@@ -1,0 +1,56 @@
+@import 'theme';
+@import 'wp-style';
+
+/******************************************************
+* MAIN.SCSS
+*	Main site element styles go in this file.
+*	Iclude styles for primary elements that are
+*	used site wide (a, h1, p, body, etc).
+\******************************************************/
+
+html {
+    background-color: $bg-darkest;
+}
+body {
+	@include Body;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div {
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    @include Links;
+    font-weight: 300;
+    text-decoration: none;
+}
+a:hover {
+    font-weight: 400;
+}
+/* a:after {
+    content: ' ⧁ ';
+    font-weight: 900;
+    font-size: 1.4em;
+    color: #99f;
+} */
+p {
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+hr {
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    border-width: 2px;
+    border-color: $bg-dark;
+}
+
+@import 'home';
+@import 'calendar';

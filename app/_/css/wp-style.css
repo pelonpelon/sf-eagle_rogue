@@ -1,0 +1,30 @@
+/****************
+ * Taken from stock WP theme to account for
+ * options in WYSIWYG editor
+****************/
+/* line 6, wp-style.scss */
+.alignleft {
+  display: inline;
+  float: left;
+  margin: 0 4px 0 0 !important;
+}
+
+/* line 12, wp-style.scss */
+.alignright {
+  display: inline;
+  float: right;
+  margin: 0 0 4px 0 !important;
+}
+
+/* line 18, wp-style.scss */
+.aligncenter {
+  display: block;
+  margin: 4px auto auto 4px !important;
+}
+
+/* line 23, wp-style.scss */
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=wp-style.css.map */

@@ -1,0 +1,39 @@
+/* COLORS */
+$black: #000;
+$white: #d0e9ff;
+$red: #A00;
+$lt-red: #F00;
+$dk-red: #600;
+$gold: #ea3;
+
+$bg-darkest: $black;
+$bg-dark: $black;
+$bg-light: $dk-red;
+$text-light: $white;
+$link-light: lightskyblue;
+
+$HighlightColor: #C1CB38;
+$LinkColor: #0000FF;
+
+/* COMMON SIZES */
+
+$header-height: 60px;
+
+/* FONT STACKS */
+$SansStack: Arial, sans-serif;
+$SansAltStack: 'Helvetica Neue', Helvetica, sans-serif;
+$SerifStack: Georgia, Serif;
+
+@mixin Html {
+    background-color: $bg-darkest;
+}
+
+@mixin Body {
+	color: $text-light;
+    background-color: $bg-darkest;
+	font-family: $SansStack;
+	font-weight: normal;
+}
+@mixin Links {
+    color: lightskyblue;
+}

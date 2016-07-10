@@ -1,0 +1,25 @@
+/****************
+ * Taken from stock WP theme to account for
+ * options in WYSIWYG editor
+****************/
+
+.alignleft {
+    display: inline;
+    float: left;
+    margin: 0 4px 0 0 !important;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    margin: 0 0 4px 0 !important;
+}
+
+.aligncenter {
+    display: block;
+    margin: 4px auto auto 4px !important;
+}
+
+.hidden {
+    display: none;
+}
