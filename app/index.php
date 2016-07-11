@@ -17,6 +17,7 @@
   <?php require("_/inc/head.php"); ?>
 </head>
 <body>
+<div id="fb-root"></div>
 <div class="pg-frame">
   <?php require('_/inc/header.php'); ?>
   <?php require('_/inc/_home.php'); ?>

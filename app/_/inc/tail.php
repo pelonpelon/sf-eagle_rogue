@@ -69,6 +69,41 @@ var lightbox = new Lightbox();
 lightbox.load(options);
 </script>
 
+<!-- Facebook -->
+<script>
+//if (window.matchMedia) {
+    //mql = window.matchMedia("(max-device-width: 768px) and (orientation:landscape)");
+    //mql.addListener(mqlHandler);
+    //function mqlHandler(mql) {
+      //if(mql.matches) {
+          //alert('OK');
+      //};
+    //};
+//};
+//var d = document;
+//var s = 'script';
+//var id = 'facebook-jssdk';
+//function loadFacebook(d, s, id) {
+    //var js,
+        //fjs = d.getElementsByTagName(s)[0];
+    //if (d.getElementById(id)) return;
+    //js = d.createElement(s);
+    //js.id = id;
+    //js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+    //fjs.parentNode.insertBefore(js, fjs);
+//};
+//(function(d, s, id) {
+    //var js,
+        //fjs = d.getElementsByTagName(s)[0];
+    //if (d.getElementById(id)) return;
+    //js = d.createElement(s);
+    //js.id = id;
+    //js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+    //fjs.parentNode.insertBefore(js, fjs);
+//}(document, 'script', 'facebook-jssdk'));
+</script>
+
 <!-- build:remove:dist -->
 <script src="//localhost:1025/livereload.js"></script>
+
 <!-- /build -->

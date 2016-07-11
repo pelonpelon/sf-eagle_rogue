@@ -15,8 +15,8 @@
         <link rel="stylesheet" href="_/css/layout.css">
         <!-- endbuild -->
 
-        <!-- uild:js _/js/lib/modernizr/modernizr.js -->
-        <!-- <script src="_/bower_components/modernizr/modernizr.js"></script> -->
+        <!-- build:js _/js/vendor/modernizr.js -->
+        <script src="_/vendor/modernizr-build.js"></script>
         <!-- endbuild -->
 
   <meta charset="utf-8">
@@ -26,7 +26,6 @@
 
           <!-- <script src="_/vendor/jquery-2.1.4.min.js"></script> -->
           <script src="_/vendor/jquery-2.1.1.js"></script>
-          <script src="_/vendor/modernizr-custom.min.js"> </script>
 
 
 

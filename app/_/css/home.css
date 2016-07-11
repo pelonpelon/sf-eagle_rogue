@@ -272,4 +272,26 @@ span.host:nth-child(4) {
   color: mediumpurple;
 }
 
+/* line 210, home.scss */
+iframe {
+  display: none;
+}
+
+@media only screen and (min-device-width: 768px) and (orientation: landscape) {
+  /* line 214, home.scss */
+  iframe {
+    display: block;
+  }
+}
+@media only screen and (max-device-width: 340px) {
+  /* line 219, home.scss */
+  .jslghtbx-caption iframe {
+    width: 340px !important;
+    height: 565px !important;
+    margin: 0 auto;
+    position: relative;
+    left: -17px;
+  }
+}
+
 /*# sourceMappingURL=home.css.map */

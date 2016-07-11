@@ -11,7 +11,7 @@ try {
 ?>
     <div class="page logo <?php echo $lb ?>">
         <?php echo $Logo->post_content; ?>
-        <div class="hidden"><?php echo $modal_contents_filtered ?></div>
+        <div class="hide-this"><?php echo $modal_contents_filtered ?></div>
       </div>
 <?php
 

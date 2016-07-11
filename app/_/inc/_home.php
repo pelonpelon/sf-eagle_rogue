@@ -1,15 +1,13 @@
 <div id="Home" class="page-content">
   <?php
-      $Drinks = get_page_by_title('Drink Specials');
-      $Contact_content = get_page_by_title_filtered('Contact Us');
+      //$Drinks = get_page_by_title('Drink Specials');
+      //$Contact_content = get_page_by_title_filtered('Contact Us');
+      $Front_content = get_page_by_title_filtered('Front');
       // var_dump($Drinks);
   ?>
-      <div class="pages">
-        <div class="page drinks">
-            <div class="content"><?php echo $Drinks->post_content; ?></div>
-        </div>
-        <div class="page contact">
-            <div class="content"><?php echo $Contact_content; ?></div>
+      <div class="pages">       <!--FIXX ••• add head and foot pages rarely used -->
+        <div class="page front">
+            <div class="content"><?php echo $Front_content; ?></div>
         </div>
       </div>
   <div class="scrollbox">

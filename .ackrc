@@ -1,0 +1,4 @@
+--ignore-case
+--ignore-dir=vendor
+--ignore-dir=wp
+--nocss
