@@ -1,4 +1,6 @@
 /* COLORS */
+$alert: crimson;
+
 $black: #000;
 $white: #d0e9ff;
 $red: #A00;
@@ -16,6 +18,11 @@ $HighlightColor: #C1CB38;
 $LinkColor: #0000FF;
 
 /* COMMON SIZES */
+
+$phone: 320px;
+$big-phone: 640px;
+$tablet: 768px;
+$laptop: 1024px;
 
 $header-height: 60px;
 
@@ -37,3 +44,18 @@ $SerifStack: Georgia, Serif;
 @mixin Links {
     color: lightskyblue;
 }
+
+.alert {
+    background-color: $alert;
+    color: black;
+}
+.spinner {
+    background-image: url('../img/spinner.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 128px;
+    min-width: 128px;
+    margin: auto;
+
+}
+

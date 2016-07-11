@@ -19,7 +19,7 @@
 /* line 18, wp-style.scss */
 .aligncenter {
   display: block;
-  margin: 4px auto auto 4px !important;
+  margin: 0 auto !important;
 }
 
 /* line 23, wp-style.scss */

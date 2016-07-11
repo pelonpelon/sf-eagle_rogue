@@ -1,11 +1,11 @@
-<div id="Home" class="page-content">
+<div id="home" class="page-content">
   <?php
       //$Drinks = get_page_by_title('Drink Specials');
       //$Contact_content = get_page_by_title_filtered('Contact Us');
       $Front_content = get_page_by_title_filtered('Front');
       // var_dump($Drinks);
   ?>
-      <div class="pages">       <!--FIXX ••• add head and foot pages rarely used -->
+      <div class="pages">       <!--TODO ••• add head and foot pages rarely used -->
         <div class="page front">
             <div class="content"><?php echo $Front_content; ?></div>
         </div>
@@ -15,7 +15,7 @@
   <?php
 
 try {
-      $TopMessage = get_page_by_title('Top Message');
+      $TopMessage = get_page_by_title('Top Message');       //FIXX ••• should be a post for email
       if (strlen($TopMessage->post_content) > 1) {
           $event_modal = get_post_meta($TopMessage->ID, 'event_modal', true);
           $event_modal_filtered = do_shortcode($event_modal);
@@ -44,7 +44,7 @@ pretty($Items->post_count);
       while ($Items->have_posts()): $Items->the_post();
       $ID = $Items->post->ID;
 
-      if ( ! in_category('news')) { continue; }
+      if ( ! in_category('news')) { continue; }     //FIXX ••• news needs a more button after 2 items
   ?>
               <div class="post news-item open-lightbox">
   <?php

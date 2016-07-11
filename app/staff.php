@@ -16,7 +16,7 @@
 <body>
 <div class="pg-frame">
   <?php require('_/inc/header.php'); ?>
-  <?php require('_/inc/home.php'); ?>
+  <?php $included_page_title = 'Staff'; require('_/inc/_wp-page.php'); ?>
 
   <!--[if lt IE 9]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser.

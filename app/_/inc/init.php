@@ -4,7 +4,7 @@
     * @var bool
     **/
 
-  define('WP_DEBUG', true); // FIXX: dev only
+  define('WP_DEBUG', true); // HOTT ••• dev only
   ini_set('error_reporting', E_ALL);
   //error_reporting(-1);
   ini_set('display_errors', 'stderr');
@@ -12,14 +12,14 @@
   ini_set('error_prepend_string', 'GIRRRLLL ... ');
 
   define('WP_USE_THEMES', false);
-  require( dirname( __FILE__ ) . '/../../../../wp/wp-blog-header.php' );       //FIXX ••• dev
+  require( dirname( __FILE__ ) . '/../../../../wp/wp-blog-header.php' );       //HOTT ••• dev
 
   /*
    *
    * Used in a few places during dev
    */
-  $root_wp_url = "http://sf-eagle.mirror/wp/"; //FIXX dev only
-  $spacer_url=$root_wp_url . "wp-content/uploads/2016/07/1pixel.gif"; //FIXX: check this, dev
+  $root_wp_url = "http://sf-eagle.mirror/wp/"; //HOTT ••• dev only
+  $spacer_url=$root_wp_url . "wp-content/uploads/2016/07/1pixel.gif"; //HOTT ••• check this, dev
 
   //set_include_path( get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT'] );
 

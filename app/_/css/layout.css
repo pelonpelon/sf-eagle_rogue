@@ -2,6 +2,22 @@
 /* COLORS */
 /* COMMON SIZES */
 /* FONT STACKS */
+/* line 48, _theme.scss */
+.alert {
+  background-color: crimson;
+  color: black;
+}
+
+/* line 52, _theme.scss */
+.spinner {
+  background-image: url("../img/spinner.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 128px;
+  min-width: 128px;
+  margin: auto;
+}
+
 /* line 1, _menu.scss */
 #menu-panel {
   position: fixed;
@@ -133,27 +149,35 @@
 
 /* line 66, layout.scss */
 .page-content {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
   width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
   height: 100%;
-  position: absolute;
+  position: relative;
   top: 60px;
   padding: 0 2px 60px 2px;
 }
 
-/* line 76, layout.scss */
+@media only screen and (min-device-width: 768px) and (orientation: landscape) {
+  /* line 76, layout.scss */
+  #home.page-content {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+}
+/* line 83, layout.scss */
 .wp-page {
   margin: 0 auto;
 }
 
-/* line 79, layout.scss */
+/* line 86, layout.scss */
 .header {
   position: relative;
 }
 
-/* line 82, layout.scss */
+/* line 89, layout.scss */
 .page-title {
   margin: auto;
   text-align: center;
@@ -161,20 +185,20 @@
   font-weight: 900;
 }
 
-/* line 88, layout.scss */
+/* line 95, layout.scss */
 .logo {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-/* line 93, layout.scss */
+/* line 100, layout.scss */
 .logo img {
   height: 60px;
   width: auto;
 }
 
-/* line 101, layout.scss */
+/* line 108, layout.scss */
 .header-psa {
   position: fixed;
   top: 60px;
@@ -188,68 +212,68 @@
   z-index: 9999;
 }
 
-/* line 113, layout.scss */
+/* line 120, layout.scss */
 .touch-button-size {
   min-height: 60px;
   min-width: 60px;
 }
 
-/* line 117, layout.scss */
+/* line 124, layout.scss */
 .jPanelMenu-panel {
   background-color: #000 !important;
   color: #FFF !important;
 }
 
-/* line 121, layout.scss */
+/* line 128, layout.scss */
 #jslghtbx {
   z-index: 30;
 }
 
 /* These 2 !importants must stay in yhis order */
-/* line 125, layout.scss */
+/* line 132, layout.scss */
 #jslghtbx img {
   margin-top: 0 !important;
 }
 
 @media only screen and (min-device-height: 768px) {
-  /* line 129, layout.scss */
+  /* line 136, layout.scss */
   #jslghtbx {
     padding-top: 5% !important;
   }
 }
 @media only screen and (min-device-height: 1024px) {
-  /* line 134, layout.scss */
+  /* line 141, layout.scss */
   #jslghtbx {
     padding-top: 8% !important;
   }
 }
 @media only screen and (min-device-width: 960px) and (orientation: landscape) {
-  /* line 139, layout.scss */
+  /* line 146, layout.scss */
   #jslghtbx img {
     margin: 0 46% 0 auto;
     max-width: 52% !important;
   }
 }
-/* line 144, layout.scss */
+/* line 151, layout.scss */
 .jslghtbx-contentwrapper {
   background-color: #000;
   position: absolute;
   width: 100%;
 }
 
-/* line 149, layout.scss */
+/* line 156, layout.scss */
 .jslghtbx-caption {
   text-align: left !important;
   padding: 5px;
 }
 
 @media only screen and (min-device-width: 960px) and (orientation: landscape) {
-  /* line 154, layout.scss */
+  /* line 161, layout.scss */
   #jslghtbx .links img {
     margin: 0;
   }
 
-  /* line 157, layout.scss */
+  /* line 164, layout.scss */
   .jslghtbx-caption {
     position: absolute;
     top: 10%;
@@ -257,24 +281,24 @@
     width: 37% !important;
   }
 }
-/* line 164, layout.scss */
+/* line 171, layout.scss */
 .jslghtbx-caption img {
   padding: 4px;
 }
 
-/* line 167, layout.scss */
+/* line 174, layout.scss */
 .event-details {
   color: deeppink;
 }
 
-/* line 170, layout.scss */
+/* line 177, layout.scss */
 .event-url {
   font-weight: 600;
   padding: 25px 0;
   display: block;
 }
 
-/* line 175, layout.scss */
+/* line 182, layout.scss */
 Inherited from li
 .jslghtbx-close {
   font-size: 3em !important;
@@ -282,7 +306,7 @@ Inherited from li
   text-shadow: 2px 3px 3px black !important;
 }
 
-/* line 181, layout.scss */
+/* line 188, layout.scss */
 .jslghtbx.jslghtbx-active {
   background-color: black !important;
 }

@@ -16,13 +16,26 @@
         <!-- endbuild -->
 
         <!-- build:js _/js/vendor/modernizr.js -->
-        <script src="_/vendor/modernizr-build.js"></script>
+        <!-- <script src="_/vendor/modernizr-build.js"></script> -->
         <!-- endbuild -->
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=0, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <link rel="stylesheet" href="_/vendor/lightbox.css">
+
+
+    <!-- Don't connect with the internet if we don't have to -->
+      <script>
+        var uri = new URL(window.document.URL);
+        var live = uri.hostname == "sf-eagle.mirror" || uri.hostname == "localhost" || uri.hostname == "127.0.0.1"  ? false : true;
+        function is_live(msg){
+            console.info(live ? 'HOT' : 'COLD' + ": " + msg);
+        }
+        is_live('head.php');
+
+
+      </script>
 
           <!-- <script src="_/vendor/jquery-2.1.4.min.js"></script> -->
           <script src="_/vendor/jquery-2.1.1.js"></script>

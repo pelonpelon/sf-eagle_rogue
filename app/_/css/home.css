@@ -1,6 +1,22 @@
 /* COLORS */
 /* COMMON SIZES */
 /* FONT STACKS */
+/* line 48, _theme.scss */
+.alert {
+  background-color: crimson;
+  color: black;
+}
+
+/* line 52, _theme.scss */
+.spinner {
+  background-image: url("../img/spinner.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 128px;
+  min-width: 128px;
+  margin: auto;
+}
+
 /* line 2, home.scss */
 .pages {
   display: none;
@@ -67,7 +83,7 @@
   flex-flow: row;
   justify-content: space-between;
   width: 100%;
-  height: 45px;
+  height: 38px;
   background-color: #600;
 }
 
@@ -75,7 +91,7 @@
 .post-day {
   flex: 1 0 70%;
   vertical-align: middle;
-  font-size: 2.2em;
+  font-size: 1.5em;
   font-weight: 600;
   background-color: #600;
 }
@@ -84,7 +100,7 @@
 .post-date {
   flex: 0 1 auto;
   padding-right: 10px;
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: #852;
   background-color: #600;
   text-shadow: #200 2px 1px;
@@ -103,7 +119,7 @@
   height: auto;
 }
 
-@media only screen and (min-device-width: 450px) {
+@media only screen and (min-device-width: 640px) {
   /* line 86, home.scss */
   .post-thumbnail img {
     max-width: 120px;
@@ -140,31 +156,26 @@ hr {
   border-color: #600;
 }
 
-/*@media only screen and (min-device-width: 450px){*/
-/*.-news-item img {*/
-/*max-width: 120px;*/
-/*}*/
-/*}*/
-/* line 116, home.scss */
+/* line 111, home.scss */
 .event-info-box {
   position: relative;
 }
 
-/* line 119, home.scss */
+/* line 114, home.scss */
 .event-title {
   text-align: center;
   font-weight: 600;
   font-size: 1.1em;
 }
 
-/* line 124, home.scss */
+/* line 119, home.scss */
 .event-content {
   max-width: 400px;
   margin: 0 auto;
   padding: 0 4px;
 }
 
-/* line 129, home.scss */
+/* line 124, home.scss */
 .event-start-time {
   position: absolute;
   right: 0;
@@ -174,7 +185,7 @@ hr {
   font-size: .8em;
 }
 
-/* line 138, home.scss */
+/* line 133, home.scss */
 .event-item {
   display: flex;
   flex-flow: row;
@@ -186,105 +197,95 @@ hr {
   margin: 0 auto;
 }
 
-@media only screen and (min-device-width: 450px) {
-  /* line 149, home.scss */
+@media only screen and (min-device-width: 640px) {
+  /* line 144, home.scss */
   .event-item {
     height: 120px;
   }
 }
-/* line 153, home.scss */
+/* line 148, home.scss */
 .event-item:hover {
   background-color: #036;
 }
 
-/* line 156, home.scss */
+/* line 151, home.scss */
 .event-info-box {
   flex-flow: column;
   flex: 1 0 0%;
   padding: 4px;
 }
 
-/*.event-item img {*/
-/*max-width: 90px;*/
-/*height: 90px;*/
-/*}*/
-/*@media only screen and (min-device-width: 450px) {*/
-/*.event-item img {*/
-/*max-width: 120px;*/
-/*height: 120px;*/
-/*}*/
-/*}*/
-/* line 171, home.scss */
+/* line 156, home.scss */
 .event-title {
   line-height: .9em;
   padding-top: 2px;
 }
 
 @media only screen and (min-device-height: 768px) and (orientation: portrait) {
-  /* line 176, home.scss */
+  /* line 161, home.scss */
   .event-title {
     line-height: 1.1em;
     padding-top: 4px;
     padding-bottom: 4px;
   }
 }
-/* line 182, home.scss */
+/* line 167, home.scss */
 .event-content {
   flex-flow: column;
   font-size: .8em;
 }
 
-/* line 186, home.scss */
+/* line 171, home.scss */
 .event-content h3 {
   margin: 0 0 5px;
   font-size: 1.5em;
 }
 
-/* line 190, home.scss */
+/* line 175, home.scss */
 .event-content ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 194, home.scss */
+/* line 179, home.scss */
 .event-content li {
   padding: 0 0 3px;
   line-height: 1em;
 }
 
-/* line 198, home.scss */
+/* line 183, home.scss */
 span.host:nth-child(1) {
   color: magenta;
 }
 
-/* line 201, home.scss */
+/* line 186, home.scss */
 span.host:nth-child(2) {
   color: lightsalmon;
 }
 
-/* line 204, home.scss */
+/* line 189, home.scss */
 span.host:nth-child(3) {
   color: limegreen;
 }
 
-/* line 207, home.scss */
+/* line 192, home.scss */
 span.host:nth-child(4) {
   color: mediumpurple;
 }
 
-/* line 210, home.scss */
+/* line 195, home.scss */
 iframe {
   display: none;
 }
 
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 214, home.scss */
+  /* line 199, home.scss */
   iframe {
     display: block;
   }
 }
-@media only screen and (max-device-width: 340px) {
-  /* line 219, home.scss */
+@media only screen and (max-device-width: 640px) {
+  /* line 204, home.scss */
   .jslghtbx-caption iframe {
     width: 340px !important;
     height: 565px !important;

@@ -21,12 +21,13 @@ jpm.on();
 </script>
 
  <!-- <script defer async src="master.js"></script> -->
-  <!-- Grow touchable items, like buttons, for fat fingers -->
+
+<!-- Grow touchable items, like buttons, for fat fingers -->        <!--NOTE ••• is this a thing? -->
 <script>
-if (Modernizr.touchevents) {
-    var els = document.querySelectorAll('.touch');
-    for (var i=0; i<els.length; i++){els[i].classList.add('touch-button-size')};
-}
+//if (Modernizr.touchevents) {
+    //var els = document.querySelectorAll('.touch');
+    //for (var i=0; i<els.length; i++){els[i].classList.add('touch-button-size')};
+//}
 </script>
     <script src="_/vendor/lightbox.js" type="text/javascript"></script>
 <script>
@@ -71,27 +72,28 @@ lightbox.load(options);
 
 <!-- Facebook -->
 <script>
-//if (window.matchMedia) {
-    //mql = window.matchMedia("(max-device-width: 768px) and (orientation:landscape)");
-    //mql.addListener(mqlHandler);
-    //function mqlHandler(mql) {
-      //if(mql.matches) {
-          //alert('OK');
-      //};
-    //};
-//};
-//var d = document;
-//var s = 'script';
-//var id = 'facebook-jssdk';
-//function loadFacebook(d, s, id) {
-    //var js,
-        //fjs = d.getElementsByTagName(s)[0];
-    //if (d.getElementById(id)) return;
-    //js = d.createElement(s);
-    //js.id = id;
-    //js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
-    //fjs.parentNode.insertBefore(js, fjs);
-//};
+if (window.matchMedia) {
+    //alert('matchMedia is present');
+    mql = window.matchMedia("(min-device-width: 768px) and (orientation:landscape)");
+    if (mql.matches) {loadFacebook();}
+    mql.addListener(mqlHandler);
+    function mqlHandler(mql) {
+      if(mql.matches) {loadFacebook();}
+    };
+};
+function loadFacebook() {
+    is_live('loadFacebook');
+    if(!live){
+        return;
+    }
+    var js,
+        fjs = document.getElementsByTagName('script')[0];
+    if (document.getElementById('facebook-jssdk')) return;
+    js = document.createElement('script');
+    js.id = 'facebook-jssdk';
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+    fjs.parentNode.insertBefore(js, fjs);
+};
 //(function(d, s, id) {
     //var js,
         //fjs = d.getElementsByTagName(s)[0];

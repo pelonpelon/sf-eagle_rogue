@@ -17,7 +17,7 @@
     /*left: 0;*/
     background: black;
 }
-@media only screen and (min-device-width: 768px) and (orientation: landscape){
+@media only screen and (min-device-width: $tablet) and (orientation: landscape){
     #Home .pg-frame {
         background-color: transparent;
         background-image: url('/wp/wp-content/uploads/2016/07/logo.svg');
@@ -27,7 +27,7 @@
         background-repeat: no-repeat;
     }
 }
-@media only screen and (min-device-height: 640px){
+@media only screen and (min-device-height: $big-phone){
     .pg-frame {
         /*position: fixed;*/
     }
@@ -37,7 +37,7 @@
     background: $bg-darkest;
     z-index: 20;
 }
-@media only screen and (min-device-height: 640px){
+@media only screen and (min-device-height: $big-phone){
     .st-header {
         position: fixed;
         /* top: 0; */
@@ -64,14 +64,21 @@
     color: #ea3;
 }
 .page-content {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     height: 100%;
-    position: absolute;
+    position: relative;
     top: $header-height;
     padding: 0 2px 60px 2px;
+}
+@media only screen and (min-device-width: $tablet) and (orientation: landscape){
+    #home.page-content {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        max-width: 100%;
+    }
 }
 .wp-page {
     margin: 0 auto;
@@ -94,7 +101,7 @@
 	height: $header-height;
     width: auto;
 }
-@media only screen and (min-device-width: 768px) and (orientation: landscape){
+@media only screen and (min-device-width: $tablet) and (orientation: landscape){
     .logo img {
     }
 }
@@ -125,12 +132,12 @@
 #jslghtbx img {
     margin-top: 0 !important;
 }
-@media only screen and (min-device-height: 768px) {
+@media only screen and (min-device-height: $tablet) {
     #jslghtbx {
         padding-top: 5% !important;
     }
 }
-@media only screen and (min-device-height: 1024px) {
+@media only screen and (min-device-height: $laptop) {
     #jslghtbx {
         padding-top: 8% !important;
     }

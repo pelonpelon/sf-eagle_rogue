@@ -1,7 +1,9 @@
 <header class="st-header">
 
-        <h1 class="page-title">SF-EAGLE</h1> <!-- FIXX should be st-title -->
-        <p class="page-subtitle">398 12th St</p> <!-- FIXX: st-subtitle -->
+<div id="fb-root"></div>
+
+        <h1 class="page-title">SF-EAGLE</h1> <!-- FIXX ••• should be st-title -->
+        <p class="page-subtitle">398 12th St</p> <!-- FIXX •••  st-subtitle -->
 <?php
 try {
     $Logo = get_page_by_title('Logo');
@@ -9,7 +11,7 @@ try {
     if (strlen($modal_contents) > 1) { $lb = 'open-lightbox'; } else { $lb = ''; }
     $modal_contents_filtered = do_shortcode($modal_contents);
 ?>
-    <div class="page logo <?php echo $lb ?>">
+    <div class="page logo <?php echo $lb ?>" onclick="loadFacebook();">
         <?php echo $Logo->post_content; ?>
         <div class="hide-this"><?php echo $modal_contents_filtered ?></div>
       </div>
@@ -19,7 +21,7 @@ try {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 //var_dump($Logo_page);
-        $PSA = get_page_by_title('PSA');
+        $PSA = get_page_by_title('PSA');        //FIXX ••• should be post for email
         if (strlen($PSA->post_content) > 1) {
 ?>
         <div class="header-psa"><?php echo $PSA->post_content; ?></div>

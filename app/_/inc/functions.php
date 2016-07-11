@@ -92,7 +92,19 @@ function change_event_posts_per_page( $query ) {
 		$headers .= "From: " . $from;
 
 		return mail($to, $subject, $message, $headers);
-	}
+    }
+
+    // Check email every 15 minutes for post
+    add_action( 'shutdown', 'retrieve_post_via_mail' );
+    function retrieve_post_via_mail() {
+        flush(); // Display the page before the mail fetching begins
+        if ( get_transient( 'retrieve_post_via_mail' ) ) {
+            return; // The mail has been checked recently; don't check again
+        } else { // The mail has not been checked in more than 15 minutes
+            do_action( 'wp-mail.php' );
+            set_transient( 'retrieve_post_via_mail', 1, 15 * MINUTE_IN_SECONDS ); // check again in 15 minutes.
+        }
+}
 
 	function HasFormError($fieldName) {
 		global $FormErrors;
