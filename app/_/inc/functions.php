@@ -116,4 +116,3 @@ function change_event_posts_per_page( $query ) {
 		return false;
 	}
 
-?>

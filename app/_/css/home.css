@@ -1,13 +1,13 @@
 /* COLORS */
 /* COMMON SIZES */
 /* FONT STACKS */
-/* line 48, _theme.scss */
+/* line 54, _theme.scss */
 .alert {
   background-color: crimson;
   color: black;
 }
 
-/* line 52, _theme.scss */
+/* line 58, _theme.scss */
 .spinner {
   background-image: url("../img/spinner.gif");
   background-repeat: no-repeat;
@@ -39,36 +39,48 @@
     margin: 0 auto;
   }
 }
-/* line 20, home.scss */
+/* line 19, home.scss */
+.poster-img {
+  display: block;
+  margin: 0 auto 50px;
+}
+
+/* line 24, home.scss */
 .top-message {
   font-size: 1.1rem;
   color: skyblue;
   font-weight: 100;
   margin: 0 auto;
-  padding: 20px 0;
+  padding-bottom: 2px;
 }
 
-/* line 27, home.scss */
+@media only screen and (min-device-height: 640px) and (orientation: portrait) {
+  /* line 32, home.scss */
+  .top-message {
+    padding: 20px 0;
+  }
+}
+/* line 36, home.scss */
 .scrollbox {
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (min-device-height: 640px) and (orientation: portrait) {
-  /* line 32, home.scss */
+  /* line 41, home.scss */
   .scrollbox {
     overflow-y: auto;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 37, home.scss */
+  /* line 46, home.scss */
   .scrollbox {
     flex: 1 1 420px;
     padding-top: 0;
     overflow-y: auto;
   }
 }
-/* line 43, home.scss */
+/* line 52, home.scss */
 .scroller {
   display: flex;
   flex-flow: column;
@@ -77,42 +89,41 @@
   padding-bottom: 90px;
 }
 
-/* line 50, home.scss */
+/* line 59, home.scss */
 .new-day {
   display: flex;
-  flex-flow: row;
-  justify-content: space-between;
+  flex-flow: column;
+  justify-content: flex-start;
   width: 100%;
-  height: 38px;
-  background-color: #600;
+  height: 42px;
+  background-color: #102646;
 }
 
-/* line 58, home.scss */
+/* line 67, home.scss */
 .post-day {
-  flex: 1 0 70%;
-  vertical-align: middle;
+  flex: 0 1 0%;
   font-size: 1.5em;
   font-weight: 600;
-  background-color: #600;
+  line-height: 1.2em;
 }
 
-/* line 65, home.scss */
+/* line 73, home.scss */
 .post-date {
-  flex: 0 1 auto;
+  flex: 1 0 auto;
   padding-right: 10px;
   font-size: 1.2em;
-  color: #852;
-  background-color: #600;
+  color: #103f86;
   text-shadow: #200 2px 1px;
+  line-height: .4em;
 }
 
 @media only screen and (min-device-height: 768px) {
-  /* line 76, home.scss */
+  /* line 84, home.scss */
   .post {
     flex: 1 0 120px;
   }
 }
-/* line 80, home.scss */
+/* line 88, home.scss */
 .post-thumbnail img {
   display: block;
   max-width: 90px;
@@ -120,29 +131,29 @@
 }
 
 @media only screen and (min-device-width: 640px) {
-  /* line 86, home.scss */
+  /* line 94, home.scss */
   .post-thumbnail img {
     max-width: 120px;
   }
 }
-/* line 90, home.scss */
+/* line 98, home.scss */
 .news-box {
   background-color: #000;
 }
 
-/* line 93, home.scss */
+/* line 101, home.scss */
 .news-content {
   margin-bottom: 18px;
 }
 
-/* line 96, home.scss */
+/* line 104, home.scss */
 .news-item {
   color: #d0e9ff;
   background-color: #000;
   padding: 10px 5px;
 }
 
-/* line 101, home.scss */
+/* line 109, home.scss */
 .news-item img {
   display: inline;
   float: right;
@@ -151,31 +162,31 @@
   padding: 26px 2% 4px 2%;
 }
 
-/* line 108, home.scss */
+/* line 116, home.scss */
 hr {
   border-color: #600;
 }
 
-/* line 111, home.scss */
+/* line 119, home.scss */
 .event-info-box {
   position: relative;
 }
 
-/* line 114, home.scss */
+/* line 122, home.scss */
 .event-title {
   text-align: center;
   font-weight: 600;
   font-size: 1.1em;
 }
 
-/* line 119, home.scss */
+/* line 127, home.scss */
 .event-content {
   max-width: 400px;
   margin: 0 auto;
   padding: 0 4px;
 }
 
-/* line 124, home.scss */
+/* line 132, home.scss */
 .event-start-time {
   position: absolute;
   right: 0;
@@ -185,7 +196,7 @@ hr {
   font-size: .8em;
 }
 
-/* line 133, home.scss */
+/* line 141, home.scss */
 .event-item {
   display: flex;
   flex-flow: row;
@@ -193,99 +204,99 @@ hr {
   height: 90px;
   background-color: #000;
   color: #d0e9ff;
-  border-bottom: #333 2px solid;
+  border-bottom: 1px solid #103f86;
   margin: 0 auto;
 }
 
 @media only screen and (min-device-width: 640px) {
-  /* line 144, home.scss */
+  /* line 152, home.scss */
   .event-item {
     height: 120px;
   }
 }
-/* line 148, home.scss */
+/* line 156, home.scss */
 .event-item:hover {
   background-color: #036;
 }
 
-/* line 151, home.scss */
+/* line 159, home.scss */
 .event-info-box {
   flex-flow: column;
   flex: 1 0 0%;
   padding: 4px;
 }
 
-/* line 156, home.scss */
+/* line 164, home.scss */
 .event-title {
   line-height: .9em;
   padding-top: 2px;
 }
 
 @media only screen and (min-device-height: 768px) and (orientation: portrait) {
-  /* line 161, home.scss */
+  /* line 169, home.scss */
   .event-title {
     line-height: 1.1em;
     padding-top: 4px;
     padding-bottom: 4px;
   }
 }
-/* line 167, home.scss */
+/* line 175, home.scss */
 .event-content {
   flex-flow: column;
   font-size: .8em;
 }
 
-/* line 171, home.scss */
+/* line 179, home.scss */
 .event-content h3 {
   margin: 0 0 5px;
   font-size: 1.5em;
 }
 
-/* line 175, home.scss */
+/* line 183, home.scss */
 .event-content ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 179, home.scss */
+/* line 187, home.scss */
 .event-content li {
   padding: 0 0 3px;
   line-height: 1em;
 }
 
-/* line 183, home.scss */
+/* line 191, home.scss */
 span.host:nth-child(1) {
   color: magenta;
 }
 
-/* line 186, home.scss */
+/* line 194, home.scss */
 span.host:nth-child(2) {
   color: lightsalmon;
 }
 
-/* line 189, home.scss */
+/* line 197, home.scss */
 span.host:nth-child(3) {
   color: limegreen;
 }
 
-/* line 192, home.scss */
+/* line 200, home.scss */
 span.host:nth-child(4) {
   color: mediumpurple;
 }
 
-/* line 195, home.scss */
+/* line 203, home.scss */
 iframe {
   display: none;
 }
 
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 199, home.scss */
+  /* line 207, home.scss */
   iframe {
     display: block;
   }
 }
 @media only screen and (max-device-width: 640px) {
-  /* line 204, home.scss */
+  /* line 212, home.scss */
   .jslghtbx-caption iframe {
     width: 340px !important;
     height: 565px !important;

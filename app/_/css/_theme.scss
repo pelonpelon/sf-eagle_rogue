@@ -6,11 +6,17 @@ $white: #d0e9ff;
 $red: #A00;
 $lt-red: #F00;
 $dk-red: #600;
+$dk-blue: #102646;
+$lt-blue: #3264b1;
+$blue: #103f86;
 $gold: #ea3;
 
 $bg-darkest: $black;
-$bg-dark: $black;
-$bg-light: $dk-red;
+$bg-darker: $black;
+$bg-dark: $dk-blue;
+$bg-light: $blue;
+$bg-lighter: $lt-blue;
+$bg-lightest: $lt-blue;
 $text-light: $white;
 $link-light: lightskyblue;
 

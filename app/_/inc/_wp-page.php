@@ -3,11 +3,10 @@ global $included_page_title;
 $Title = $included_page_title;
 $title = strtolower($Title);
 ?>
-<div id=$title class="page-content">
+<div id="<?php echo $title; ?>" class="wp-page page-content">
 
 <?php
-    $page = get_page_by_title($Title);
-    //var_dump($page);
+    $page = get_page_by_title_safely($Title);
     echo do_shortcode($page->post_content);
 ?>
 

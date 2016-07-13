@@ -1,13 +1,46 @@
-<div id="home" class="page-content">
-  <?php
-      //$Drinks = get_page_by_title('Drink Specials');
-      //$Contact_content = get_page_by_title_filtered('Contact Us');
+<?php
+      $args = array(
+          'orderby'       => 'post_date',
+          'order'         => 'ASC',
+          'post_type'     => array('post', 'page'),
+          'post_status'   => array('publish', 'future'),
+          'numberposts'   => -1
+      );
+      $Items = new WP_Query( $args );
+?>
+
+  <div id="home" class="page-content">
+
+<?php
+      // Show wp_Front or first event as backup
+      // get_page_by_title doesn't work here
+      $Front = get_page_by_title('Front');
       $Front_content = get_page_by_title_filtered('Front');
-      // var_dump($Drinks);
+      if ($Front->post_status == 'publish') {
+          $markup = $Front_content;
+      }else{
+          while ($Items->have_posts()): $Items->the_post();
+              if ( ! in_category('event')) { continue; }
+              $ID = $Items->post->ID;
+              $attachment_url = wp_get_attachment_url( get_post_thumbnail_id( $ID ) );
+              $event_content = do_shortcode(get_the_content());
+              $postcard = do_shortcode(get_post_meta($ID, 'event_postcard', true));
+              if ( has_post_thumbnail() ) {
+                  $attrs = array('class' => 'noclick poster-img', 'data-jslghtbx' => $attachment_url, 'data-jslghtbx-caption' => $event_content);
+                  $post_thumbnail_img = get_the_post_thumbnail(null, 'medium', $attrs);
+              }
+              $markup = '<div class="poster open-lightbox">'
+                  . '<div>' . $post_thumbnail_img . '</div>'
+                  . '<div>' . $postcard . '</div>'
+                  . '</div>';
+              break;
+          endwhile;
+          wp_reset_postdata();
+      }
   ?>
       <div class="pages">       <!--TODO ••• add head and foot pages rarely used -->
         <div class="page front">
-            <div class="content"><?php echo $Front_content; ?></div>
+            <div class="content"><?php echo $markup; ?></div>
         </div>
       </div>
   <div class="scrollbox">
@@ -15,7 +48,7 @@
   <?php
 
 try {
-      $TopMessage = get_page_by_title('Top Message');       //FIXX ••• should be a post for email
+      $TopMessage = get_page_by_title_safely('Top Message');       //FIXX ••• should be a post for email
       if (strlen($TopMessage->post_content) > 1) {
           $event_modal = get_post_meta($TopMessage->ID, 'event_modal', true);
           $event_modal_filtered = do_shortcode($event_modal);
@@ -30,15 +63,6 @@ try {
       }
 } catch (Exception $e) { ;; }
 
-      $args = array(
-          'orderby'       => 'post_date',
-          'order'         => 'ASC',
-          'post_type'     => array('post', 'page'),
-          'post_status'   => array('publish', 'future'),
-          'numberposts'   => -1
-      );
-      $Items = new WP_Query( $args );
-pretty($Items->post_count);
       ?>  <div class="news-box">  <?php
 
       while ($Items->have_posts()): $Items->the_post();
@@ -150,12 +174,3 @@ pretty($Items->post_count);
   </div>
   </div>
 </div>
-<script>
-$('.open-lightbox')
-    .each(function(){
-        var imgsrc = $(this).find('img')[0];
-        $(this).on('click', function(){
-            lightbox.open(imgsrc);
-        })
-    });
-</script>

@@ -68,17 +68,40 @@ var options = {
 
 var lightbox = new Lightbox();
 lightbox.load(options);
+
+$('.open-lightbox')
+.each(function(){
+    var imgsrc = $(this).find('img')[0];
+    $(this).on('click', function(e){
+        if ( $(e.target).closest('.open-lightbox').length != 0 ) {
+            lightbox.open(imgsrc);
+        }
+    })
+});
 </script>
 
 <!-- Facebook -->
 <script>
 if (window.matchMedia) {
-    //alert('matchMedia is present');
+
+    // on load
     mql = window.matchMedia("(min-device-width: 768px) and (orientation:landscape)");
-    if (mql.matches) {loadFacebook();}
+    var logo = $('.logo')[0];
+    if (mql.matches) {
+        loadFacebook();
+        logo.classList.remove('open-lightbox');
+    }
+
+    // on orientation change
     mql.addListener(mqlHandler);
     function mqlHandler(mql) {
-      if(mql.matches) {loadFacebook();}
+        if(mql.matches) {
+            loadFacebook();
+            // we don't want a tap on the logo to bring up facebook as well
+            logo.classList.remove('open-lightbox');
+        }else{
+            logo.classList.add('open-lightbox');
+        }
     };
 };
 function loadFacebook() {
