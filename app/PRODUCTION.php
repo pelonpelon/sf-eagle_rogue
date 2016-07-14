@@ -6,3 +6,4 @@
         //FIXX ••• cancel default on modal clicks when you don't want to leave
         //FIXX ••• show SM without long dash on front page
         //FIXX ••• 404.html not working
+        //FIXX ••• add "Generic image" url box
