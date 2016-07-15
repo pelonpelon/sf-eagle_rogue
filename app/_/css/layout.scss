@@ -12,9 +12,6 @@
 .pg-frame {
     width: 100%;
     height: 100%;
-    /*position: static;*/
-    /*top: 0;*/
-    /*left: 0;*/
     background: black;
 }
 @media only screen and (min-device-width: $tablet) and (orientation: landscape){
@@ -29,7 +26,6 @@
 }
 @media only screen and (min-device-height: $big-phone){
     .pg-frame {
-        /*position: fixed;*/
     }
 }
 .st-header {
@@ -40,8 +36,6 @@
 @media only screen and (min-device-height: $big-phone){
     .st-header {
         position: fixed;
-        /* top: 0; */
-        /* left: 0; */
         width: 100%;
     }
 }

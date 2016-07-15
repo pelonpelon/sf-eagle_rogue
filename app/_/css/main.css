@@ -137,13 +137,13 @@ hr {
 }
 
 /* line 2, home.scss */
-.pages {
+#home .pages {
   display: none;
 }
 
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
   /* line 6, home.scss */
-  .pages {
+  #home .pages {
     display: flex;
     flex-flow: column;
     flex: 0 0 59%;
@@ -153,19 +153,19 @@ hr {
   }
 
   /* line 14, home.scss */
-  .page {
+  #home .page {
     flex: 1 0 0%;
     margin: 0 auto;
   }
 }
 /* line 19, home.scss */
-.poster-img {
+#home .poster-img {
   display: block;
   margin: 0 auto 50px;
 }
 
 /* line 24, home.scss */
-.top-message {
+#home .top-message {
   font-size: 1.1rem;
   color: skyblue;
   font-weight: 100;
@@ -175,32 +175,32 @@ hr {
 
 @media only screen and (min-device-height: 640px) and (orientation: portrait) {
   /* line 32, home.scss */
-  .top-message {
+  #home .top-message {
     padding: 20px 0;
   }
 }
 /* line 36, home.scss */
-.scrollbox {
+#home .scrollbox {
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (min-device-height: 640px) and (orientation: portrait) {
   /* line 41, home.scss */
-  .scrollbox {
+  #home .scrollbox {
     overflow-y: auto;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
   /* line 46, home.scss */
-  .scrollbox {
+  #home .scrollbox {
     flex: 1 1 420px;
     padding-top: 0;
     overflow-y: auto;
   }
 }
 /* line 52, home.scss */
-.scroller {
+#home .scroller {
   display: flex;
   flex-flow: column;
   max-width: 650px;
@@ -209,7 +209,7 @@ hr {
 }
 
 /* line 59, home.scss */
-.new-day {
+#home .new-day {
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
@@ -219,7 +219,7 @@ hr {
 }
 
 /* line 67, home.scss */
-.post-day {
+#home .post-day {
   flex: 0 1 0%;
   font-size: 1.5em;
   font-weight: 600;
@@ -227,7 +227,7 @@ hr {
 }
 
 /* line 73, home.scss */
-.post-date {
+#home .post-date {
   flex: 1 0 auto;
   padding-right: 10px;
   font-size: 1.2em;
@@ -238,12 +238,12 @@ hr {
 
 @media only screen and (min-device-height: 768px) {
   /* line 84, home.scss */
-  .post {
+  #home .post {
     flex: 1 0 120px;
   }
 }
 /* line 88, home.scss */
-.post-thumbnail img {
+#home .post-thumbnail img {
   display: block;
   max-width: 90px;
   height: auto;
@@ -251,7 +251,7 @@ hr {
 
 @media only screen and (min-device-width: 640px) {
   /* line 94, home.scss */
-  .post-thumbnail img {
+  #home .post-thumbnail img {
     max-width: 120px;
   }
 }
@@ -276,36 +276,34 @@ hr {
 .news-item img {
   display: inline;
   float: right;
-  /*max-width: 90px;*/
-  /*height: auto !important;*/
   padding: 26px 2% 4px 2%;
 }
 
-/* line 116, home.scss */
+/* line 114, home.scss */
 hr {
   border-color: #600;
 }
 
-/* line 119, home.scss */
+/* line 117, home.scss */
 .event-info-box {
   position: relative;
 }
 
-/* line 122, home.scss */
+/* line 120, home.scss */
 .event-title {
   text-align: center;
   font-weight: 600;
   font-size: 1.1em;
 }
 
-/* line 127, home.scss */
+/* line 125, home.scss */
 .event-content {
   max-width: 400px;
   margin: 0 auto;
   padding: 0 4px;
 }
 
-/* line 132, home.scss */
+/* line 130, home.scss */
 .event-start-time {
   position: absolute;
   right: 0;
@@ -315,7 +313,7 @@ hr {
   font-size: .8em;
 }
 
-/* line 141, home.scss */
+/* line 139, home.scss */
 .event-item {
   display: flex;
   flex-flow: row;
@@ -328,95 +326,95 @@ hr {
 }
 
 @media only screen and (min-device-width: 640px) {
-  /* line 152, home.scss */
+  /* line 150, home.scss */
   .event-item {
     height: 120px;
   }
 }
-/* line 156, home.scss */
+/* line 154, home.scss */
 .event-item:hover {
   background-color: #036;
 }
 
-/* line 159, home.scss */
+/* line 157, home.scss */
 .event-info-box {
   flex-flow: column;
   flex: 1 0 0%;
   padding: 4px;
 }
 
-/* line 164, home.scss */
+/* line 162, home.scss */
 .event-title {
   line-height: .9em;
   padding-top: 2px;
 }
 
 @media only screen and (min-device-height: 768px) and (orientation: portrait) {
-  /* line 169, home.scss */
+  /* line 167, home.scss */
   .event-title {
     line-height: 1.1em;
     padding-top: 4px;
     padding-bottom: 4px;
   }
 }
-/* line 175, home.scss */
+/* line 173, home.scss */
 .event-content {
   flex-flow: column;
   font-size: .8em;
 }
 
-/* line 179, home.scss */
+/* line 177, home.scss */
 .event-content h3 {
   margin: 0 0 5px;
   font-size: 1.5em;
 }
 
-/* line 183, home.scss */
+/* line 181, home.scss */
 .event-content ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 187, home.scss */
+/* line 185, home.scss */
 .event-content li {
   padding: 0 0 3px;
   line-height: 1em;
 }
 
-/* line 191, home.scss */
+/* line 189, home.scss */
 span.host:nth-child(1) {
   color: magenta;
 }
 
-/* line 194, home.scss */
+/* line 192, home.scss */
 span.host:nth-child(2) {
   color: lightsalmon;
 }
 
-/* line 197, home.scss */
+/* line 195, home.scss */
 span.host:nth-child(3) {
   color: limegreen;
 }
 
-/* line 200, home.scss */
+/* line 198, home.scss */
 span.host:nth-child(4) {
   color: mediumpurple;
 }
 
-/* line 203, home.scss */
-iframe {
+/* line 201, home.scss */
+#home iframe {
   display: none;
 }
 
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 207, home.scss */
-  iframe {
+  /* line 205, home.scss */
+  #home iframe {
     display: block;
   }
 }
 @media only screen and (max-device-width: 640px) {
-  /* line 212, home.scss */
-  .jslghtbx-caption iframe {
+  /* line 210, home.scss */
+  #home .jslghtbx-caption iframe {
     width: 340px !important;
     height: 565px !important;
     margin: 0 auto;
@@ -427,6 +425,112 @@ iframe {
 /* line 1, calendar.scss */
 #Calendar .calendar img {
   max-width: 100%;
+}
+
+/* COLORS */
+/* COMMON SIZES */
+/* FONT STACKS */
+/* line 54, _theme.scss */
+.alert {
+  background-color: crimson;
+  color: black;
+}
+
+/* line 58, _theme.scss */
+.spinner {
+  background-image: url("../img/spinner.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 128px;
+  min-width: 128px;
+  margin: auto;
+}
+
+/* line 3, staff.scss */
+#staff .scrollbox {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 7, staff.scss */
+#staff .scroller {
+  display: flex;
+  flex-flow: column;
+  max-width: 650px;
+  margin: 0 auto;
+  padding-bottom: 90px;
+}
+
+/* line 15, staff.scss */
+.staff-box {
+  background-color: #000;
+}
+
+/* line 18, staff.scss */
+.staff-item {
+  display: flex;
+  flex-flow: column;
+  color: #d0e9ff;
+  background-color: #000;
+  padding: 10px 5px;
+}
+
+/* line 25, staff.scss */
+.staff-content {
+  display: flex;
+  flex-flow: row;
+}
+
+/* line 29, staff.scss */
+#staff .post-thumbnail {
+  flex: 0 1 40%;
+  height: 120px;
+  overflow-y: hidden;
+}
+
+/* line 34, staff.scss */
+#staff .post-thumbnail img {
+  height: auto;
+  width: 100%;
+}
+
+/* line 38, staff.scss */
+.staff-profile {
+  flex: 1 0 50%;
+  padding: 0 2px;
+}
+
+/* line 42, staff.scss */
+.staff-details {
+  font-size: .9em;
+  text-align: right;
+}
+
+@media only screen and (min-device-width: 640px) {
+  /* line 47, staff.scss */
+  #staff .post-thumbnail img {
+    max-width: 120px;
+  }
+}
+@media only screen and (min-device-height: 640px) and (orientation: portrait) {
+  /* line 52, staff.scss */
+  #staff .scrollbox {
+    overflow-y: auto;
+  }
+}
+@media only screen and (min-device-height: 768px) {
+  /* line 57, staff.scss */
+  #staff .post {
+    flex: 0 1 240px;
+  }
+}
+@media only screen and (min-device-width: 768px) and (orientation: landscape) {
+  /* line 62, staff.scss */
+  #staff .scrollbox {
+    flex: 1 1 420px;
+    padding-top: 0;
+    overflow-y: auto;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

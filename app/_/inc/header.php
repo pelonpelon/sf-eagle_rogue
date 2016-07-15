@@ -58,6 +58,9 @@ $pages = get_pages($args);
     <tr>
       <td id="menu-item1" class="menu-item"><a href="index.php">HOME</a></td>
     </tr>
+    <tr>
+      <td id="menu-item1" class="menu-item"><a href="staff.php">STAFF</a></td>
+    </tr>
 <?php foreach ($pages as $page) {
         $title = $page->post_title;
         $file = $title . '.php';

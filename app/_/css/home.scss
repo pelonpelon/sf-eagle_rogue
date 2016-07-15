@@ -1,9 +1,9 @@
 @import 'theme';
-.pages {
+#home .pages {
     display: none;
 }
 @media only screen and (min-device-width: $tablet) and (orientation: landscape){
-    .pages {
+    #home .pages {
         display: flex;
         flex-flow: column;
         flex: 0 0 59%;
@@ -11,17 +11,17 @@
         opacity: 0.88;
         background: #000;
     }
-    .page {
+    #home .page {
         flex: 1 0 0%;
         margin: 0 auto;
     }
 }
-.poster-img {
+#home .poster-img {
     display: block;
     margin: 0 auto 50px;
 }
 
-.top-message {
+#home .top-message {
     font-size: 1.1rem;
     color: skyblue;
     font-weight: 100;
@@ -29,34 +29,34 @@
     padding-bottom: 2px;
 }
 @media only screen and (min-device-height: $big-phone) and (orientation: portrait){
-    .top-message {
+    #home .top-message {
         padding: 20px 0;
     }
 }
-.scrollbox {
+#home .scrollbox {
     width: 100%;
     height: 100%;
 }
 @media only screen and (min-device-height: $big-phone) and (orientation: portrait){
-    .scrollbox {
+    #home .scrollbox {
         overflow-y: auto;
     }
 }
 @media only screen and (min-device-width: $tablet) and (orientation: landscape){
-    .scrollbox {
+    #home .scrollbox {
         flex: 1 1 420px;
         padding-top: 0;
         overflow-y: auto;
     }
 }
-.scroller {
+#home .scroller {
     display: flex;
     flex-flow: column;
     max-width: 650px;
     margin: 0 auto;
     padding-bottom: 90px;
 }
-.new-day {
+#home .new-day {
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
@@ -64,13 +64,13 @@
     height: 42px;
     background-color: $bg-dark;
 }
-.post-day {
+#home .post-day {
     flex: 0 1 0%;
     font-size: 1.5em;
     font-weight: 600;
     line-height: 1.2em;
 }
-.post-date {
+#home .post-date {
     flex: 1 0 auto;
     padding-right: 10px;
     font-size: 1.2em;
@@ -78,20 +78,20 @@
     text-shadow: #200 2px 1px;
     line-height: .4em;
 }
-.post {
+#home .post {
 }
 @media only screen and (min-device-height: $tablet) {
-    .post {
+    #home .post {
         flex: 1 0 120px;
     }
 }
-.post-thumbnail img {
+#home .post-thumbnail img {
     display: block;
     max-width: 90px;
     height: auto;
 }
 @media only screen and (min-device-width: $big-phone){
-    .post-thumbnail img {
+    #home .post-thumbnail img {
         max-width: 120px;
     }
 }
@@ -109,8 +109,6 @@
 .news-item img {
     display: inline;
     float: right;
-    /*max-width: 90px;*/
-    /*height: auto !important;*/
 	padding: 26px 2% 4px 2%;
 }
 hr {
@@ -200,16 +198,16 @@ span.host:nth-child(3) {
 span.host:nth-child(4) {
     color: mediumpurple;
 }
-iframe {
+#home iframe {
     display: none;
 }
 @media only screen and (min-device-width: $tablet) and (orientation: landscape){
-    iframe {
+    #home iframe {
         display: block;
     }
 }
 @media only screen and (max-device-width: $big-phone){
-    .jslghtbx-caption iframe {
+    #home .jslghtbx-caption iframe {
         width: 340px !important;
         height: 565px !important;
         margin: 0 auto;

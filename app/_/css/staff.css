@@ -1,0 +1,107 @@
+/* COLORS */
+/* COMMON SIZES */
+/* FONT STACKS */
+/* line 54, _theme.scss */
+.alert {
+  background-color: crimson;
+  color: black;
+}
+
+/* line 58, _theme.scss */
+.spinner {
+  background-image: url("../img/spinner.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 128px;
+  min-width: 128px;
+  margin: auto;
+}
+
+/* line 3, staff.scss */
+#staff .scrollbox {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 7, staff.scss */
+#staff .scroller {
+  display: flex;
+  flex-flow: column;
+  max-width: 650px;
+  margin: 0 auto;
+  padding-bottom: 90px;
+}
+
+/* line 15, staff.scss */
+.staff-box {
+  background-color: #000;
+}
+
+/* line 18, staff.scss */
+.staff-item {
+  display: flex;
+  flex-flow: column;
+  color: #d0e9ff;
+  background-color: #000;
+  padding: 10px 5px;
+}
+
+/* line 25, staff.scss */
+.staff-content {
+  display: flex;
+  flex-flow: row;
+}
+
+/* line 29, staff.scss */
+#staff .post-thumbnail {
+  flex: 0 1 40%;
+  height: 120px;
+  overflow-y: hidden;
+}
+
+/* line 34, staff.scss */
+#staff .post-thumbnail img {
+  height: auto;
+  width: 100%;
+}
+
+/* line 38, staff.scss */
+.staff-profile {
+  flex: 1 0 50%;
+  padding: 0 2px;
+}
+
+/* line 42, staff.scss */
+.staff-details {
+  font-size: .9em;
+  text-align: right;
+}
+
+@media only screen and (min-device-width: 640px) {
+  /* line 47, staff.scss */
+  #staff .post-thumbnail img {
+    max-width: 120px;
+  }
+}
+@media only screen and (min-device-height: 640px) and (orientation: portrait) {
+  /* line 52, staff.scss */
+  #staff .scrollbox {
+    overflow-y: auto;
+  }
+}
+@media only screen and (min-device-height: 768px) {
+  /* line 57, staff.scss */
+  #staff .post {
+    flex: 0 1 240px;
+  }
+}
+@media only screen and (min-device-width: 768px) and (orientation: landscape) {
+  /* line 62, staff.scss */
+  #staff .scrollbox {
+    flex: 1 1 420px;
+    padding-top: 0;
+    overflow-y: auto;
+  }
+}
+
+/*# sourceMappingURL=staff.css.map */

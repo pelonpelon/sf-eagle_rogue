@@ -16,7 +16,7 @@
         <!-- endbuild -->
 
         <!-- build:js _/js/vendor/modernizr.js -->
-        <!-- <script src="_/vendor/modernizr-build.js"></script> -->
+        <script src="_/vendor/modernizr.js"></script>
         <!-- endbuild -->
 
   <meta charset="utf-8">

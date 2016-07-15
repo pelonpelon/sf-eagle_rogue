@@ -86,7 +86,7 @@ try {
   ?>
                 <div class="news-content">
                 <div class="post-thumbnail"><?php echo $post_thumbnail_img ?></div>
-                  <div class='news-content'><?php echo $postcard; ?></div>
+                  <div class='news-postcard'><?php echo $postcard; ?></div>
                 </div>
               </div>
               <hr>
