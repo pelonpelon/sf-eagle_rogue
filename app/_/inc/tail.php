@@ -1,26 +1,22 @@
 <!-- build:js(app) _/js/main.js -->
-<!-- <script src="_/bower_components/jquery/jquery.js"></script> -->
 <script src="_/js/functions.js"></script>
 <script src="_/js/validation.js"></script>
 <script src="_/vendor/jquery.jpanelmenu.js"></script>
-<!-- endbuild -->
-
-<!-- uild:js(app) /_/js/bootstrap.js -->
-<!-- <script src="_/bower_components/bootstrap/dist/js/bootstrap.js"></script> -->
+<script src="_/vendor/lightbox.js" type="text/javascript"></script>
 <!-- endbuild -->
 
   <!-- jPanelMenu -->
 <script>
 var jpm=$.jPanelMenu({
-menu: 'menu',
+    menu: '#menu',
+    panel: '#panel',
     trigger: '.menu-trigger',
-    panel: '#menu-panel',
-    clone: 'false',
+    closeOnContentClick: true,
+    clone: true,
+    duration: 0,
     });
 jpm.on();
 </script>
-
- <!-- <script defer async src="master.js"></script> -->
 
 <!-- Grow touchable items, like buttons, for fat fingers -->        <!--NOTE ••• is this a thing? -->
 <script>
@@ -29,7 +25,6 @@ jpm.on();
     //for (var i=0; i<els.length; i++){els[i].classList.add('touch-button-size')};
 //}
 </script>
-    <script src="_/vendor/lightbox.js" type="text/javascript"></script>
 <script>
 var options = {
     dimensions: 		true,

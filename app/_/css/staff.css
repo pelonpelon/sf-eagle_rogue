@@ -1,13 +1,13 @@
 /* COLORS */
 /* COMMON SIZES */
 /* FONT STACKS */
-/* line 54, _theme.scss */
+/* line 87, _theme.scss */
 .alert {
   background-color: crimson;
   color: black;
 }
 
-/* line 58, _theme.scss */
+/* line 91, _theme.scss */
 .spinner {
   background-image: url("../img/spinner.gif");
   background-repeat: no-repeat;
@@ -25,8 +25,12 @@
 
 /* line 7, staff.scss */
 #staff .scroller {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
   max-width: 650px;
   margin: 0 auto;
   padding-bottom: 90px;
@@ -39,8 +43,12 @@
 
 /* line 18, staff.scss */
 .staff-item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
   color: #d0e9ff;
   background-color: #000;
   padding: 10px 5px;
@@ -48,13 +56,19 @@
 
 /* line 25, staff.scss */
 .staff-content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row;
+  -webkit-flex-flow: row;
+      -ms-flex-flow: row;
+          flex-flow: row;
 }
 
 /* line 29, staff.scss */
 #staff .post-thumbnail {
-  flex: 0 1 40%;
+  -webkit-flex: 0 1 40%;
+      -ms-flex: 0 1 40%;
+          flex: 0 1 40%;
   height: 120px;
   overflow-y: hidden;
 }
@@ -67,7 +81,9 @@
 
 /* line 38, staff.scss */
 .staff-profile {
-  flex: 1 0 50%;
+  -webkit-flex: 1 0 50%;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
   padding: 0 2px;
 }
 
@@ -92,16 +108,18 @@
 @media only screen and (min-device-height: 768px) {
   /* line 57, staff.scss */
   #staff .post {
-    flex: 0 1 240px;
+    -webkit-flex: 0 1 240px;
+        -ms-flex: 0 1 240px;
+            flex: 0 1 240px;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
   /* line 62, staff.scss */
   #staff .scrollbox {
-    flex: 1 1 420px;
+    -webkit-flex: 1 1 420px;
+        -ms-flex: 1 1 420px;
+            flex: 1 1 420px;
     padding-top: 0;
     overflow-y: auto;
   }
 }
-
-/*# sourceMappingURL=staff.css.map */

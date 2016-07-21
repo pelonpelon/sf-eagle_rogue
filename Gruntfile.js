@@ -45,8 +45,16 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: ['<%= yeoman.app %>/_/css/**/*.{scss,sass}'], //Watch these files, and...
-                tasks: ['sass:watcher'] //run this operation when the files change.
+                tasks: ['sass:watcher', 'postcss:watcher'] //run this operation when the files change.
             },
+            //sass: {
+                //files: ['<%= yeoman.app %>/_/css/**/*.{scss,sass}'], //Watch these files, and...
+                //tasks: ['sass:watcher'] //run this operation when the files change.
+            //},
+            //postcss: {
+                //files: ['<%= yeoman.app %>/_/css/**/*.css'], //Watch these files, and...
+                //tasks: ['postcss:watcher'] //run this operation when the files change.
+            //},
             livereload: {
                 options: {livereload: 1025},
                 files: [
@@ -173,7 +181,31 @@ module.exports = function (grunt) {
         },
 
 
-
+        // POSTCSS
+        // for build only
+        postcss: {
+                options: {
+                  map: false, // inline sourcemaps
+                  // or
+                  //map: {
+                      //inline: false, // save all sourcemaps as separate files...
+                      //annotation: 'dist/css/maps/' // ...to the specified directory
+                  //},
+                  //syntax: require('postcss-scss'),
+                  processors: [
+                    //require('pixrem')(), // add fallbacks for rem units
+                    require('autoprefixer')({browsers: 'last 3 versions'}) // add vendor prefixes
+                    //require('cssnano')() // minify the result
+                  ]
+                },
+                watcher : {
+                    src: '<%= yeoman.app %>/_/css/*.css',
+                },
+                dist : {
+                    //src: '<%= yeoman.app %>/_/css/*.css',
+                    src: '.tmp/_/css/*.css',
+                }
+        },
 
         // SASS
         //  The sass operation runs the sass preprocessor
@@ -464,6 +496,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'sass:watcher',
+            'postcss:watcher',
             'watch'
   //          'php:server'
         ]);
@@ -477,6 +510,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
+        'postcss:dist',
         'concat',
         'cssmin',
         'uglify',
@@ -496,5 +530,9 @@ module.exports = function (grunt) {
         'phplint',
         //'test',
         'build'
+    ]);
+
+    grunt.registerTask('prefix', [
+        'postcss:dist'
     ]);
 };

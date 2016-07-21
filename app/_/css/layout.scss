@@ -24,10 +24,6 @@
         background-repeat: no-repeat;
     }
 }
-@media only screen and (min-device-height: $big-phone){
-    .pg-frame {
-    }
-}
 .st-header {
     height: $header-height;
     background: $bg-darkest;
@@ -39,30 +35,30 @@
         width: 100%;
     }
 }
-.menu-trigger {
-    width: 100%;
-    background: $bg-dark;
-    color: black;
-    z-index: 10;
+#hamburger {
+    position: fixed;
+    width: $header-height;
+    height: ($header-height - 10);
+    padding: 0 0 0 15px;
 }
 .page-title {
     text-align: center;
     font-size: 1.8em;
     padding-top: 4px;
-    color: #ea3;
+    color: $gold;
 }
 .page-subtitle {
     text-align: center;
     font-size: 1em;
     margin: 0;
-    color: #ea3;
+    color: $gold;
 }
 .page-content {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-    height: 100%;
-    padding: 0 2px 60px 2px;
+    height: auto;
+    background: $bg-darkest
 }
 @media only screen and (min-device-height: $big-phone){
     .page-content {
@@ -76,6 +72,7 @@
         flex-flow: row;
         justify-content: space-between;
         max-width: 100%;
+        position: absolute;
     }
 }
 .wp-page {
@@ -125,10 +122,6 @@
 .touch-button-size {
     min-height: 60px;
     min-width: 60px;
-}
-.jPanelMenu-panel {
-    background-color: #000 !important;
-    color: #FFF !important;
 }
 #jslghtbx{
     z-index: 30;

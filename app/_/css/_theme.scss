@@ -5,10 +5,16 @@ $black: #000;
 $white: #d0e9ff;
 $red: #A00;
 $lt-red: #F00;
+$light-red: #F00;
 $dk-red: #600;
-$dk-blue: #102646;
-$lt-blue: #3264b1;
-$blue: #103f86;
+$dark-red: #600;
+$bright-blue: deepskyblue;
+$lt-blue: cornflowerblue;
+$light-blue: cornflowerblue;
+$blue: #275392;
+$dk-blue: #102542;
+$dark-blue: #051a29;
+$deep-blue: #082032;
 $gold: #ea3;
 
 $bg-darkest: $black;
@@ -17,7 +23,34 @@ $bg-dark: $dk-blue;
 $bg-light: $blue;
 $bg-lighter: $lt-blue;
 $bg-lightest: $lt-blue;
+$bg-bright: $bright-blue;
+
+$fg-darkest: $black;
+$fg-darker: $black;
+$fg-dark: $dk-blue;
+$fg-light: $blue;
+$fg-lighter: $lt-blue;
+$fg-lightest: $lt-blue;
+$fg-bright: $bright-blue;
+
+$bg-2: $black;
+$bg-1: $deep-blue;
+$bg0: $dark-blue;
+$bg1: $blue;
+$bg2: $light-blue;
+$bgb: $bright-blue;
+
+$fg-2: $gold;
+$fg-1: $gold;
+$fg0: $gold;
+$fg1: $gold;
+$fg2: $gold;
+$fgb: $gold;
+
+
 $text-light: $white;
+$text-dark: $black;
+
 $link-light: lightskyblue;
 
 $HighlightColor: #C1CB38;

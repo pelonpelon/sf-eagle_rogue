@@ -17,11 +17,5 @@ function TrackEvent(category, action, label, url) {
 	}
 }
 
-// make logo image modal work
-
-modal_contents = $('.logo .hide-this').html();
-$('.logo.open-lightbox img').addClass('noclick');
-$('.logo.open-lightbox img').attr('data-jslghtbx', 'http://127.0.0.1/Sites/sf-eagle/www/rogue/wp/wp-content/uploads/2016/07/1pixel.gif');
-$('.logo.open-lightbox img').attr('data-jslghtbx-caption', modal_contents);
 
 

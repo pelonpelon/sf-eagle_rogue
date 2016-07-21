@@ -12,7 +12,7 @@ function br2sp ($string) {
 
 // var_dump but pretty
 function pretty( $var ){
-    echo str_replace(',', ',<br>', var_export($var));
+    echo str_replace(',', '<br>', var_export($var));
 }
 
 // Show error page if page not in db and published
@@ -35,4 +35,28 @@ function get_page_by_title_safely( $title, $alt_title = 'Error' ) {
 function get_page_by_title_filtered( $title ){
     $page = get_page_by_title_safely($title);
     return do_shortcode($page->post_content);
+}
+
+# grab a random image from WPDB
+function get_image_url_by_slug( $slug ) {
+    $args = array(
+        'post_type' => 'attachment',
+        'name' => sanitize_title($slug),
+        'posts_per_page' => 1,
+        'post_status' => 'inherit',
+    );
+    $_header = get_posts( $args );
+    $header = $_header ? array_pop($_header) : null;
+    return $header ? wp_get_attachment_url($header->ID) : '';
+}
+function get_image_ID_by_slug( $slug ) {
+    $args = array(
+        'post_type' => 'attachment',
+        'name' => sanitize_title($slug),
+        'posts_per_page' => 1,
+        'post_status' => 'inherit',
+    );
+    $_header = get_posts( $args );
+    $header = $_header ? array_pop($_header) : null;
+    return $header ? $header->ID : '';
 }

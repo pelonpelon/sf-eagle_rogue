@@ -8,17 +8,24 @@
 *	used site wide (a, h1, p, body, etc).
 \******************************************************/
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html {
     background-color: $bg-darkest;
 }
 body {
 	@include Body;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    bottom: -60px;
+
 }
-div {
-    box-sizing: border-box;
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 auto;
 }
 li {
     list-style: none;
@@ -37,13 +44,6 @@ a:hover {
     font-size: 1.4em;
     color: #99f;
 } */
-p {
-    margin: 0;
-}
-ul {
-    margin: 0;
-    padding: 0;
-}
 hr {
     margin: auto;
     padding: 0;

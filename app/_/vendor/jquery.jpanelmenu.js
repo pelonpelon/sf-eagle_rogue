@@ -407,8 +407,8 @@
 				if ( !jP.options.closeOnContentClick ) return false;
 
 				$(document).on('click touchend',jP.panel,function(e){
-					if ( jP.menuIsOpen() ) jP.closeMenu(jP.options.animated);
 					//e.preventDefault();
+					if ( jP.menuIsOpen() ) jP.closeMenu(jP.options.animated);
 				});
 			},
 

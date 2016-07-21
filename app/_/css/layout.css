@@ -2,13 +2,13 @@
 /* COLORS */
 /* COMMON SIZES */
 /* FONT STACKS */
-/* line 54, _theme.scss */
+/* line 87, _theme.scss */
 .alert {
   background-color: crimson;
   color: black;
 }
 
-/* line 58, _theme.scss */
+/* line 91, _theme.scss */
 .spinner {
   background-image: url("../img/spinner.gif");
   background-repeat: no-repeat;
@@ -19,57 +19,71 @@
 }
 
 /* line 1, _menu.scss */
-#menu-panel {
+#panel {
   position: fixed;
-  top: 60px;
-  right: 100%;
-  border-spacing: 0;
-  z-index: 20;
+  z-index: 99;
 }
 
-/* line 8, _menu.scss */
-#menu-panel a {
+/* line 5, _menu.scss */
+.jPanelMenu #menu {
+  display: none;
+}
+
+/* line 10, _menu.scss */
+#jPanelMenu-menu {
+  background: #000;
+  height: auto !important;
+}
+
+/* line 15, _menu.scss */
+#jPanelMenu-menu a:hover {
+  color: #ea3;
+}
+
+/* line 18, _menu.scss */
+#jPanelMenu-menu a {
   display: block;
-  padding: 25px 5em 25px 9em;
-}
-
-/* line 12, _menu.scss */
-#menu-panel a:hover {
-  background-color: #ea3;
-}
-
-/* line 17, _menu.scss */
-#menu-panel a {
+  padding: 20px 7em 20px 5em;
   color: white;
   text-decoration: none;
   font-weight: 900;
   font-family: 'Arial';
 }
 
-@media only screen and (min-device-height: 640px) and (orientation: portrait) {
-  /* line 24, _menu.scss */
-  .menu-trigger {
-    position: fixed;
-  }
-}
-@media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 29, _menu.scss */
-  .menu-trigger {
-    position: fixed;
-  }
-}
-/* line 33, _menu.scss */
-.hamburger:after {
-  content: '≣';
+/* line 26, _menu.scss */
+.menu-trigger {
   position: fixed;
-  top: -4px;
-  width: 60px;
+  top: -60px;
+  /*left: -250px;*/
+  /*width: 310px;*/
   height: 60px;
-  padding: 0 0 0 10px;
-  font-size: 3.2em;
+  width: 60px;
+  text-align: center;
+  padding: 10px;
+}
+
+/* line 37, _menu.scss */
+#menu-header {
+  font-size: 2.2em;
+  line-height: 1em;
+  padding: 12px 0 0 17px;
+  float: left;
+  height: 60px;
+  opacity: 0.6;
+  width: 100%;
+}
+
+/* line 46, _menu.scss */
+#menu-header:hover {
+  background-color: inherit;
+}
+
+/* line 49, _menu.scss */
+.hamburger:before {
+  content: '≣';
+  font-size: 36px;
   color: white;
-  opacity: 0.7;
-  z-index: 25;
+  opacity: .4;
 }
 
 /******************************************************
@@ -98,7 +112,7 @@
     background-repeat: no-repeat;
   }
 }
-/* line 31, layout.scss */
+/* line 27, layout.scss */
 .st-header {
   height: 60px;
   background: #000;
@@ -106,21 +120,21 @@
 }
 
 @media only screen and (min-device-height: 640px) {
-  /* line 37, layout.scss */
+  /* line 33, layout.scss */
   .st-header {
     position: fixed;
     width: 100%;
   }
 }
-/* line 42, layout.scss */
-.menu-trigger {
-  width: 100%;
-  background: #102646;
-  color: black;
-  z-index: 10;
+/* line 38, layout.scss */
+#hamburger {
+  position: fixed;
+  width: 60px;
+  height: 50px;
+  padding: 0 0 0 15px;
 }
 
-/* line 48, layout.scss */
+/* line 44, layout.scss */
 .page-title {
   text-align: center;
   font-size: 1.8em;
@@ -128,7 +142,7 @@
   color: #ea3;
 }
 
-/* line 54, layout.scss */
+/* line 50, layout.scss */
 .page-subtitle {
   text-align: center;
   font-size: 1em;
@@ -136,32 +150,39 @@
   color: #ea3;
 }
 
-/* line 60, layout.scss */
+/* line 56, layout.scss */
 .page-content {
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
-  height: 100%;
-  padding: 0 2px 60px 2px;
+  height: auto;
+  background: #000;
 }
 
 @media only screen and (min-device-height: 640px) {
-  /* line 68, layout.scss */
+  /* line 64, layout.scss */
   .page-content {
     position: relative;
     top: 60px;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 74, layout.scss */
+  /* line 70, layout.scss */
   #home.page-content {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row;
-    justify-content: space-between;
+    -webkit-flex-flow: row;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     max-width: 100%;
+    position: absolute;
   }
 }
-/* line 81, layout.scss */
+/* line 78, layout.scss */
 .wp-page {
   margin: 0 auto;
 }
@@ -169,18 +190,18 @@
 @media only screen and (min-device-width: 768px) {
   padding-top: 4%;
 }
-/* line 87, layout.scss */
+/* line 84, layout.scss */
 .wp-page img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 91, layout.scss */
+/* line 88, layout.scss */
 .header {
   position: relative;
 }
 
-/* line 94, layout.scss */
+/* line 91, layout.scss */
 .page-title {
   margin: auto;
   text-align: center;
@@ -188,20 +209,20 @@
   font-weight: 900;
 }
 
-/* line 100, layout.scss */
+/* line 97, layout.scss */
 .logo {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-/* line 105, layout.scss */
+/* line 102, layout.scss */
 .logo img {
   height: 60px;
   width: auto;
 }
 
-/* line 113, layout.scss */
+/* line 110, layout.scss */
 .header-psa {
   position: fixed;
   top: 60px;
@@ -215,68 +236,62 @@
   z-index: 9999;
 }
 
-/* line 125, layout.scss */
+/* line 122, layout.scss */
 .touch-button-size {
   min-height: 60px;
   min-width: 60px;
 }
 
-/* line 129, layout.scss */
-.jPanelMenu-panel {
-  background-color: #000 !important;
-  color: #FFF !important;
-}
-
-/* line 133, layout.scss */
+/* line 126, layout.scss */
 #jslghtbx {
   z-index: 30;
 }
 
 /* These 2 !importants must stay in yhis order */
-/* line 137, layout.scss */
+/* line 130, layout.scss */
 #jslghtbx img {
   margin-top: 0 !important;
 }
 
 @media only screen and (min-device-height: 768px) {
-  /* line 141, layout.scss */
+  /* line 134, layout.scss */
   #jslghtbx {
     padding-top: 5% !important;
   }
 }
 @media only screen and (min-device-height: 1024px) {
-  /* line 146, layout.scss */
+  /* line 139, layout.scss */
   #jslghtbx {
     padding-top: 8% !important;
   }
 }
 @media only screen and (min-device-width: 960px) and (orientation: landscape) {
-  /* line 151, layout.scss */
+  /* line 144, layout.scss */
   #jslghtbx img {
     margin: 0 46% 0 auto;
     max-width: 52% !important;
   }
 }
-/* line 156, layout.scss */
+/* line 149, layout.scss */
 .jslghtbx-contentwrapper {
   background-color: #000;
   position: absolute;
   width: 100%;
 }
 
-/* line 161, layout.scss */
+/* line 154, layout.scss */
 .jslghtbx-caption {
   text-align: left !important;
   padding: 5px;
 }
 
 @media only screen and (min-device-width: 960px) and (orientation: landscape) {
-  /* line 166, layout.scss */
+  /* line 159, layout.scss */
   #jslghtbx .links img {
     margin: 0;
   }
 
-  /* line 169, layout.scss */
+  /* line 162, layout.scss */
   .jslghtbx-caption {
     position: absolute;
     top: 10%;
@@ -284,24 +299,24 @@
     width: 37% !important;
   }
 }
-/* line 176, layout.scss */
+/* line 169, layout.scss */
 .jslghtbx-caption img {
   padding: 4px;
 }
 
-/* line 179, layout.scss */
+/* line 172, layout.scss */
 .event-details {
   color: deeppink;
 }
 
-/* line 182, layout.scss */
+/* line 175, layout.scss */
 .event-url {
   font-weight: 600;
   padding: 25px 0;
   display: block;
 }
 
-/* line 187, layout.scss */
+/* line 180, layout.scss */
 Inherited from li
 .jslghtbx-close {
   font-size: 3em !important;
@@ -309,9 +324,7 @@ Inherited from li
   text-shadow: 2px 3px 3px black !important;
 }
 
-/* line 193, layout.scss */
+/* line 186, layout.scss */
 .jslghtbx.jslghtbx-active {
   background-color: black !important;
 }
-
-/*# sourceMappingURL=layout.css.map */

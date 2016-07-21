@@ -12,19 +12,20 @@
   ini_set('error_prepend_string', 'GIRRRLLL ... ');
 
   define('WP_USE_THEMES', false);
-  require( dirname( __FILE__ ) . '/../../../../wp/wp-blog-header.php' );       //HOTT ••• dev
-
-  /*
-   *
-   * Used in a few places during dev
-   */
-  $root_wp_url = "http://sf-eagle.mirror/wp/"; //HOTT ••• dev only
-  $spacer_url=$root_wp_url . "wp-content/uploads/2016/07/1pixel.gif"; //HOTT ••• check this, dev
+  include_once( dirname( __FILE__ ) . '/../../../../wp_rogue/wp-blog-header.php' );
 
   //set_include_path( get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT'] );
 
     date_default_timezone_set('America/Los_Angeles');
 	require("_/inc/functions.php");
+
+    /*
+     * Used in a few places during dev
+     */
+    $root_wp_url = "http://sf-eagle.mirror/wp/"; //HOTT ••• dev only
+    // $spacer_url=$root_wp_url . "wp-content/uploads/2016/07/1pixel.gif"; //HOTT ••• check this, dev
+    $spacer_url=get_image_url_by_slug('1pixel'); //HOTT ••• check this, dev
+
 
 	//Constants
 	define("FROM_EMAIL", "http://sf-eagle.com/rogue <webform@http://sf-eagle.com/rogue>");

@@ -5,18 +5,14 @@
         <link rel="shortcut icon" href="http://<?php echo($ServerName); ?>/favicon.ico">
 
 
-        <!-- uild:css({.tmp,app}) _/css/bootstrap.css -->
-        <!-- <link rel="stylesheet" href="_/bower_components/bootstrap/dist/css/bootstrap.css"> -->
-        <!-- <link rel="stylesheet" href="_/bower_components/bootstrap/dist/css/bootstrap-theme.css"> -->
-        <!-- endbuild -->
-
-        <!-- build:css({.tmp,app}) _/css/site-styles.css -->
+        <!-- build:css({.tmp,app}) _/css/main.css -->
         <link rel="stylesheet" href="_/css/main.css">
         <link rel="stylesheet" href="_/css/layout.css">
         <!-- endbuild -->
 
-        <!-- build:js _/js/vendor/modernizr.js -->
+        <!-- build:js(app) _/vendor/mod-jq.min.js -->
         <script src="_/vendor/modernizr.js"></script>
+        <script src="_/vendor/jquery-2.1.1.js"></script>
         <!-- endbuild -->
 
   <meta charset="utf-8">
@@ -36,13 +32,25 @@
 
 
       </script>
+<!--
+      <script async src="_/vendor/fastclick.min.js"></script>
+        <script>(function() {
+            window.addEventListener('load', function() {
+                return FastClick.attach(document.body, false);
+            });
+
+            }).call(this);
+        </script>
+-->
 
           <!-- <script src="_/vendor/jquery-2.1.4.min.js"></script> -->
-          <script src="_/vendor/jquery-2.1.1.js"></script>
+
+        <!-- uild:js(app) _/vendor/jquery.min.js -->
+        <!-- endbuild -->
 
 
 
-<!-- uild:js _/js/respond.js -->
+<!--build:js _/vendor/respond.js -->
 <!--[if lt IE 9]>
 <script src="_/vendor/jRespond.min.js"></script>
 <![endif]-->

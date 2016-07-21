@@ -1,45 +1,55 @@
-#menu-panel {
+#panel {
     position: fixed;
-    top: $header-height;
-    right: 100%;
-    border-spacing:0;
-    z-index: 20;
+    z-index: 99;
 }
-#menu-panel a {
+.jPanelMenu #menu {
+    display: none;
+}
+.jPanelMenu-panel {
+}
+#jPanelMenu-menu {
+    //top: 50px !important;
+    background: $bg-darkest;
+    height: auto !important;
+}
+#jPanelMenu-menu a:hover {
+    color: $gold;
+}
+#jPanelMenu-menu a {
     display: block;
-    padding: 25px 5em 25px 9em;
-}
-#menu-panel a:hover {
-    background-color: $gold;
-}
-#menu-panel td {
-}
-#menu-panel a {
+    padding: 20px 7em 20px 5em;
     color: white;
     text-decoration: none;
     font-weight: 900;
     font-family: 'Arial';
 }
-@media only screen and (min-device-height: 640px) and (orientation: portrait){
-    .menu-trigger {
-        position: fixed;
-    }
-}
-@media only screen and (min-device-width: 768px) and (orientation: landscape){
-    .menu-trigger {
-        position: fixed;
-    }
-}
-.hamburger:after {
-    content: '≣';
+.menu-trigger {
     position: fixed;
-    top: -4px;
-    width: $header-height;
+    top: -60px;
+    /*left: -250px;*/
+    /*width: 310px;*/
     height: $header-height;
-    padding: 0 0 0 10px;
-    font-size: 3.2em;
+    width: $header-height;
+    text-align: center;
+    padding: 10px
+//    display: block;
+}
+#menu-header {
+    font-size: 2.2em;
+    line-height: 1em;
+    padding: 12px 0 0 17px;
+    float: left;
+    height: 60px;
+    opacity: 0.6;
+    width: 100%
+}
+#menu-header:hover {
+    background-color: inherit;
+}
+.hamburger:before {
+    content: '≣';
+    font-size: 36px;
     color: white;
-    opacity: 0.7;
-    z-index: 25;
+    opacity: .4;
 }
 
