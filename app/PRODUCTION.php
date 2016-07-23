@@ -14,3 +14,12 @@
         //FIXX ••• add metabox image upload for generic poster
         //FIXX ••• add Sponsors with hosts, guests
         //FIXX ••• Try a video on popup
+        //FIXX ••• jPanelMenu submit changes on jank
+        //FIXX ••• lightbox submit changes "off" and ?prevent default?
+        //FIXX ••• lightbox:413,409 else #jslghtbx exists (add class)
+        //FIXX ••• cron removes poster if generic exists
+        //FIXX ••• fix media dimensions in wp LIVE
+        //FIXX ••• multicolored bouncing lightbox balls
+        //FIXX ••• band page, add multiple [links] after name
+        //FIXX ••• create Softball post_type
+

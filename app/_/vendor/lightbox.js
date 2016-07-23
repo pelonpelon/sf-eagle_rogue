@@ -407,10 +407,24 @@ function Lightbox() {
         };
 
         // load box in custom element
-        if (CTX.opt.boxId) {
-            CTX.box = document.getElementById(CTX.opt);
+        if (CTX.opt.boxId && document.getElementById(CTX.opt.boxId)) {
+            CTX.box = document.getElementById(CTX.opt.boxId);
+            CTX.box.setAttribute('class', 'jslghtbx');
+        }
+        if (CTX.opt.boxId && !document.getElementById(CTX.opt.boxId)) {
+            var newEl = document.createElement('div');
+            newEl.setAttribute('id', CTX.opt.boxId);
+            newEl.setAttribute('class', 'jslghtbx');
+            CTX.box = newEl;
+            body.appendChild(CTX.box);
         }
         // create box element if no ID is given
+        else if (!CTX.opt.boxId && document.getElementById('jslghtbx')) {
+            CTX.box = document.getElementById('jslghtbx');
+            CTX.box.setAttribute('id', 'jslghtbx');
+            CTX.box.setAttribute('class', 'jslghtbx');
+            body.appendChild(CTX.box);
+        }
         else if (!CTX.box && !document.getElementById('jslghtbx')) {
             var newEl = document.createElement('div');
             newEl.setAttribute('id', 'jslghtbx');

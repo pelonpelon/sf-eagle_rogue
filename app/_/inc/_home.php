@@ -71,7 +71,7 @@
               <div class="item open-lightbox">
   <?php
       $attachment_url = wp_get_attachment_url( get_post_thumbnail_id( $ID ) );
-      $news_content = get_the_content();
+      $news_content = do_shortcode(get_the_content());
       $attrs = array('class' => 'noclick', 'data-jslghtbx' => $attachment_url, 'data-jslghtbx-caption' => $news_content);
       $postcard = do_shortcode(get_post_meta($ID, 'event_postcard', true));
       if ( has_post_thumbnail() ) {
@@ -122,9 +122,16 @@
           //}
           $post_day = $date->format('l');
           $post_date = $date->format('M d');
-
-          if ( $date->format('l') != $current_day ) {
-              $current_day = $date->format('l');
+          $post_start_time = $date->format('G:i');
+          $endtime = get_post_meta($ID, 'event_endtime', true);
+          $event_end_time = new DateTime(get_the_date('r'), new DateTimeZone('America/Los_Angeles'));
+          date_modify($event_end_time, $endtime);
+          if ($event_end_time < $date) {
+              date_modify($event_end_time, '+1 day');
+          }
+          if ($event_end_time < $now) { continue; }
+          if ( $date->format('Y-m-d') != $current_day ) {
+              $current_day = $date->format('Y-m-d');
               $new_day = true;
           } else {
               $new_day = false;
@@ -161,13 +168,13 @@
   ?>
 
           <div class="new-day">
-            <span class="day"><?php echo $current_day; ?></span>
+            <span class="day"><?php echo $post_day; ?></span>
             <span class="date"><?php echo $post_date; ?></span>
           </div>
 
   <?php } ?>
 
-          <div class="item  open-lightbox <?php echo $current_day; ?>">
+          <div class="item  open-lightbox <?php echo $post_day; ?>">
               <div class="thumbnail"><?php echo $post_thumbnail_img; ?></div>
               <div class="content"><?php echo $postcard; ?>
               <div class="info">

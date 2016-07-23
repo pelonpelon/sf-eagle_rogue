@@ -25,6 +25,7 @@
     $('.logo.open-lightbox img').addClass('noclick');
     $('.logo.open-lightbox img').attr('data-jslghtbx', '<?php echo $spacer_url; ?>');
     $('.logo.open-lightbox img').attr('data-jslghtbx-caption', modal_contents);
+
 </script>
 
 <?php
@@ -65,16 +66,23 @@
 ?>
     <nav id="menu">
         <ul>
-          <li id="menu-header" class="hamburger" onclick="event.preventDefault(); jpm.trigger(true);"></li>
-          <li id="menu-home" class="Home" onclick="jpm.trigger(true);"><a href="index.php">HOME</a></li>
-          <li id="menu-staff" class="Staff" onclick="jpm.trigger(true);"><a href="staff.php">STAFF</a></li>
+          <li class="hamburger" onclick="event.preventDefault(); jpm.trigger(true);"></li>
+          <li class="home" onclick="jpm.trigger(true);"><a href="index.php">HOME</a></li>
+          <li class="staff" onclick="jpm.trigger(true);"><a href="staff.php">STAFF</a></li>
 
 <?php foreach ($pages as $page) {
         $title_raw = $page->post_title;
         $title = strtolower($page->post_title);
         $file = $title . '.php';
-        echo '<li id="menu-' . $title . '" class="menu-item" onclick="jpm.trigger(true);"><a href="' . $file . '">' . strtoupper($title) . '</a></li>';
+        echo '<li class="' .$title. '" onclick="jpm.trigger(true);"><a href="' . $file . '">' . strtoupper($title) . '</a></li>';
 } ?>
+
+          <li class="social facebook" onclick="jpm.trigger(true);"><a href="https://www.facebook.com/SFEagle" target="_blank"><img src="_/img/facebook-60x60.png" /></a></li>
+          <li class="social instagram" onclick="jpm.trigger(true);"><a href="https://www.instagram.com/sfeagle/" target="_blank"><img src="_/img/instagram-60x60.png" /></a></li>
+          <li class="social tumblr" onclick="jpm.trigger(true);"><a href="http://sfeaglebar.tumblr.com/" target="_blank"><img src="_/img/tumblr-60x60.png" /></a></li>
+          <li class="social twitter" onclick="jpm.trigger(true);"><a href="https://twitter.com/sfeaglebar" target="_blank"><img src="_/img/twitter-60x60.png" /></a></li>
+          <li class="social googleplus" onclick="jpm.trigger(true);"><a href="https://plus.google.com/104184281608152528049/posts" target="_blank"><img src="_/img/googleplus-60x60.png" /></a></li>
+          <li class="social email" onclick="jpm.trigger(true);"><a href="mailto:info@sf-eagle.com?subject=Sent%20via%20website" target="_blank"><img src="_/img/mail-60x60.png" /></a></li>
 
         </ul>
     </nav>

@@ -190,9 +190,12 @@ function reschedule_monthly_events() {
     }
 endwhile;
 }
+if ( ! wp_next_scheduled( 'every_morning_at_3am' ) ) {
+    wp_schedule_event( strtotime('03:00'), 'daily', 'every_morning_at_3am' );
+}
 if ( ! wp_next_scheduled( 'every_morning_at_2am' ) ) {
     wp_schedule_event( strtotime('02:00'), 'daily', 'every_morning_at_2am' );
 }
 add_action( 'every_morning_at_2am', 'reschedule_weekly_events' );
-add_action( 'every_morning_at_2am', 'reschedule_monthly_events' );
+add_action( 'every_morning_at_3am', 'reschedule_monthly_events' );
 

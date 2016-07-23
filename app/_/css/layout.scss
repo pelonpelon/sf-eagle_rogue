@@ -1,51 +1,27 @@
 @import 'theme';
 @import 'menu';
+@import 'jslghtbx';
 
-/******************************************************
-* LAYOUT.SCSS
-*	Main site layout styles go in this file.
-*	Iclude styles for the site header and footer,
-*	main body and sidebars, etc.
-*	All styles for components/sections that are used
-*	site wide.
-\******************************************************/
 .pg-frame {
     width: 100%;
     height: 100%;
     background: black;
 }
-@media only screen and (min-device-width: $tablet) and (orientation: landscape){
-    #Home .pg-frame {
-        background-color: transparent;
-        background-image: url('/wp/wp-content/uploads/2016/07/logo.svg');
-        background-position-x: 10%;
-        background-position-y: 70%;
-        background-size: 49%;
-        background-repeat: no-repeat;
-    }
-}
+
+//HEADER
+
 .st-header {
     height: $header-height;
     background: $bg-darkest;
     z-index: 20;
 }
-@media only screen and (min-device-height: $big-phone){
-    .st-header {
-        position: fixed;
-        width: 100%;
-    }
-}
-#hamburger {
-    position: fixed;
-    width: $header-height;
-    height: ($header-height - 10);
-    padding: 0 0 0 15px;
-}
 .page-title {
-    text-align: center;
-    font-size: 1.8em;
     padding-top: 4px;
     color: $gold;
+    margin: auto;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 900;
 }
 .page-subtitle {
     text-align: center;
@@ -53,33 +29,27 @@
     margin: 0;
     color: $gold;
 }
+.logo {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.logo img {
+    height: $header-height;
+    width: auto;
+}
+
+// CONTENT
+
 .page-content {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    height: auto;
+    height: 100%;
     background: $bg-darkest
-}
-@media only screen and (min-device-height: $big-phone){
-    .page-content {
-        position: relative;
-        top: $header-height;
-    }
-}
-@media only screen and (min-device-width: $tablet) and (orientation: landscape){
-    #home.page-content {
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
-        max-width: 100%;
-        position: absolute;
-    }
 }
 .wp-page {
     margin: 0 auto;
-}
-@media only screen and (min-device-width: $tablet){
-    padding-top: 4%;
 }
 .wp-page img {
     max-width: 100%;
@@ -87,25 +57,6 @@
 }
 .header {
     position: relative;
-}
-.page-title {
-    margin: auto;
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: 900;
-}
-.logo {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-.logo img {
-	height: $header-height;
-    width: auto;
-}
-@media only screen and (min-device-width: $tablet) and (orientation: landscape){
-    .logo img {
-    }
 }
 .header-psa {
     position: fixed;
@@ -123,66 +74,33 @@
     min-height: 60px;
     min-width: 60px;
 }
-#jslghtbx{
-    z-index: 30;
-}
-/* These 2 !importants must stay in yhis order */
-#jslghtbx img {
-    margin-top: 0 !important;
-}
-@media only screen and (min-device-height: $tablet) {
-    #jslghtbx {
-        padding-top: 5% !important;
+
+/*Media Queries*/
+
+@media only screen and (min-device-height: $big-phone){
+    .st-header {
+        position: fixed;
+        width: 100%;
+    }
+    .page-content {
+        position: relative;
+        top: $header-height;
     }
 }
-@media only screen and (min-device-height: $laptop) {
-    #jslghtbx {
-        padding-top: 8% !important;
+@media only screen and (min-device-width: $tablet){
+    .hamburger:before {
+        font-size: 48px;
     }
-}
-@media only screen and (min-device-width: 960px) and (orientation: landscape) {
-    #jslghtbx img {
-        margin: 0 46% 0 auto;
-        max-width: 52% !important;
+    .page-title {
+        font-size: 2em;
     }
-}
-.jslghtbx-contentwrapper {
-    background-color: $bg-darkest;
-    position: absolute;
-    width: 100%;
-}
-.jslghtbx-caption {
-    text-align: left !important;
-    padding: 5px;
-}
-@media only screen and (min-device-width: 960px) and (orientation: landscape) {
-    #jslghtbx .links img {
-        margin: 0;
+    .logo img {
+        height: 90px;
     }
-   .jslghtbx-caption {
-      position: absolute;
-      top: 10%;
-      left: 60%;
-      width: 37% !important;
+    .st-header {
+        height: 90px;
     }
-}
-.jslghtbx-caption img {
-    padding: 4px;
-}
-.event-details {
-    color: deeppink;
-}
-.event-url {
-    font-weight: 600;
-    padding: 25px 0;
-    display: block;
-}
-Inherited from li
-.jslghtbx-close {
-    font-size: 3em !important;
-    font-weight: 600;
-    text-shadow: 2px 3px 3px black !important;
-}
-.jslghtbx.jslghtbx-active {
-    background-color: rgba(0, 0, 0, 1) !important;
+    .page-content {
+        top: 90px;
+    }
 }

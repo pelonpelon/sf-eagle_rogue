@@ -1,7 +1,5 @@
-
 /* imports */
 @import 'theme';
-
 
 #home iframe {
     display: none;
@@ -29,7 +27,35 @@
     flex-direction: column;
     max-width: 650px;
     margin: 0 auto;
+    will-change: scroll-position;
 }
+hr {
+    border-color: $bg-light;
+}
+
+/*News*/
+.news {
+    background-color: $bg-darkest;
+}
+.news .content {
+    margin-bottom: 18px;
+}
+.news .content p {
+    margin-bottom: 18px;
+    font-size: smaller;
+}
+.news .item {
+    color: $text-light;
+    background-color: $bg-darkest;
+    padding: 10px 5px;
+}
+.news .item img {
+    display: inline;
+    float: right;
+	padding: 26px 2% 4px 2%;
+}
+
+/*New Day*/
 .new-day {
     flex: 1 0 40px;
     display: flex;
@@ -53,33 +79,10 @@
     font-size: .7em;
     font-weight: 600;
     text-shadow: #200 2px 1px;
-    line-height: .5em;
+    line-height: .7em;
 }
-.news {
-    background-color: $bg-darkest;
-}
-.news .content {
-    margin-bottom: 18px;
-}
-.news .content p {
-    margin-bottom: 18px;
-    font-size: smaller;
-    font-family: sans-serif;
-    font-weight: 100;
-}
-.news .item {
-    color: $text-light;
-    background-color: $bg-darkest;
-    padding: 10px 5px;
-}
-.news .item img {
-    display: inline;
-    float: right;
-	padding: 26px 2% 4px 2%;
-}
-hr {
-    border-color: $bg-light;
-}
+
+/*Events*/
 .event .info {
     position: absolute;
     right: 3px;
@@ -87,6 +90,7 @@ hr {
     padding: 0 0 0 12px;
     font-size: 1em;
     text-align: right;
+    color: $fg2;
     opacity: .7;
 }
 .event .item {
@@ -96,7 +100,8 @@ hr {
     overflow-y: hidden;
     background-color: $bg-darker;
     border-top: black solid 2px;
-    color: $text-light;
+    /*color: $text-light;*/
+    color: #ecdfda;
     overflow: hidden;
     height: 90px;
 }
@@ -119,7 +124,7 @@ hr {
     padding: 0 2%;
     background-image: linear-gradient($bg-2, $bg-1)
 }
-.details .label {
+span.label {
     font-size: smaller;
     color: $bright-blue;
 }
@@ -128,11 +133,32 @@ hr {
     color: $bright-blue;
 }
 .event .content h4 {
-    font-size: .8em;
-    color: sienna;
+    font-size: smaller;
+    color: yellowgreen;
 }
 .event .content li {
     line-height: 1em;
+}
+.event-details {
+    color: deeppink;
+}
+.event-url {
+    font-weight: 600;
+    padding: 25px 0;
+    display: block;
+}
+.who, .band-list {
+    font-size: .9em;
+    padding-top: 7px;
+}
+.band-list li, .band-list a {
+    color: #ef5eef;
+}
+.promoter, .promoter a {
+    color: mediumslateblue !important;
+}
+.more {
+    color: aqua;
 }
 /*.event .title {*/
     /*text-align: center;*/
@@ -153,13 +179,39 @@ span.host:nth-child(3) {
 span.host:nth-child(4) {
     color: mediumpurple;
 }
-/*
-@media only screen and (min-device-height: $big-phone) and (orientation: portrait){
-    #home .top-message {
-        padding: 20px 0;
+
+/*Media Queries*/
+
+@media only screen and (min-device-width: $tablet) {
+    .news .postcard h3 {
+        font-size: 1em;
+    }
+    .news .content {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .event .item {
+        height: 120px;
+    }
+    .event .thumbnail img {
+        width: 120px;
+    }
+    .event .content h3 {
+      font-size: 1.5em;
+  }
+    .event .content li {
+        font-size: 1.2em;
+
+    }
+    .who, .band-list {
+        padding-left: 5%;
+        font-size: 1em;
     }
 }
 @media only screen and (min-device-width: $tablet) and (orientation: landscape){
+    #home iframe {
+        display: block;
+    }
     #home .pages {
         display: flex;
         flex-direction: column;
@@ -172,32 +224,54 @@ span.host:nth-child(4) {
         flex: 1 0 0%;
         margin: 0 auto;
     }
+    #home .scrollbox {
+        flex: 1 1 420px;
+        padding-top: 0;
+        overflow-y: auto;
+    }
+    .news .content {
+        width: 100% !important;
+    }
+}
+@media only screen and (min-device-width: $tablet) and (orientation: landscape){
+    #home.pg-frame {
+        background-color: transparent;
+        background-image: url('/wp/wp-content/uploads/2016/07/logo.svg');
+        background-position-x: 10%;
+        background-position-y: 70%;
+        background-size: 49%;
+        background-repeat: no-repeat;
+    }
+    #home.page-content {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        max-width: 100%;
+        position: fixed;
+    }
+}
+/*
+@media only screen and (min-device-height: $tablet) {
+    #home .post {
+        flex: 1 0 120px;
+    }
 }
 @media only screen and (min-device-height: $big-phone) and (orientation: portrait){
     #home .scrollbox {
         overflow-y: auto;
     }
-}
-@media only screen and (min-device-height: $tablet) {
-    #home .post {
-        flex: 1 0 120px;
+    .event-title {
+        line-height: 1.1em;
+        padding-top: 4px;
+        padding-bottom: 4px;
     }
 }
 @media only screen and (min-device-width: $big-phone){
     #home .post-thumbnail img {
         max-width: 120px;
     }
-}
-@media only screen and (min-device-width: $tablet) and (orientation: landscape){
-    #home .scrollbox {
-        flex: 1 1 420px;
-        padding-top: 0;
-        overflow-y: auto;
-    }
-}
-@media only screen and (min-device-width: $tablet) and (orientation: landscape){
-    #home iframe {
-        display: block;
+    .event-item {
+        height: 120px;
     }
 }
 @media only screen and (max-device-width: $big-phone){
@@ -209,17 +283,33 @@ span.host:nth-child(4) {
         left: -17px;
     }
 }
-@media only screen and (min-device-width: $big-phone) {
-    .event-item {
-        height: 120px;
-    }
-}
-@media only screen and (min-device-height: $tablet) and (orientation: portrait){
-    .event-title {
-        line-height: 1.1em;
-        padding-top: 4px;
-        padding-bottom: 4px;
+@media only screen and (min-device-height: $big-phone) and (orientation: portrait){
+    #home .top-message {
+        padding: 20px 0;
     }
 }
 
 */
+
+.social-buttons {
+    position: absolute;
+    min-width: 222px;
+    padding-top: 5px;
+}
+.facebook-button, .twitter-button, .tumblr-button {
+    display: inline-block;
+    overflow: hidden;
+    min-width: 60px;
+    height: 60px;
+    vertical-align: bottom;
+    text-align: center;
+}
+.facebook-button {
+    margin: -2px 4px 0 4px;
+}
+.twitter-button {
+    margin: 0 4px;
+}
+.tumblr-button {
+    margin: 0 4px;
+}

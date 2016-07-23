@@ -1,44 +1,67 @@
-#panel {
-    position: fixed;
-    z-index: 99;
+.hamburger:before {
+    content: '≣';
+    font-size: 38px;
+    color: white;
+    opacity: .3;
 }
-.jPanelMenu #menu {
-    display: none;
+.jPanelMenu-panel .hamburger {
+    text-align: center;
+}
+.hamburger {
+    position: fixed;
+    width: $header-height;
+    height: ($header-height - 10);
+    padding: 0 0 0 18px;
+}
+.menu-trigger {
+    height: $header-height;
+    width: $header-height;
+    padding: 0 17px;
+}
+a.menu-trigger.hamburger:hover {
+    text-decoration: none;
+}
+#panel {
+    position: relative;
+    top: -60px;
+//    z-index: 99;
 }
 .jPanelMenu-panel {
+    position: fixed !important;
+    min-height: initial !important;
+    width: auto !important;
+    background: transparent !important;
 }
-#jPanelMenu-menu {
+nav#jPanelMenu-menu {
     //top: 50px !important;
     background: $bg-darkest;
-    height: auto !important;
+ //   height: auto !important;
+//    display: none;
+    padding-bottom: 30px;
 }
-#jPanelMenu-menu a:hover {
-    color: $gold;
+#jPanelMenu-menu ul {
+    will-change: scroll-position;
 }
 #jPanelMenu-menu a {
     display: block;
-    padding: 20px 7em 20px 5em;
+    padding: 20px 7em;
     color: white;
     text-decoration: none;
     font-weight: 900;
     font-family: 'Arial';
 }
-.menu-trigger {
-    position: fixed;
-    top: -60px;
-    /*left: -250px;*/
-    /*width: 310px;*/
-    height: $header-height;
-    width: $header-height;
-    text-align: center;
-    padding: 10px
-//    display: block;
+#jPanelMenu-menu a:hover {
+    color: $gold;
 }
+li#menu-header {
+  padding: 0 0 0 18px;
+  position: fixed;
+}
+/*
 #menu-header {
     font-size: 2.2em;
     line-height: 1em;
-    padding: 12px 0 0 17px;
-    float: left;
+    padding: 3px 0 0 17px;
     height: 60px;
     opacity: 0.6;
     width: 100%
@@ -46,10 +69,10 @@
 #menu-header:hover {
     background-color: inherit;
 }
-.hamburger:before {
-    content: '≣';
-    font-size: 36px;
-    color: white;
-    opacity: .4;
-}
+@media only screen and (min-device-width: $tablet){
+    #menu-header {
+        padding-top: 18px;
+    }
 
+}
+*/

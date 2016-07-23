@@ -1,0 +1,72 @@
+
+#jslghtbx{
+    z-index: 30;
+    padding-top: 10px !important;
+}
+#jslghtbx img {
+    margin-top: 0 !important;
+    max-width: 100%;
+    height: auto;
+}
+.jslghtbx-contentwrapper {
+    background-color: $bg-darkest;
+    position: absolute;
+    width: 100%;
+    will-change: scroll-position;
+}
+.jslghtbx-contentwrapper img {
+    max-height: 670px !important;
+}
+.jslghtbx-caption {
+    text-align: left !important;
+    padding: 5px;
+    margin-bottom: 30px !important;
+}
+.jslghtbx-caption a.url {
+    display: block;
+    padding: 20px;
+}
+.jslghtbx-caption p {
+    padding: 7px 0;
+}
+.jslghtbx-caption img {
+    padding: 4px;
+}
+.jslghtbx-close {
+    font-size: 3em !important;
+    font-weight: 600;
+    text-shadow: 2px 3px 3px black !important;
+}
+.jslghtbx.jslghtbx-active {
+    background-color: rgba(0, 0, 0, 1) !important;
+}
+@media only screen and (min-device-height: $tablet) and (orientation: portrait) {
+    #jslghtbx {
+        padding-top: 10px !important;
+    }
+    .jslghtbx-contentwrapper img {
+        max-height: ($tablet * 1.2) !important;
+    }
+}
+@media only screen and (min-device-height: $laptop) {
+    #jslghtbx {
+        padding-top: 10px !important;
+    }
+}
+/*
+@media only screen and (min-device-width: 960px) and (orientation: landscape) {
+    #jslghtbx img:nth-child(1) {
+        margin: 0 46% 0 auto;
+        max-width: 52% !important;
+    }
+    #jslghtbx .links img {
+        margin: 0;
+    }
+    .jslghtbx-caption {
+        position: absolute;
+        top: 10%;
+        left: 60%;
+        width: 37% !important;
+    }
+}
+*/

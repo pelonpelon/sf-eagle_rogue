@@ -4,6 +4,8 @@
     * @var bool
     **/
 
+  date_default_timezone_set('America/Los_Angeles');
+
   define('WP_DEBUG', true); // HOTT ••• dev only
   ini_set('error_reporting', E_ALL);
   //error_reporting(-1);
@@ -16,7 +18,6 @@
 
   //set_include_path( get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT'] );
 
-    date_default_timezone_set('America/Los_Angeles');
 	require("_/inc/functions.php");
 
     /*

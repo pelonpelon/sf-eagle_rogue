@@ -451,7 +451,8 @@
 			},
 
 			setupMarkup: function() {
-				$('html').addClass('jPanelMenu');
+				//bf addClass to html causes jank ?depending on user css?
+				$('body').addClass('jPanelMenu');
 				$(jP.options.panel + ' > *').not(jP.menu + ', ' + jP.options.excludedPanelContent).wrapAll('<div class="' + jP.panel.replace('.','') + '"/>');
 				var menu = ( jP.options.clone )?$(jP.options.menu).clone(jP.options.keepEventHandlers):$(jP.options.menu);
 				menu.attr('id', jP.menu.replace('#','')).insertAfter(jP.options.panel + ' > ' + jP.panel);

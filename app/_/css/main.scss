@@ -8,6 +8,10 @@
 *	used site wide (a, h1, p, body, etc).
 \******************************************************/
 
+.fixed {
+    position: fixed;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -22,6 +26,7 @@ body {
     position: absolute;
     top: 0;
     bottom: -60px;
+    color: $white;
 
 }
 h1, h2, h3, h4, h5, h6 {
@@ -31,12 +36,11 @@ li {
     list-style: none;
 }
 a {
-    @include Links;
-    font-weight: 300;
     text-decoration: none;
+    color: inherit;
 }
 a:hover {
-    font-weight: 400;
+    text-decoration: underline;
 }
 /* a:after {
     content: ' ⧁ ';

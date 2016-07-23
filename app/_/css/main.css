@@ -54,18 +54,23 @@
 *	used site wide (a, h1, p, body, etc).
 \******************************************************/
 /* line 11, main.scss */
+.fixed {
+  position: fixed;
+}
+
+/* line 15, main.scss */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* line 17, main.scss */
+/* line 21, main.scss */
 html {
   background-color: #000;
 }
 
-/* line 20, main.scss */
+/* line 24, main.scss */
 body {
   color: #d0e9ff;
   background-color: #000;
@@ -74,28 +79,28 @@ body {
   position: absolute;
   top: 0;
   bottom: -60px;
+  color: #d0e9ff;
 }
 
-/* line 27, main.scss */
+/* line 32, main.scss */
 h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
-/* line 30, main.scss */
+/* line 35, main.scss */
 li {
   list-style: none;
 }
 
-/* line 33, main.scss */
+/* line 38, main.scss */
 a {
-  color: lightskyblue;
-  font-weight: 300;
   text-decoration: none;
+  color: inherit;
 }
 
-/* line 38, main.scss */
+/* line 42, main.scss */
 a:hover {
-  font-weight: 400;
+  text-decoration: underline;
 }
 
 /* a:after {
@@ -104,7 +109,7 @@ a:hover {
     font-size: 1.4em;
     color: #99f;
 } */
-/* line 47, main.scss */
+/* line 51, main.scss */
 hr {
   margin: auto;
   padding: 0;
@@ -133,23 +138,23 @@ hr {
   margin: auto;
 }
 
-/* line 6, home.scss */
+/* line 4, home.scss */
 #home iframe {
   display: none;
 }
 
-/* line 9, home.scss */
+/* line 7, home.scss */
 #home .pages {
   display: none;
 }
 
-/* line 12, home.scss */
+/* line 10, home.scss */
 #home .poster-img {
   display: block;
   margin: 0 auto 50px;
 }
 
-/* line 16, home.scss */
+/* line 14, home.scss */
 #home .top-message {
   font-size: 1.1rem;
   color: skyblue;
@@ -158,13 +163,13 @@ hr {
   padding-bottom: 2px;
 }
 
-/* line 23, home.scss */
+/* line 21, home.scss */
 #home .scrollbox {
   width: 100%;
   height: 100%;
 }
 
-/* line 27, home.scss */
+/* line 25, home.scss */
 #home .scroller {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -174,9 +179,47 @@ hr {
           flex-direction: column;
   max-width: 650px;
   margin: 0 auto;
+  will-change: scroll-position;
 }
 
-/* line 33, home.scss */
+/* line 32, home.scss */
+hr {
+  border-color: #275392;
+}
+
+/*News*/
+/* line 37, home.scss */
+.news {
+  background-color: #000;
+}
+
+/* line 40, home.scss */
+.news .content {
+  margin-bottom: 18px;
+}
+
+/* line 43, home.scss */
+.news .content p {
+  margin-bottom: 18px;
+  font-size: smaller;
+}
+
+/* line 47, home.scss */
+.news .item {
+  color: #d0e9ff;
+  background-color: #000;
+  padding: 10px 5px;
+}
+
+/* line 52, home.scss */
+.news .item img {
+  display: inline;
+  float: right;
+  padding: 26px 2% 4px 2%;
+}
+
+/*New Day*/
+/* line 59, home.scss */
 .new-day {
   -webkit-flex: 1 0 40px;
       -ms-flex: 1 0 40px;
@@ -197,7 +240,7 @@ hr {
   color: #275392;
 }
 
-/* line 44, home.scss */
+/* line 70, home.scss */
 .new-day .day {
   -webkit-flex: 1 0 20px;
       -ms-flex: 1 0 20px;
@@ -207,7 +250,7 @@ hr {
   line-height: 1em;
 }
 
-/* line 50, home.scss */
+/* line 76, home.scss */
 .new-day .date {
   -webkit-flex: 0 1 15px;
       -ms-flex: 0 1 15px;
@@ -216,47 +259,11 @@ hr {
   font-size: .7em;
   font-weight: 600;
   text-shadow: #200 2px 1px;
-  line-height: .5em;
+  line-height: .7em;
 }
 
-/* line 58, home.scss */
-.news {
-  background-color: #000;
-}
-
-/* line 61, home.scss */
-.news .content {
-  margin-bottom: 18px;
-}
-
-/* line 64, home.scss */
-.news .content p {
-  margin-bottom: 18px;
-  font-size: smaller;
-  font-family: sans-serif;
-  font-weight: 100;
-}
-
-/* line 70, home.scss */
-.news .item {
-  color: #d0e9ff;
-  background-color: #000;
-  padding: 10px 5px;
-}
-
-/* line 75, home.scss */
-.news .item img {
-  display: inline;
-  float: right;
-  padding: 26px 2% 4px 2%;
-}
-
-/* line 80, home.scss */
-hr {
-  border-color: #275392;
-}
-
-/* line 83, home.scss */
+/*Events*/
+/* line 86, home.scss */
 .event .info {
   position: absolute;
   right: 3px;
@@ -264,10 +271,11 @@ hr {
   padding: 0 0 0 12px;
   font-size: 1em;
   text-align: right;
+  color: #d0e9ff;
   opacity: .7;
 }
 
-/* line 92, home.scss */
+/* line 96, home.scss */
 .event .item {
   -webkit-flex: 0 0 90px;
       -ms-flex: 0 0 90px;
@@ -281,12 +289,13 @@ hr {
   overflow-y: hidden;
   background-color: #000;
   border-top: black solid 2px;
-  color: #d0e9ff;
+  /*color: $text-light;*/
+  color: #ecdfda;
   overflow: hidden;
   height: 90px;
 }
 
-/* line 103, home.scss */
+/* line 108, home.scss */
 .event .thumbnail {
   -webkit-flex: 0 0 90px;
       -ms-flex: 0 0 90px;
@@ -300,7 +309,7 @@ hr {
   background-color: #1b2127;
 }
 
-/* line 109, home.scss */
+/* line 114, home.scss */
 .event .thumbnail img {
   display: block;
   width: 90px;
@@ -308,7 +317,7 @@ hr {
   opacity: .7;
 }
 
-/* line 115, home.scss */
+/* line 120, home.scss */
 .event .content {
   -webkit-flex: 1 1 0%;
       -ms-flex: 1 1 0%;
@@ -319,27 +328,60 @@ hr {
   background-image: linear-gradient(#000, #082032);
 }
 
-/* line 122, home.scss */
-.details .label {
+/* line 127, home.scss */
+span.label {
   font-size: smaller;
   color: deepskyblue;
 }
 
-/* line 126, home.scss */
+/* line 131, home.scss */
 .event .content h3 {
   font-size: 1.1em;
   color: deepskyblue;
 }
 
-/* line 130, home.scss */
+/* line 135, home.scss */
 .event .content h4 {
-  font-size: .8em;
-  color: sienna;
+  font-size: smaller;
+  color: yellowgreen;
 }
 
-/* line 134, home.scss */
+/* line 139, home.scss */
 .event .content li {
   line-height: 1em;
+}
+
+/* line 142, home.scss */
+.event-details {
+  color: deeppink;
+}
+
+/* line 145, home.scss */
+.event-url {
+  font-weight: 600;
+  padding: 25px 0;
+  display: block;
+}
+
+/* line 150, home.scss */
+.who, .band-list {
+  font-size: .9em;
+  padding-top: 7px;
+}
+
+/* line 154, home.scss */
+.band-list li, .band-list a {
+  color: #ef5eef;
+}
+
+/* line 157, home.scss */
+.promoter, .promoter a {
+  color: mediumslateblue !important;
+}
+
+/* line 160, home.scss */
+.more {
+  color: aqua;
 }
 
 /*.event .title {*/
@@ -349,71 +391,157 @@ hr {
 /*line-height: .9em;*/
 /*padding-top: 2px;*/
 /*}*/
-/* line 144, home.scss */
+/* line 170, home.scss */
 span.host:nth-child(1) {
   color: magenta;
 }
 
-/* line 147, home.scss */
+/* line 173, home.scss */
 span.host:nth-child(2) {
   color: lightsalmon;
 }
 
-/* line 150, home.scss */
+/* line 176, home.scss */
 span.host:nth-child(3) {
   color: limegreen;
 }
 
-/* line 153, home.scss */
+/* line 179, home.scss */
 span.host:nth-child(4) {
   color: mediumpurple;
 }
 
-/*
-@media only screen and (min-device-height: $big-phone) and (orientation: portrait){
-    #home .top-message {
-        padding: 20px 0;
-    }
+/*Media Queries*/
+@media only screen and (min-device-width: 768px) {
+  /* line 186, home.scss */
+  .news .postcard h3 {
+    font-size: 1em;
+  }
+
+  /* line 189, home.scss */
+  .news .content {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  /* line 193, home.scss */
+  .event .item {
+    height: 120px;
+  }
+
+  /* line 196, home.scss */
+  .event .thumbnail img {
+    width: 120px;
+  }
+
+  /* line 199, home.scss */
+  .event .content h3 {
+    font-size: 1.5em;
+  }
+
+  /* line 202, home.scss */
+  .event .content li {
+    font-size: 1.2em;
+  }
+
+  /* line 206, home.scss */
+  .who, .band-list {
+    padding-left: 5%;
+    font-size: 1em;
+  }
 }
-@media only screen and (min-device-width: $tablet) and (orientation: landscape){
-    #home .pages {
-        display: flex;
-        flex-direction: column;
-        flex: 0 0 59%;
-        padding: 3%;
-        opacity: 0.88;
-        background: #000;
-    }
-    #home .page {
-        flex: 1 0 0%;
-        margin: 0 auto;
+@media only screen and (min-device-width: 768px) and (orientation: landscape) {
+  /* line 212, home.scss */
+  #home iframe {
+    display: block;
+  }
+
+  /* line 215, home.scss */
+  #home .pages {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-flex: 0 0 59%;
+        -ms-flex: 0 0 59%;
+            flex: 0 0 59%;
+    padding: 3%;
+    opacity: 0.88;
+    background: #000;
+  }
+
+  /* line 223, home.scss */
+  #home .page {
+    -webkit-flex: 1 0 0%;
+        -ms-flex: 1 0 0%;
+            flex: 1 0 0%;
+    margin: 0 auto;
+  }
+
+  /* line 227, home.scss */
+  #home .scrollbox {
+    -webkit-flex: 1 1 420px;
+        -ms-flex: 1 1 420px;
+            flex: 1 1 420px;
+    padding-top: 0;
+    overflow-y: auto;
+  }
+
+  /* line 232, home.scss */
+  .news .content {
+    width: 100% !important;
+  }
+}
+@media only screen and (min-device-width: 768px) and (orientation: landscape) {
+  /* line 237, home.scss */
+  #home.pg-frame {
+    background-color: transparent;
+    background-image: url("/wp/wp-content/uploads/2016/07/logo.svg");
+    background-position-x: 10%;
+    background-position-y: 70%;
+    background-size: 49%;
+    background-repeat: no-repeat;
+  }
+
+  /* line 245, home.scss */
+  #home.page-content {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-width: 100%;
+    position: fixed;
+  }
+}
+/*
+@media only screen and (min-device-height: $tablet) {
+    #home .post {
+        flex: 1 0 120px;
     }
 }
 @media only screen and (min-device-height: $big-phone) and (orientation: portrait){
     #home .scrollbox {
         overflow-y: auto;
     }
-}
-@media only screen and (min-device-height: $tablet) {
-    #home .post {
-        flex: 1 0 120px;
+    .event-title {
+        line-height: 1.1em;
+        padding-top: 4px;
+        padding-bottom: 4px;
     }
 }
 @media only screen and (min-device-width: $big-phone){
     #home .post-thumbnail img {
         max-width: 120px;
     }
-}
-@media only screen and (min-device-width: $tablet) and (orientation: landscape){
-    #home .scrollbox {
-        flex: 1 1 420px;
-        padding-top: 0;
-        overflow-y: auto;
-    }
-}
-@media only screen and (min-device-width: $tablet) and (orientation: landscape){
-    #home iframe {
-        display: block;
+    .event-item {
+        height: 120px;
     }
 }
 @media only screen and (max-device-width: $big-phone){
@@ -425,20 +553,45 @@ span.host:nth-child(4) {
         left: -17px;
     }
 }
-@media only screen and (min-device-width: $big-phone) {
-    .event-item {
-        height: 120px;
-    }
-}
-@media only screen and (min-device-height: $tablet) and (orientation: portrait){
-    .event-title {
-        line-height: 1.1em;
-        padding-top: 4px;
-        padding-bottom: 4px;
+@media only screen and (min-device-height: $big-phone) and (orientation: portrait){
+    #home .top-message {
+        padding: 20px 0;
     }
 }
 
 */
+/* line 294, home.scss */
+.social-buttons {
+  position: absolute;
+  min-width: 222px;
+  padding-top: 5px;
+}
+
+/* line 299, home.scss */
+.facebook-button, .twitter-button, .tumblr-button {
+  display: inline-block;
+  overflow: hidden;
+  min-width: 60px;
+  height: 60px;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+/* line 307, home.scss */
+.facebook-button {
+  margin: -2px 4px 0 4px;
+}
+
+/* line 310, home.scss */
+.twitter-button {
+  margin: 0 4px;
+}
+
+/* line 313, home.scss */
+.tumblr-button {
+  margin: 0 4px;
+}
+
 /* line 1, calendar.scss */
 #Calendar .calendar img {
   max-width: 100%;

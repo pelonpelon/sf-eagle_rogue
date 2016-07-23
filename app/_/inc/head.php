@@ -28,15 +28,14 @@
         function is_live(msg){
             console.info(live ? 'HOT' : 'COLD' + ": " + msg);
         }
-        is_live('head.php');
-
-
+        is_live('is_live() function in head.php');
       </script>
-<!--
-      <script async src="_/vendor/fastclick.min.js"></script>
+
+<!--      <script async src="_/vendor/fastclick.min.js"></script>
         <script>(function() {
+            content = document.getElementsByClassName('page-content');
             window.addEventListener('load', function() {
-                return FastClick.attach(document.body, false);
+                return FastClick.attach(content[0], false);
             });
 
             }).call(this);
