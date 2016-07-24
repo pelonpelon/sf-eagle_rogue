@@ -150,46 +150,53 @@ li#menu-header {
 }
 
 /* line 25, _jslghtbx.scss */
-.jslghtbx-caption a.url {
+.jslghtbx-caption a {
   display: block;
-  padding: 20px;
+  padding: 25px;
+  font-size: 1em;
 }
 
-/* line 29, _jslghtbx.scss */
+/* line 30, _jslghtbx.scss */
+.jslghtbx-caption .band-list ul a {
+  border: 2px solid yellow;
+  border-radius: 50% 40% 30% 20%;
+}
+
+/* line 34, _jslghtbx.scss */
 .jslghtbx-caption p {
   padding: 7px 0;
 }
 
-/* line 32, _jslghtbx.scss */
+/* line 37, _jslghtbx.scss */
 .jslghtbx-caption img {
   padding: 4px;
 }
 
-/* line 35, _jslghtbx.scss */
+/* line 40, _jslghtbx.scss */
 .jslghtbx-close {
   font-size: 3em !important;
   font-weight: 600;
   text-shadow: 2px 3px 3px black !important;
 }
 
-/* line 40, _jslghtbx.scss */
+/* line 45, _jslghtbx.scss */
 .jslghtbx.jslghtbx-active {
   background-color: black !important;
 }
 
 @media only screen and (min-device-height: 768px) and (orientation: portrait) {
-  /* line 44, _jslghtbx.scss */
+  /* line 49, _jslghtbx.scss */
   #jslghtbx {
     padding-top: 10px !important;
   }
 
-  /* line 47, _jslghtbx.scss */
+  /* line 52, _jslghtbx.scss */
   .jslghtbx-contentwrapper img {
     max-height: 921.6px !important;
   }
 }
 @media only screen and (min-device-height: 1024px) {
-  /* line 52, _jslghtbx.scss */
+  /* line 57, _jslghtbx.scss */
   #jslghtbx {
     padding-top: 10px !important;
   }

@@ -238,9 +238,10 @@ hr {
   background-color: #000;
   background-image: linear-gradient(#082032, #000);
   color: #275392;
+  border-top: 1px solid #00F;
 }
 
-/* line 70, home.scss */
+/* line 71, home.scss */
 .new-day .day {
   -webkit-flex: 1 0 20px;
       -ms-flex: 1 0 20px;
@@ -250,7 +251,7 @@ hr {
   line-height: 1em;
 }
 
-/* line 76, home.scss */
+/* line 77, home.scss */
 .new-day .date {
   -webkit-flex: 0 1 15px;
       -ms-flex: 0 1 15px;
@@ -263,7 +264,7 @@ hr {
 }
 
 /*Events*/
-/* line 86, home.scss */
+/* line 87, home.scss */
 .event .info {
   position: absolute;
   right: 3px;
@@ -275,7 +276,7 @@ hr {
   opacity: .7;
 }
 
-/* line 96, home.scss */
+/* line 97, home.scss */
 .event .item {
   -webkit-flex: 0 0 90px;
       -ms-flex: 0 0 90px;
@@ -295,7 +296,7 @@ hr {
   height: 90px;
 }
 
-/* line 108, home.scss */
+/* line 109, home.scss */
 .event .thumbnail {
   -webkit-flex: 0 0 90px;
       -ms-flex: 0 0 90px;
@@ -309,7 +310,7 @@ hr {
   background-color: #1b2127;
 }
 
-/* line 114, home.scss */
+/* line 115, home.scss */
 .event .thumbnail img {
   display: block;
   width: 90px;
@@ -317,7 +318,7 @@ hr {
   opacity: .7;
 }
 
-/* line 120, home.scss */
+/* line 121, home.scss */
 .event .content {
   -webkit-flex: 1 1 0%;
       -ms-flex: 1 1 0%;
@@ -328,58 +329,58 @@ hr {
   background-image: linear-gradient(#000, #082032);
 }
 
-/* line 127, home.scss */
+/* line 128, home.scss */
 span.label {
   font-size: smaller;
   color: deepskyblue;
 }
 
-/* line 131, home.scss */
+/* line 132, home.scss */
 .event .content h3 {
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: deepskyblue;
 }
 
-/* line 135, home.scss */
+/* line 136, home.scss */
 .event .content h4 {
   font-size: smaller;
   color: yellowgreen;
 }
 
-/* line 139, home.scss */
+/* line 140, home.scss */
 .event .content li {
   line-height: 1em;
 }
 
-/* line 142, home.scss */
+/* line 143, home.scss */
 .event-details {
   color: deeppink;
 }
 
-/* line 145, home.scss */
+/* line 146, home.scss */
 .event-url {
   font-weight: 600;
   padding: 25px 0;
   display: block;
 }
 
-/* line 150, home.scss */
+/* line 151, home.scss */
 .who, .band-list {
   font-size: .9em;
   padding-top: 7px;
 }
 
-/* line 154, home.scss */
+/* line 155, home.scss */
 .band-list li, .band-list a {
   color: #ef5eef;
 }
 
-/* line 157, home.scss */
+/* line 158, home.scss */
 .promoter, .promoter a {
   color: mediumslateblue !important;
 }
 
-/* line 160, home.scss */
+/* line 161, home.scss */
 .more {
   color: aqua;
 }
@@ -391,72 +392,72 @@ span.label {
 /*line-height: .9em;*/
 /*padding-top: 2px;*/
 /*}*/
-/* line 170, home.scss */
-span.host:nth-child(1) {
+/* line 171, home.scss */
+.content .who span:nth-child(2) {
   color: magenta;
 }
 
-/* line 173, home.scss */
-span.host:nth-child(2) {
+/* line 174, home.scss */
+.content .who span:nth-child(3) {
   color: lightsalmon;
 }
 
-/* line 176, home.scss */
-span.host:nth-child(3) {
+/* line 177, home.scss */
+.content .who span:nth-child(4) {
   color: limegreen;
 }
 
-/* line 179, home.scss */
-span.host:nth-child(4) {
+/* line 180, home.scss */
+.content .who span:nth-child(5) {
   color: mediumpurple;
 }
 
 /*Media Queries*/
 @media only screen and (min-device-width: 768px) {
-  /* line 186, home.scss */
+  /* line 187, home.scss */
   .news .postcard h3 {
     font-size: 1em;
   }
 
-  /* line 189, home.scss */
+  /* line 190, home.scss */
   .news .content {
     width: 80%;
     margin: 0 auto;
   }
 
-  /* line 193, home.scss */
+  /* line 194, home.scss */
   .event .item {
     height: 120px;
   }
 
-  /* line 196, home.scss */
+  /* line 197, home.scss */
   .event .thumbnail img {
     width: 120px;
   }
 
-  /* line 199, home.scss */
+  /* line 200, home.scss */
   .event .content h3 {
     font-size: 1.5em;
   }
 
-  /* line 202, home.scss */
+  /* line 203, home.scss */
   .event .content li {
     font-size: 1.2em;
   }
 
-  /* line 206, home.scss */
+  /* line 207, home.scss */
   .who, .band-list {
     padding-left: 5%;
     font-size: 1em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 212, home.scss */
+  /* line 213, home.scss */
   #home iframe {
     display: block;
   }
 
-  /* line 215, home.scss */
+  /* line 216, home.scss */
   #home .pages {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -472,7 +473,7 @@ span.host:nth-child(4) {
     background: #000;
   }
 
-  /* line 223, home.scss */
+  /* line 224, home.scss */
   #home .page {
     -webkit-flex: 1 0 0%;
         -ms-flex: 1 0 0%;
@@ -480,7 +481,7 @@ span.host:nth-child(4) {
     margin: 0 auto;
   }
 
-  /* line 227, home.scss */
+  /* line 228, home.scss */
   #home .scrollbox {
     -webkit-flex: 1 1 420px;
         -ms-flex: 1 1 420px;
@@ -489,13 +490,13 @@ span.host:nth-child(4) {
     overflow-y: auto;
   }
 
-  /* line 232, home.scss */
+  /* line 233, home.scss */
   .news .content {
     width: 100% !important;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 237, home.scss */
+  /* line 238, home.scss */
   #home.pg-frame {
     background-color: transparent;
     background-image: url("/wp/wp-content/uploads/2016/07/logo.svg");
@@ -505,7 +506,7 @@ span.host:nth-child(4) {
     background-repeat: no-repeat;
   }
 
-  /* line 245, home.scss */
+  /* line 246, home.scss */
   #home.page-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -560,14 +561,14 @@ span.host:nth-child(4) {
 }
 
 */
-/* line 294, home.scss */
+/* line 295, home.scss */
 .social-buttons {
   position: absolute;
   min-width: 222px;
   padding-top: 5px;
 }
 
-/* line 299, home.scss */
+/* line 300, home.scss */
 .facebook-button, .twitter-button, .tumblr-button {
   display: inline-block;
   overflow: hidden;
@@ -577,17 +578,17 @@ span.host:nth-child(4) {
   text-align: center;
 }
 
-/* line 307, home.scss */
+/* line 308, home.scss */
 .facebook-button {
   margin: -2px 4px 0 4px;
 }
 
-/* line 310, home.scss */
+/* line 311, home.scss */
 .twitter-button {
   margin: 0 4px;
 }
 
-/* line 313, home.scss */
+/* line 314, home.scss */
 .tumblr-button {
   margin: 0 4px;
 }

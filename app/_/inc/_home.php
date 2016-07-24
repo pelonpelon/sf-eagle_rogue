@@ -107,7 +107,9 @@
           if ( ! in_category('event')) { continue; }
           $ID = $Items->post->ID;
 
+          date_default_timezone_set('America/Los_Angeles');
           $now = new DateTime();
+          //date_modify($now, new DateTimeZone('America/Los_Angeles'));
           $today = $now->format('l');
           //$post_date = get_the_date('ymd');
           //$this_year = $now->format('y');
@@ -116,7 +118,7 @@
           //date_modify($cuttoff, '-6 months');
           //$status = get_post_status();
 
-          $date = new DateTime(get_the_date('r'), new DateTimeZone('America/Los_Angeles'));
+          $date = new DateTime(get_the_date('r'));
           //if ( ($status == 'publish') && ($date < $cuttoff) ) {
               //date_modify($date, '+1 year');
           //}
@@ -124,11 +126,13 @@
           $post_date = $date->format('M d');
           $post_start_time = $date->format('G:i');
           $endtime = get_post_meta($ID, 'event_endtime', true);
-          $event_end_time = new DateTime(get_the_date('r'), new DateTimeZone('America/Los_Angeles'));
+          $event_end_time = new DateTime(get_the_date('r'));
           date_modify($event_end_time, $endtime);
+          $countdown = round(($event_end_time->format('U') - $now->format('U'))/3600);
           if ($event_end_time < $date) {
               date_modify($event_end_time, '+1 day');
           }
+          //if ($ID == '5134' ){ throw new Exception($event_end_time->format('r'). ' ' .$now->format('r')); }
           if ($event_end_time < $now) { continue; }
           if ( $date->format('Y-m-d') != $current_day ) {
               $current_day = $date->format('Y-m-d');
@@ -179,7 +183,15 @@
               <div class="content"><?php echo $postcard; ?>
               <div class="info">
                   <div class="cover"><?php echo get_post_meta($ID, 'event_cover', true); ?></div>
-                  <div class="start-time"><?php echo $date->format('g:ia'); ?></div>
+                  <div class="start-time">
+        <?php
+
+            if ( $now->format('Y-m-d') == $current_day ) {
+              for ($x = 0; $x < $countdown; $x++) { echo '. '; }
+              echo $date->format('g:ia');
+            }
+        ?>
+                </div>
               </div>
 </div>
           </div>

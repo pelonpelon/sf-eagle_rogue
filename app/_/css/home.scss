@@ -66,6 +66,7 @@ hr {
     background-color: $bg-2;
     background-image: linear-gradient($bg-1, $bg-2);
     color: $blue;
+    border-top: 1px solid #00F;
 }
 .new-day .day {
     flex: 1 0 20px;
@@ -129,7 +130,7 @@ span.label {
     color: $bright-blue;
 }
 .event .content h3 {
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: $bright-blue;
 }
 .event .content h4 {
@@ -167,16 +168,16 @@ span.label {
 	/*line-height: .9em;*/
     /*padding-top: 2px;*/
 /*}*/
-span.host:nth-child(1) {
+.content .who span:nth-child(2) {
     color: magenta;
 }
-span.host:nth-child(2) {
+.content .who span:nth-child(3) {
     color: lightsalmon;
 }
-span.host:nth-child(3) {
+.content .who span:nth-child(4) {
     color: limegreen;
 }
-span.host:nth-child(4) {
+.content .who span:nth-child(5) {
     color: mediumpurple;
 }
 

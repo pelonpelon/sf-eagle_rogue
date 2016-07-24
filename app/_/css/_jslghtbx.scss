@@ -22,9 +22,14 @@
     padding: 5px;
     margin-bottom: 30px !important;
 }
-.jslghtbx-caption a.url {
+.jslghtbx-caption a {
     display: block;
-    padding: 20px;
+    padding: 25px;
+    font-size: 1em;
+}
+.jslghtbx-caption .band-list ul a {
+    border: 2px solid yellow;
+    border-radius: 50% 40% 30% 20%;
 }
 .jslghtbx-caption p {
     padding: 7px 0;
