@@ -129,74 +129,93 @@ li#menu-header {
   height: auto;
 }
 
-/* line 11, _jslghtbx.scss */
+/* line 15, _jslghtbx.scss */
 .jslghtbx-contentwrapper {
   background-color: #000;
   position: absolute;
   width: 100%;
-  will-change: scroll-position;
 }
 
-/* line 17, _jslghtbx.scss */
+/* line 20, _jslghtbx.scss */
 .jslghtbx-contentwrapper img {
   max-height: 670px !important;
 }
 
-/* line 20, _jslghtbx.scss */
+/* line 23, _jslghtbx.scss */
 .jslghtbx-caption {
   text-align: left !important;
   padding: 5px;
   margin-bottom: 30px !important;
 }
 
-/* line 25, _jslghtbx.scss */
+/* line 28, _jslghtbx.scss */
 .jslghtbx-caption a {
   display: block;
   padding: 25px;
   font-size: 1em;
 }
 
-/* line 30, _jslghtbx.scss */
+/* line 33, _jslghtbx.scss */
 .jslghtbx-caption .band-list ul a {
   border: 2px solid yellow;
   border-radius: 50% 40% 30% 20%;
 }
 
-/* line 34, _jslghtbx.scss */
+/* line 37, _jslghtbx.scss */
 .jslghtbx-caption p {
   padding: 7px 0;
 }
 
-/* line 37, _jslghtbx.scss */
+/* line 40, _jslghtbx.scss */
 .jslghtbx-caption img {
   padding: 4px;
 }
 
-/* line 40, _jslghtbx.scss */
+/* line 43, _jslghtbx.scss */
 .jslghtbx-close {
   font-size: 3em !important;
   font-weight: 600;
   text-shadow: 2px 3px 3px black !important;
 }
 
-/* line 45, _jslghtbx.scss */
+/* line 48, _jslghtbx.scss */
 .jslghtbx.jslghtbx-active {
   background-color: black !important;
 }
 
+/* line 51, _jslghtbx.scss */
+.jslghtbx-loading-animation > span:nth-child(1) {
+  background-color: magenta !important;
+}
+
+/* line 54, _jslghtbx.scss */
+.jslghtbx-loading-animation > span:nth-child(2) {
+  background-color: lime !important;
+}
+
+/* line 57, _jslghtbx.scss */
+.jslghtbx-loading-animation > span:nth-child(3) {
+  background-color: #1fb0f5 !important;
+}
+
+/* line 60, _jslghtbx.scss */
+.jslghtbx-loading-animation > span:nth-child(4) {
+  background-color: gold !important;
+}
+
 @media only screen and (min-device-height: 768px) and (orientation: portrait) {
-  /* line 49, _jslghtbx.scss */
+  /* line 64, _jslghtbx.scss */
   #jslghtbx {
     padding-top: 10px !important;
   }
 
-  /* line 52, _jslghtbx.scss */
+  /* line 67, _jslghtbx.scss */
   .jslghtbx-contentwrapper img {
     max-height: 921.6px !important;
   }
 }
 @media only screen and (min-device-height: 1024px) {
-  /* line 57, _jslghtbx.scss */
+  /* line 72, _jslghtbx.scss */
   #jslghtbx {
     padding-top: 10px !important;
   }
@@ -226,14 +245,14 @@ li#menu-header {
 }
 
 /* line 13, layout.scss */
-.st-header {
+.site-header {
   height: 60px;
   background: #000;
   z-index: 20;
 }
 
 /* line 18, layout.scss */
-.page-title {
+.site-title {
   padding-top: 4px;
   color: #ea3;
   margin: auto;
@@ -243,7 +262,7 @@ li#menu-header {
 }
 
 /* line 26, layout.scss */
-.page-subtitle {
+.site-subtitle {
   text-align: center;
   font-size: 1em;
   margin: 0;
@@ -272,23 +291,24 @@ li#menu-header {
   background: #000;
 }
 
-/* line 51, layout.scss */
+/*FIXX ••• set these for every generic wp-page*/
+/* line 52, layout.scss */
 .wp-page {
   margin: 0 auto;
 }
 
-/* line 54, layout.scss */
+/* line 55, layout.scss */
 .wp-page img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 58, layout.scss */
+/* line 59, layout.scss */
 .header {
   position: relative;
 }
 
-/* line 61, layout.scss */
+/* line 62, layout.scss */
 .header-psa {
   position: fixed;
   top: 60px;
@@ -302,7 +322,7 @@ li#menu-header {
   z-index: 9999;
 }
 
-/* line 73, layout.scss */
+/* line 74, layout.scss */
 .touch-button-size {
   min-height: 60px;
   min-width: 60px;
@@ -310,40 +330,40 @@ li#menu-header {
 
 /*Media Queries*/
 @media only screen and (min-device-height: 640px) {
-  /* line 81, layout.scss */
-  .st-header {
+  /* line 82, layout.scss */
+  .site-header {
     position: fixed;
     width: 100%;
   }
 
-  /* line 85, layout.scss */
+  /* line 86, layout.scss */
   .page-content {
     position: relative;
     top: 60px;
   }
 }
 @media only screen and (min-device-width: 768px) {
-  /* line 91, layout.scss */
+  /* line 92, layout.scss */
   .hamburger:before {
     font-size: 48px;
   }
 
-  /* line 94, layout.scss */
-  .page-title {
+  /* line 95, layout.scss */
+  .site-title {
     font-size: 2em;
   }
 
-  /* line 97, layout.scss */
+  /* line 98, layout.scss */
   .logo img {
     height: 90px;
   }
 
-  /* line 100, layout.scss */
-  .st-header {
+  /* line 101, layout.scss */
+  .site-header {
     height: 90px;
   }
 
-  /* line 103, layout.scss */
+  /* line 104, layout.scss */
   .page-content {
     top: 90px;
   }

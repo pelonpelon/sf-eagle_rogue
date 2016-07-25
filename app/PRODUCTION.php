@@ -1,25 +1,27 @@
-        //FIXX ••• add pages to wp
-        //FIXX ••• install plugins: metabox
-        //FIXX ••• categories: news, events
-        //FIXX ••• set default cat to event
-        //FIXX ••• add social media
-        //FIXX ••• cancel default on modal clicks when you don't want to leave
-        //FIXX ••• show SM without long dash on front page
-        //FIXX ••• 404.html not working
-        //FIXX ••• add "Generic image" url box
-        //FIXX ••• lanscape pages scroll with scroller
-        //FIXX ••• add Error Image for get_image_url_by_slug
-        //FIXX ••• add to image service 1000px
-        //FIXX ••• Info page of pages with menu at top
-        //FIXX ••• add metabox image upload for generic poster
-        //FIXX ••• add Sponsors with hosts, guests
-        //FIXX ••• Try a video on popup
-        //FIXX ••• jPanelMenu submit changes on jank
-        //FIXX ••• lightbox submit changes "off" and ?prevent default?
-        //FIXX ••• lightbox:413,409 else #jslghtbx exists (add class)
-        //FIXX ••• cron removes poster if generic exists
-        //FIXX ••• fix media dimensions in wp LIVE
-        //FIXX ••• multicolored bouncing lightbox balls
-        //FIXX ••• band page, add multiple [links] after name
-        //FIXX ••• create Softball post_type
+        //TODOp ••• set default cat to event
+        //TODOp ••• fix media dimensions in wp LIVE +1000
+        //TODOp ••• categories: news, events
+        //TODOp ••• add social media
+        //TODOp ••• add pages to wp
+        //TODOp  install plugins: metabox
+        //TODOd ••• cron removes poster if generic exists
+        //TODOd ••• cron duplicate only required stuff on repeat
+        //TODOd ••• 404.html not working
+        //TODOd •• put menu-trigger on own layer for animation
+        //TODOd •• cancel default on modal clicks when you don't want to leave (class?)
+        //TODOd •• add Sponsors with hosts, guests
+        //TODOd •• add Error Image for get_image_url_by_slug
+        //TODOd •• Try a video on popup
+        //TODOd • lightbox:413,409 else #jslghtbx exists (add class)
+        //TODOd • lightbox submit changes "off" and ?prevent default?
+        //TODOd • jPanelMenu submit changes on jank
+        //TODOd • create Softball post_type
+        //TODOd • band page, add multiple [links] after name
+        //TODOd • Info page of pages with menu at top
+        //TODOd  multicolored bouncing lightbox balls
+        //TODOd  lanscape pages scroll with scroller
+        //TODOd  add "Generic image" url box
+        //TODOd  Logo modal: [page title=''] HOT
+
+
 

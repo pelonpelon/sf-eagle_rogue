@@ -16,18 +16,24 @@
         <!-- endbuild -->
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=0, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=1, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <link rel="stylesheet" href="_/vendor/lightbox.css">
 
 
     <!-- Don't connect with the internet if we don't have to -->
       <script>
-        var uri = new URL(window.document.URL);
-        var live = uri.hostname == "sf-eagle.mirror" || uri.hostname == "localhost" || uri.hostname == "127.0.0.1"  ? false : true;
+        var uri = new URL(window.document.URL),
+            live = true;
+        if (uri.hostname.substr(0,3) == '127' || uri.hostname.substr(0,3) == '192' || uri.hostname.substr(0,3) == '169' ) {
+            live = false;
+        } else if (uri.hostname == "sf-eagle.mirror" || uri.hostname == "localhost") {
+            live = false
+        }
         function is_live(msg){
             console.info(live ? 'HOT' : 'COLD' + ": " + msg);
         }
+
         is_live('is_live() function in head.php');
       </script>
 

@@ -47,9 +47,11 @@
 #home .scrollbox {
   width: 100%;
   height: 100%;
+  overflow-y: auto;
+  padding: 0 0 240px 0;
 }
 
-/* line 25, home.scss */
+/* line 27, home.scss */
 #home .scroller {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -62,36 +64,36 @@
   will-change: scroll-position;
 }
 
-/* line 32, home.scss */
+/* line 34, home.scss */
 hr {
   border-color: #275392;
 }
 
 /*News*/
-/* line 37, home.scss */
+/* line 39, home.scss */
 .news {
   background-color: #000;
 }
 
-/* line 40, home.scss */
+/* line 42, home.scss */
 .news .content {
   margin-bottom: 18px;
 }
 
-/* line 43, home.scss */
+/* line 45, home.scss */
 .news .content p {
   margin-bottom: 18px;
   font-size: smaller;
 }
 
-/* line 47, home.scss */
+/* line 49, home.scss */
 .news .item {
   color: #d0e9ff;
   background-color: #000;
   padding: 10px 5px;
 }
 
-/* line 52, home.scss */
+/* line 54, home.scss */
 .news .item img {
   display: inline;
   float: right;
@@ -99,7 +101,7 @@ hr {
 }
 
 /*New Day*/
-/* line 59, home.scss */
+/* line 61, home.scss */
 .new-day {
   -webkit-flex: 1 0 40px;
       -ms-flex: 1 0 40px;
@@ -121,7 +123,7 @@ hr {
   border-top: 1px solid #00F;
 }
 
-/* line 71, home.scss */
+/* line 73, home.scss */
 .new-day .day {
   -webkit-flex: 1 0 20px;
       -ms-flex: 1 0 20px;
@@ -131,7 +133,7 @@ hr {
   line-height: 1em;
 }
 
-/* line 77, home.scss */
+/* line 79, home.scss */
 .new-day .date {
   -webkit-flex: 0 1 15px;
       -ms-flex: 0 1 15px;
@@ -144,7 +146,7 @@ hr {
 }
 
 /*Events*/
-/* line 87, home.scss */
+/* line 89, home.scss */
 .event .info {
   position: absolute;
   right: 3px;
@@ -156,7 +158,7 @@ hr {
   opacity: .7;
 }
 
-/* line 97, home.scss */
+/* line 99, home.scss */
 .event .item {
   -webkit-flex: 0 0 90px;
       -ms-flex: 0 0 90px;
@@ -176,7 +178,7 @@ hr {
   height: 90px;
 }
 
-/* line 109, home.scss */
+/* line 111, home.scss */
 .event .thumbnail {
   -webkit-flex: 0 0 90px;
       -ms-flex: 0 0 90px;
@@ -190,7 +192,7 @@ hr {
   background-color: #1b2127;
 }
 
-/* line 115, home.scss */
+/* line 117, home.scss */
 .event .thumbnail img {
   display: block;
   width: 90px;
@@ -198,7 +200,7 @@ hr {
   opacity: .7;
 }
 
-/* line 121, home.scss */
+/* line 123, home.scss */
 .event .content {
   -webkit-flex: 1 1 0%;
       -ms-flex: 1 1 0%;
@@ -209,58 +211,58 @@ hr {
   background-image: linear-gradient(#000, #082032);
 }
 
-/* line 128, home.scss */
+/* line 130, home.scss */
 span.label {
   font-size: smaller;
   color: deepskyblue;
 }
 
-/* line 132, home.scss */
+/* line 134, home.scss */
 .event .content h3 {
   font-size: 1.2em;
   color: deepskyblue;
 }
 
-/* line 136, home.scss */
+/* line 138, home.scss */
 .event .content h4 {
   font-size: smaller;
   color: yellowgreen;
 }
 
-/* line 140, home.scss */
+/* line 142, home.scss */
 .event .content li {
   line-height: 1em;
 }
 
-/* line 143, home.scss */
+/* line 145, home.scss */
 .event-details {
   color: deeppink;
 }
 
-/* line 146, home.scss */
+/* line 148, home.scss */
 .event-url {
   font-weight: 600;
   padding: 25px 0;
   display: block;
 }
 
-/* line 151, home.scss */
+/* line 153, home.scss */
 .who, .band-list {
   font-size: .9em;
   padding-top: 7px;
 }
 
-/* line 155, home.scss */
+/* line 157, home.scss */
 .band-list li, .band-list a {
   color: #ef5eef;
 }
 
-/* line 158, home.scss */
+/* line 160, home.scss */
 .promoter, .promoter a {
   color: mediumslateblue !important;
 }
 
-/* line 161, home.scss */
+/* line 163, home.scss */
 .more {
   color: aqua;
 }
@@ -272,88 +274,126 @@ span.label {
 /*line-height: .9em;*/
 /*padding-top: 2px;*/
 /*}*/
-/* line 171, home.scss */
+/* line 173, home.scss */
 .content .who span:nth-child(2) {
   color: magenta;
 }
 
-/* line 174, home.scss */
+/* line 176, home.scss */
 .content .who span:nth-child(3) {
   color: lightsalmon;
 }
 
-/* line 177, home.scss */
+/* line 179, home.scss */
 .content .who span:nth-child(4) {
   color: limegreen;
 }
 
-/* line 180, home.scss */
+/* line 182, home.scss */
 .content .who span:nth-child(5) {
   color: mediumpurple;
 }
 
 /*Media Queries*/
 @media only screen and (min-device-width: 768px) {
-  /* line 187, home.scss */
+  /* line 189, home.scss */
   .news .postcard h3 {
     font-size: 1em;
   }
 
-  /* line 190, home.scss */
+  /* line 192, home.scss */
   .news .content {
     width: 80%;
     margin: 0 auto;
   }
 
-  /* line 194, home.scss */
+  /* line 196, home.scss */
   .event .item {
     height: 120px;
   }
 
-  /* line 197, home.scss */
+  /* line 199, home.scss */
   .event .thumbnail img {
     width: 120px;
   }
 
-  /* line 200, home.scss */
+  /* line 202, home.scss */
   .event .content h3 {
     font-size: 1.5em;
   }
 
-  /* line 203, home.scss */
+  /* line 205, home.scss */
   .event .content li {
     font-size: 1.2em;
   }
 
-  /* line 207, home.scss */
+  /* line 209, home.scss */
   .who, .band-list {
     padding-left: 5%;
     font-size: 1em;
   }
 }
+/* line 214, home.scss */
+.pages h1,
+.pages h2,
+.pages h3,
+.pages h4,
+.pages h5,
+.pages h6 {
+  margin: 15px 0;
+}
+
+/* line 223, home.scss */
+.pages {
+  background: #000;
+  color: floralwhite;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+/* line 231, home.scss */
+.wp-page {
+  -webkit-flex: 0 1 30%;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+  display: block;
+  margin: 10px auto 30px;
+  font-size: .9em;
+}
+
+/* line 237, home.scss */
+.jslghtbx-contentwrapper .pages {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 213, home.scss */
+  /* line 242, home.scss */
   #home iframe {
     display: block;
   }
 
-  /* line 216, home.scss */
+  /* line 245, home.scss */
   #home .pages {
+    -webkit-flex: 0 0 59%;
+        -ms-flex: 0 0 59%;
+            flex: 0 0 59%;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-flex: 0 0 59%;
-        -ms-flex: 0 0 59%;
-            flex: 0 0 59%;
-    padding: 3%;
-    opacity: 0.88;
-    background: #000;
+    padding: 40px 11% 100px;
   }
 
-  /* line 224, home.scss */
+  /* line 251, home.scss */
   #home .page {
     -webkit-flex: 1 0 0%;
         -ms-flex: 1 0 0%;
@@ -361,22 +401,20 @@ span.label {
     margin: 0 auto;
   }
 
-  /* line 228, home.scss */
+  /* line 255, home.scss */
   #home .scrollbox {
     -webkit-flex: 1 1 420px;
         -ms-flex: 1 1 420px;
             flex: 1 1 420px;
-    padding-top: 0;
-    overflow-y: auto;
   }
 
-  /* line 233, home.scss */
+  /* line 258, home.scss */
   .news .content {
     width: 100% !important;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 238, home.scss */
+  /* line 263, home.scss */
   #home.pg-frame {
     background-color: transparent;
     background-image: url("/wp/wp-content/uploads/2016/07/logo.svg");
@@ -386,7 +424,7 @@ span.label {
     background-repeat: no-repeat;
   }
 
-  /* line 246, home.scss */
+  /* line 271, home.scss */
   #home.page-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -441,14 +479,14 @@ span.label {
 }
 
 */
-/* line 295, home.scss */
+/* line 320, home.scss */
 .social-buttons {
   position: absolute;
   min-width: 222px;
   padding-top: 5px;
 }
 
-/* line 300, home.scss */
+/* line 325, home.scss */
 .facebook-button, .twitter-button, .tumblr-button {
   display: inline-block;
   overflow: hidden;
@@ -458,17 +496,17 @@ span.label {
   text-align: center;
 }
 
-/* line 308, home.scss */
+/* line 333, home.scss */
 .facebook-button {
   margin: -2px 4px 0 4px;
 }
 
-/* line 311, home.scss */
+/* line 336, home.scss */
 .twitter-button {
   margin: 0 4px;
 }
 
-/* line 314, home.scss */
+/* line 339, home.scss */
 .tumblr-button {
   margin: 0 4px;
 }

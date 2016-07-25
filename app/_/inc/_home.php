@@ -14,40 +14,38 @@
 <?php
       // Show wp_Front or first event as backup
       // get_page_by_title doesn't work here
-      $Front = get_page_by_title('Front');
-      $Front_content = get_page_by_title_filtered('Front');
-      if ($Front->post_status == 'publish') {
-          $markup = $Front_content;
-      }else{
-          while ($Items->have_posts()): $Items->the_post();
-              if ( ! in_category('event')) { continue; }
-              $ID = $Items->post->ID;
-              $attachment_url = wp_get_attachment_url( get_post_thumbnail_id( $ID ) );
-              $event_content = do_shortcode(get_the_content());
-              $postcard = do_shortcode(get_post_meta($ID, 'event_postcard', true));
-              if ( has_post_thumbnail() ) {
-                  $attrs = array('class' => 'noclick poster-img', 'data-jslghtbx' => $attachment_url, 'data-jslghtbx-caption' => $event_content);
-                  $post_thumbnail_img = get_the_post_thumbnail(null, 'medium', $attrs);
-              }
-              $markup = '<div class="poster open-lightbox">'
-                  . '<div>' . $post_thumbnail_img . '</div>'
-                  . '<div>' . $postcard . '</div>'
-                  . '</div>';
-              break;
-          endwhile;
-          wp_reset_postdata();
-      }
+      //$Front = get_page_by_title('Front');
+      //$Front_content = get_page_by_title_filtered('Front');
+      //if ($Front->post_status == 'publish') {
+          //$markup = $Front_content;
+      //}else{
+          //while ($Items->have_posts()): $Items->the_post();
+              //if ( ! in_category('event')) { continue; }
+              //$ID = $Items->post->ID;
+              //$attachment_url = wp_get_attachment_url( get_post_thumbnail_id( $ID ) );
+              //$event_content = do_shortcode(get_the_content());
+              //$postcard = do_shortcode(get_post_meta($ID, 'event_postcard', true));
+              //if ( has_post_thumbnail() ) {
+                  //$attrs = array('class' => 'noclick poster-img', 'data-jslghtbx' => $attachment_url, 'data-jslghtbx-caption' => $event_content);
+                  //$post_thumbnail_img = get_the_post_thumbnail(null, 'medium', $attrs);
+              //}
+              //$markup = '<div class="poster open-lightbox">'
+                  //. '<div>' . $post_thumbnail_img . '</div>'
+                  //. '<div>' . $postcard . '</div>'
+                  //. '</div>';
+              //break;
+          //endwhile;
+          //wp_reset_postdata();
+      //}
   ?>
-      <div class="pages">       <!--TODO ••• add head and foot pages rarely used -->
-        <div class="page front">
-            <div class="content"><?php echo $markup; ?></div>
-        </div>
+      <div class="pages">       <!--TODOd • add head and foot pages rarely used -->
+            <?php echo $logo_modal_contents_filtered; ?>
       </div>
   <div class="scrollbox">
   <div class="scroller">
   <?php
 
-      $TopMessage = get_page_by_title_safely('Top Message');       //FIXX ••• should be a post for email
+      $TopMessage = get_page_by_title_safely('Top Message');       //FIXX • should be a post for email
       if (strlen($TopMessage->post_content) > 1) {
           $event_modal = get_post_meta($TopMessage->ID, 'event_modal', true);
           $event_modal_filtered = do_shortcode($event_modal);
@@ -66,7 +64,7 @@
       while ($Items->have_posts()): $Items->the_post();
       $ID = $Items->post->ID;
 
-      if ( ! in_category('news')) { continue; }     //FIXX ••• news needs a more button after 2 items
+      if ( ! in_category('news')) { continue; }     //FIXX • news needs a more button after 2 items
   ?>
               <div class="item open-lightbox">
   <?php
@@ -188,8 +186,8 @@
 
             if ( $now->format('Y-m-d') == $current_day ) {
               for ($x = 0; $x < $countdown; $x++) { echo '. '; }
-              echo $date->format('g:ia');
             }
+            echo $date->format('g:ia');
         ?>
                 </div>
               </div>

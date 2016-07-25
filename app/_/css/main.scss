@@ -23,9 +23,8 @@ html {
 }
 body {
 	@include Body;
-    position: absolute;
     top: 0;
-    bottom: -60px;
+    bottom: -90px;
     color: $white;
 
 }
@@ -55,7 +54,7 @@ hr {
     border-width: 2px;
     border-color: $bg-dark;
 }
-
+/*//FIXX ••• can I @import _**/
 @import 'home';
 @import 'calendar';
 @import 'staff';

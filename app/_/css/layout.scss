@@ -10,12 +10,12 @@
 
 //HEADER
 
-.st-header {
+.site-header {
     height: $header-height;
     background: $bg-darkest;
     z-index: 20;
 }
-.page-title {
+.site-title {
     padding-top: 4px;
     color: $gold;
     margin: auto;
@@ -23,7 +23,7 @@
     font-size: 1.5em;
     font-weight: 900;
 }
-.page-subtitle {
+.site-subtitle {
     text-align: center;
     font-size: 1em;
     margin: 0;
@@ -48,6 +48,7 @@
     height: 100%;
     background: $bg-darkest
 }
+/*FIXX ••• set these for every generic wp-page*/
 .wp-page {
     margin: 0 auto;
 }
@@ -78,7 +79,7 @@
 /*Media Queries*/
 
 @media only screen and (min-device-height: $big-phone){
-    .st-header {
+    .site-header {
         position: fixed;
         width: 100%;
     }
@@ -91,13 +92,13 @@
     .hamburger:before {
         font-size: 48px;
     }
-    .page-title {
+    .site-title {
         font-size: 2em;
     }
     .logo img {
         height: 90px;
     }
-    .st-header {
+    .site-header {
         height: 90px;
     }
     .page-content {

@@ -59,10 +59,13 @@ var options = {
     addClickEvents:     true,
     // callbacks
     onopen: function(){
-        // ...
+        //$('.jslghtbx-contentwrapper').css('transform', 'translate3d(0, 0, 0)');
+        //$('.menu-trigger').hide();
+        //$('html').addClass('fixed');
     },
     onclose: function(){
-        // ...
+        //$('.menu-trigger').show();
+        //$('html').removeClass('fixed');
     },
     onload: function(){
         // ...
@@ -114,7 +117,7 @@ if (window.matchMedia) {
     };
 };
 function loadFacebook() {
-    is_live('loadFacebook');
+    is_live('function loadFacebook post');
     if(!live){
         return;
     }
@@ -137,9 +140,9 @@ function loadFacebook() {
 //}(document, 'script', 'facebook-jssdk'));
 </script>
 
-// SOCIAL BUTTONS
+<!-- SOCIAL BUTTONS -->
 
-// facebook
+<!-- facebook -->
 <script async>
 (function(d, s, id) {
     is_live('social facebook');
@@ -155,7 +158,7 @@ fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'))
 </script>
 
-// twitter
+<!-- twitter -->
 <script async>
 window.twttr = (function(d, s, id) {
     is_live('social twitter');
@@ -178,7 +181,7 @@ return t;
 }(document, "script", "twitter-wjs"));
 </script>
 
-// tumblr
+<!-- tumblr -->
 <script async>
 !function(d,s,id){
     is_live('social tumblr');

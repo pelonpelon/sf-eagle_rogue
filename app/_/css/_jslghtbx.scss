@@ -8,11 +8,14 @@
     max-width: 100%;
     height: auto;
 }
+.jslghtbx-animate, .jslghtbx-animate-transition, .jslghtbx-animate-init {
+}
+.jslghtbx-wrapper-active {
+}
 .jslghtbx-contentwrapper {
     background-color: $bg-darkest;
     position: absolute;
     width: 100%;
-    will-change: scroll-position;
 }
 .jslghtbx-contentwrapper img {
     max-height: 670px !important;
@@ -44,6 +47,18 @@
 }
 .jslghtbx.jslghtbx-active {
     background-color: rgba(0, 0, 0, 1) !important;
+}
+.jslghtbx-loading-animation > span:nth-child(1) {
+    background-color: magenta !important;
+}
+.jslghtbx-loading-animation > span:nth-child(2) {
+    background-color: lime !important;
+}
+.jslghtbx-loading-animation > span:nth-child(3) {
+    background-color: #1fb0f5 !important;
+}
+.jslghtbx-loading-animation > span:nth-child(4) {
+    background-color: gold !important;
 }
 @media only screen and (min-device-height: $tablet) and (orientation: portrait) {
     #jslghtbx {

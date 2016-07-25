@@ -1,22 +1,22 @@
 <div id="fb-root"></div>
 
-<header class="st-header">
+<header class="site-header">
 <!--   <div id="hamburger"" class="hamburger" onclick="event.preventDefault(); jpm.trigger(true); "></div> -->
-    <h1 class="page-title">SF-EAGLE</h1> <!-- FIXX ••• should be st-title -->
-    <p class="page-subtitle">398 12th St</p> <!-- FIXX •••  st-subtitle -->
+    <h1 class="site-title">SF-EAGLE</h1> <!-- FIXX ••• should be st-title -->
+    <p class="site-subtitle">398 12th St</p> <!-- FIXX •••  st-subtitle -->
 
 <?php
     $Logo = get_page_by_title_safely('Logo');
     //$logo get_page_by_title('Logos') ? get_page_by_title : 'no';
     //if ($Logo = get_page_by_title('Logo')) {
-        $modal_contents = get_post_meta($Logo->ID, 'event_modal', true);
-        if (strlen($modal_contents) > 1) { $lb = 'open-lightbox'; } else { $lb = ''; }
-        $modal_contents_filtered = do_shortcode($modal_contents);
+        $logo_modal_contents = get_post_meta($Logo->ID, 'event_modal', true);
+        if (strlen($logo_modal_contents) > 1) { $lb = 'open-lightbox'; } else { $lb = ''; }
+        $logo_modal_contents_filtered = do_shortcode($logo_modal_contents);
 ?>
 
-    <div class="page logo <?php echo $lb ?>">
+    <div class="logo <?php echo $lb ?>">
         <?php echo $Logo->post_content; ?>
-        <div class="hide-this"><?php echo $modal_contents_filtered ?></div>
+        <div class="hide-this"><?php echo $logo_modal_contents_filtered ?></div>
      </div>
 
 <script>
@@ -31,7 +31,7 @@
 <?php
         // Bright Pink Emergency Notice fixed to top of page
         // can't use get_page_by_title_safely
-        $PSA = get_page_by_title('PSA');        //FIXX ••• should be post for email
+        $PSA = get_page_by_title('PSA');        //FIXX • should be post for email
         if (strlen($PSA->post_content) > 1) {
 ?>
 

@@ -21,6 +21,8 @@
 #home .scrollbox {
     width: 100%;
     height: 100%;
+    overflow-y: auto;
+    padding: 0 0 240px 0;
 }
 #home .scroller {
     display: flex;
@@ -209,17 +211,42 @@ span.label {
         font-size: 1em;
     }
 }
+.pages h1,
+.pages h2,
+.pages h3,
+.pages h4,
+.pages h5,
+.pages h6
+{
+    margin: 15px 0;
+}
+.pages {
+    background: #000;
+    color: floralwhite;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+}
+.wp-page {
+    flex: 0 1 30%;
+    display: block;
+    margin: 10px auto 30px;
+    font-size: .9em;
+}
+.jslghtbx-contentwrapper .pages {
+    display: flex;
+    flex-direction: column;
+}
 @media only screen and (min-device-width: $tablet) and (orientation: landscape){
     #home iframe {
         display: block;
     }
     #home .pages {
+        flex: 0 0 59%;
         display: flex;
         flex-direction: column;
-        flex: 0 0 59%;
-        padding: 3%;
-        opacity: 0.88;
-        background: #000;
+        padding: 40px 11% 100px;
     }
     #home .page {
         flex: 1 0 0%;
@@ -227,8 +254,6 @@ span.label {
     }
     #home .scrollbox {
         flex: 1 1 420px;
-        padding-top: 0;
-        overflow-y: auto;
     }
     .news .content {
         width: 100% !important;
