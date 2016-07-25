@@ -51,9 +51,9 @@
 			define("ANALYTICS_ID", "");
 			break;
 
-		case 'http://sf-eagle.com/rogue':
+		case 'http://sf-eagle.com/rogue/www':
 			define("CONTACT_EMAIL", "");
-			define("ANALYTICS_ID", "");
+			define("ANALYTICS_ID", "UA-42163204-1");
 			break;
 	}
 

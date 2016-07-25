@@ -22,6 +22,23 @@
         //TODOd  lanscape pages scroll with scroller
         //TODOd  add "Generic image" url box
         //TODOd  Logo modal: [page title=''] HOT
+        //FIXX ••• news needs an expiration
+        //FIXX ••• does new get do_shorcode?
+        //FIXX ••• news links must have color
+        //TODOd ••• fix somethings fucked up
+        //TODOd ••• Staff needs edit buttons
+        //TODOd ••• editor should add <br> for blanks
+        //TODOd ••• should staff title default to left
+        //TODOd ••• get rid of staff default
+        //TODOd ••• rename some of those function files
+        //TODOd ••• rename staff2 def2 staff-postcard staff-profile
+        //TODOd ••• make rows of djs and guests colorful
+        //TODOd ••• staff button simplify classes
+        //TODOd ••• all defaults, print known details fill in shortcode for others
+        //FIXX ••• max posts for staff set at 10
+        //FIXX ••• <p> on pages needs margins
+        //FIXX ••• Loading is very ugly
+        //FIXX ••• news title not centered
 
 
 

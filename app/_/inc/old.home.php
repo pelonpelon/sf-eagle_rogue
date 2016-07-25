@@ -24,7 +24,7 @@
             if ( has_post_thumbnail() ) {
                 $post_thumbnail_img = get_the_post_thumbnail(null, 'thumbnail', $attrs);
             } else {
-                $thumbnail_ID = get_attachment_ID_by_slug('1pixel');
+                $thumbnail_ID = get_image_ID_by_slug('1pixel');
                 set_post_thumbnail( $post, $thumbnail_ID );
                 $post_thumbnail_img = get_the_post_thumbnail(null, 'thumbnail', $attrs);
            }

@@ -286,29 +286,30 @@ li#menu-header {
 .page-content {
   width: 100%;
   max-width: 1000px;
+  padding: 30px 4%;
   margin: 0 auto;
   height: 100%;
   background: #000;
 }
 
 /*FIXX ••• set these for every generic wp-page*/
-/* line 52, layout.scss */
+/* line 53, layout.scss */
 .wp-page {
   margin: 0 auto;
 }
 
-/* line 55, layout.scss */
+/* line 56, layout.scss */
 .wp-page img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 59, layout.scss */
+/* line 60, layout.scss */
 .header {
   position: relative;
 }
 
-/* line 62, layout.scss */
+/* line 63, layout.scss */
 .header-psa {
   position: fixed;
   top: 60px;
@@ -322,7 +323,7 @@ li#menu-header {
   z-index: 9999;
 }
 
-/* line 74, layout.scss */
+/* line 75, layout.scss */
 .touch-button-size {
   min-height: 60px;
   min-width: 60px;
@@ -330,40 +331,40 @@ li#menu-header {
 
 /*Media Queries*/
 @media only screen and (min-device-height: 640px) {
-  /* line 82, layout.scss */
+  /* line 83, layout.scss */
   .site-header {
     position: fixed;
     width: 100%;
   }
 
-  /* line 86, layout.scss */
+  /* line 87, layout.scss */
   .page-content {
     position: relative;
     top: 60px;
   }
 }
 @media only screen and (min-device-width: 768px) {
-  /* line 92, layout.scss */
+  /* line 93, layout.scss */
   .hamburger:before {
     font-size: 48px;
   }
 
-  /* line 95, layout.scss */
+  /* line 96, layout.scss */
   .site-title {
     font-size: 2em;
   }
 
-  /* line 98, layout.scss */
+  /* line 99, layout.scss */
   .logo img {
     height: 90px;
   }
 
-  /* line 101, layout.scss */
+  /* line 102, layout.scss */
   .site-header {
     height: 90px;
   }
 
-  /* line 104, layout.scss */
+  /* line 105, layout.scss */
   .page-content {
     top: 90px;
   }
