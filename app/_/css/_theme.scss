@@ -11,10 +11,10 @@ $dark-red: #600;
 $bright-blue: deepskyblue;
 $lt-blue: cornflowerblue;
 $light-blue: cornflowerblue;
-$blue: #275392;
+$blue: #3360a0;
 $dk-blue: #102542;
 $dark-blue: #051a29;
-$deep-blue: #082032;
+$deep-blue: #0e2542;
 $gold: #ea3;
 
 $bg-darkest: $black;
@@ -66,7 +66,12 @@ $laptop: 1024px;
 $header-height: 60px;
 
 /* FONT STACKS */
-$SansStack: Arial, sans-serif;
+@font-face {
+    font-family: 'AlegreyaSans';
+    src: url('fonts/AlegreyaSans-Medium.woff');
+}
+$SansStack: 'AlegreyaSans', Arial, sans-serif;
+/*$SansStack: Arial, sans-serif;*/
 $SansAltStack: 'Helvetica Neue', Helvetica, sans-serif;
 $SerifStack: Georgia, Serif;
 

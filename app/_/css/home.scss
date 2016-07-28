@@ -44,7 +44,7 @@ hr {
 }
 .news .content p {
     margin-bottom: 18px;
-    font-size: smaller;
+    /*font-size: smaller;*/
 }
 .news .item {
     color: $text-light;
@@ -56,25 +56,34 @@ hr {
     float: right;
 	padding: 26px 2% 4px 2%;
 }
-
+.news .content a {
+    color: deepskyblue;
+}
 /*New Day*/
 .new-day {
     flex: 1 0 40px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     padding: 10px 0 0 4px;
     background-color: $bg-2;
     background-image: linear-gradient($bg-1, $bg-2);
     color: $blue;
     border-top: 1px solid #00F;
+    font-variant: small-caps;
+}
+.new-day .date-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 .new-day .day {
     flex: 1 0 20px;
     font-size: 1em;
     font-weight: 600;
-    line-height: 1em;
+    line-height: 1.3em;
 }
 .new-day .date {
     flex: 0 1 15px;
@@ -82,10 +91,77 @@ hr {
     font-size: .7em;
     font-weight: 600;
     text-shadow: #200 2px 1px;
-    line-height: .7em;
+    line-height: 0em;
+}
+.new-day .drink-special {
+    flex: 1;
+    font-size: smaller;
+    text-align: right;
 }
 
 /*Events*/
+.event .item {
+    flex: 0 0 90px;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    background-color: $bg-darker;
+    border-top: black solid 2px;
+    overflow: hidden;
+    height: 90px;
+}
+.event .thumbnail {
+    flex: 0 0 90px;
+    display: flex;
+    align-items: flex-start;
+    background-color: #1b2127;
+}
+.event .thumbnail img {
+    display: block;
+    width: 90px;
+    height: auto;
+    opacity: .8;
+}
+.event .content {
+    font-family: "Alegreyasans";
+    flex: 1 1 0%;
+    position: relative;
+    font-size: .8em;
+    color: mediumturquoise;
+    padding: 0 2%;
+    background-image: linear-gradient($bg-2, $bg-2, $bg-1)
+}
+span.label {
+    font-size: smaller;
+    color: $bright-blue;
+}
+.event .content p {
+    font-size: smaller;
+    font-style: italic;
+    font-weight: 600;
+}
+.event .content h3 {
+    color: $bright-blue;
+}
+.event .content h4 {
+    color: turquoise;
+}
+.event .content .subtitle {
+    font-size: small;
+    color: cyan;
+}
+.event .content li {
+    line-height: 1em;
+}
+/*.event-details {*/
+    /*color: deeppink;*/
+/*}*/
+/*.event-url {*/
+    /*font-weight: 600;*/
+    /*padding: 25px 0;*/
+    /*display: block;*/
+/*}*/
+// cover and start time
 .event .info {
     position: absolute;
     right: 3px;
@@ -95,60 +171,6 @@ hr {
     text-align: right;
     color: $fg2;
     opacity: .7;
-}
-.event .item {
-    flex: 0 0 90px;
-    display: flex;
-    flex-direction: row;
-    overflow-y: hidden;
-    background-color: $bg-darker;
-    border-top: black solid 2px;
-    /*color: $text-light;*/
-    color: #ecdfda;
-    overflow: hidden;
-    height: 90px;
-}
-.event .thumbnail {
-    flex: 0 0 90px;
-    display: flex;
-    align-items: center;
-    background-color: #1b2127;
-}
-.event .thumbnail img {
-    display: block;
-    width: 90px;
-    height: auto;
-    opacity: .7;
-}
-.event .content {
-    flex: 1 1 0%;
-    position: relative;
-    font-size: .8em;
-    padding: 0 2%;
-    background-image: linear-gradient($bg-2, $bg-1)
-}
-span.label {
-    font-size: smaller;
-    color: $bright-blue;
-}
-.event .content h3 {
-    font-size: 1.2em;
-    color: $bright-blue;
-}
-.event .content h4 {
-    font-size: smaller;
-    color: yellowgreen;
-}
-.event .content li {
-    line-height: 1em;
-}
-.event-details {
-    color: deeppink;
-}
-.event-url {
-    font-weight: 600;
-    padding: 25px 0;
-    display: block;
 }
 .who, .band-list {
     font-size: .9em;
@@ -170,17 +192,41 @@ span.label {
 	/*line-height: .9em;*/
     /*padding-top: 2px;*/
 /*}*/
-.content .who span:nth-child(2) {
+.who .hosts span:nth-child(2) {
     color: magenta;
 }
-.content .who span:nth-child(3) {
+.who .hosts span:nth-child(3) {
     color: lightsalmon;
 }
-.content .who span:nth-child(4) {
+.who .hosts span:nth-child(4) {
     color: limegreen;
 }
-.content .who span:nth-child(5) {
+.who .hosts span:nth-child(5) {
     color: mediumpurple;
+}
+.who .guests span:nth-child(2) {
+    color: limegreen;
+}
+.who .guests span:nth-child(3) {
+    color: mediumpurple;
+}
+.who .guests span:nth-child(4) {
+    color: magenta;
+}
+.who .guests span:nth-child(5) {
+    color: lightsalmon;
+}
+.who .djs span:nth-child(2) {
+    color: mediumpurple;
+}
+.who .djs span:nth-child(3) {
+    color: magenta;
+}
+.who .djs span:nth-child(4) {
+    color: lightsalmon;
+}
+.who .djs span:nth-child(5) {
+    color: limegreen;
 }
 
 /*Media Queries*/
@@ -195,6 +241,9 @@ span.label {
     }
     .event .item {
         height: 120px;
+    }
+    .event .thumbnail {
+        flex: 0 0 120px;
     }
     .event .thumbnail img {
         width: 120px;
@@ -238,6 +287,11 @@ span.label {
     display: flex;
     flex-direction: column;
 }
+@media only screen and (min-device-width: $tablet) {
+    .event .content {
+        font-size: .9em;
+    }
+}
 @media only screen and (min-device-width: $tablet) and (orientation: landscape){
     #home iframe {
         display: block;
@@ -246,7 +300,9 @@ span.label {
         flex: 0 0 59%;
         display: flex;
         flex-direction: column;
-        padding: 40px 11% 100px;
+        padding: 0 17% 0 3%;
+        margin: 30px 0 100px 0;
+        height: 80%;
     }
     #home .page {
         flex: 1 0 0%;
@@ -254,9 +310,18 @@ span.label {
     }
     #home .scrollbox {
         flex: 1 1 420px;
+        height: 100%;
     }
     .news .content {
         width: 100% !important;
+    }
+}
+@media only screen and (orientation: landscape){
+    .new-day .day {
+        line-height: 1em;
+    }
+    .new-day .date {
+        line-height: .5em;
     }
 }
 @media only screen and (min-device-width: $tablet) and (orientation: landscape){

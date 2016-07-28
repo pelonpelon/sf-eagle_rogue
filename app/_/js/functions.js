@@ -17,5 +17,7 @@ function TrackEvent(category, action, label, url) {
 	}
 }
 
+// Click on news <a> stop modal from loading
+$('.news a').on('click', function(e){e.stopPropagation();});
 
 

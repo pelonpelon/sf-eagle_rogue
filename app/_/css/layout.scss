@@ -51,7 +51,7 @@
 }
 /*FIXX ••• set these for every generic wp-page*/
 .wp-page {
-    margin: 0 auto;
+    margin: 0 auto 25px;
 }
 .wp-page img {
     max-width: 100%;
@@ -86,7 +86,9 @@
     }
     .page-content {
         position: relative;
-        top: $header-height;
+        top: 70px;
+        padding-left: 2px;
+        padding-right: 2px;
     }
 }
 @media only screen and (min-device-width: $tablet){

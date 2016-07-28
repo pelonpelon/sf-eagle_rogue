@@ -32,11 +32,11 @@ a.menu-trigger.hamburger:hover {
     width: auto !important;
     background: transparent !important;
 }
+#menu {
+    display: none;
+}
 nav#jPanelMenu-menu {
-    //top: 50px !important;
     background: $bg-darkest;
- //   height: auto !important;
-//    display: none;
     padding-bottom: 30px;
 }
 #jPanelMenu-menu ul {

@@ -20,7 +20,8 @@
      </div>
 
 <script>
-    /* necessary to get logo modal to work properly */
+        /* necessary to get logo modal to work properly
+           not in functions.js because php is necessary */
     modal_contents = $('.logo .hide-this').html();
     $('.logo.open-lightbox img').addClass('noclick');
     $('.logo.open-lightbox img').attr('data-jslghtbx', '<?php echo $spacer_url; ?>');
@@ -64,7 +65,7 @@
   );
   $pages = get_pages($args);
 ?>
-    <nav id="menu">
+    <nav id="menu" style="display: none;">
         <ul>
           <li class="hamburger" onclick="event.preventDefault(); jpm.trigger(true);"></li>
           <li class="home" onclick="jpm.trigger(true);"><a href="index.php">HOME</a></li>
