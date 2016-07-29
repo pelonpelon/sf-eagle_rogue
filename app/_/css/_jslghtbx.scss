@@ -24,18 +24,19 @@
     text-align: left !important;
     padding: 5px;
     margin-bottom: 30px !important;
+    color: lightslategray !important;
 }
 .jslghtbx-caption a {
     display: block;
-    padding: 25px;
+    padding: 20px 7%;
     font-size: 1em;
 }
 .jslghtbx-caption .band-list ul a {
-    border: 2px solid yellow;
-    border-radius: 50% 40% 30% 20%;
+    font-size: large;
 }
-.jslghtbx-caption p {
-    padding: 7px 0;
+.jslghtbx-caption .band-list ul a:hover {
+    background-color: mediumslateblue;
+    opacity: .4;
 }
 .jslghtbx-caption img {
     padding: 4px;
@@ -59,6 +60,15 @@
 }
 .jslghtbx-loading-animation > span:nth-child(4) {
     background-color: gold !important;
+}
+.jslghtbx-loading-animation > span:nth-child(5) {
+    background-color: royalblue !important;
+}
+.jslghtbx-loading-animation > span:nth-child(6) {
+    background-color: red !important;
+}
+.jslghtbx-loading-animation > span:nth-child(7) {
+    background-color: yellow !important;
 }
 @media only screen and (min-device-height: $tablet) and (orientation: portrait) {
     #jslghtbx {

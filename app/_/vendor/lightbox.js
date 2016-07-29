@@ -569,9 +569,9 @@ function Lightbox() {
             isOpen = true;
 
             // execute open callback
-            if (CTX.opt.onopen) {
-                CTX.opt.onopen();
-            }
+            //if (CTX.opt.onopen) {
+                //CTX.opt.onopen();
+            //}
         }
 
         // hide overflow by default / if set
@@ -672,8 +672,14 @@ function Lightbox() {
         // set src
         currImage.img.setAttribute('src', src);
 
+        // execute open callback
+        if (CTX.opt.onopen && isOpen) {
+          CTX.opt.onopen();
+        }
+
         // start loading animation
         startAnimation();
+
     }
 
     /*

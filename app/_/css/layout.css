@@ -156,76 +156,92 @@ li#menu-header {
   text-align: left !important;
   padding: 5px;
   margin-bottom: 30px !important;
+  color: lightslategray !important;
 }
 
-/* line 28, _jslghtbx.scss */
+/* line 29, _jslghtbx.scss */
 .jslghtbx-caption a {
   display: block;
-  padding: 25px;
+  padding: 20px 7%;
   font-size: 1em;
 }
 
-/* line 33, _jslghtbx.scss */
+/* line 34, _jslghtbx.scss */
 .jslghtbx-caption .band-list ul a {
-  border: 2px solid yellow;
-  border-radius: 50% 40% 30% 20%;
+  font-size: large;
 }
 
 /* line 37, _jslghtbx.scss */
-.jslghtbx-caption p {
-  padding: 7px 0;
+.jslghtbx-caption .band-list ul a:hover {
+  background-color: mediumslateblue;
+  opacity: .4;
 }
 
-/* line 40, _jslghtbx.scss */
+/* line 41, _jslghtbx.scss */
 .jslghtbx-caption img {
   padding: 4px;
 }
 
-/* line 43, _jslghtbx.scss */
+/* line 44, _jslghtbx.scss */
 .jslghtbx-close {
   font-size: 3em !important;
   font-weight: 600;
   text-shadow: 2px 3px 3px black !important;
 }
 
-/* line 48, _jslghtbx.scss */
+/* line 49, _jslghtbx.scss */
 .jslghtbx.jslghtbx-active {
   background-color: black !important;
 }
 
-/* line 51, _jslghtbx.scss */
+/* line 52, _jslghtbx.scss */
 .jslghtbx-loading-animation > span:nth-child(1) {
   background-color: magenta !important;
 }
 
-/* line 54, _jslghtbx.scss */
+/* line 55, _jslghtbx.scss */
 .jslghtbx-loading-animation > span:nth-child(2) {
   background-color: lime !important;
 }
 
-/* line 57, _jslghtbx.scss */
+/* line 58, _jslghtbx.scss */
 .jslghtbx-loading-animation > span:nth-child(3) {
   background-color: #1fb0f5 !important;
 }
 
-/* line 60, _jslghtbx.scss */
+/* line 61, _jslghtbx.scss */
 .jslghtbx-loading-animation > span:nth-child(4) {
   background-color: gold !important;
 }
 
+/* line 64, _jslghtbx.scss */
+.jslghtbx-loading-animation > span:nth-child(5) {
+  background-color: royalblue !important;
+}
+
+/* line 67, _jslghtbx.scss */
+.jslghtbx-loading-animation > span:nth-child(6) {
+  background-color: red !important;
+}
+
+/* line 70, _jslghtbx.scss */
+.jslghtbx-loading-animation > span:nth-child(7) {
+  background-color: yellow !important;
+}
+
 @media only screen and (min-device-height: 768px) and (orientation: portrait) {
-  /* line 64, _jslghtbx.scss */
+  /* line 74, _jslghtbx.scss */
   #jslghtbx {
     padding-top: 10px !important;
   }
 
-  /* line 67, _jslghtbx.scss */
+  /* line 77, _jslghtbx.scss */
   .jslghtbx-contentwrapper img {
     max-height: 921.6px !important;
   }
 }
 @media only screen and (min-device-height: 1024px) {
-  /* line 72, _jslghtbx.scss */
+  /* line 82, _jslghtbx.scss */
   #jslghtbx {
     padding-top: 10px !important;
   }
@@ -302,7 +318,7 @@ li#menu-header {
   background: #000;
 }
 
-/*FIXX ••• set these for every generic wp-page*/
+/* set these for every generic wp-page*/
 /* line 53, layout.scss */
 .wp-page {
   margin: 0 auto 25px;

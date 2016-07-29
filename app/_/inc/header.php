@@ -2,8 +2,8 @@
 
 <header class="site-header">
 <!--   <div id="hamburger"" class="hamburger" onclick="event.preventDefault(); jpm.trigger(true); "></div> -->
-    <h1 class="site-title">SF-EAGLE</h1> <!-- FIXX ••• should be st-title -->
-    <p class="site-subtitle">398 12th St</p> <!-- FIXX •••  st-subtitle -->
+    <h1 class="site-title">SF-EAGLE</h1>
+    <p class="site-subtitle">398 12th St</p>
 
 <?php
     $Logo = get_page_by_title_safely('Logo');
@@ -32,7 +32,7 @@
 <?php
         // Bright Pink Emergency Notice fixed to top of page
         // can't use get_page_by_title_safely
-        $PSA = get_page_by_title('PSA');        //FIXX • should be post for email
+        $PSA = get_page_by_title('PSA');
         if (strlen($PSA->post_content) > 1) {
 ?>
 

@@ -18,16 +18,6 @@
 
   //set_include_path( get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT'] );
 
-	require("_/inc/functions.php");
-
-    /*
-     * Used in a few places during dev
-     */
-    $root_wp_url = "http://sf-eagle.mirror/wp/"; //HOTT ••• dev only
-    // $spacer_url=$root_wp_url . "wp-content/uploads/2016/07/1pixel.gif"; //HOTT ••• check this, dev
-    $spacer_url=get_image_url_by_slug('1pixel'); //HOTT ••• check this, dev
-
-
 	//Constants
 	define("FROM_EMAIL", "http://sf-eagle.com/rogue <webform@http://sf-eagle.com/rogue>");
 
@@ -49,12 +39,28 @@
 		case 'localhost':
 			define("CONTACT_EMAIL", "");
 			define("ANALYTICS_ID", "");
+            define("APP_PATH', '../../rogue/app/");
 			break;
 
-		case 'http://sf-eagle.com/rogue/www':
+        case 'sf-eagle.com':
+            define("CONTACT_EMAIL", "");
+            define("ANALYTICS_ID", "UA-42163204-1");
+            define("APP_PATH", "../../rogue/www/");
+            break;
+
+		case 'sf-eagle.mirror':
 			define("CONTACT_EMAIL", "");
 			define("ANALYTICS_ID", "UA-42163204-1");
+            define("APP_PATH", "../../rogue/app/");
 			break;
 	}
+    require("_/inc/functions.php");
+
+    /*
+     * Used in a few places during dev
+     */
+    $root_wp_url = "http://sf-eagle.mirror/wp/"; //HOTT ••• dev only
+    // $spacer_url=$root_wp_url . "wp-content/uploads/2016/07/1pixel.gif"; //HOTT ••• check this, dev
+    $spacer_url=get_image_url_by_slug('1pixel'); //HOTT ••• check this, dev
 
 ?>

@@ -24,7 +24,7 @@
       <div class="scroller">
 
 <?php
-      $TopMessage = get_page_by_title_safely('Top Message');       //FIXX • should be a post for email
+      $TopMessage = get_page_by_title_safely('Top Message');
       if (strlen($TopMessage->post_content) > 1) {
           $event_modal = get_post_meta($TopMessage->ID, 'event_modal', true);
           $event_modal_filtered = do_shortcode($event_modal);
@@ -46,7 +46,7 @@
       $ID = get_the_id();
       $expires_std = get_post_meta($ID, 'event_expires', true);
       $expires_obj = new DateTime($expires_std);
-      if ( ! in_category('news') || ($expires_std && $expires_obj->format('U') <= $now->format('U')) ) { continue; }     //FIXX • news needs a more button after 2 items
+      if ( ! in_category('news') || ($expires_std && $expires_obj->format('U') <= $now->format('U')) ) { continue; }
 ?>
 
             <div class="item open-lightbox">

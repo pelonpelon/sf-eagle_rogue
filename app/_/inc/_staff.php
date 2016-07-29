@@ -26,7 +26,7 @@ $ID = $Items->post->ID;
 $attachment_url = wp_get_attachment_url( get_post_thumbnail_id( $ID ) );
 $staff_content = do_shortcode(get_the_content());
 $attrs = array('class' => 'noclick', 'data-jslghtbx' => $attachment_url, 'data-jslghtbx-caption' => $staff_content);
-$profile = do_shortcode(get_post_meta($ID, 'event_profile', true));
+$postcard = do_shortcode(get_post_meta($ID, 'staff_postcard', true));
 if ( has_post_thumbnail() ) {
     $post_thumbnail_img = get_the_post_thumbnail(null, 'medium', $attrs);
 } else {
@@ -37,7 +37,7 @@ if ( has_post_thumbnail() ) {
 ?>
                 <div class="staff-content">
                 <div class="post-thumbnail"><?php echo $post_thumbnail_img ?></div>
-                <div class='staff-profile'><?php echo $profile; ?></div>
+                <div class='staff-postcard'><?php echo $postcard; ?></div>
                 </div>
               </div>
 <?php

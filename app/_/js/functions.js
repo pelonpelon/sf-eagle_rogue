@@ -20,4 +20,10 @@ function TrackEvent(category, action, label, url) {
 // Click on news <a> stop modal from loading
 $('.news a').on('click', function(e){e.stopPropagation();});
 
+// Click on link in jslghtbx-caption <a> stop modal from closing
+
+//$('.jslghtbx-caption').on('click', function(e){
+//console.log('clicked');
+//e.stopPropagation();});
+
 

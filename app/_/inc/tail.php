@@ -62,6 +62,10 @@ var options = {
         //$('.jslghtbx-contentwrapper').css('transform', 'translate3d(0, 0, 0)');
         //$('.menu-trigger').hide();
         //$('html').addClass('fixed');
+        console.log('lightbox isOpen');
+        $('.jslghtbx-caption a').on('click', function(e){
+            console.log('clicked');
+            e.stopPropagation();});
     },
     onclose: function(){
         //$('.menu-trigger').show();

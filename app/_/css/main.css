@@ -86,28 +86,28 @@ body {
   color: #d0e9ff;
 }
 
-/* line 31, main.scss */
+/* line 30, main.scss */
 p {
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
-/* line 34, main.scss */
+/* line 33, main.scss */
 h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
-/* line 37, main.scss */
+/* line 36, main.scss */
 li {
   list-style: none;
 }
 
-/* line 40, main.scss */
+/* line 39, main.scss */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* line 44, main.scss */
+/* line 43, main.scss */
 a:hover {
   text-decoration: underline;
 }
@@ -118,7 +118,7 @@ a:hover {
     font-size: 1.4em;
     color: #99f;
 } */
-/* line 53, main.scss */
+/* line 52, main.scss */
 hr {
   margin: auto;
   padding: 0;
@@ -314,9 +314,9 @@ hr {
 /*Events*/
 /* line 103, home.scss */
 .event .item {
-  -webkit-flex: 0 0 90px;
-      -ms-flex: 0 0 90px;
-          flex: 0 0 90px;
+  -webkit-flex: 1 0 90px;
+      -ms-flex: 1 0 90px;
+          flex: 1 0 90px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -389,12 +389,17 @@ span.label {
 }
 
 /* line 149, home.scss */
+.event .content .title {
+  text-shadow: blue 1px 2px;
+}
+
+/* line 152, home.scss */
 .event .content .subtitle {
-  font-size: small;
+  font-size: smaller;
   color: cyan;
 }
 
-/* line 153, home.scss */
+/* line 156, home.scss */
 .event .content li {
   line-height: 1em;
 }
@@ -407,7 +412,7 @@ span.label {
 /*padding: 25px 0;*/
 /*display: block;*/
 /*}*/
-/* line 165, home.scss */
+/* line 168, home.scss */
 .event .info {
   position: absolute;
   right: 3px;
@@ -419,23 +424,23 @@ span.label {
   opacity: .7;
 }
 
-/* line 175, home.scss */
+/* line 178, home.scss */
 .who, .band-list {
   font-size: .9em;
   padding-top: 7px;
 }
 
-/* line 179, home.scss */
+/* line 182, home.scss */
 .band-list li, .band-list a {
   color: #ef5eef;
 }
 
-/* line 182, home.scss */
+/* line 185, home.scss */
 .promoter, .promoter a {
   color: mediumslateblue !important;
 }
 
-/* line 185, home.scss */
+/* line 188, home.scss */
 .more {
   color: aqua;
 }
@@ -447,113 +452,113 @@ span.label {
 /*line-height: .9em;*/
 /*padding-top: 2px;*/
 /*}*/
-/* line 195, home.scss */
+/* line 198, home.scss */
 .who .hosts span:nth-child(2) {
   color: magenta;
 }
 
-/* line 198, home.scss */
+/* line 201, home.scss */
 .who .hosts span:nth-child(3) {
   color: lightsalmon;
 }
 
-/* line 201, home.scss */
+/* line 204, home.scss */
 .who .hosts span:nth-child(4) {
   color: limegreen;
 }
 
-/* line 204, home.scss */
+/* line 207, home.scss */
 .who .hosts span:nth-child(5) {
   color: mediumpurple;
 }
 
-/* line 207, home.scss */
+/* line 210, home.scss */
 .who .guests span:nth-child(2) {
   color: limegreen;
 }
 
-/* line 210, home.scss */
+/* line 213, home.scss */
 .who .guests span:nth-child(3) {
   color: mediumpurple;
 }
 
-/* line 213, home.scss */
+/* line 216, home.scss */
 .who .guests span:nth-child(4) {
   color: magenta;
 }
 
-/* line 216, home.scss */
+/* line 219, home.scss */
 .who .guests span:nth-child(5) {
   color: lightsalmon;
 }
 
-/* line 219, home.scss */
+/* line 222, home.scss */
 .who .djs span:nth-child(2) {
   color: mediumpurple;
 }
 
-/* line 222, home.scss */
+/* line 225, home.scss */
 .who .djs span:nth-child(3) {
   color: magenta;
 }
 
-/* line 225, home.scss */
+/* line 228, home.scss */
 .who .djs span:nth-child(4) {
   color: lightsalmon;
 }
 
-/* line 228, home.scss */
+/* line 231, home.scss */
 .who .djs span:nth-child(5) {
   color: limegreen;
 }
 
 /*Media Queries*/
 @media only screen and (min-device-width: 768px) {
-  /* line 235, home.scss */
+  /* line 238, home.scss */
   .news .postcard h3 {
     font-size: 1em;
   }
 
-  /* line 238, home.scss */
+  /* line 241, home.scss */
   .news .content {
     width: 80%;
     margin: 0 auto;
   }
 
-  /* line 242, home.scss */
+  /* line 245, home.scss */
   .event .item {
     height: 120px;
   }
 
-  /* line 245, home.scss */
+  /* line 248, home.scss */
   .event .thumbnail {
     -webkit-flex: 0 0 120px;
         -ms-flex: 0 0 120px;
             flex: 0 0 120px;
   }
 
-  /* line 248, home.scss */
+  /* line 251, home.scss */
   .event .thumbnail img {
     width: 120px;
   }
 
-  /* line 251, home.scss */
+  /* line 254, home.scss */
   .event .content h3 {
     font-size: 1.5em;
   }
 
-  /* line 254, home.scss */
+  /* line 257, home.scss */
   .event .content li {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
-  /* line 258, home.scss */
+  /* line 261, home.scss */
   .who, .band-list {
     padding-left: 5%;
     font-size: 1em;
   }
 }
-/* line 263, home.scss */
+/* line 266, home.scss */
 .pages h1,
 .pages h2,
 .pages h3,
@@ -563,7 +568,7 @@ span.label {
   margin: 15px 0;
 }
 
-/* line 272, home.scss */
+/* line 275, home.scss */
 .pages {
   background: #000;
   color: floralwhite;
@@ -573,7 +578,7 @@ span.label {
   overflow-y: auto;
 }
 
-/* line 280, home.scss */
+/* line 283, home.scss */
 .wp-page {
   -webkit-flex: 0 1 30%;
       -ms-flex: 0 1 30%;
@@ -583,7 +588,7 @@ span.label {
   font-size: .9em;
 }
 
-/* line 286, home.scss */
+/* line 289, home.scss */
 .jslghtbx-contentwrapper .pages {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -594,18 +599,23 @@ span.label {
 }
 
 @media only screen and (min-device-width: 768px) {
-  /* line 291, home.scss */
+  /* line 294, home.scss */
   .event .content {
-    font-size: .9em;
+    font-size: 1em;
+  }
+
+  /* line 297, home.scss */
+  .event .title {
+    font-size: 1.3em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 296, home.scss */
+  /* line 302, home.scss */
   #home iframe {
     display: block;
   }
 
-  /* line 299, home.scss */
+  /* line 305, home.scss */
   #home .pages {
     -webkit-flex: 0 0 59%;
         -ms-flex: 0 0 59%;
@@ -621,7 +631,7 @@ span.label {
     height: 80%;
   }
 
-  /* line 307, home.scss */
+  /* line 313, home.scss */
   #home .page {
     -webkit-flex: 1 0 0%;
         -ms-flex: 1 0 0%;
@@ -629,7 +639,7 @@ span.label {
     margin: 0 auto;
   }
 
-  /* line 311, home.scss */
+  /* line 317, home.scss */
   #home .scrollbox {
     -webkit-flex: 1 1 420px;
         -ms-flex: 1 1 420px;
@@ -637,24 +647,24 @@ span.label {
     height: 100%;
   }
 
-  /* line 315, home.scss */
+  /* line 321, home.scss */
   .news .content {
     width: 100% !important;
   }
 }
 @media only screen and (orientation: landscape) {
-  /* line 320, home.scss */
+  /* line 326, home.scss */
   .new-day .day {
     line-height: 1em;
   }
 
-  /* line 323, home.scss */
+  /* line 329, home.scss */
   .new-day .date {
     line-height: .5em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 328, home.scss */
+  /* line 334, home.scss */
   #home.pg-frame {
     background-color: transparent;
     background-image: url("/wp/wp-content/uploads/2016/07/logo.svg");
@@ -664,7 +674,7 @@ span.label {
     background-repeat: no-repeat;
   }
 
-  /* line 336, home.scss */
+  /* line 342, home.scss */
   #home.page-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -719,14 +729,14 @@ span.label {
 }
 
 */
-/* line 385, home.scss */
+/* line 391, home.scss */
 .social-buttons {
   position: absolute;
   min-width: 222px;
   padding-top: 5px;
 }
 
-/* line 390, home.scss */
+/* line 396, home.scss */
 .facebook-button, .twitter-button, .tumblr-button {
   display: inline-block;
   overflow: hidden;
@@ -736,17 +746,17 @@ span.label {
   text-align: center;
 }
 
-/* line 398, home.scss */
+/* line 404, home.scss */
 .facebook-button {
   margin: -2px 4px 0 4px;
 }
 
-/* line 401, home.scss */
+/* line 407, home.scss */
 .twitter-button {
   margin: 0 4px;
 }
 
-/* line 404, home.scss */
+/* line 410, home.scss */
 .tumblr-button {
   margin: 0 4px;
 }
