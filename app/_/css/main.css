@@ -7,13 +7,13 @@
   src: url("fonts/AlegreyaSans-Medium.woff");
 }
 /*$SansStack: Arial, sans-serif;*/
-/* line 92, _theme.scss */
+/* line 95, _theme.scss */
 .alert {
   background-color: crimson;
   color: black;
 }
 
-/* line 96, _theme.scss */
+/* line 99, _theme.scss */
 .spinner {
   background-image: url("../img/spinner.gif");
   background-repeat: no-repeat;
@@ -137,13 +137,13 @@ hr {
   src: url("fonts/AlegreyaSans-Medium.woff");
 }
 /*$SansStack: Arial, sans-serif;*/
-/* line 92, _theme.scss */
+/* line 95, _theme.scss */
 .alert {
   background-color: crimson;
   color: black;
 }
 
-/* line 96, _theme.scss */
+/* line 99, _theme.scss */
 .spinner {
   background-image: url("../img/spinner.gif");
   background-repeat: no-repeat;
@@ -259,16 +259,16 @@ hr {
   padding: 10px 0 0 4px;
   background-color: #000;
   background-image: linear-gradient(#0e2542, #000);
-  color: #3360a0;
+  color: #618ece;
   border-top: 1px solid #00F;
   font-variant: small-caps;
 }
 
 /* line 76, home.scss */
 .new-day .date-box {
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-flex: 0 1 25%;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -285,7 +285,7 @@ hr {
   -webkit-flex: 1 0 20px;
       -ms-flex: 1 0 20px;
           flex: 1 0 20px;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 600;
   line-height: 1.3em;
 }
@@ -296,10 +296,10 @@ hr {
       -ms-flex: 0 1 15px;
           flex: 0 1 15px;
   padding-right: 10px;
-  font-size: .7em;
+  font-size: .8em;
   font-weight: 600;
   text-shadow: #200 2px 1px;
-  line-height: 0em;
+  line-height: .2em;
 }
 
 /* line 96, home.scss */
@@ -307,8 +307,8 @@ hr {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  font-size: smaller;
   text-align: right;
+  padding-right: 1%;
 }
 
 /*Events*/
@@ -327,7 +327,7 @@ hr {
   background-color: #000;
   border-top: black solid 2px;
   overflow: hidden;
-  height: 90px;
+  /*height: 90px;*/
 }
 
 /* line 113, home.scss */
@@ -342,9 +342,10 @@ hr {
       -ms-flex-align: start;
           align-items: flex-start;
   background-color: #1b2127;
+  height: 90px;
 }
 
-/* line 119, home.scss */
+/* line 120, home.scss */
 .event .thumbnail img {
   display: block;
   width: 90px;
@@ -352,7 +353,7 @@ hr {
   opacity: .8;
 }
 
-/* line 125, home.scss */
+/* line 126, home.scss */
 .event .content {
   font-family: "Alegreyasans";
   -webkit-flex: 1 1 0%;
@@ -360,37 +361,28 @@ hr {
           flex: 1 1 0%;
   position: relative;
   font-size: .8em;
-  color: mediumturquoise;
+  color: lightblue;
   padding: 0 2%;
   background-image: linear-gradient(#000, #000, #0e2542);
 }
 
-/* line 134, home.scss */
+/* line 135, home.scss */
 span.label {
   font-size: smaller;
   color: deepskyblue;
 }
 
-/* line 138, home.scss */
+/* line 139, home.scss */
 .event .content p {
   font-size: smaller;
   font-style: italic;
   font-weight: 600;
 }
 
-/* line 143, home.scss */
-.event .content h3 {
-  color: deepskyblue;
-}
-
-/* line 146, home.scss */
-.event .content h4 {
-  color: turquoise;
-}
-
-/* line 149, home.scss */
+/* line 148, home.scss */
 .event .content .title {
-  text-shadow: blue 1px 2px;
+  text-shadow: blue 1px 1px;
+  color: #01a1d6;
 }
 
 /* line 152, home.scss */
@@ -431,16 +423,24 @@ span.label {
 }
 
 /* line 182, home.scss */
-.band-list li, .band-list a {
-  color: #ef5eef;
+.band-list li:nth-child(odd) {
+  color: #c7e4fd;
 }
 
 /* line 185, home.scss */
-.promoter, .promoter a {
-  color: mediumslateblue !important;
+.band-list li:nth-child(even) {
+  color: #98a7b5;
 }
 
-/* line 188, home.scss */
+/*.band-list li, .band-list a {*/
+/*color: #ef5eef;*/
+/*}*/
+/* line 191, home.scss */
+.promoter, .promoter a {
+  color: #618ece !important;
+}
+
+/* line 194, home.scss */
 .more {
   color: aqua;
 }
@@ -452,113 +452,99 @@ span.label {
 /*line-height: .9em;*/
 /*padding-top: 2px;*/
 /*}*/
-/* line 198, home.scss */
-.who .hosts span:nth-child(2) {
-  color: magenta;
-}
-
-/* line 201, home.scss */
-.who .hosts span:nth-child(3) {
-  color: lightsalmon;
-}
-
 /* line 204, home.scss */
-.who .hosts span:nth-child(4) {
-  color: limegreen;
+.who .hosts span:nth-child(odd) {
+  color: #98a7b5;
 }
 
 /* line 207, home.scss */
-.who .hosts span:nth-child(5) {
-  color: mediumpurple;
+.who .hosts span:nth-child(even) {
+  color: #c7e4fd;
 }
 
 /* line 210, home.scss */
-.who .guests span:nth-child(2) {
-  color: limegreen;
+.who .hosts span:first-child {
+  color: deepskyblue;
 }
 
 /* line 213, home.scss */
-.who .guests span:nth-child(3) {
-  color: mediumpurple;
+.who .guests span:nth-child(odd) {
+  color: #c7e4fd;
 }
 
 /* line 216, home.scss */
-.who .guests span:nth-child(4) {
-  color: magenta;
+.who .guests span:nth-child(even) {
+  color: #98a7b5;
 }
 
 /* line 219, home.scss */
-.who .guests span:nth-child(5) {
-  color: lightsalmon;
+.who .guests span:first-child {
+  color: deepskyblue;
 }
 
 /* line 222, home.scss */
-.who .djs span:nth-child(2) {
-  color: mediumpurple;
+.who .djs span:nth-child(even) {
+  color: #c7e4fd;
 }
 
 /* line 225, home.scss */
-.who .djs span:nth-child(3) {
-  color: magenta;
+.who .djs span:nth-child(odd) {
+  color: #98a7b5;
 }
 
 /* line 228, home.scss */
-.who .djs span:nth-child(4) {
-  color: lightsalmon;
-}
-
-/* line 231, home.scss */
-.who .djs span:nth-child(5) {
-  color: limegreen;
+.who .djs span:first-child {
+  color: deepskyblue;
 }
 
 /*Media Queries*/
 @media only screen and (min-device-width: 768px) {
-  /* line 238, home.scss */
+  /* line 235, home.scss */
   .news .postcard h3 {
     font-size: 1em;
   }
 
-  /* line 241, home.scss */
+  /* line 238, home.scss */
   .news .content {
     width: 80%;
     margin: 0 auto;
   }
 
-  /* line 245, home.scss */
+  /* line 242, home.scss */
   .event .item {
-    height: 120px;
+    /*height: 120px;*/
   }
 
-  /* line 248, home.scss */
+  /* line 245, home.scss */
   .event .thumbnail {
     -webkit-flex: 0 0 120px;
         -ms-flex: 0 0 120px;
             flex: 0 0 120px;
+    height: 120px;
   }
 
-  /* line 251, home.scss */
+  /* line 249, home.scss */
   .event .thumbnail img {
     width: 120px;
   }
 
-  /* line 254, home.scss */
+  /* line 252, home.scss */
   .event .content h3 {
-    font-size: 1.5em;
+    /*font-size: 1.3em;*/
   }
 
-  /* line 257, home.scss */
+  /* line 255, home.scss */
   .event .content li {
     font-size: 1em;
   }
 
-  /* line 261, home.scss */
+  /* line 259, home.scss */
   .who, .band-list {
     padding-left: 5%;
     font-size: 1em;
   }
 }
-/* line 266, home.scss */
+/* line 264, home.scss */
 .pages h1,
 .pages h2,
 .pages h3,
@@ -568,7 +554,7 @@ span.label {
   margin: 15px 0;
 }
 
-/* line 275, home.scss */
+/* line 273, home.scss */
 .pages {
   background: #000;
   color: floralwhite;
@@ -578,7 +564,7 @@ span.label {
   overflow-y: auto;
 }
 
-/* line 283, home.scss */
+/* line 281, home.scss */
 .wp-page {
   -webkit-flex: 0 1 30%;
       -ms-flex: 0 1 30%;
@@ -588,7 +574,7 @@ span.label {
   font-size: .9em;
 }
 
-/* line 289, home.scss */
+/* line 287, home.scss */
 .jslghtbx-contentwrapper .pages {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -599,23 +585,29 @@ span.label {
 }
 
 @media only screen and (min-device-width: 768px) {
-  /* line 294, home.scss */
+  /* line 292, home.scss */
   .event .content {
     font-size: 1em;
   }
 
-  /* line 297, home.scss */
+  /* line 295, home.scss */
   .event .title {
-    font-size: 1.3em;
+    /*font-size: 1.3em;*/
+  }
+}
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+  /* line 300, home.scss */
+  .scrollbox {
+    font-size: 1.4em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 302, home.scss */
+  /* line 305, home.scss */
   #home iframe {
     display: block;
   }
 
-  /* line 305, home.scss */
+  /* line 308, home.scss */
   #home .pages {
     -webkit-flex: 0 0 59%;
         -ms-flex: 0 0 59%;
@@ -631,7 +623,7 @@ span.label {
     height: 80%;
   }
 
-  /* line 313, home.scss */
+  /* line 316, home.scss */
   #home .page {
     -webkit-flex: 1 0 0%;
         -ms-flex: 1 0 0%;
@@ -639,7 +631,7 @@ span.label {
     margin: 0 auto;
   }
 
-  /* line 317, home.scss */
+  /* line 320, home.scss */
   #home .scrollbox {
     -webkit-flex: 1 1 420px;
         -ms-flex: 1 1 420px;
@@ -647,24 +639,24 @@ span.label {
     height: 100%;
   }
 
-  /* line 321, home.scss */
+  /* line 324, home.scss */
   .news .content {
     width: 100% !important;
   }
 }
 @media only screen and (orientation: landscape) {
-  /* line 326, home.scss */
+  /* line 329, home.scss */
   .new-day .day {
     line-height: 1em;
   }
 
-  /* line 329, home.scss */
+  /* line 332, home.scss */
   .new-day .date {
     line-height: .5em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 334, home.scss */
+  /* line 337, home.scss */
   #home.pg-frame {
     background-color: transparent;
     background-image: url("/wp/wp-content/uploads/2016/07/logo.svg");
@@ -674,7 +666,7 @@ span.label {
     background-repeat: no-repeat;
   }
 
-  /* line 342, home.scss */
+  /* line 345, home.scss */
   #home.page-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -729,14 +721,14 @@ span.label {
 }
 
 */
-/* line 391, home.scss */
+/* line 394, home.scss */
 .social-buttons {
   position: absolute;
   min-width: 222px;
   padding-top: 5px;
 }
 
-/* line 396, home.scss */
+/* line 399, home.scss */
 .facebook-button, .twitter-button, .tumblr-button {
   display: inline-block;
   overflow: hidden;
@@ -746,17 +738,17 @@ span.label {
   text-align: center;
 }
 
-/* line 404, home.scss */
+/* line 407, home.scss */
 .facebook-button {
   margin: -2px 4px 0 4px;
 }
 
-/* line 407, home.scss */
+/* line 410, home.scss */
 .twitter-button {
   margin: 0 4px;
 }
 
-/* line 410, home.scss */
+/* line 413, home.scss */
 .tumblr-button {
   margin: 0 4px;
 }
@@ -774,13 +766,13 @@ span.label {
   src: url("fonts/AlegreyaSans-Medium.woff");
 }
 /*$SansStack: Arial, sans-serif;*/
-/* line 92, _theme.scss */
+/* line 95, _theme.scss */
 .alert {
   background-color: crimson;
   color: black;
 }
 
-/* line 96, _theme.scss */
+/* line 99, _theme.scss */
 .spinner {
   background-image: url("../img/spinner.gif");
   background-repeat: no-repeat;

@@ -100,7 +100,16 @@
           if ($event_end_time < $date) {
               date_modify($event_end_time, '+1 day');
           }
-          if ($event_end_time < $now) { continue; }
+          if ($event_end_time < $now) {
+              $post_data = array('ID' => $ID, 'post_status' => 'pending');
+              wp_update_post($post_data);
+
+              $file = APP_PATH.'logs/transients.log';
+              $entry = date('ymd G:i:s'). " :home.php " .get_the_title(). " new status: pending\n\n";
+              file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+
+              continue;
+          }
           if ( $date->format('Y-m-d') != $current_day ) {
               $current_day = $date->format('Y-m-d');
               $new_day = true;

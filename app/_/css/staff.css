@@ -6,13 +6,13 @@
   src: url("fonts/AlegreyaSans-Medium.woff");
 }
 /*$SansStack: Arial, sans-serif;*/
-/* line 92, _theme.scss */
+/* line 95, _theme.scss */
 .alert {
   background-color: crimson;
   color: black;
 }
 
-/* line 96, _theme.scss */
+/* line 99, _theme.scss */
 .spinner {
   background-image: url("../img/spinner.gif");
   background-repeat: no-repeat;

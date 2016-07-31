@@ -5,6 +5,7 @@
         //TODOp ••• add social media
         //TODOp ••• add pages to wp
         //TODOp  install plugins: metabox
+        //TODOp  Happy Hour news item (should there be an ad item)
         //TODOp  ------------------------
         //TODOd ••• remove feature img etc upon weekly/monthly if generic
         //TODOd ••• cron removes poster if generic exists
@@ -50,6 +51,7 @@
         //TODOd  ------------------------
         //FIXX ••• does godaddy run cron?
         //FIXX ••• Ack internal FIXXs
+        //FIXX ••• Social Media Buttons
         //FIXX  subtitle should be any length
         //FIXX  staff default
         //FIXX  rows should replace space with nbsp to keep names together (but some are long)

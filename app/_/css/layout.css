@@ -7,13 +7,13 @@
   src: url("fonts/AlegreyaSans-Medium.woff");
 }
 /*$SansStack: Arial, sans-serif;*/
-/* line 92, _theme.scss */
+/* line 95, _theme.scss */
 .alert {
   background-color: crimson;
   color: black;
 }
 
-/* line 96, _theme.scss */
+/* line 99, _theme.scss */
 .spinner {
   background-image: url("../img/spinner.gif");
   background-repeat: no-repeat;
@@ -280,35 +280,37 @@ li#menu-header {
 /* line 18, layout.scss */
 .site-title {
   padding-top: 4px;
-  color: #ea3;
   margin: auto;
   text-align: center;
   font-size: 1.5em;
-  font-weight: 900;
+  font-weight: 300;
+  color: #cce7f3;
+  text-shadow: #8a9eca 1px 1px;
 }
 
-/* line 26, layout.scss */
+/* line 27, layout.scss */
 .site-subtitle {
   text-align: center;
   font-size: 1em;
   margin: 0;
-  color: #ea3;
+  font-weight: 100;
+  color: #4c95e6;
 }
 
-/* line 32, layout.scss */
+/* line 34, layout.scss */
 .logo {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-/* line 37, layout.scss */
+/* line 39, layout.scss */
 .logo img {
   height: 60px;
   width: auto;
 }
 
-/* line 44, layout.scss */
+/* line 46, layout.scss */
 .page-content {
   width: 100%;
   max-width: 1000px;
@@ -319,23 +321,23 @@ li#menu-header {
 }
 
 /* set these for every generic wp-page*/
-/* line 53, layout.scss */
+/* line 55, layout.scss */
 .wp-page {
   margin: 0 auto 25px;
 }
 
-/* line 56, layout.scss */
+/* line 58, layout.scss */
 .wp-page img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 60, layout.scss */
+/* line 62, layout.scss */
 .header {
   position: relative;
 }
 
-/* line 63, layout.scss */
+/* line 65, layout.scss */
 .header-psa {
   position: fixed;
   top: 60px;
@@ -349,7 +351,7 @@ li#menu-header {
   z-index: 9999;
 }
 
-/* line 75, layout.scss */
+/* line 77, layout.scss */
 .touch-button-size {
   min-height: 60px;
   min-width: 60px;
@@ -357,13 +359,13 @@ li#menu-header {
 
 /*Media Queries*/
 @media only screen and (min-device-height: 640px) {
-  /* line 83, layout.scss */
+  /* line 85, layout.scss */
   .site-header {
     position: fixed;
     width: 100%;
   }
 
-  /* line 87, layout.scss */
+  /* line 89, layout.scss */
   .page-content {
     position: relative;
     top: 70px;
@@ -372,27 +374,27 @@ li#menu-header {
   }
 }
 @media only screen and (min-device-width: 768px) {
-  /* line 95, layout.scss */
+  /* line 97, layout.scss */
   .hamburger:before {
     font-size: 48px;
   }
 
-  /* line 98, layout.scss */
+  /* line 100, layout.scss */
   .site-title {
     font-size: 2em;
   }
 
-  /* line 101, layout.scss */
+  /* line 103, layout.scss */
   .logo img {
     height: 90px;
   }
 
-  /* line 104, layout.scss */
+  /* line 106, layout.scss */
   .site-header {
     height: 90px;
   }
 
-  /* line 107, layout.scss */
+  /* line 109, layout.scss */
   .page-content {
     top: 90px;
   }

@@ -69,34 +69,34 @@ hr {
     padding: 10px 0 0 4px;
     background-color: $bg-2;
     background-image: linear-gradient($bg-1, $bg-2);
-    color: $blue;
+    color: #618ece;
     border-top: 1px solid #00F;
     font-variant: small-caps;
 }
 .new-day .date-box {
-    flex: 1;
+    flex: 0 1 25%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 .new-day .day {
     flex: 1 0 20px;
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: 600;
     line-height: 1.3em;
 }
 .new-day .date {
     flex: 0 1 15px;
     padding-right: 10px;
-    font-size: .7em;
+    font-size: .8em;
     font-weight: 600;
     text-shadow: #200 2px 1px;
-    line-height: 0em;
+    line-height: .2em;
 }
 .new-day .drink-special {
     flex: 1;
-    font-size: smaller;
     text-align: right;
+    padding-right: 1%;
 }
 
 /*Events*/
@@ -108,13 +108,14 @@ hr {
     background-color: $bg-darker;
     border-top: black solid 2px;
     overflow: hidden;
-    height: 90px;
+    /*height: 90px;*/
 }
 .event .thumbnail {
     flex: 0 0 90px;
     display: flex;
     align-items: flex-start;
     background-color: #1b2127;
+    height: 90px;
 }
 .event .thumbnail img {
     display: block;
@@ -127,7 +128,7 @@ hr {
     flex: 1 1 0%;
     position: relative;
     font-size: .8em;
-    color: mediumturquoise;
+    color: lightblue;
     padding: 0 2%;
     background-image: linear-gradient($bg-2, $bg-2, $bg-1)
 }
@@ -141,13 +142,12 @@ span.label {
     font-weight: 600;
 }
 .event .content h3 {
-    color: $bright-blue;
 }
 .event .content h4 {
-    color: turquoise;
 }
 .event .content .title {
-    text-shadow: blue 1px 2px;
+    text-shadow: blue 1px 1px;
+    color: #01a1d6;
 }
 .event .content .subtitle {
     font-size: smaller;
@@ -179,11 +179,17 @@ span.label {
     font-size: .9em;
     padding-top: 7px;
 }
-.band-list li, .band-list a {
-    color: #ef5eef;
+.band-list li:nth-child(odd) {
+    color: #c7e4fd;
 }
+.band-list li:nth-child(even) {
+    color: #98a7b5;
+}
+/*.band-list li, .band-list a {*/
+    /*color: #ef5eef;*/
+/*}*/
 .promoter, .promoter a {
-    color: mediumslateblue !important;
+    color: #618ece !important;
 }
 .more {
     color: aqua;
@@ -195,41 +201,32 @@ span.label {
 	/*line-height: .9em;*/
     /*padding-top: 2px;*/
 /*}*/
-.who .hosts span:nth-child(2) {
-    color: magenta;
+.who .hosts span:nth-child(odd) {
+    color: #98a7b5;
 }
-.who .hosts span:nth-child(3) {
-    color: lightsalmon;
+.who .hosts span:nth-child(even) {
+    color: #c7e4fd;
 }
-.who .hosts span:nth-child(4) {
-    color: limegreen;
+.who .hosts span:first-child {
+    color: deepskyblue;
 }
-.who .hosts span:nth-child(5) {
-    color: mediumpurple;
+.who .guests span:nth-child(odd) {
+    color: #c7e4fd;
 }
-.who .guests span:nth-child(2) {
-    color: limegreen;
+.who .guests span:nth-child(even) {
+    color: #98a7b5;
 }
-.who .guests span:nth-child(3) {
-    color: mediumpurple;
+.who .guests span:first-child {
+    color: deepskyblue;
 }
-.who .guests span:nth-child(4) {
-    color: magenta;
+.who .djs span:nth-child(even) {
+    color: #c7e4fd;
 }
-.who .guests span:nth-child(5) {
-    color: lightsalmon;
+.who .djs span:nth-child(odd) {
+    color: #98a7b5;
 }
-.who .djs span:nth-child(2) {
-    color: mediumpurple;
-}
-.who .djs span:nth-child(3) {
-    color: magenta;
-}
-.who .djs span:nth-child(4) {
-    color: lightsalmon;
-}
-.who .djs span:nth-child(5) {
-    color: limegreen;
+.who .djs span:first-child {
+    color: deepskyblue;
 }
 
 /*Media Queries*/
@@ -243,16 +240,17 @@ span.label {
         margin: 0 auto;
     }
     .event .item {
-        height: 120px;
+        /*height: 120px;*/
     }
     .event .thumbnail {
         flex: 0 0 120px;
+        height: 120px;
     }
     .event .thumbnail img {
         width: 120px;
     }
     .event .content h3 {
-      font-size: 1.5em;
+      /*font-size: 1.3em;*/
   }
     .event .content li {
         font-size: 1em;
@@ -295,7 +293,12 @@ span.label {
         font-size: 1em;
     }
     .event .title {
-        font-size: 1.3em;
+        /*font-size: 1.3em;*/
+    }
+}
+@media only screen and (max-device-width: ($tablet - 1px)) and (orientation: landscape){
+    .scrollbox {
+        font-size: 1.4em;
     }
 }
 @media only screen and (min-device-width: $tablet) and (orientation: landscape){

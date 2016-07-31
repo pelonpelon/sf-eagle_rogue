@@ -37,22 +37,22 @@
 	//SET SERVER SPECIFIC VARIABLES AND CONSTANTS
 	switch ($ServerName) {
 		case 'localhost':
-			define("CONTACT_EMAIL", "");
+			define("CONTACT_EMAIL", "pelon@localhost");
 			define("ANALYTICS_ID", "");
             define("APP_PATH', '../../rogue/app/");
 			break;
 
+        case 'sf-eagle.mirror':
+            define("CONTACT_EMAIL", "pelon@localhost");
+            define("ANALYTICS_ID", "");
+            define("APP_PATH", "../../rogue/app/");
+            break;
+
         case 'sf-eagle.com':
-            define("CONTACT_EMAIL", "");
+            define("CONTACT_EMAIL", "pelonpelon@gmail.com");
             define("ANALYTICS_ID", "UA-42163204-1");
             define("APP_PATH", "../../rogue/www/");
             break;
-
-		case 'sf-eagle.mirror':
-			define("CONTACT_EMAIL", "");
-			define("ANALYTICS_ID", "UA-42163204-1");
-            define("APP_PATH", "../../rogue/app/");
-			break;
 	}
     require("_/inc/functions.php");
 

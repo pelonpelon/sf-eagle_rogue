@@ -17,17 +17,19 @@
 }
 .site-title {
     padding-top: 4px;
-    color: $gold;
     margin: auto;
     text-align: center;
     font-size: 1.5em;
-    font-weight: 900;
+	font-weight: 300;
+    color: #cce7f3;
+    text-shadow: #8a9eca 1px 1px;
 }
 .site-subtitle {
     text-align: center;
     font-size: 1em;
     margin: 0;
-    color: $gold;
+    font-weight: 100;
+    color: #4c95e6;
 }
 .logo {
     position: absolute;

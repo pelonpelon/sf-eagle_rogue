@@ -96,6 +96,7 @@ function SendMail($to, $subject, $message, $html = true, $from = FROM_EMAIL) {
 // Check email every 15 minutes for post
 add_action( 'shutdown', 'retrieve_post_via_mail' );
 function retrieve_post_via_mail() {
+    //require_once('wp-cron.php');
     $file = APP_PATH.'logs/transients.log';
     flush(); // Display the page before the mail fetching begins
     if ( get_transient( 'retrieve_post_via_mail' ) ) {
@@ -110,23 +111,26 @@ function retrieve_post_via_mail() {
 add_action( 'shutdown', 'advance_periodic_events' );
 function advance_periodic_events() {
     $file = APP_PATH.'logs/transients.log';
-    $entry = "CALLED advance_periodic_events ".date('ymd G:i:s')."\n";
+    $entry = "\n\n" .date('ymd G:i:s'). " :advance_periodic_events\n";
     file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
     flush(); // Display the page before the mail fetching begins
     if ( get_transient( 'advance_periodic_events' ) ) {
-        $entry = ":skipping action wp-cron.php\n";
+        $entry = date('ymd G:i:s'). " :advance_periodic_events :skipping action wp-cron.php\n";
         file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
         return;
     } else {
-        $entry = ":doing action wp-cron.php\n";
+        $entry = date('ymd G:i:s'). " :advance_periodic_events :require_once wp-cron.php\n";
         file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
-        do_action( APP_PATH.'_/inc/wp-cron.php' );
-        $entry = ":action wp-cron.php done\n";
+        require_once('wp-cron.php');
+        reschedule_weekly_events();
+        reschedule_monthly_events();
+
+        //do_action( 'wp-cron.php' );
         if (set_transient( 'advance_periodic_events', 1, 15 * MINUTE_IN_SECONDS )) { // check  every hour
-            $entry .= " :transient set\n";
+            $entry = date('ymd G:i:s'). " :advance_periodic_events :set transient success\n";
             file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
         }else{
-            $entry .= " :transient failed\n";
+            $entry = date('ymd G:i:s'). " :advance_periodic_events :set transient failed\n";
             file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
         }
     }

@@ -1,9 +1,5 @@
 <?php
 
-$file = APP_PATH.'transients.log';
-$entry = ":action wp-cron.php running\n";
-file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
-
 $args = array(
     'orderby'       => 'post_date',
     'order'         => 'DEC',
@@ -13,15 +9,13 @@ $args = array(
 );
 $Items = new WP_Query( $args );
 
-reschedule_weekly_events();
-reschedule_monthly_events();
-
 //FIXX ••• send email to myself to confirm
 
 // reset past events scheduled weekly
 function reschedule_weekly_events() {
-    $file = APP_PATH.'transients.log';
-    $entry = ":action wp-cron.php running reschedule_weekly_events\n";
+    global $Items;
+    $file = APP_PATH.'logs/transients.log';
+    $entry = date('ymd G:i:s'). " :wp-cron.php :reschedule_weekly_events\n";
     file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
     while ($Items->have_posts()): $Items->the_post();
@@ -32,8 +26,9 @@ function reschedule_weekly_events() {
     $now = new DateTime();
     $today = $now->format('l');
     $date = new DateTime(get_the_date('r'), new DateTimeZone('America/Los_Angeles'));
-    $post_day = $date->format('l');
     $post_date = $date->format('Y-m-d');
+    if ($post_date >= $date->format('Y-m-d')) { continue; }
+    $post_day = $date->format('l');
     $post_time = $date->format('G:i');
 
     if ($now->format('Y-m-d') != $post_day ) {
@@ -46,6 +41,14 @@ function reschedule_weekly_events() {
         wp_update_post($post_data);
         $date_string = $date_gmt->format('Y-m-d H:i');
         update_post_meta($ID, 'event_starttime', $date_string);
+
+        $file = APP_PATH.'logs/transients.log';
+        $entry = date('ymd G:i:s'). ' :wp-cron.php: ' .get_the_title(). ' scheduled for ' .$date_string;
+        $entry .= date('ymd G:i:s'). " :wp-cron.php :reschedule_weekly_events SENDING EMAIL\n";
+        file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+
+        wp_mail( CONTACT_EMAIL, 'reschedule_weekly_events: '. get_the_title(),
+            get_the_title(). ' schduled for ' .$date_string );
     }
     endwhile;
     wp_reset_postdata();
@@ -53,11 +56,10 @@ function reschedule_weekly_events() {
 
 // reset past events scheduled monthly
 function reschedule_monthly_events() {
-    $file = APP_PATH.'transients.log';
-    $entry = ":action wp-cron.php running reschedule_monthly_events\n";
+    global $Items;
+    $file = APP_PATH.'logs/transients.log';
+    $entry =  date('ymd G:i:s'). " :wp-cron.php :reschedule_monthly_events\n";
     file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
-
-    $Items = new WP_Query( $args );
 
     while ($Items->have_posts()): $Items->the_post();
 
@@ -69,6 +71,8 @@ function reschedule_monthly_events() {
     $now = new DateTime();
     $today = $now->format('l');
     $date = new DateTime(get_the_date('r'), new DateTimeZone('America/Los_Angeles'));
+    $post_date = $date->format('Y-m-d');
+    if ($post_date >= $date->format('Y-m-d')) { continue; }
     $post_day = $date->format('l');
     $post_time = $date->format('G:i');
 
@@ -83,6 +87,14 @@ function reschedule_monthly_events() {
         wp_update_post($post_data);
         $date_string = $date_gmt->format('Y-m-d H:i');
         update_post_meta($ID, 'event_starttime', $date_string);
+
+        $file = APP_PATH.'logs/transients.log';
+        $entry = date('ymd G:i:s'). ' :wp-cron.php: ' .get_the_title(). ' scheduled for ' .$date_string;
+        $entry .= date('ymd G:i:s'). " :wp-cron.php :reschedule_monthly_events SENDING EMAIL\n";
+        file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+
+        wp_mail( CONTACT_EMAIL, 'reschedule_monthly_events: '. get_the_title(),
+            get_the_title(). ' schduled for ' .$date_string );
     }
     endwhile;
     wp_reset_postdata();
