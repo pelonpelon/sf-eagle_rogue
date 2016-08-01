@@ -71,7 +71,7 @@
 
 /* line 34, home.scss */
 hr {
-  border-color: #3360a0;
+  border-color: #600;
 }
 
 /*News*/
@@ -110,8 +110,13 @@ hr {
   color: deepskyblue;
 }
 
+/* line 62, home.scss */
+.news .content h3, .news .content h4 {
+  color: deepskyblue;
+}
+
 /*New Day*/
-/* line 63, home.scss */
+/* line 66, home.scss */
 .new-day {
   -webkit-flex: 1 0 40px;
       -ms-flex: 1 0 40px;
@@ -134,7 +139,7 @@ hr {
   font-variant: small-caps;
 }
 
-/* line 76, home.scss */
+/* line 79, home.scss */
 .new-day .date-box {
   -webkit-flex: 0 1 25%;
       -ms-flex: 0 1 25%;
@@ -150,7 +155,7 @@ hr {
           justify-content: flex-start;
 }
 
-/* line 82, home.scss */
+/* line 85, home.scss */
 .new-day .day {
   -webkit-flex: 1 0 20px;
       -ms-flex: 1 0 20px;
@@ -160,7 +165,7 @@ hr {
   line-height: 1.3em;
 }
 
-/* line 88, home.scss */
+/* line 91, home.scss */
 .new-day .date {
   -webkit-flex: 0 1 15px;
       -ms-flex: 0 1 15px;
@@ -172,7 +177,7 @@ hr {
   line-height: .2em;
 }
 
-/* line 96, home.scss */
+/* line 99, home.scss */
 .new-day .drink-special {
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -182,7 +187,7 @@ hr {
 }
 
 /*Events*/
-/* line 103, home.scss */
+/* line 106, home.scss */
 .event .item {
   -webkit-flex: 1 0 90px;
       -ms-flex: 1 0 90px;
@@ -200,7 +205,7 @@ hr {
   background-image: linear-gradient(#000, #000, #0e2542);
 }
 
-/* line 114, home.scss */
+/* line 117, home.scss */
 .event .thumbnail {
   -webkit-flex: 0 0 90px;
       -ms-flex: 0 0 90px;
@@ -215,7 +220,7 @@ hr {
   height: 90px;
 }
 
-/* line 121, home.scss */
+/* line 124, home.scss */
 .event .thumbnail img {
   display: block;
   width: 90px;
@@ -223,7 +228,7 @@ hr {
   opacity: .8;
 }
 
-/* line 127, home.scss */
+/* line 130, home.scss */
 .event .content {
   font-family: "Alegreyasans";
   -webkit-flex: 1 1 0%;
@@ -236,32 +241,32 @@ hr {
   /*background-image: linear-gradient($bg-2, $bg-2, $bg-1)*/
 }
 
-/* line 136, home.scss */
+/* line 139, home.scss */
 span.label {
   font-size: smaller;
   color: deepskyblue;
 }
 
-/* line 140, home.scss */
+/* line 143, home.scss */
 .event .content p {
   font-size: smaller;
   font-style: italic;
   font-weight: 600;
 }
 
-/* line 149, home.scss */
+/* line 152, home.scss */
 .event .content .title {
   text-shadow: blue 1px 1px;
   color: #01a1d6;
 }
 
-/* line 153, home.scss */
+/* line 156, home.scss */
 .event .content .subtitle {
   font-size: smaller;
   color: cyan;
 }
 
-/* line 157, home.scss */
+/* line 160, home.scss */
 .event .content li {
   line-height: 1em;
 }
@@ -274,7 +279,7 @@ span.label {
 /*padding: 25px 0;*/
 /*display: block;*/
 /*}*/
-/* line 169, home.scss */
+/* line 172, home.scss */
 .event .info {
   position: absolute;
   right: 3px;
@@ -286,18 +291,18 @@ span.label {
   opacity: .7;
 }
 
-/* line 179, home.scss */
+/* line 182, home.scss */
 .who, .band-list {
   font-size: .9em;
   padding-top: 7px;
 }
 
-/* line 183, home.scss */
+/* line 186, home.scss */
 .band-list li:nth-child(odd) {
   color: #c7e4fd;
 }
 
-/* line 186, home.scss */
+/* line 189, home.scss */
 .band-list li:nth-child(even) {
   color: #98a7b5;
 }
@@ -305,12 +310,12 @@ span.label {
 /*.band-list li, .band-list a {*/
 /*color: #ef5eef;*/
 /*}*/
-/* line 192, home.scss */
+/* line 195, home.scss */
 .promoter, .promoter a {
   color: #618ece !important;
 }
 
-/* line 195, home.scss */
+/* line 198, home.scss */
 .more {
   color: aqua;
 }
@@ -322,58 +327,53 @@ span.label {
 /*line-height: .9em;*/
 /*padding-top: 2px;*/
 /*}*/
-/* line 205, home.scss */
+/* line 208, home.scss */
 .who .hosts span:nth-child(odd) {
   color: #98a7b5;
 }
 
-/* line 208, home.scss */
+/* line 211, home.scss */
 .who .hosts span:nth-child(even) {
   color: #c7e4fd;
 }
 
-/* line 211, home.scss */
+/* line 214, home.scss */
 .who .hosts span:first-child {
   color: deepskyblue;
 }
 
-/* line 214, home.scss */
+/* line 217, home.scss */
 .who .guests span:nth-child(odd) {
   color: #c7e4fd;
 }
 
-/* line 217, home.scss */
+/* line 220, home.scss */
 .who .guests span:nth-child(even) {
   color: #98a7b5;
 }
 
-/* line 220, home.scss */
+/* line 223, home.scss */
 .who .guests span:first-child {
   color: deepskyblue;
 }
 
-/* line 223, home.scss */
+/* line 226, home.scss */
 .who .djs span:nth-child(even) {
   color: #c7e4fd;
 }
 
-/* line 226, home.scss */
+/* line 229, home.scss */
 .who .djs span:nth-child(odd) {
   color: #98a7b5;
 }
 
-/* line 229, home.scss */
+/* line 232, home.scss */
 .who .djs span:first-child {
   color: deepskyblue;
 }
 
 /*Media Queries*/
 @media only screen and (min-device-width: 768px) {
-  /* line 236, home.scss */
-  .news .postcard h3 {
-    font-size: 1em;
-  }
-
   /* line 239, home.scss */
   .news .content {
     width: 80%;
@@ -427,14 +427,13 @@ span.label {
 /* line 274, home.scss */
 .pages {
   background: #000;
-  color: floralwhite;
   position: relative;
   bottom: 0;
   left: 0;
   overflow-y: auto;
 }
 
-/* line 282, home.scss */
+/* line 281, home.scss */
 .wp-page {
   -webkit-flex: 0 1 30%;
       -ms-flex: 0 1 30%;
@@ -444,7 +443,7 @@ span.label {
   font-size: .9em;
 }
 
-/* line 288, home.scss */
+/* line 287, home.scss */
 .jslghtbx-contentwrapper .pages {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -455,29 +454,29 @@ span.label {
 }
 
 @media only screen and (min-device-width: 768px) {
-  /* line 293, home.scss */
+  /* line 292, home.scss */
   .event .content {
     font-size: 1em;
   }
 
-  /* line 296, home.scss */
+  /* line 295, home.scss */
   .event .title {
     /*font-size: 1.3em;*/
   }
 }
 @media only screen and (max-device-width: 767px) and (orientation: landscape) {
-  /* line 301, home.scss */
+  /* line 300, home.scss */
   .scrollbox {
     font-size: 1.4em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 306, home.scss */
+  /* line 305, home.scss */
   #home iframe {
     display: block;
   }
 
-  /* line 309, home.scss */
+  /* line 308, home.scss */
   #home .pages {
     -webkit-flex: 0 0 59%;
         -ms-flex: 0 0 59%;
@@ -493,7 +492,7 @@ span.label {
     height: 80%;
   }
 
-  /* line 317, home.scss */
+  /* line 316, home.scss */
   #home .page {
     -webkit-flex: 1 0 0%;
         -ms-flex: 1 0 0%;
@@ -501,7 +500,7 @@ span.label {
     margin: 0 auto;
   }
 
-  /* line 321, home.scss */
+  /* line 320, home.scss */
   #home .scrollbox {
     -webkit-flex: 1 1 420px;
         -ms-flex: 1 1 420px;
@@ -509,24 +508,24 @@ span.label {
     height: 100%;
   }
 
-  /* line 325, home.scss */
+  /* line 324, home.scss */
   .news .content {
     width: 100% !important;
   }
 }
 @media only screen and (orientation: landscape) {
-  /* line 330, home.scss */
+  /* line 329, home.scss */
   .new-day .day {
     line-height: 1em;
   }
 
-  /* line 333, home.scss */
+  /* line 332, home.scss */
   .new-day .date {
     line-height: .5em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 338, home.scss */
+  /* line 337, home.scss */
   #home.pg-frame {
     background-color: transparent;
     background-image: url("/wp/wp-content/uploads/2016/07/logo.svg");
@@ -536,7 +535,7 @@ span.label {
     background-repeat: no-repeat;
   }
 
-  /* line 346, home.scss */
+  /* line 345, home.scss */
   #home.page-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -591,14 +590,14 @@ span.label {
 }
 
 */
-/* line 395, home.scss */
+/* line 394, home.scss */
 .social-buttons {
   position: absolute;
   min-width: 222px;
   padding-top: 5px;
 }
 
-/* line 400, home.scss */
+/* line 399, home.scss */
 .facebook-button, .twitter-button, .tumblr-button {
   display: inline-block;
   overflow: hidden;
@@ -608,17 +607,17 @@ span.label {
   text-align: center;
 }
 
-/* line 408, home.scss */
+/* line 407, home.scss */
 .facebook-button {
   margin: -2px 4px 0 4px;
 }
 
-/* line 411, home.scss */
+/* line 410, home.scss */
 .twitter-button {
   margin: 0 4px;
 }
 
-/* line 414, home.scss */
+/* line 413, home.scss */
 .tumblr-button {
   margin: 0 4px;
 }

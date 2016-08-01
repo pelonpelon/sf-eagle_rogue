@@ -32,7 +32,7 @@
     will-change: scroll-position;
 }
 hr {
-    border-color: $bg-light;
+    border-color: #600;
 }
 
 /*News*/
@@ -57,6 +57,9 @@ hr {
 	padding: 26px 2% 4px 2%;
 }
 .news .content a {
+    color: deepskyblue;
+}
+.news .content h3, .news .content h4 {
     color: deepskyblue;
 }
 /*New Day*/
@@ -233,9 +236,6 @@ span.label {
 /*Media Queries*/
 
 @media only screen and (min-device-width: $tablet) {
-    .news .postcard h3 {
-        font-size: 1em;
-    }
     .news .content {
         width: 80%;
         margin: 0 auto;
@@ -273,7 +273,6 @@ span.label {
 }
 .pages {
     background: #000;
-    color: floralwhite;
     position: relative;
     bottom: 0;
     left: 0;

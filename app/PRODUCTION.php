@@ -12,6 +12,7 @@
         //TODOd ••• cron duplicate only required stuff on repeat
         //TODOd ••• Monthlies rewite to check 2nd and 5th Tuesday and Wednesday
         //TODOd ••• 404.html not working
+        //TODOd ••• can sampler do transparent backgound on banners
         //TODOd •• shortcode for formatted social
         //TODOd •• put menu-trigger on own layer for animation
         //TODOd •• add Error Image for get_image_url_by_slug
@@ -50,6 +51,11 @@
         //FIXX ••• does godaddy run cron?
         //FIXX ••• Social Media Buttons
         //FIXX ••• Ack internal FIXXs
+        //TODOd ••• editor add div
+        //TODOd ••• editor add flexbox table
+        //TODOd ••• editor move ul and li together
+        //TODOd ••• how to DEC order to query for news without DB call
+        //TODOp ••• add FOLSOM to calendar
         //FIXX  subtitle should be any length
         //FIXX  staff default
         //FIXX  rows should replace space with nbsp to keep names together (but some are long)

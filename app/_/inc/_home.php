@@ -173,7 +173,7 @@
             if ( $now->format('Y-m-d') == $current_day ) {
               for ($x = 0; $x < $countdown; $x++) { echo '. '; }
             }
-            echo $date->format('g:ia');
+            echo $date->format('g:i a');
         ?>
                 </div>
               </div>
