@@ -12,30 +12,28 @@
         //TODOd ••• cron duplicate only required stuff on repeat
         //TODOd ••• Monthlies rewite to check 2nd and 5th Tuesday and Wednesday
         //TODOd ••• 404.html not working
-        //TODOd •• when things expire chng to draft
         //TODOd •• shortcode for formatted social
-        //TODOd •• row colors should be random so they don't repeat, code?
         //TODOd •• put menu-trigger on own layer for animation
-        //TODOd •• generics could have a post type or category
-        //TODOd •• all defaults, print known details fill in shortcode for others
-        //TODOd •• add Sponsors,beneficiaries with hosts, guests
         //TODOd •• add Error Image for get_image_url_by_slug
-        //TODOd •• Try a video on popup
         //TODOd • there are Woof pics
         //TODOd • staff button simplify classes
         //TODOd • rename staff2 def2 staff-postcard staff-profile
-        //TODOd • news needs a more button after 2 items
+        //TODOd • news needs a more button after 2 items (archives page)
         //TODOd • make useable post template so I can preview both post and postcard
         //TODOd • lightbox.js:413,409 else #jslghtbx exists (add class)
         //TODOd • lightbox.js submit changes "off" and ?prevent default?
         //TODOd • lightbox.js moved onopen to end of openbox after adding caption
         //TODOd • jPanelMenu submit changes on jank
+        //TODOd • generics could have a post type or category
         //TODOd • djs urls
         //TODOd • create Softball post_type
         //TODOd • band page, add multiple [links] after name
+        //TODOd • add Sponsors,beneficiaries with hosts, guests
+        //TODOd • Try a video on popup
         //TODOd • Top Message should be a post that can be emailed
         //TODOd • TNL icon should have trans bg
         //TODOd • Info page of pages with menu at top
+        //TODOd  when things expire chng to pending
         //TODOd  rename some of those function files
         //TODOd  multicolored bouncing lightbox balls
         //TODOd  make rows of djs and guests colorful
@@ -50,8 +48,8 @@
         //TODOd  Logo modal: [page title=''] HOT
         //TODOd  ------------------------
         //FIXX ••• does godaddy run cron?
-        //FIXX ••• Ack internal FIXXs
         //FIXX ••• Social Media Buttons
+        //FIXX ••• Ack internal FIXXs
         //FIXX  subtitle should be any length
         //FIXX  staff default
         //FIXX  rows should replace space with nbsp to keep names together (but some are long)

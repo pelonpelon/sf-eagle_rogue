@@ -101,14 +101,18 @@
               date_modify($event_end_time, '+1 day');
           }
           if ($event_end_time < $now) {
-              $post_data = array('ID' => $ID, 'post_status' => 'pending');
-              wp_update_post($post_data);
+              $weekly = get_post_meta($ID, 'event_weekly', true); //FIXX ••• does this work
+              $monthly = get_post_meta($ID, 'event_monthy_days', true);
+              if (!$weekly && !$monthly) {
+                  $post_data = array('ID' => $ID, 'post_status' => 'pending');
+                  wp_update_post($post_data);
 
-              $file = APP_PATH.'logs/transients.log';
-              $entry = date('ymd G:i:s'). " :home.php " .get_the_title(). " new status: pending\n\n";
-              file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+                  $file = APP_PATH.'logs/transients.log';
+                  $entry = date('ymd G:i:s'). " :home.php " .get_the_title(). " new status: pending\n\n";
+                  file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
-              continue;
+                  continue;
+              }
           }
           if ( $date->format('Y-m-d') != $current_day ) {
               $current_day = $date->format('Y-m-d');

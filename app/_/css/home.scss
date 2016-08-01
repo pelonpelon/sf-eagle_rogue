@@ -108,13 +108,14 @@ hr {
     background-color: $bg-darker;
     border-top: black solid 2px;
     overflow: hidden;
+    background-image: linear-gradient($bg-2, $bg-2, $bg-1)
     /*height: 90px;*/
 }
 .event .thumbnail {
     flex: 0 0 90px;
     display: flex;
     align-items: flex-start;
-    background-color: #1b2127;
+    /*background-color: #1b2127;*/
     height: 90px;
 }
 .event .thumbnail img {
@@ -130,7 +131,7 @@ hr {
     font-size: .8em;
     color: lightblue;
     padding: 0 2%;
-    background-image: linear-gradient($bg-2, $bg-2, $bg-1)
+    /*background-image: linear-gradient($bg-2, $bg-2, $bg-1)*/
 }
 span.label {
     font-size: smaller;
