@@ -62,7 +62,7 @@
       $news_content = do_shortcode(get_the_content());
       $attrs = array('class' => 'noclick', 'data-jslghtbx' => $attachment_url, 'data-jslghtbx-caption' => $news_content);
       //$postcard = do_shortcode(get_post_meta($ID, 'event_postcard', true));
-      $postcard = do_shortcode(isset( $md['event_postcard'][0]) ? $md['event_postcard'][0] : '' );
+      $postcard = do_shortcode( isset($md['event_postcard'][0]) ? $md['event_postcard'][0] : '' );
       if ( has_post_thumbnail() ) {
           $post_thumbnail_img = get_the_post_thumbnail(null, 'thumbnail', $attrs);
       } else {
@@ -73,7 +73,7 @@
 ?>
 
                 <div class="content">
-                    <div class="expires"><?php echo $expires_std; ?></div>
+                  <!--  <div class="expires"><php echo $expires_std; ?></div> --> <!--//FIXX add news expire date in camo ??? -->
                     <div class="thumbnail"><?php echo $post_thumbnail_img ?></div>
                       <div class='postcard'><?php echo $postcard; ?></div>
                     </div>
