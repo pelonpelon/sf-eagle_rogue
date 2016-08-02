@@ -28,7 +28,7 @@
   content: '≣';
   font-size: 38px;
   color: white;
-  opacity: .3;
+  opacity: .4;
 }
 
 /* line 7, _menu.scss */
@@ -273,23 +273,29 @@ li#menu-header {
 /* line 13, layout.scss */
 .site-header {
   height: 60px;
-  background: #000;
+  background: url("../../_/img/patio-banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   z-index: 20;
+  border-bottom: 6px #600 solid;
 }
 
-/* line 18, layout.scss */
+/* line 21, layout.scss */
 .site-title {
   padding-top: 4px;
   margin: auto;
   text-align: center;
-  font-size: 1.5em;
-  font-weight: 300;
-  color: #cce7f3;
-  text-shadow: #8a9eca 1px 1px;
+  /*font-size: 1.5em;*/
+  font-size: 3em;
+  line-height: 1em;
+  font-weight: 900;
+  color: #000;
+  text-shadow: #1570bf 2px 3px;
 }
 
-/* line 27, layout.scss */
+/* line 33, layout.scss */
 .site-subtitle {
+  display: none;
   text-align: center;
   font-size: 1em;
   margin: 0;
@@ -297,20 +303,20 @@ li#menu-header {
   color: #4c95e6;
 }
 
-/* line 34, layout.scss */
+/* line 41, layout.scss */
 .logo {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-/* line 39, layout.scss */
+/* line 46, layout.scss */
 .logo img {
   height: 60px;
   width: auto;
 }
 
-/* line 46, layout.scss */
+/* line 53, layout.scss */
 .page-content {
   width: 100%;
   max-width: 1000px;
@@ -321,23 +327,23 @@ li#menu-header {
 }
 
 /* set these for every generic wp-page*/
-/* line 55, layout.scss */
+/* line 62, layout.scss */
 .wp-page {
   margin: 0 auto 25px;
 }
 
-/* line 58, layout.scss */
+/* line 65, layout.scss */
 .wp-page img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 62, layout.scss */
+/* line 69, layout.scss */
 .header {
   position: relative;
 }
 
-/* line 65, layout.scss */
+/* line 72, layout.scss */
 .header-psa {
   position: fixed;
   top: 60px;
@@ -351,7 +357,7 @@ li#menu-header {
   z-index: 9999;
 }
 
-/* line 77, layout.scss */
+/* line 84, layout.scss */
 .touch-button-size {
   min-height: 60px;
   min-width: 60px;
@@ -359,13 +365,13 @@ li#menu-header {
 
 /*Media Queries*/
 @media only screen and (min-device-height: 640px) {
-  /* line 85, layout.scss */
+  /* line 92, layout.scss */
   .site-header {
     position: fixed;
     width: 100%;
   }
 
-  /* line 89, layout.scss */
+  /* line 96, layout.scss */
   .page-content {
     position: relative;
     top: 70px;
@@ -374,27 +380,30 @@ li#menu-header {
   }
 }
 @media only screen and (min-device-width: 768px) {
-  /* line 97, layout.scss */
+  /* line 104, layout.scss */
   .hamburger:before {
     font-size: 48px;
   }
 
-  /* line 100, layout.scss */
+  /* line 107, layout.scss */
   .site-title {
-    font-size: 2em;
+    /*font-size: 2em;*/
+    font-size: 6em;
+    line-height: 0.9em;
+    text-shadow: #1b81da 3px 4px;
   }
 
-  /* line 103, layout.scss */
+  /* line 113, layout.scss */
   .logo img {
     height: 90px;
   }
 
-  /* line 106, layout.scss */
+  /* line 116, layout.scss */
   .site-header {
     height: 90px;
   }
 
-  /* line 109, layout.scss */
+  /* line 119, layout.scss */
   .page-content {
     top: 90px;
   }

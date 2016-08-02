@@ -12,19 +12,26 @@
 
 .site-header {
     height: $header-height;
-    background: $bg-darkest;
+    background: url('../../_/img/patio-banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     z-index: 20;
+    border-bottom: 6px #600 solid;
 }
 .site-title {
     padding-top: 4px;
     margin: auto;
     text-align: center;
-    font-size: 1.5em;
-	font-weight: 300;
-    color: #cce7f3;
-    text-shadow: #8a9eca 1px 1px;
+    /*font-size: 1.5em;*/
+    font-size: 3em;
+    line-height: 1em;
+	font-weight: 900;
+    color: #000;
+    text-shadow: #1570bf 2px 3px;
+
 }
 .site-subtitle {
+    display: none;
     text-align: center;
     font-size: 1em;
     margin: 0;
@@ -98,7 +105,10 @@
         font-size: 48px;
     }
     .site-title {
-        font-size: 2em;
+        /*font-size: 2em;*/
+      font-size: 6em;
+      line-height: 0.9em;
+      text-shadow: #1b81da 3px 4px;
     }
     .logo img {
         height: 90px;
