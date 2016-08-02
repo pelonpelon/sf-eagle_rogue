@@ -113,6 +113,7 @@
 
                   continue;
               }
+              continue;
           }
           if ( $date->format('Y-m-d') != $current_day ) {
               $current_day = $date->format('Y-m-d');
