@@ -13,6 +13,7 @@
           'numberposts'   => 100
       );
       $Items = new WP_Query( $args );
+
 ?>
 
   <div id="home" class="page-content">
@@ -43,10 +44,15 @@
 
 <?php
       while ($Items->have_posts()): $Items->the_post();
+
       $ID = get_the_id();
-      $expires_std = get_post_meta($ID, 'event_expires', true);
+      // get all metadata for this post
+      $md = get_post_custom($ID);
+
+      $expires_std = isset($md['event_expires'][0]) ? $md['event_expires'][0] : '3000-01-01 00:00';
       $expires_obj = new DateTime($expires_std);
       if ( ! in_category('news') || ($expires_std && $expires_obj->format('U') <= $now->format('U')) ) { continue; }
+
 ?>
 
             <div class="item open-lightbox">
@@ -55,7 +61,8 @@
       $attachment_url = wp_get_attachment_url( get_post_thumbnail_id( $ID ) );
       $news_content = do_shortcode(get_the_content());
       $attrs = array('class' => 'noclick', 'data-jslghtbx' => $attachment_url, 'data-jslghtbx-caption' => $news_content);
-      $postcard = do_shortcode(get_post_meta($ID, 'event_postcard', true));
+      //$postcard = do_shortcode(get_post_meta($ID, 'event_postcard', true));
+      $postcard = do_shortcode(isset( $md['event_postcard'][0]) ? $md['event_postcard'][0] : '' );
       if ( has_post_thumbnail() ) {
           $post_thumbnail_img = get_the_post_thumbnail(null, 'thumbnail', $attrs);
       } else {
@@ -66,6 +73,7 @@
 ?>
 
                 <div class="content">
+                    <div class="expires"><?php echo $expires_std; ?></div>
                     <div class="thumbnail"><?php echo $post_thumbnail_img ?></div>
                       <div class='postcard'><?php echo $postcard; ?></div>
                     </div>
@@ -88,12 +96,15 @@
       //$event_count+=1;
       //echo $event_count.' '.get_the_title();
           $ID = $Items->post->ID;
+          // get all metadata for this post
+          $md = get_post_custom($ID);
 
           $date = new DateTime(get_the_date('r'));
           $post_day = $date->format('l');
           $post_date = $date->format('M d');
           $post_start_time = $date->format('G:i');
-          $endtime = get_post_meta($ID, 'event_endtime', true);
+          //$endtime = get_post_meta($ID, 'event_endtime', true);
+          $endtime = $md['event_endtime'][0];
           $event_end_time = new DateTime(get_the_date('r'));
           date_modify($event_end_time, $endtime);
           $countdown = round(($event_end_time->format('U') - $now->format('U'))/3600);
@@ -101,8 +112,10 @@
               date_modify($event_end_time, '+1 day');
           }
           if ($event_end_time < $now) {
-              $weekly = get_post_meta($ID, 'event_weekly', true); //FIXX ••• does this work
-              $monthly = get_post_meta($ID, 'event_monthy_days', true);
+              //$weekly = get_post_meta($ID, 'event_weekly', true); //FIXX ••• does this work
+              //$monthly = get_post_meta($ID, 'event_monthy_days', true);
+              $weekly = isset($md['event_weeky'][0]) ? $md['event_weeky'][0] : false;
+              $monthly = isset($md['event_monthy_days'][0]) ? $md['event_monthy_days'][0] : false;
               if (!$weekly && !$monthly) {
                   $post_data = array('ID' => $ID, 'post_status' => 'pending');
                   wp_update_post($post_data);
@@ -122,8 +135,8 @@
               $new_day = false;
           }
 
-          $generic_poster_id = get_post_meta($ID, 'event_generic_poster', true);
-          $generic_poster_url = wp_get_attachment_url( $generic_poster_id );
+          $generic_poster_id = isset($md['event_generic_poster'][0]) ? $md['event_generic_poster'][0] : false;
+          $generic_poster_url = $generic_poster_id ? wp_get_attachment_url( $generic_poster_id ) : false;
           $event_content = do_shortcode(get_the_content());
 
           if ( has_post_thumbnail() ) {
@@ -145,9 +158,11 @@
 
           $attrs = array('class' => 'noclick', 'data-jslghtbx' => $attachment_url, 'data-jslghtbx-caption' => $event_content);
           $post_thumbnail_img = get_the_post_thumbnail(null, 'thumbnail', $attrs);
-          $drink_special = get_post_meta($ID, 'event_drink_special', true);
+          //$drink_special = get_post_meta($ID, 'event_drink_special', true);
+          $drink_special = isset($md['event_drink_special'][0]) ? $md['event_drink_special'][0] : '';
+          $cover = isset($md['event_cover'][0]) ? $md['event_cover'][0] : '';
 
-          $postcard = do_shortcode(get_post_meta($ID, 'event_postcard', true));
+          $postcard = do_shortcode(isset($md['event_postcard'][0]) ? $md['event_postcard'][0] : '');
 
           if ($new_day) {
 
@@ -167,7 +182,8 @@
               <div class="thumbnail"><?php echo $post_thumbnail_img; ?></div>
               <div class="content"><?php echo $postcard; ?>
               <div class="info">
-                  <div class="cover"><?php echo get_post_meta($ID, 'event_cover', true); ?></div>
+                  <!-- <div class="cover"><php echo get_post_meta($ID, 'event_cover', true); ?></div> -->
+                  <div class="cover"><?php echo $cover; ?></div>
                   <div class="start-time">
         <?php
 
