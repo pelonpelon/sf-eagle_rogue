@@ -1,5 +1,9 @@
 <?php
 
+$file = APP_PATH.'logs/transients.log';
+$entry = date('ymd G:i:s'). " :wp-cron.php\n";
+file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+
 $args = array(
     'orderby'       => 'post_date',
     'order'         => 'DEC',

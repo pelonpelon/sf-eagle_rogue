@@ -91,7 +91,7 @@
       if ($tags) {
           foreach ($tags as $tag) {
               $taglist .= '<span> ' . $tag->slug . ' </span>';
-              $tagcloud .= '<a class="tag-button" href="#events_top" onclick="allItems(\'hide\'); $(\'.tag-'
+              $tagcloud .= '<a class="tag-button" href="#filtered_list" onclick="allItems(\'hide\'); $(\'.tag-'
                   . $tag->slug . '\').show(\'slow\', \'linear\').prev(\'.new-day\').show(\'slow\', \'linear\');">'
                   . $tag->name . '</a> ';
           }
@@ -115,7 +115,7 @@
 <a name="tagcloud"></a>
             <div class="tagcloud" style="display:none;"><?php echo $tagcloud; ?>
 <a name="filtered_list"></a>
-                <a class="show-everything tag-button" onclick="$('.tagcloud').slideToggle(); allItems('show'); $('.tagcloud-button').scrollTop(scroll_pos);">everything</a>
+                <a class="show-everything tag-button" onclick="$('.tagcloud').slideToggle(); allItems('show');">everything</a>
             </div>
 <a name="events_top"></a>
             <div class="event">
@@ -144,8 +144,9 @@
           if ($event_end_time < $now) {
               //$weekly = get_post_meta($ID, 'event_weekly', true); //FIXX ••• does this work
               //$monthly = get_post_meta($ID, 'event_monthy_days', true);
-              $weekly = isset($md['event_weeky'][0]) ? $md['event_weeky'][0] : false;
-              $monthly = isset($md['event_monthy_days'][0]) ? $md['event_monthy_days'][0] : false;
+              $weekly = isset($md['event_weekly']);
+              $monthly = isset($md['event_monthy_ordinals']);
+              //throw new Exception("weekly: ". ($weekly ? 'true' : 'false') ." monthly: ". ($monthly ? 'true' : 'false') );
               if (!$weekly && !$monthly) {
                   $post_data = array('ID' => $ID, 'post_status' => 'pending');
                   wp_update_post($post_data);
