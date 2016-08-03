@@ -69,18 +69,19 @@ function event_meta_boxes( $meta_boxes ) {
         'std'  => 0,
         'desc' => 'id=weekly',
       ),
-      // MONTHLY ORDINAL
+      // MONTHLY ORDINALS
       array(
-        'name'    => esc_html__( 'MONTHLY ORDINALS', $prefix ),
-        'id'     => $prefix . 'monthly_ordinals',
-        'type'    => 'radio',
-        'options' => array(
-          'first' => esc_html__( 'first', $prefix  ),
-          'second' => esc_html__( 'second', $prefix  ),
-          'third' => esc_html__( 'third', $prefix  ),
-          'fourth' => esc_html__( 'fourth', $prefix  ),
-          'fifth' => esc_html__( 'fifth', $prefix  ),
-        ),
+          'name'    => esc_html__( 'MONTHLY ORDINALS', $prefix ),
+          'id'     => $prefix . 'monthly_ordinals',
+          'type'    => 'checkbox_list',
+          // Options of checkboxes, in format 'value' => 'Label'
+          'options' => array(
+              'first' => esc_html__( 'first', $prefix  ),
+              'second' => esc_html__( 'second', $prefix  ),
+              'third' => esc_html__( 'third', $prefix  ),
+              'fourth' => esc_html__( 'fourth', $prefix  ),
+              'fifth' => esc_html__( 'fifth', $prefix  ),
+          ),
       ),
       // MONTHLY DAY
       array(

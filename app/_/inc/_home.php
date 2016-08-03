@@ -84,11 +84,41 @@
       endwhile;
       wp_reset_postdata();
       $current_day = '';
+
+      $tags = get_tags(array('get' => 'all'));
+      $taglist = ' ';
+      $tagcloud = ' ';
+      if ($tags) {
+          foreach ($tags as $tag) {
+              $taglist .= '<span> ' . $tag->slug . ' </span>';
+              $tagcloud .= '<a class="tag-button" href="#events_top" onclick="allItems(\'hide\'); $(\'.tag-'
+                  . $tag->slug . '\').show(\'slow\', \'linear\').prev(\'.new-day\').show(\'slow\', \'linear\');">'
+                  . $tag->name . '</a> ';
+          }
+      }
 ?>
 
-            </div>  <!--item-->
-            <div class="event">
+            </div>  <!--news-->
 
+            <script>
+              function allItems(visibility) {
+                if (visibility == 'hide') {
+                    $('.item').hide('slow', 'linear'); $('.new-day').hide('slow', 'linear');
+                }
+                if (visibility == 'show') {
+                    $('.item').show('slow', 'linear'); $('.new-day').show('slow', 'linear');
+                }
+              }
+            </script>
+
+            <a href="#tagcloud" class="tagcloud-button" onclick="$('.tagcloud').slideToggle();" >Filter:  <br /><?php echo $taglist; ?></a>
+<a name="tagcloud"></a>
+            <div class="tagcloud" style="display:none;"><?php echo $tagcloud; ?>
+<a name="filtered_list"></a>
+                <a class="show-everything tag-button" onclick="$('.tagcloud').slideToggle(); allItems('show'); $('.tagcloud-button').scrollTop(scroll_pos);">everything</a>
+            </div>
+<a name="events_top"></a>
+            <div class="event">
 <?php
       //$event_count=0;
       while ($Items->have_posts()): $Items->the_post();
@@ -163,6 +193,13 @@
           $cover = isset($md['event_cover'][0]) ? $md['event_cover'][0] : '';
 
           $postcard = do_shortcode(isset($md['event_postcard'][0]) ? $md['event_postcard'][0] : '');
+          $tags = get_the_tags($ID);
+          $taglist = ' ';
+          if ($tags) {
+              foreach ($tags as $tag) {
+                  $taglist .= 'tag-' . $tag->name . ' ';
+              }
+          }
 
           if ($new_day) {
 
@@ -178,7 +215,7 @@
 
   <?php } ?>
 
-          <div class="item  open-lightbox <?php echo $post_day; ?>">
+          <div class="item  open-lightbox <?php echo $post_day . $taglist; ?> ">
               <div class="thumbnail"><?php echo $post_thumbnail_img; ?></div>
               <div class="content"><?php echo $postcard; ?>
               <div class="info">

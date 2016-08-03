@@ -1,26 +1,33 @@
-        //TODOp ••• set default cat to event
         //TODOp ••• fix somethings fucked up
         //TODOp ••• fix media dimensions in wp LIVE +1000
         //TODOp ••• categories: news, events
         //TODOp ••• add social media
         //TODOp ••• add pages to wp
+        //TODOp ••• add to metabox input-list.css li float:left padding-right:20px
+        //TODOp ••• add pages to wp
+        //TODOp  set default cat to event
         //TODOp  install plugins: metabox
+        //TODOp  add FOLSOM to calendar
         //TODOp  Happy Hour news item (should there be an ad item)
         //TODOp  ------------------------
         //TODOd ••• remove feature img etc upon weekly/monthly if generic
+        //TODOd ••• how to DEC order to query for news without DB call
+        //TODOd ••• editor move ul and li together
+        //TODOd ••• editor add flexbox table
+        //TODOd ••• editor add div
         //TODOd ••• cron removes poster if generic exists
         //TODOd ••• cron duplicate only required stuff on repeat
+        //TODOd ••• can sampler do transparent backgound on banners
         //TODOd ••• Monthlies rewite to check 2nd and 5th Tuesday and Wednesday
         //TODOd ••• 404.html not working
-        //TODOd ••• can sampler do transparent backgound on banners
         //TODOd •• shortcode for formatted social
         //TODOd •• put menu-trigger on own layer for animation
+        //TODOd •• make useable post template so I can preview pages
         //TODOd •• add Error Image for get_image_url_by_slug
         //TODOd • there are Woof pics
         //TODOd • staff button simplify classes
         //TODOd • rename staff2 def2 staff-postcard staff-profile
         //TODOd • news needs a more button after 2 items (archives page)
-        //TODOd • make useable post template so I can preview both post and postcard
         //TODOd • lightbox.js:413,409 else #jslghtbx exists (add class)
         //TODOd • lightbox.js submit changes "off" and ?prevent default?
         //TODOd • lightbox.js moved onopen to end of openbox after adding caption
@@ -51,11 +58,6 @@
         //FIXX ••• does godaddy run cron?
         //FIXX ••• Social Media Buttons
         //FIXX ••• Ack internal FIXXs
-        //TODOd ••• editor add div
-        //TODOd ••• editor add flexbox table
-        //TODOd ••• editor move ul and li together
-        //TODOd ••• how to DEC order to query for news without DB call
-        //TODOp ••• add FOLSOM to calendar
         //FIXX  subtitle should be any length
         //FIXX  staff default
         //FIXX  rows should replace space with nbsp to keep names together (but some are long)

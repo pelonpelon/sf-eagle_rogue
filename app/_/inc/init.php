@@ -39,19 +39,19 @@
 		case 'localhost':
 			define("CONTACT_EMAIL", "pelon@localhost");
 			define("ANALYTICS_ID", "");
-            define("APP_PATH', '../../rogue/app/");
+            define("APP_PATH", dirname( __FILE__ ) . '/../../' );
 			break;
 
         case 'sf-eagle.mirror':
             define("CONTACT_EMAIL", "pelon@localhost");
             define("ANALYTICS_ID", "");
-            define("APP_PATH", "../../rogue/app/");
+            define("APP_PATH", dirname( __FILE__ ) . '/../../' );
             break;
 
         case 'sf-eagle.com':
             define("CONTACT_EMAIL", "pelonpelon@gmail.com");
             define("ANALYTICS_ID", "UA-42163204-1");
-            define("APP_PATH", "../../rogue/www/");
+            define("APP_PATH", dirname( __FILE__ ) . '/../../' );
             break;
 	}
     require("_/inc/functions.php");

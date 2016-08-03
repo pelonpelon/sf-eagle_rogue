@@ -102,6 +102,42 @@ hr {
     padding-right: 1%;
 }
 
+/*Events Filter*/
+
+.tag-button {
+  display: inline-block;
+  padding: 10px;
+  /*border: 10px solid #600;*/
+  border-radius: 45%;
+  background: goldenrod;
+  font-size: 2em;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-variant: small-caps;
+  float: right;
+}
+.tag-button:hover {
+    text-decoration: none;
+}
+.tagcloud-button {
+  display: block;
+  background: #006;
+  padding: 20px 0;
+  text-align: center;
+  text-decoration: none;
+  font-variant: small-caps;
+  font-size: 1.4em;
+}
+.tagcloud-button:hover {
+    text-decoration: none;
+}
+.show-everything {
+    display: block;
+    float: none;
+    clear: right;
+}
+
 /*Events*/
 .event .item {
     flex: 1 0 90px;

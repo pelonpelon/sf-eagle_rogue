@@ -111,6 +111,7 @@ function retrieve_post_via_mail() {
 add_action( 'shutdown', 'advance_periodic_events' );
 function advance_periodic_events() {
     $file = APP_PATH.'logs/transients.log';
+    //throw new Exception("\n\n". APP_PATH2 ."\n\n".__file__."\n\n".$file."\n\n".getcwd()."\n\n");
     $entry = "\n\n" .date('ymd G:i:s'). " :advance_periodic_events\n";
     file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
     flush(); // Display the page before the mail fetching begins

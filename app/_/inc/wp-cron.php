@@ -64,9 +64,10 @@ function reschedule_monthly_events() {
     while ($Items->have_posts()): $Items->the_post();
 
     $ID = $Items->post->ID;
-    $monthly_day = get_post_meta($ID, 'event_monthly_days', true);
-    if (!$monthly_day || !in_category('event')) { continue; }
-    $monthly_ordinal = get_post_meta($ID, 'event_monthly_ordinals', true);
+    $md = get_post_custom($ID);
+
+    if (!isset($md['event_monthly_ordinals'][0]) || !in_category('event')) { continue; }
+    //$monthly_ordinal = $md['event_monthly_ordinals'][0];
 
     $now = new DateTime();
     $today = $now->format('l');
@@ -76,25 +77,29 @@ function reschedule_monthly_events() {
     $post_day = $date->format('l');
     $post_time = $date->format('G:i');
 
+    $monthly_day = $md['event_monthly_days'][0];
+
     if ($today != $post_day ) {
-        $new_date_utc = strtotime("$monthly_ordinal $post_day of next month $post_time America/Los_Angeles");
-        $date_gmt = new DateTime('@'.$new_date_utc);
-        $date_gmt_string = $date_gmt->format('Y-m-d H:i:s');
-        $date_gmt->setTimeZone( new DateTimeZone('America/Los_Angeles' ));
-        $date_string = $date_gmt->format('Y-m-d H:i:s');
-        //throw new Exception($post_day.'_'.$post_time.' ds: '.$date_string.' gmt: '.$date_gmt_string);
-        $post_data = array('ID' => $ID, 'post_date' => $date_string, 'post_date_gmt' => $date_gmt_string);
-        wp_update_post($post_data);
-        $date_string = $date_gmt->format('Y-m-d H:i');
-        update_post_meta($ID, 'event_starttime', $date_string);
+        foreach ($md['event_monthly_ordinals'] as $monthly_ordinal) {
+            $new_date_utc = strtotime("$monthly_ordinal $post_day of next month $post_time America/Los_Angeles");
+            $date_gmt = new DateTime('@'.$new_date_utc);
+            $date_gmt_string = $date_gmt->format('Y-m-d H:i:s');
+            $date_gmt->setTimeZone( new DateTimeZone('America/Los_Angeles' ));
+            $date_string = $date_gmt->format('Y-m-d H:i:s');
+            //throw new Exception($post_day.'_'.$post_time.' ds: '.$date_string.' gmt: '.$date_gmt_string);
+            $post_data = array('ID' => $ID, 'post_date' => $date_string, 'post_date_gmt' => $date_gmt_string);
+            wp_update_post($post_data);
+            $date_string = $date_gmt->format('Y-m-d H:i');
+            update_post_meta($ID, 'event_starttime', $date_string);
 
-        $file = APP_PATH.'logs/transients.log';
-        $entry = date('ymd G:i:s'). ' :wp-cron.php: ' .get_the_title(). ' scheduled for ' .$date_string;
-        $entry .= date('ymd G:i:s'). " :wp-cron.php :reschedule_monthly_events SENDING EMAIL\n";
-        file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+            $file = APP_PATH.'logs/transients.log';
+            $entry = date('ymd G:i:s'). ' :wp-cron.php: ' .get_the_title(). ' scheduled for ' .$date_string;
+            $entry .= date('ymd G:i:s'). " :wp-cron.php :reschedule_monthly_events SENDING EMAIL\n";
+            file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
-        wp_mail( CONTACT_EMAIL, 'reschedule_monthly_events: '. get_the_title(),
-            get_the_title(). ' schduled for ' .$date_string );
+            wp_mail( CONTACT_EMAIL, 'reschedule_monthly_events: '. get_the_title(),
+                get_the_title(). ' schduled for ' .$date_string );
+        }
     }
     endwhile;
     wp_reset_postdata();
