@@ -85,14 +85,15 @@
       wp_reset_postdata();
       $current_day = '';
 
-      $tags = get_tags(array('get' => 'all'));
+      $tags = get_tags();
       $taglist = ' ';
       $tagcloud = ' ';
       if ($tags) {
           foreach ($tags as $tag) {
-              $taglist .= '<span> ' . $tag->slug . ' </span>';
-              $tagcloud .= '<a class="tag-button" href="#filtered_list" onclick="allItems(\'hide\'); $(\'.tag-'
-                  . $tag->slug . '\').show(\'slow\', \'linear\').prev(\'.new-day\').show(\'slow\', \'linear\');">'
+              $taglist .= '<span> ' . $tag->slug . ':' . $tag->count . ' </span>';
+              $tagcloud .= '<a class="tag-button" onclick="$(\'.tagcloud\').slideToggle();allItems(\'hide\'); $(\'.tag-'
+                  . $tag->slug . '\').each(function(){
+                      $(this).removeClass(\'hideme\').fadeIn(600).prevAll(\'.new-day\').first().removeClass(\'hideme\').fadeIn(600);})">'
                   . $tag->name . '</a> ';
           }
       }
@@ -103,15 +104,17 @@
             <script>
               function allItems(visibility) {
                 if (visibility == 'hide') {
-                    $('.item').hide('slow', 'linear'); $('.new-day').hide('slow', 'linear');
+                    $('.item').fadeOut(600).addClass('hideme');
+                    $('.new-day').fadeOut(600).addClass('hideme');
                 }
                 if (visibility == 'show') {
-                    $('.item').show('slow', 'linear'); $('.new-day').show('slow', 'linear');
+                    $('.item').removeClass('hideme').fadeIn(600);
+                    $('.new-day').removeClass('hideme').fadeIn(600);
                 }
               }
             </script>
 
-            <a href="#tagcloud" class="tagcloud-button" onclick="$('.tagcloud').slideToggle();" >Filter:  <br /><?php echo $taglist; ?></a>
+            <a href="#tagcloud" class="tagcloud-button" onclick="$('.tagcloud').slideToggle();" ><?php echo $taglist; ?></a>
 <a name="tagcloud"></a>
             <div class="tagcloud" style="display:none;"><?php echo $tagcloud; ?>
 <a name="filtered_list"></a>
