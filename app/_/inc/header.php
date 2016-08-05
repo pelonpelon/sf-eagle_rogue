@@ -42,6 +42,7 @@
          <div id="panel">
          <a class="menu-trigger hamburger" href="#menu"></a>
          </div>
+<span class="beta" style="float:right;">(beta)</span>
 </header>
 
 <?php
@@ -68,14 +69,14 @@
     <nav id="menu" style="display: none;">
         <ul>
           <li class="hamburger" onclick="event.preventDefault(); jpm.trigger(true);"></li>
-          <li class="home" onclick="jpm.trigger(true);"><a href="index.php">HOME</a></li>
-          <li class="staff" onclick="jpm.trigger(true);"><a href="staff.php">STAFF</a></li>
+          <li class="menu-item home" onclick="jpm.trigger(true);"><a href="index.php">HOME</a></li>
+          <li class="menu-item staff" onclick="jpm.trigger(true);"><a href="staff.php">STAFF</a></li>
 
 <?php foreach ($pages as $page) {
         $title_raw = $page->post_title;
         $title = strtolower($page->post_title);
         $file = $title . '.php';
-        echo '<li class="' .$title. '" onclick="jpm.trigger(true);"><a href="' . $file . '">' . strtoupper($title) . '</a></li>';
+        echo '<li class="menu-item ' .$title. '" onclick="jpm.trigger(true);"><a href="' . $file . '">' . strtoupper($title) . '</a></li>';
 } ?>
 
           <li class="social facebook" onclick="jpm.trigger(true);"><a href="https://www.facebook.com/SFEagle" target="_blank"><img src="_/img/facebook-60x60.png" /></a></li>

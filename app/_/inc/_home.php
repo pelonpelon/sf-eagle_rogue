@@ -55,12 +55,22 @@
 
 ?>
 
-            <div class="item open-lightbox">
 
 <?php
       $attachment_url = wp_get_attachment_url( get_post_thumbnail_id( $ID ) );
-      $news_content = do_shortcode(get_the_content());
-      $attrs = array('class' => 'noclick', 'data-jslghtbx' => $attachment_url, 'data-jslghtbx-caption' => $news_content);
+      $news_content =  do_shortcode(get_the_content());
+      //throw new Exception("nc: |" . strlen($news_content) . "|" );
+      if (strlen($news_content)) {
+          $attrs = array('class' => 'noclick', 'data-jslghtbx' => $attachment_url, 'data-jslghtbx-caption' => $news_content);
+
+          ?> <div class="item open-lightbox"> <?php
+
+      }else{
+          $attrs = '';
+
+          ?> <div class="item"> <?php
+
+      }
       //$postcard = do_shortcode(get_post_meta($ID, 'event_postcard', true));
       $postcard = do_shortcode( isset($md['event_postcard'][0]) ? $md['event_postcard'][0] : '' );
       if ( has_post_thumbnail() ) {
@@ -83,47 +93,94 @@
 <?php
       endwhile;
       wp_reset_postdata();
-      $current_day = '';
 
-      $tags = get_tags();
-      $taglist = ' ';
-      $tagcloud = ' ';
-      if ($tags) {
-          foreach ($tags as $tag) {
-              $taglist .= '<span> ' . $tag->slug . ':' . $tag->count . ' </span>';
-              $tagcloud .= '<a class="tag-button" onclick="$(\'.tagcloud\').slideToggle();allItems(\'hide\'); $(\'.tag-'
-                  . $tag->slug . '\').each(function(){
-                      $(this).removeClass(\'hideme\').fadeIn(600).prevAll(\'.new-day\').first().removeClass(\'hideme\').fadeIn(600);})">'
-                  . $tag->name . '</a> ';
-          }
-      }
 ?>
+                </div>  <!--news-->
+<?php
 
-            </div>  <!--news-->
+//
+// TAGS
+//
+//
+
+    $tags = array();
+    while ($Items->have_posts()): $Items->the_post();
+        if ( ! in_category('event') || $Items->post->post_status != 'future' ) { continue; }
+        $tags_array = get_the_tags();
+        //print(" tags:: ");
+        //print_r($tags);
+        if ($tags_array) {
+            foreach ($tags_array as $tag) {
+                //isset($tags[$tag->slug]) ? print(" ++ ") : print(" +1 ");
+                isset($tags[$tag->slug]) ? $tags[$tag->slug] += 1 : $tags[$tag->slug] = 1;
+                //echo " tags: " . $tag->slug . ":" . $tags[$tag->slug];
+            }
+        }
+
+    endwhile;
+        //print_r($tags);
+        //throw new Exception("tags array: " . print_r($tags));
+    wp_reset_postdata();
+
+          //$all_tags = get_tags();
+          $taglist = ' ';
+          $tagcloud = ' ';
+          if ($tags) {
+              foreach (array_keys($tags) as $tag) {
+                  $font_size = .8 + $tags[$tag]/10;
+                  $font_weight = 300;
+                  if ($tag == 'special') {$font_size *= 1.5; $font_weight = 900;}
+                  $taglist .= '<span style="font-size: ' . $font_size . 'em; font-weight: ' . $font_weight . ';"> ' . $tag . ' </span>';
+                  $tagcloud .= '<a
+                      class="tag-button"
+                      style="font-size: ' . ($font_size * 2.2) . 'em; font-weight: ' . $font_weight . ';"
+                      onclick="$(\'.tagcloud a\').removeClass(\'clicked\'); $(this).addClass(\'clicked\'); allItems(\'hide\'); $(\'.tag-' . $tag . '\').each(function(){
+                          $(this).delay(600).removeClass(\'hideme\').fadeIn(600).prevAll(\'.new-day\').first().delay(400).removeClass(\'hideme\').fadeIn(400);})">'
+                          . $tag. '</a> ';
+              }
+          }
+    ?>
 
             <script>
               function allItems(visibility) {
                 if (visibility == 'hide') {
-                    $('.item').fadeOut(600).addClass('hideme');
-                    $('.new-day').fadeOut(600).addClass('hideme');
+                    $('.news hr').fadeOut(400).addClass('hideme');
+                    $('.tagcloud-button').fadeOut(400).addClass('hideme');
+                    $('.item').fadeOut(400).addClass('hideme');
+                    $('.new-day').fadeOut(400).addClass('hideme');
                 }
                 if (visibility == 'show') {
-                    $('.item').removeClass('hideme').fadeIn(600);
                     $('.new-day').removeClass('hideme').fadeIn(600);
+                    $('.item').removeClass('hideme').fadeIn(600);
+                    $('.news hr').removeClass('hideme').fadeIn(600);
+                    $('.tagcloud-button').removeClass('hideme').fadeIn(600);
                 }
               }
             </script>
 
-            <a href="#tagcloud" class="tagcloud-button" onclick="$('.tagcloud').slideToggle();" ><?php echo $taglist; ?></a>
-<a name="tagcloud"></a>
+            <a class="news-bottom" name="news_bottom"></a>
+
+            <a class="tagcloud-button" href="#" onclick="allItems('hide'); $('.tagcloud').slideToggle();" ><?php echo $taglist; ?></a>
+
+            <a name="tagcloud"></a>
+
             <div class="tagcloud" style="display:none;"><?php echo $tagcloud; ?>
-<a name="filtered_list"></a>
-                <a class="show-everything tag-button" onclick="$('.tagcloud').slideToggle(); allItems('show');">everything</a>
+
+                <a class="filtered-list" name="filtered_list"></a>
+
+                <a class="show-everything tag-button"
+                    onclick="allItems('show'); $('.tagcloud').slideToggle(); $('.tagcloud a').removeClass('clicked');">everything</a>
+
             </div>
-<a name="events_top"></a>
-            <div class="event">
+
+            <a name="events_top"></a>
+
+
+        <div class="event">
 <?php
+
       //$event_count=0;
+      $current_day = '';
       while ($Items->have_posts()): $Items->the_post();
           if ( ! in_category('event')) { continue; }
       //$event_count+=1;
@@ -197,10 +254,10 @@
           $cover = isset($md['event_cover'][0]) ? $md['event_cover'][0] : '';
 
           $postcard = do_shortcode(isset($md['event_postcard'][0]) ? $md['event_postcard'][0] : '');
-          $tags = get_the_tags($ID);
+          $post_tags = get_the_tags($ID);
           $taglist = ' ';
-          if ($tags) {
-              foreach ($tags as $tag) {
+          if ($post_tags) {
+              foreach ($post_tags as $tag) {
                   $taglist .= 'tag-' . $tag->name . ' ';
               }
           }

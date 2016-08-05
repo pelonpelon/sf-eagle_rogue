@@ -24,7 +24,7 @@
 }
 .staff-content {
     display: flex;
-    flex-flow: row;    
+    flex-flow: row;
 }
 #staff .post-thumbnail {
     flex: 0 1 40%;
@@ -34,6 +34,9 @@
 #staff .post-thumbnail img {
     height: auto;
     width: 100%;
+}
+.staff-postcard {
+  padding: 1%;
 }
 .staff-profile {
     flex: 1 0 50%;

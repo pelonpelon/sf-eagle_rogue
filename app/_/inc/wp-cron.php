@@ -1,5 +1,7 @@
 <?php
 
+global $past_items;
+
 $file = APP_PATH.'logs/transients.log';
 $entry = date('ymd G:i:s'). " :wp-cron.php\n";
 file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
@@ -11,18 +13,20 @@ $args = array(
     'post_status'   => array('publish'),
     'numberposts'   => 100
 );
-$Items = new WP_Query( $args );
+$past_items = new WP_Query( $args );
+//print_r($past_items->have_posts());
+//throw new Exception($past_items->have_posts());
 
 //FIXX ••• send email to myself to confirm
 
 // reset past events scheduled weekly
 function reschedule_weekly_events() {
-    global $Items;
+    global $past_items;
     $file = APP_PATH.'logs/transients.log';
     $entry = date('ymd G:i:s'). " :wp-cron.php :reschedule_weekly_events\n";
     file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
-    while ($Items->have_posts()): $Items->the_post();
+    while ($past_items->have_posts()): $past_items->the_post();
 
     $ID = get_the_ID();
     $weekly = get_post_meta($ID, 'event_weekly', true);
@@ -31,7 +35,8 @@ function reschedule_weekly_events() {
     $today = $now->format('l');
     $date = new DateTime(get_the_date('r'), new DateTimeZone('America/Los_Angeles'));
     $post_date = $date->format('Y-m-d');
-    if ($post_date >= $date->format('Y-m-d')) { continue; }
+    //if ($ID == 5573){throw new Exception("post_date < today: ". $post_date . " < " . $date->format('Y-m-d'));};
+    if ($post_date >= $now->format('Y-m-d')) { continue; }
     $post_day = $date->format('l');
     $post_time = $date->format('G:i');
 
@@ -52,7 +57,7 @@ function reschedule_weekly_events() {
         file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
         wp_mail( CONTACT_EMAIL, 'reschedule_weekly_events: '. get_the_title(),
-            get_the_title(). ' schduled for ' .$date_string );
+            get_the_title(). ' scheduled for ' .$date_string );
     }
     endwhile;
     wp_reset_postdata();
@@ -60,14 +65,14 @@ function reschedule_weekly_events() {
 
 // reset past events scheduled monthly
 function reschedule_monthly_events() {
-    global $Items;
+    global $past_items;
     $file = APP_PATH.'logs/transients.log';
     $entry =  date('ymd G:i:s'). " :wp-cron.php :reschedule_monthly_events\n";
     file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
-    while ($Items->have_posts()): $Items->the_post();
+    while ($past_items->have_posts()): $past_items->the_post();
 
-    $ID = $Items->post->ID;
+    $ID = $past_items->post->ID;
     $md = get_post_custom($ID);
 
     if (!isset($md['event_monthly_ordinals'][0]) || !in_category('event')) { continue; }
@@ -77,7 +82,7 @@ function reschedule_monthly_events() {
     $today = $now->format('l');
     $date = new DateTime(get_the_date('r'), new DateTimeZone('America/Los_Angeles'));
     $post_date = $date->format('Y-m-d');
-    if ($post_date >= $date->format('Y-m-d')) { continue; }
+    if ($post_date >= $now->format('Y-m-d')) { continue; }
     $post_day = $date->format('l');
     $post_time = $date->format('G:i');
 
@@ -102,7 +107,7 @@ function reschedule_monthly_events() {
             file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
             wp_mail( CONTACT_EMAIL, 'reschedule_monthly_events: '. get_the_title(),
-                get_the_title(). ' schduled for ' .$date_string );
+                get_the_title(). ' scheduled for ' .$date_string );
         }
     }
     endwhile;

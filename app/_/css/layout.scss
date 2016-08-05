@@ -53,14 +53,14 @@
 .page-content {
     width: 100%;
     max-width: 1000px;
-    padding: 30px 4%;
+    padding: 0px 2px;
     margin: 0 auto;
     height: 100%;
     background: $bg-darkest
 }
 /* set these for every generic wp-page*/
 .wp-page {
-    margin: 0 auto 25px;
+    margin: 25px auto;
 }
 .wp-page img {
     max-width: 100%;
@@ -95,9 +95,8 @@
     }
     .page-content {
         position: relative;
-        top: 70px;
-        padding-left: 2px;
-        padding-right: 2px;
+        padding-top: 70px;
+        /*top: 70px;*/
     }
 }
 @media only screen and (min-device-width: $tablet){
@@ -117,6 +116,9 @@
         height: 90px;
     }
     .page-content {
-        top: 90px;
+        padding-top: 90px;
+        padding-left: 4%;
+        padding-right: 4%;
+        /*top: 90px;*/
     }
 }

@@ -34,35 +34,36 @@
 /* line 7, _menu.scss */
 .jPanelMenu-panel .hamburger {
   text-align: center;
+  font-size: 0.7em;
 }
 
-/* line 10, _menu.scss */
+/* line 11, _menu.scss */
 .hamburger {
   position: fixed;
-  width: 60px;
-  height: 50px;
+  width: 90px;
+  height: 90px;
   padding: 0 0 0 18px;
 }
 
-/* line 16, _menu.scss */
+/* line 17, _menu.scss */
 .menu-trigger {
-  height: 60px;
-  width: 60px;
-  padding: 0 17px;
+  height: 80px;
+  width: 90px;
+  padding: 0 17px 0 0;
 }
 
-/* line 21, _menu.scss */
+/* line 22, _menu.scss */
 a.menu-trigger.hamburger:hover {
   text-decoration: none;
 }
 
-/* line 24, _menu.scss */
+/* line 25, _menu.scss */
 #panel {
   position: relative;
   top: -60px;
 }
 
-/* line 29, _menu.scss */
+/* line 30, _menu.scss */
 .jPanelMenu-panel {
   position: fixed !important;
   min-height: initial !important;
@@ -70,38 +71,42 @@ a.menu-trigger.hamburger:hover {
   background: transparent !important;
 }
 
-/* line 35, _menu.scss */
+/* line 36, _menu.scss */
 #menu {
   display: none;
 }
 
-/* line 38, _menu.scss */
+/* line 39, _menu.scss */
 nav#jPanelMenu-menu {
   background: #000;
   padding-bottom: 30px;
 }
 
-/* line 42, _menu.scss */
+/* line 43, _menu.scss */
 #jPanelMenu-menu ul {
   will-change: scroll-position;
 }
 
-/* line 45, _menu.scss */
+/* line 46, _menu.scss */
+#jPanelMenu-menu .menu-item.home {
+  margin-left: 90px;
+}
+
+/* line 49, _menu.scss */
 #jPanelMenu-menu a {
   display: block;
-  padding: 20px 7em;
+  padding: 20px 4em;
   color: white;
   text-decoration: none;
   font-weight: 900;
-  font-family: 'Arial';
 }
 
-/* line 53, _menu.scss */
+/* line 56, _menu.scss */
 #jPanelMenu-menu a:hover {
   color: #ea3;
 }
 
-/* line 56, _menu.scss */
+/* line 59, _menu.scss */
 li#menu-header {
   padding: 0 0 0 18px;
   position: fixed;
@@ -320,7 +325,7 @@ li#menu-header {
 .page-content {
   width: 100%;
   max-width: 1000px;
-  padding: 30px 4%;
+  padding: 0px 2px;
   margin: 0 auto;
   height: 100%;
   background: #000;
@@ -329,7 +334,7 @@ li#menu-header {
 /* set these for every generic wp-page*/
 /* line 62, layout.scss */
 .wp-page {
-  margin: 0 auto 25px;
+  margin: 25px auto;
 }
 
 /* line 65, layout.scss */
@@ -374,18 +379,17 @@ li#menu-header {
   /* line 96, layout.scss */
   .page-content {
     position: relative;
-    top: 70px;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-top: 70px;
+    /*top: 70px;*/
   }
 }
 @media only screen and (min-device-width: 768px) {
-  /* line 104, layout.scss */
+  /* line 103, layout.scss */
   .hamburger:before {
     font-size: 48px;
   }
 
-  /* line 107, layout.scss */
+  /* line 106, layout.scss */
   .site-title {
     /*font-size: 2em;*/
     font-size: 6em;
@@ -393,18 +397,21 @@ li#menu-header {
     text-shadow: #1b81da 3px 4px;
   }
 
-  /* line 113, layout.scss */
+  /* line 112, layout.scss */
   .logo img {
     height: 90px;
   }
 
-  /* line 116, layout.scss */
+  /* line 115, layout.scss */
   .site-header {
     height: 90px;
   }
 
-  /* line 119, layout.scss */
+  /* line 118, layout.scss */
   .page-content {
-    top: 90px;
+    padding-top: 90px;
+    padding-left: 4%;
+    padding-right: 4%;
+    /*top: 90px;*/
   }
 }

@@ -190,27 +190,55 @@ hr {
 /* line 107, home.scss */
 .tag-button {
   display: inline-block;
-  padding: 10px;
+  padding: 8px;
   /*border: 10px solid #600;*/
-  border-radius: 45%;
-  background: goldenrod;
+  border-radius: 35%;
+  border: #000 2px solid;
+  color: #1570bf;
   font-size: 2em;
   text-decoration: none;
   text-align: center;
-  color: black;
+  background: black;
   font-variant: small-caps;
   float: right;
 }
 
-/* line 120, home.scss */
+/* line 121, home.scss */
+.tag-button.clicked {
+  color: #082871;
+  background: #1570bf;
+}
+
+/* line 125, home.scss */
 .tag-button:hover {
   text-decoration: none;
 }
 
-/* line 123, home.scss */
+/* line 128, home.scss */
+.tagcloud {
+  max-width: 520px;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+/* line 137, home.scss */
 .tagcloud-button {
   display: block;
-  background: #006;
+  background: #172d4c;
   padding: 10px 0;
   text-align: center;
   text-decoration: none;
@@ -218,12 +246,12 @@ hr {
   font-size: 1.4em;
 }
 
-/* line 132, home.scss */
+/* line 146, home.scss */
 .tagcloud-button:hover {
   text-decoration: none;
 }
 
-/* line 135, home.scss */
+/* line 149, home.scss */
 .show-everything {
   display: block;
   float: none;
@@ -231,7 +259,7 @@ hr {
 }
 
 /*Events*/
-/* line 142, home.scss */
+/* line 156, home.scss */
 .event .item {
   -webkit-flex: 1 0 90px;
       -ms-flex: 1 0 90px;
@@ -249,7 +277,7 @@ hr {
   background-image: linear-gradient(#000, #000, #0e2542);
 }
 
-/* line 153, home.scss */
+/* line 167, home.scss */
 .event .thumbnail {
   -webkit-flex: 0 0 90px;
       -ms-flex: 0 0 90px;
@@ -264,7 +292,7 @@ hr {
   height: 90px;
 }
 
-/* line 160, home.scss */
+/* line 174, home.scss */
 .event .thumbnail img {
   display: block;
   width: 90px;
@@ -272,7 +300,7 @@ hr {
   opacity: .8;
 }
 
-/* line 166, home.scss */
+/* line 180, home.scss */
 .event .content {
   font-family: "Alegreyasans";
   -webkit-flex: 1 1 0%;
@@ -285,32 +313,32 @@ hr {
   /*background-image: linear-gradient($bg-2, $bg-2, $bg-1)*/
 }
 
-/* line 175, home.scss */
+/* line 189, home.scss */
 span.label {
   font-size: smaller;
   color: deepskyblue;
 }
 
-/* line 179, home.scss */
+/* line 193, home.scss */
 .event .content p {
   font-size: smaller;
   font-style: italic;
   font-weight: 600;
 }
 
-/* line 188, home.scss */
+/* line 202, home.scss */
 .event .content .title {
   text-shadow: blue 1px 1px;
   color: #01a1d6;
 }
 
-/* line 192, home.scss */
+/* line 206, home.scss */
 .event .content .subtitle {
   font-size: smaller;
   color: cyan;
 }
 
-/* line 196, home.scss */
+/* line 210, home.scss */
 .event .content li {
   line-height: 1em;
 }
@@ -323,7 +351,7 @@ span.label {
 /*padding: 25px 0;*/
 /*display: block;*/
 /*}*/
-/* line 208, home.scss */
+/* line 222, home.scss */
 .event .info {
   position: absolute;
   right: 3px;
@@ -335,18 +363,18 @@ span.label {
   opacity: .7;
 }
 
-/* line 218, home.scss */
+/* line 232, home.scss */
 .who, .band-list {
   font-size: .9em;
   padding-top: 7px;
 }
 
-/* line 222, home.scss */
+/* line 236, home.scss */
 .band-list li:nth-child(odd) {
   color: #c7e4fd;
 }
 
-/* line 225, home.scss */
+/* line 239, home.scss */
 .band-list li:nth-child(even) {
   color: #98a7b5;
 }
@@ -354,12 +382,12 @@ span.label {
 /*.band-list li, .band-list a {*/
 /*color: #ef5eef;*/
 /*}*/
-/* line 231, home.scss */
+/* line 245, home.scss */
 .promoter, .promoter a {
   color: #618ece !important;
 }
 
-/* line 234, home.scss */
+/* line 248, home.scss */
 .more {
   color: aqua;
 }
@@ -371,65 +399,65 @@ span.label {
 /*line-height: .9em;*/
 /*padding-top: 2px;*/
 /*}*/
-/* line 244, home.scss */
+/* line 258, home.scss */
 .who .hosts span:nth-child(odd) {
   color: #98a7b5;
 }
 
-/* line 247, home.scss */
+/* line 261, home.scss */
 .who .hosts span:nth-child(even) {
   color: #c7e4fd;
 }
 
-/* line 250, home.scss */
+/* line 264, home.scss */
 .who .hosts span:first-child {
   color: deepskyblue;
 }
 
-/* line 253, home.scss */
+/* line 267, home.scss */
 .who .guests span:nth-child(odd) {
   color: #c7e4fd;
 }
 
-/* line 256, home.scss */
+/* line 270, home.scss */
 .who .guests span:nth-child(even) {
   color: #98a7b5;
 }
 
-/* line 259, home.scss */
+/* line 273, home.scss */
 .who .guests span:first-child {
   color: deepskyblue;
 }
 
-/* line 262, home.scss */
+/* line 276, home.scss */
 .who .djs span:nth-child(even) {
   color: #c7e4fd;
 }
 
-/* line 265, home.scss */
+/* line 279, home.scss */
 .who .djs span:nth-child(odd) {
   color: #98a7b5;
 }
 
-/* line 268, home.scss */
+/* line 282, home.scss */
 .who .djs span:first-child {
   color: deepskyblue;
 }
 
 /*Media Queries*/
 @media only screen and (min-device-width: 768px) {
-  /* line 275, home.scss */
+  /* line 289, home.scss */
   .news .content {
     width: 80%;
     margin: 0 auto;
   }
 
-  /* line 279, home.scss */
+  /* line 293, home.scss */
   .event .item {
     /*height: 120px;*/
   }
 
-  /* line 282, home.scss */
+  /* line 296, home.scss */
   .event .thumbnail {
     -webkit-flex: 0 0 120px;
         -ms-flex: 0 0 120px;
@@ -437,28 +465,28 @@ span.label {
     height: 120px;
   }
 
-  /* line 286, home.scss */
+  /* line 300, home.scss */
   .event .thumbnail img {
     width: 120px;
   }
 
-  /* line 289, home.scss */
+  /* line 303, home.scss */
   .event .content h3 {
     /*font-size: 1.3em;*/
   }
 
-  /* line 292, home.scss */
+  /* line 306, home.scss */
   .event .content li {
     font-size: 1em;
   }
 
-  /* line 296, home.scss */
+  /* line 310, home.scss */
   .who, .band-list {
     padding-left: 5%;
     font-size: 1em;
   }
 }
-/* line 301, home.scss */
+/* line 315, home.scss */
 .pages h1,
 .pages h2,
 .pages h3,
@@ -468,7 +496,7 @@ span.label {
   margin: 15px 0;
 }
 
-/* line 310, home.scss */
+/* line 324, home.scss */
 .pages {
   background: #000;
   position: relative;
@@ -477,7 +505,7 @@ span.label {
   overflow-y: auto;
 }
 
-/* line 317, home.scss */
+/* line 331, home.scss */
 .wp-page {
   -webkit-flex: 0 1 30%;
       -ms-flex: 0 1 30%;
@@ -487,7 +515,7 @@ span.label {
   font-size: .9em;
 }
 
-/* line 323, home.scss */
+/* line 337, home.scss */
 .jslghtbx-contentwrapper .pages {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -498,29 +526,29 @@ span.label {
 }
 
 @media only screen and (min-device-width: 768px) {
-  /* line 328, home.scss */
+  /* line 342, home.scss */
   .event .content {
     font-size: 1em;
   }
 
-  /* line 331, home.scss */
+  /* line 345, home.scss */
   .event .title {
     /*font-size: 1.3em;*/
   }
 }
 @media only screen and (max-device-width: 767px) and (orientation: landscape) {
-  /* line 336, home.scss */
+  /* line 350, home.scss */
   .scrollbox {
     font-size: 1.4em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 341, home.scss */
+  /* line 355, home.scss */
   #home iframe {
     display: block;
   }
 
-  /* line 344, home.scss */
+  /* line 358, home.scss */
   #home .pages {
     -webkit-flex: 0 0 59%;
         -ms-flex: 0 0 59%;
@@ -536,7 +564,7 @@ span.label {
     height: 80%;
   }
 
-  /* line 352, home.scss */
+  /* line 366, home.scss */
   #home .page {
     -webkit-flex: 1 0 0%;
         -ms-flex: 1 0 0%;
@@ -544,7 +572,7 @@ span.label {
     margin: 0 auto;
   }
 
-  /* line 356, home.scss */
+  /* line 370, home.scss */
   #home .scrollbox {
     -webkit-flex: 1 1 420px;
         -ms-flex: 1 1 420px;
@@ -552,24 +580,24 @@ span.label {
     height: 100%;
   }
 
-  /* line 360, home.scss */
+  /* line 374, home.scss */
   .news .content {
     width: 100% !important;
   }
 }
 @media only screen and (orientation: landscape) {
-  /* line 365, home.scss */
+  /* line 379, home.scss */
   .new-day .day {
     line-height: 1em;
   }
 
-  /* line 368, home.scss */
+  /* line 382, home.scss */
   .new-day .date {
     line-height: .5em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 373, home.scss */
+  /* line 387, home.scss */
   #home.pg-frame {
     background-color: transparent;
     background-image: url("/wp/wp-content/uploads/2016/07/logo.svg");
@@ -579,7 +607,7 @@ span.label {
     background-repeat: no-repeat;
   }
 
-  /* line 381, home.scss */
+  /* line 395, home.scss */
   #home.page-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -634,14 +662,14 @@ span.label {
 }
 
 */
-/* line 430, home.scss */
+/* line 444, home.scss */
 .social-buttons {
   position: absolute;
   min-width: 222px;
   padding-top: 5px;
 }
 
-/* line 435, home.scss */
+/* line 449, home.scss */
 .facebook-button, .twitter-button, .tumblr-button {
   display: inline-block;
   overflow: hidden;
@@ -651,17 +679,17 @@ span.label {
   text-align: center;
 }
 
-/* line 443, home.scss */
+/* line 457, home.scss */
 .facebook-button {
   margin: -2px 4px 0 4px;
 }
 
-/* line 446, home.scss */
+/* line 460, home.scss */
 .twitter-button {
   margin: 0 4px;
 }
 
-/* line 449, home.scss */
+/* line 463, home.scss */
 .tumblr-button {
   margin: 0 4px;
 }

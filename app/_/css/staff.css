@@ -85,6 +85,11 @@
 }
 
 /* line 38, staff.scss */
+.staff-postcard {
+  padding: 1%;
+}
+
+/* line 41, staff.scss */
 .staff-profile {
   -webkit-flex: 1 0 50%;
       -ms-flex: 1 0 50%;
@@ -92,26 +97,26 @@
   padding: 0 2px;
 }
 
-/* line 42, staff.scss */
+/* line 45, staff.scss */
 .staff-details {
   font-size: .9em;
   text-align: right;
 }
 
 @media only screen and (min-device-width: 640px) {
-  /* line 47, staff.scss */
+  /* line 50, staff.scss */
   #staff .post-thumbnail img {
     max-width: 120px;
   }
 }
 @media only screen and (min-device-height: 640px) and (orientation: portrait) {
-  /* line 52, staff.scss */
+  /* line 55, staff.scss */
   #staff .scrollbox {
     overflow-y: auto;
   }
 }
 @media only screen and (min-device-height: 768px) {
-  /* line 57, staff.scss */
+  /* line 60, staff.scss */
   #staff .post {
     -webkit-flex: 0 1 240px;
         -ms-flex: 0 1 240px;
@@ -119,7 +124,7 @@
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 62, staff.scss */
+  /* line 65, staff.scss */
   #staff .scrollbox {
     -webkit-flex: 1 1 420px;
         -ms-flex: 1 1 420px;

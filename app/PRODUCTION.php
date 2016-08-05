@@ -1,16 +1,19 @@
+        //TODOp ••• TURN OFF DEBUG
+        //TODOp ••• make view post work
         //TODOp ••• fix somethings fucked up
         //TODOp ••• fix media dimensions in wp LIVE +1000
         //TODOp ••• categories: news, events
+        //TODOp ••• add to metabox input-list.css li float:left padding-right:20px
         //TODOp ••• add social media
         //TODOp ••• add pages to wp
-        //TODOp ••• add to metabox input-list.css li float:left padding-right:20px
         //TODOp ••• add pages to wp
         //TODOp  set default cat to event
         //TODOp  install plugins: metabox
         //TODOp  add FOLSOM to calendar
         //TODOp  Happy Hour news item (should there be an ad item)
         //TODOp  ------------------------
-        //TODOd ••• remove feature img etc upon weekly/monthly if generic
+        //TODOd ••• cron if weekly already exists don't advance
+        //TODOd ••• cron remove feature img etc upon weekly/monthly if generic
         //TODOd ••• how to DEC order to query for news without DB call
         //TODOd ••• editor move ul and li together
         //TODOd ••• editor add flexbox table
@@ -18,7 +21,7 @@
         //TODOd ••• cron removes poster if generic exists
         //TODOd ••• cron duplicate only required stuff on repeat
         //TODOd ••• can sampler do transparent backgound on banners
-        //TODOd ••• Monthlies rewite to check 2nd and 5th Tuesday and Wednesday
+        //TODOd  Monthlies rewite to check 2nd and 5th Tuesday and Wednesday
         //TODOd ••• 404.html not working
         //TODOd •• shortcode for formatted social
         //TODOd •• put menu-trigger on own layer for animation
@@ -36,7 +39,8 @@
         //TODOd • djs urls
         //TODOd • create Softball post_type
         //TODOd • band page, add multiple [links] after name
-        //TODOd • add Sponsors,beneficiaries with hosts, guests
+        //TODOd •• add Sponsors,beneficiaries,procedes with hosts, guests
+        //TODOd •• give hosts, djs etc their own links
         //TODOd • Try a video on popup
         //TODOd • Top Message should be a post that can be emailed
         //TODOd • TNL icon should have trans bg

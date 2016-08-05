@@ -15,7 +15,7 @@ var jpm=$.jPanelMenu({
     excludedPanelContent: 'style, script',
     keepEventHandlers: false,
     direction: 'left',
-    openPosition: '250px',
+    openPosition: '300px',
     animated: true,
     closeOnContentClick: true,
     afterOpen: function(){

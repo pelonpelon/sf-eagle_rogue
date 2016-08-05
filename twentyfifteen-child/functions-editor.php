@@ -27,7 +27,7 @@
    //return $buttons;
 //}
 
-//function my_mce_buttons_2( $buttons ) {	
+//function my_mce_buttons_2( $buttons ) {
 	/**
 	 * Add in a core button that's disabled by default
 	 */
@@ -38,7 +38,46 @@
 //}
 //add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
 
-// add more buttons to the html editor
+//
+//
+// DEFAULT EDITOR MARKUP
+//
+//
+
+// Default post editor text //
+function diww_default_post_content( $content ) {
+    $where = get_current_screen();
+    if ( $where->action != 'add' ) { return; }
+    $ID = get_the_ID();
+    $post_type = $where->post_type;
+    if ( $post_type == 'post' ) {
+        $template = get_page_by_title('_post_editor_default');
+        $content = $template->post_content;
+        //$content = '[title align="left"]
+            //[when]
+            //<p>[who]</p>
+            //[more]';
+    }
+    if ( $post_type == 'staff' ) {
+        $template = get_page_by_title('_staff_editor_default');
+        $content = $template->post_content;
+        //$content = '[meta id=\'nickname\']
+            //<ul class="social_media">
+            //<li><a href="[meta id=\'facebook_url\']" target="_blank">Facebook</a></li>
+            //<li><a href="[meta id=\'twitter_url\']" target="_blank">Twitter</a></li>
+            //</ul>';
+    }
+    return $content;
+    //}
+}
+add_filter( 'default_content', 'diww_default_post_content' );
+
+//
+//
+// EDITOR BUTTONS
+//
+//
+
 function appthemes_add_quicktags() {
   $where = get_current_screen();
   $ID = get_the_ID();

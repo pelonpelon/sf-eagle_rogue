@@ -328,9 +328,10 @@ function event_meta_boxes( $meta_boxes ) {
         'id'    => $prefix . 'postcard',
         'type'  => 'wysiwyg',
         'raw'   => true,
-        'std'   => '[staff id="title"]
-[staff id="position"]
-[staff id="birthday"]',
+        'std'   => '<ul class="details">
+  <li>[title align="left"]</li>
+  <li>[staff id="position"]</li>
+</ul>',
         'options' => array(
           'textarea_rows' => 16,
           'teeny'     => false,

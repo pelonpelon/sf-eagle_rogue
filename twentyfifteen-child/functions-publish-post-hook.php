@@ -111,7 +111,7 @@ function add_events_type_meta_data_tab()
   }
 }
 
-// enforce custom field required    //FIXX ••• notices show up on wrong screens 
+// enforce custom field required    //FIXX ••• notices show up on wrong screens
 add_action( 'admin_notices', 'required_custom_fields' );
 function required_custom_fields() {
   $where = get_current_screen();
@@ -160,31 +160,6 @@ function update_publish_date() {
     }
   }
 }
-
-
-// Default post editor text //
-function diww_default_post_content( $content ) {
-  $where = get_current_screen();
-  if ( $where->action != 'add' ) { return; }
-  $ID = get_the_ID();
-  $post_type = $where->post_type;
-  if ( $post_type == 'post' ) {
-    $content = '[title align="left"]
-[when]
-<p>[who]</p>
-[more]';
-  }
-  if ( $post_type == 'staff' ) {
-    $content = '[meta id=\'nickname\'] is one heluva guy
-          <ul class="social_media">
-          <li><a href="[meta id=\'facebook_url\']" target="_blank">Facebook</a></li>
-          <li><a href="[meta id=\'twitter_url\']" target="_blank">Twitter</a></li>
-          </ul>';
-  }
-    return $content;
-  //}
-}
-add_filter( 'default_content', 'diww_default_post_content' );
 
 
 // warn that date not set back one year

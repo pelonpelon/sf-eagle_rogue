@@ -37,13 +37,13 @@
 	//SET SERVER SPECIFIC VARIABLES AND CONSTANTS
 	switch ($ServerName) {
 		case 'localhost':
-			define("CONTACT_EMAIL", "pelon@localhost");
+			define("CONTACT_EMAIL", "pelon@macbook");
 			define("ANALYTICS_ID", "");
             define("APP_PATH", dirname( __FILE__ ) . '/../../' );
 			break;
 
         case 'sf-eagle.mirror':
-            define("CONTACT_EMAIL", "pelon@localhost");
+            define("CONTACT_EMAIL", "pelon@macbook");
             define("ANALYTICS_ID", "");
             define("APP_PATH", dirname( __FILE__ ) . '/../../' );
             break;
