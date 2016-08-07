@@ -105,7 +105,13 @@
 
     $tags = array();
     while ($Items->have_posts()): $Items->the_post();
+
         if ( ! in_category('event') || $Items->post->post_status != 'future' ) { continue; }
+        $endtime = get_post_meta(get_the_ID(), 'event_endtime', true);
+        $event_end_time = new DateTime(get_the_date('r'));
+        date_modify($event_end_time, $endtime);
+        if ($now->format('U') > $event_end_time->format('U')) {continue;}
+
         $tags_array = get_the_tags();
         //print(" tags:: ");
         //print_r($tags);
