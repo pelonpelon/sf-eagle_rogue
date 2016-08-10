@@ -331,20 +331,21 @@ hr {
   background: black;
   font-variant: small-caps;
   float: right;
+  cursor: pointer;
 }
 
-/* line 121, home.scss */
+/* line 122, home.scss */
 .tag-button.clicked {
   color: #082871;
   background: #1570bf;
 }
 
-/* line 125, home.scss */
+/* line 126, home.scss */
 .tag-button:hover {
   text-decoration: none;
 }
 
-/* line 128, home.scss */
+/* line 129, home.scss */
 .tagcloud {
   max-width: 520px;
   margin: 0 auto;
@@ -365,7 +366,7 @@ hr {
           flex-wrap: wrap;
 }
 
-/* line 137, home.scss */
+/* line 138, home.scss */
 .tagcloud-button {
   display: block;
   background: #172d4c;
@@ -376,12 +377,12 @@ hr {
   font-size: 1.4em;
 }
 
-/* line 146, home.scss */
+/* line 147, home.scss */
 .tagcloud-button:hover {
   text-decoration: none;
 }
 
-/* line 149, home.scss */
+/* line 150, home.scss */
 .show-everything {
   display: block;
   float: none;
@@ -390,7 +391,7 @@ hr {
 }
 
 /*Events*/
-/* line 157, home.scss */
+/* line 158, home.scss */
 .event .item {
   -webkit-flex: 1 0 90px;
       -ms-flex: 1 0 90px;
@@ -408,7 +409,7 @@ hr {
   background-image: linear-gradient(#000, #000, #0e2542);
 }
 
-/* line 168, home.scss */
+/* line 169, home.scss */
 .event .thumbnail {
   -webkit-flex: 0 0 90px;
       -ms-flex: 0 0 90px;
@@ -423,7 +424,7 @@ hr {
   height: 90px;
 }
 
-/* line 175, home.scss */
+/* line 176, home.scss */
 .event .thumbnail img {
   display: block;
   width: 90px;
@@ -431,7 +432,7 @@ hr {
   opacity: .8;
 }
 
-/* line 181, home.scss */
+/* line 182, home.scss */
 .event .content {
   font-family: "Alegreyasans";
   -webkit-flex: 1 1 0%;
@@ -444,32 +445,32 @@ hr {
   /*background-image: linear-gradient($bg-2, $bg-2, $bg-1)*/
 }
 
-/* line 190, home.scss */
+/* line 191, home.scss */
 span.label {
   font-size: smaller;
   color: deepskyblue;
 }
 
-/* line 194, home.scss */
+/* line 195, home.scss */
 .event .content p {
   font-size: smaller;
   font-style: italic;
   font-weight: 600;
 }
 
-/* line 203, home.scss */
+/* line 204, home.scss */
 .event .content .title {
   text-shadow: blue 1px 1px;
   color: #01a1d6;
 }
 
-/* line 207, home.scss */
+/* line 208, home.scss */
 .event .content .subtitle {
   font-size: smaller;
   color: cyan;
 }
 
-/* line 211, home.scss */
+/* line 212, home.scss */
 .event .content li {
   line-height: 1em;
 }
@@ -482,7 +483,7 @@ span.label {
 /*padding: 25px 0;*/
 /*display: block;*/
 /*}*/
-/* line 223, home.scss */
+/* line 224, home.scss */
 .event .info {
   position: absolute;
   right: 3px;
@@ -494,18 +495,18 @@ span.label {
   opacity: .7;
 }
 
-/* line 233, home.scss */
+/* line 234, home.scss */
 .who, .band-list {
   font-size: .9em;
   padding-top: 7px;
 }
 
-/* line 237, home.scss */
+/* line 238, home.scss */
 .band-list li:nth-child(odd) {
   color: #c7e4fd;
 }
 
-/* line 240, home.scss */
+/* line 241, home.scss */
 .band-list li:nth-child(even) {
   color: #98a7b5;
 }
@@ -513,12 +514,12 @@ span.label {
 /*.band-list li, .band-list a {*/
 /*color: #ef5eef;*/
 /*}*/
-/* line 246, home.scss */
+/* line 247, home.scss */
 .promoter, .promoter a {
   color: #618ece !important;
 }
 
-/* line 249, home.scss */
+/* line 250, home.scss */
 .more {
   color: aqua;
 }
@@ -530,65 +531,65 @@ span.label {
 /*line-height: .9em;*/
 /*padding-top: 2px;*/
 /*}*/
-/* line 259, home.scss */
+/* line 260, home.scss */
 .who .hosts span:nth-child(odd) {
   color: #98a7b5;
 }
 
-/* line 262, home.scss */
+/* line 263, home.scss */
 .who .hosts span:nth-child(even) {
   color: #c7e4fd;
 }
 
-/* line 265, home.scss */
+/* line 266, home.scss */
 .who .hosts span:first-child {
   color: deepskyblue;
 }
 
-/* line 268, home.scss */
+/* line 269, home.scss */
 .who .guests span:nth-child(odd) {
   color: #c7e4fd;
 }
 
-/* line 271, home.scss */
+/* line 272, home.scss */
 .who .guests span:nth-child(even) {
   color: #98a7b5;
 }
 
-/* line 274, home.scss */
+/* line 275, home.scss */
 .who .guests span:first-child {
   color: deepskyblue;
 }
 
-/* line 277, home.scss */
+/* line 278, home.scss */
 .who .djs span:nth-child(even) {
   color: #c7e4fd;
 }
 
-/* line 280, home.scss */
+/* line 281, home.scss */
 .who .djs span:nth-child(odd) {
   color: #98a7b5;
 }
 
-/* line 283, home.scss */
+/* line 284, home.scss */
 .who .djs span:first-child {
   color: deepskyblue;
 }
 
 /*Media Queries*/
 @media only screen and (min-device-width: 768px) {
-  /* line 290, home.scss */
+  /* line 291, home.scss */
   .news .content {
     width: 80%;
     margin: 0 auto;
   }
 
-  /* line 294, home.scss */
+  /* line 295, home.scss */
   .event .item {
     /*height: 120px;*/
   }
 
-  /* line 297, home.scss */
+  /* line 298, home.scss */
   .event .thumbnail {
     -webkit-flex: 0 0 120px;
         -ms-flex: 0 0 120px;
@@ -596,28 +597,28 @@ span.label {
     height: 120px;
   }
 
-  /* line 301, home.scss */
+  /* line 302, home.scss */
   .event .thumbnail img {
     width: 120px;
   }
 
-  /* line 304, home.scss */
+  /* line 305, home.scss */
   .event .content h3 {
     /*font-size: 1.3em;*/
   }
 
-  /* line 307, home.scss */
+  /* line 308, home.scss */
   .event .content li {
     font-size: 1em;
   }
 
-  /* line 311, home.scss */
+  /* line 312, home.scss */
   .who, .band-list {
     padding-left: 5%;
     font-size: 1em;
   }
 }
-/* line 316, home.scss */
+/* line 317, home.scss */
 .pages h1,
 .pages h2,
 .pages h3,
@@ -627,7 +628,7 @@ span.label {
   margin: 15px 0;
 }
 
-/* line 325, home.scss */
+/* line 326, home.scss */
 .pages {
   background: #000;
   position: relative;
@@ -636,7 +637,7 @@ span.label {
   overflow-y: auto;
 }
 
-/* line 332, home.scss */
+/* line 333, home.scss */
 .wp-page {
   -webkit-flex: 0 1 30%;
       -ms-flex: 0 1 30%;
@@ -646,7 +647,7 @@ span.label {
   font-size: .9em;
 }
 
-/* line 338, home.scss */
+/* line 339, home.scss */
 .jslghtbx-contentwrapper .pages {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -657,29 +658,29 @@ span.label {
 }
 
 @media only screen and (min-device-width: 768px) {
-  /* line 343, home.scss */
+  /* line 344, home.scss */
   .event .content {
     font-size: 1em;
   }
 
-  /* line 346, home.scss */
+  /* line 347, home.scss */
   .event .title {
     /*font-size: 1.3em;*/
   }
 }
 @media only screen and (max-device-width: 767px) and (orientation: landscape) {
-  /* line 351, home.scss */
+  /* line 352, home.scss */
   .scrollbox {
     font-size: 1.4em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 356, home.scss */
+  /* line 357, home.scss */
   #home iframe {
     display: block;
   }
 
-  /* line 359, home.scss */
+  /* line 360, home.scss */
   #home .pages {
     -webkit-flex: 0 0 59%;
         -ms-flex: 0 0 59%;
@@ -695,7 +696,7 @@ span.label {
     height: 80%;
   }
 
-  /* line 367, home.scss */
+  /* line 368, home.scss */
   #home .page {
     -webkit-flex: 1 0 0%;
         -ms-flex: 1 0 0%;
@@ -703,7 +704,7 @@ span.label {
     margin: 0 auto;
   }
 
-  /* line 371, home.scss */
+  /* line 372, home.scss */
   #home .scrollbox {
     -webkit-flex: 1 1 420px;
         -ms-flex: 1 1 420px;
@@ -711,24 +712,24 @@ span.label {
     height: 100%;
   }
 
-  /* line 375, home.scss */
+  /* line 376, home.scss */
   .news .content {
     width: 100% !important;
   }
 }
 @media only screen and (orientation: landscape) {
-  /* line 380, home.scss */
+  /* line 381, home.scss */
   .new-day .day {
     line-height: 1em;
   }
 
-  /* line 383, home.scss */
+  /* line 384, home.scss */
   .new-day .date {
     line-height: .5em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 388, home.scss */
+  /* line 389, home.scss */
   #home.pg-frame {
     background-color: transparent;
     background-image: url("/wp/wp-content/uploads/2016/07/logo.svg");
@@ -738,7 +739,7 @@ span.label {
     background-repeat: no-repeat;
   }
 
-  /* line 396, home.scss */
+  /* line 397, home.scss */
   #home.page-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -793,14 +794,14 @@ span.label {
 }
 
 */
-/* line 445, home.scss */
+/* line 446, home.scss */
 .social-buttons {
   position: absolute;
   min-width: 222px;
   padding-top: 5px;
 }
 
-/* line 450, home.scss */
+/* line 451, home.scss */
 .facebook-button, .twitter-button, .tumblr-button {
   display: inline-block;
   overflow: hidden;
@@ -810,17 +811,17 @@ span.label {
   text-align: center;
 }
 
-/* line 458, home.scss */
+/* line 459, home.scss */
 .facebook-button {
   margin: -2px 4px 0 4px;
 }
 
-/* line 461, home.scss */
+/* line 462, home.scss */
 .twitter-button {
   margin: 0 4px;
 }
 
-/* line 464, home.scss */
+/* line 465, home.scss */
 .tumblr-button {
   margin: 0 4px;
 }
