@@ -178,8 +178,8 @@ li#menu-header {
 
 /* line 37, _jslghtbx.scss */
 .jslghtbx-caption .band-list ul a:hover {
-  background-color: mediumslateblue;
-  opacity: .4;
+  background-color: #4d7fc7;
+  opacity: .5;
 }
 
 /* line 41, _jslghtbx.scss */

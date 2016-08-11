@@ -444,9 +444,15 @@ span.label {
 */
 
 .social-buttons {
-    position: absolute;
-    min-width: 222px;
-    padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin-left: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 900;
+  color: aqua;
+
 }
 .facebook-button, .twitter-button, .tumblr-button {
     display: inline-block;

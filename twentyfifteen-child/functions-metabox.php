@@ -163,9 +163,7 @@ function event_meta_boxes( $meta_boxes ) {
         'type'  => 'wysiwyg',
         // Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
         'raw'   => true,
-        'std'   => '[title]
-[subtitle]
-[who]',
+        'std'   => '[template title="_postcard_default"]',
         'options' => array(
           'textarea_rows' => 7,
           'teeny'     => false,

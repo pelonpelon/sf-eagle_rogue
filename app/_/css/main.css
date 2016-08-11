@@ -796,12 +796,21 @@ span.label {
 */
 /* line 446, home.scss */
 .social-buttons {
-  position: absolute;
-  min-width: 222px;
-  padding-top: 5px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  float: right;
+  margin-left: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 900;
+  color: aqua;
 }
 
-/* line 451, home.scss */
+/* line 457, home.scss */
 .facebook-button, .twitter-button, .tumblr-button {
   display: inline-block;
   overflow: hidden;
@@ -811,17 +820,17 @@ span.label {
   text-align: center;
 }
 
-/* line 459, home.scss */
+/* line 465, home.scss */
 .facebook-button {
   margin: -2px 4px 0 4px;
 }
 
-/* line 462, home.scss */
+/* line 468, home.scss */
 .twitter-button {
   margin: 0 4px;
 }
 
-/* line 465, home.scss */
+/* line 471, home.scss */
 .tumblr-button {
   margin: 0 4px;
 }

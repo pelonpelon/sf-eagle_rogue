@@ -1,5 +1,13 @@
 <?php
 
+
+/*
+
+$tw = isset($md['twitter_url']) ? $md['twitter_url'] : false;
+$fb = isset($md['facebook_url']) ? $md['facebook_url'] : false;
+$tm = isset($md['tumblr_url']) ? $md['tumblr_url'] : false;
+ * */
+
 function shortcode_get_field_array($prefix, $args){
   $attrs = shortcode_atts( array(
     'id' => false,
@@ -184,7 +192,7 @@ function shortcode_event_who( $args ){
         }
       }
 
-      // it's not a list  
+      // it's not a list
     } else {
         $data = get_post_meta(get_the_ID(), $field->id, true);
         if ($data) {
@@ -251,18 +259,40 @@ add_shortcode( 'when', 'shortcode_event_when' );
 
 // Get any page contents
 function shortcode_page_content_by_title( $args ){
+    $attrs = shortcode_atts( array(
+        'title' => 'Error',
+    ), $args );
+    $title = $attrs['title'];
+    $title_oneword = str_replace(array('_',' '), '-', strtolower($title));
+    $page = get_page_by_title_safely($title);
+    $markup = '<div class="wp-page '.$title_oneword.'">';
+    $markup .= do_shortcode($page->post_content);
+    $markup .= '</div>';
+    return $markup;
+}
+add_shortcode( 'page', 'shortcode_page_content_by_title' );
+
+// Get template contents
+function shortcode_template_content_by_title( $args ){
   $attrs = shortcode_atts( array(
     'title' => 'Error',
   ), $args );
   $title = $attrs['title'];
   $title_oneword = str_replace(array('_',' '), '-', strtolower($title));
-  $page = get_page_by_title_safely($title);
-  $markup = '<div class="wp-page '.$title_oneword.'">';
-  $markup .= do_shortcode($page->post_content);
-  $markup .= '</div>';
-  return $markup;
+  $template = get_page_by_title($title);
+  if ($template) {
+      $markup = '<div class="wp-template '.$title_oneword.'">';
+      $markup .= do_shortcode($template->post_content);
+      $markup .= '</div>';
+      return $markup;
+  }else{
+      $markup = '<div class="wp-template">';
+      $markup .= '</div>';
+      return '<!-- template: ' . $title_oneword . ' NOT FOUND --> '
+          . $markup;
+  }
 }
-add_shortcode( 'page', 'shortcode_page_content_by_title' );
+add_shortcode( 'template', 'shortcode_template_content_by_title' );
 
 // Get any image in database
 function shortcode_image_by_name( $args ){
@@ -304,7 +334,7 @@ function shortcode_band_list( $args ){
     if ($promoter) {
       $markup .= '<h4 class=\'promoter\'>';
       $markup .= $promoter;
-      $markup .= '</h4>'; 
+      $markup .= '</h4>';
     }
     $markup .= '<ul>';
     while (!empty($band_names->items)) {
@@ -324,9 +354,9 @@ function shortcode_band_list( $args ){
       }
         $markup .= $promoter;
       if ($promoter_url) {
-        $markup .= '</a>'; 
+        $markup .= '</a>';
       }
-      $markup .= '</h4>'; 
+      $markup .= '</h4>';
     }
     $markup .= '<ul>';
     while (!empty($band_names->items)) {
@@ -389,3 +419,4 @@ function shortcode_staff_meta( $args ){
 }
 add_shortcode( 'staff', 'shortcode_staff_meta' );
 
+require_once('functions-shortcodes-social.php');

@@ -21,6 +21,7 @@
         //TODOd ••• cron removes poster if generic exists
         //TODOd ••• cron duplicate only required stuff on repeat
         //TODOd ••• can sampler do transparent backgound on banners
+        //TODOd ••• add shortcodes to help or editor button
         //TODOd  Monthlies rewite to check 2nd and 5th Tuesday and Wednesday
         //TODOd ••• 404.html not working
         //TODOd •• shortcode for formatted social
@@ -62,6 +63,9 @@
         //FIXX ••• does godaddy run cron?
         //FIXX ••• Social Media Buttons
         //FIXX ••• Ack internal FIXXs
+        //FIXX ••• shortcodes -> get_post_custom
+        //FIXX ••• editor buttons defp defc defpb defcb
+        //FIXX ••• shrink band links for laptop
         //FIXX  subtitle should be any length
         //FIXX  staff default
         //FIXX  rows should replace space with nbsp to keep names together (but some are long)

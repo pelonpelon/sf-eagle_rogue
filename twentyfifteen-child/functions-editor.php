@@ -51,21 +51,23 @@ function diww_default_post_content( $content ) {
     $ID = get_the_ID();
     $post_type = $where->post_type;
     if ( $post_type == 'post' ) {
-        $template = get_page_by_title('_post_editor_default');
-        $content = $template->post_content;
+        //$template = get_page_by_title('_post_editor_default');
+        //$content = $template->post_content;
         //$content = '[title align="left"]
             //[when]
             //<p>[who]</p>
             //[more]';
+        $content = '[template title="_post_editor_default"]';
     }
     if ( $post_type == 'staff' ) {
-        $template = get_page_by_title('_staff_editor_default');
-        $content = $template->post_content;
+        //$template = get_page_by_title('_staff_editor_default');
+        //$content = $template->post_content;
         //$content = '[meta id=\'nickname\']
             //<ul class="social_media">
             //<li><a href="[meta id=\'facebook_url\']" target="_blank">Facebook</a></li>
             //<li><a href="[meta id=\'twitter_url\']" target="_blank">Twitter</a></li>
             //</ul>';
+        $content = '[template title="_staff_editor_default"]';
     }
     return $content;
     //}
