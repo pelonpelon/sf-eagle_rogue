@@ -36,15 +36,22 @@
     width: 100%;
 }
 .staff-postcard {
-  padding: 1%;
+  margin-left: 15px;
+}
+.staff-nickname, .staff-position {
+    display: block;
+}
+.staff-nickname {
+    font-size: 1.8em;
 }
 .staff-profile {
     flex: 1 0 50%;
     padding: 0 2px;
 }
-.staff-details {
-    font-size: .9em;
-    text-align: right;
+.jslghtbx-caption .staff.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 @media only screen and (min-device-width: $big-phone){
     #staff .post-thumbnail img {

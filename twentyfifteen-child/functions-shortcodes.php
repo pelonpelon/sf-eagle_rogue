@@ -381,6 +381,7 @@ add_shortcode( 'band_list', 'shortcode_band_list' );
 
 // gets STAFF metadata conditional altering the output
 function shortcode_staff_meta( $args ){
+  $ID = get_the_ID();
   $field = shortcode_get_field_array('staff_', $args);
   //var_export($field);
 
@@ -388,7 +389,32 @@ function shortcode_staff_meta( $args ){
   if (!$field->id) {return "";}
   $cls = str_replace('_', '-', $field->id);
   $markup = '';
-  if ($field->id[strlen($field->id)-1] == 's' ) {
+
+  if ($field->id == 'staff_social') {
+      $md = get_post_custom($ID);
+      $markup = '';
+      $markup .= "<div class='staff social'>";
+      foreach ($md as $key => $value){
+          if ($social = strstr($key, '_url', true) ) {
+              $img = '_/img/' . substr($social, 6) . '-60x60.png';
+              $markup .= "<a href='$value[0]' target='_blank' class='noclick' onclick='function(e){e.preventDefault();}'><img src='$img' /></a>";
+          }
+      }
+      $markup .= "</div>";
+      return $markup;
+  }
+  else if ($field->id == 'staff_birthday') {
+      date_default_timezone_set('America/Los_Angeles');
+      $bd = get_post_meta($ID, 'staff_birthday', true);
+      $date = new DateTime($bd);
+      $this_year = new DateTime();
+      $this_year->modify($date->format('M d'));
+      $birthday = $this_year->format('l, M d');
+      $markup = '';
+      $markup .= "<span class='staff birthday'>$birthday</span>";
+      return $markup;
+  }
+  else if ($field->id[strlen($field->id)-1] == 's' ) {
     if ($field->fmt == 'list') {
       $markup = '<ul class=\'' .$cls. '\'>';
       while (!empty($field->items)) {
@@ -406,7 +432,7 @@ function shortcode_staff_meta( $args ){
       }
     }
   } else {
-    $data = get_post_meta(get_the_ID(), $field->id, true);
+    $data = get_post_meta($ID, $field->id, true);
     if ($field->fmt == 'markup') {
       $output = '<span class=\'' .$cls. '\'>' .$data. '</span>';
     }else{

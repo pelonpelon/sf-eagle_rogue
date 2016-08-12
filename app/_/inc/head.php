@@ -30,7 +30,7 @@
         } else if (uri.hostname == "sf-eagle.mirror" || uri.hostname == "localhost") {
             live = false;
         }
-        live = true;
+        //live = true; //for dev only
         function is_live(msg){
             console.info(live ? 'HOT' : 'COLD' + ": " + msg);
         }

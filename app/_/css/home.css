@@ -369,14 +369,15 @@ span.label {
 .who, .band-list {
   font-size: .9em;
   padding-top: 7px;
+  max-width: 80%;
 }
 
-/* line 238, home.scss */
+/* line 239, home.scss */
 .band-list li:nth-child(odd) {
   color: #c7e4fd;
 }
 
-/* line 241, home.scss */
+/* line 242, home.scss */
 .band-list li:nth-child(even) {
   color: #98a7b5;
 }
@@ -384,12 +385,12 @@ span.label {
 /*.band-list li, .band-list a {*/
 /*color: #ef5eef;*/
 /*}*/
-/* line 247, home.scss */
+/* line 248, home.scss */
 .promoter, .promoter a {
   color: #618ece !important;
 }
 
-/* line 250, home.scss */
+/* line 251, home.scss */
 .more {
   color: aqua;
 }
@@ -401,65 +402,65 @@ span.label {
 /*line-height: .9em;*/
 /*padding-top: 2px;*/
 /*}*/
-/* line 260, home.scss */
+/* line 261, home.scss */
 .who .hosts span:nth-child(odd) {
   color: #98a7b5;
 }
 
-/* line 263, home.scss */
+/* line 264, home.scss */
 .who .hosts span:nth-child(even) {
   color: #c7e4fd;
 }
 
-/* line 266, home.scss */
+/* line 267, home.scss */
 .who .hosts span:first-child {
   color: deepskyblue;
 }
 
-/* line 269, home.scss */
+/* line 270, home.scss */
 .who .guests span:nth-child(odd) {
   color: #c7e4fd;
 }
 
-/* line 272, home.scss */
+/* line 273, home.scss */
 .who .guests span:nth-child(even) {
   color: #98a7b5;
 }
 
-/* line 275, home.scss */
+/* line 276, home.scss */
 .who .guests span:first-child {
   color: deepskyblue;
 }
 
-/* line 278, home.scss */
+/* line 279, home.scss */
 .who .djs span:nth-child(even) {
   color: #c7e4fd;
 }
 
-/* line 281, home.scss */
+/* line 282, home.scss */
 .who .djs span:nth-child(odd) {
   color: #98a7b5;
 }
 
-/* line 284, home.scss */
+/* line 285, home.scss */
 .who .djs span:first-child {
   color: deepskyblue;
 }
 
 /*Media Queries*/
 @media only screen and (min-device-width: 768px) {
-  /* line 291, home.scss */
+  /* line 292, home.scss */
   .news .content {
     width: 80%;
     margin: 0 auto;
   }
 
-  /* line 295, home.scss */
+  /* line 296, home.scss */
   .event .item {
     /*height: 120px;*/
   }
 
-  /* line 298, home.scss */
+  /* line 299, home.scss */
   .event .thumbnail {
     -webkit-flex: 0 0 120px;
         -ms-flex: 0 0 120px;
@@ -467,28 +468,28 @@ span.label {
     height: 120px;
   }
 
-  /* line 302, home.scss */
+  /* line 303, home.scss */
   .event .thumbnail img {
     width: 120px;
   }
 
-  /* line 305, home.scss */
+  /* line 306, home.scss */
   .event .content h3 {
     /*font-size: 1.3em;*/
   }
 
-  /* line 308, home.scss */
+  /* line 309, home.scss */
   .event .content li {
     font-size: 1em;
   }
 
-  /* line 312, home.scss */
+  /* line 313, home.scss */
   .who, .band-list {
     padding-left: 5%;
     font-size: 1em;
   }
 }
-/* line 317, home.scss */
+/* line 318, home.scss */
 .pages h1,
 .pages h2,
 .pages h3,
@@ -498,7 +499,7 @@ span.label {
   margin: 15px 0;
 }
 
-/* line 326, home.scss */
+/* line 327, home.scss */
 .pages {
   background: #000;
   position: relative;
@@ -507,7 +508,7 @@ span.label {
   overflow-y: auto;
 }
 
-/* line 333, home.scss */
+/* line 334, home.scss */
 .wp-page {
   -webkit-flex: 0 1 30%;
       -ms-flex: 0 1 30%;
@@ -517,7 +518,7 @@ span.label {
   font-size: .9em;
 }
 
-/* line 339, home.scss */
+/* line 340, home.scss */
 .jslghtbx-contentwrapper .pages {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -528,29 +529,29 @@ span.label {
 }
 
 @media only screen and (min-device-width: 768px) {
-  /* line 344, home.scss */
+  /* line 345, home.scss */
   .event .content {
     font-size: 1em;
   }
 
-  /* line 347, home.scss */
+  /* line 348, home.scss */
   .event .title {
     /*font-size: 1.3em;*/
   }
 }
 @media only screen and (max-device-width: 767px) and (orientation: landscape) {
-  /* line 352, home.scss */
+  /* line 353, home.scss */
   .scrollbox {
     font-size: 1.4em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 357, home.scss */
+  /* line 358, home.scss */
   #home iframe {
     display: block;
   }
 
-  /* line 360, home.scss */
+  /* line 361, home.scss */
   #home .pages {
     -webkit-flex: 0 0 59%;
         -ms-flex: 0 0 59%;
@@ -566,7 +567,7 @@ span.label {
     height: 80%;
   }
 
-  /* line 368, home.scss */
+  /* line 369, home.scss */
   #home .page {
     -webkit-flex: 1 0 0%;
         -ms-flex: 1 0 0%;
@@ -574,7 +575,7 @@ span.label {
     margin: 0 auto;
   }
 
-  /* line 372, home.scss */
+  /* line 373, home.scss */
   #home .scrollbox {
     -webkit-flex: 1 1 420px;
         -ms-flex: 1 1 420px;
@@ -582,24 +583,24 @@ span.label {
     height: 100%;
   }
 
-  /* line 376, home.scss */
+  /* line 377, home.scss */
   .news .content {
     width: 100% !important;
   }
 }
 @media only screen and (orientation: landscape) {
-  /* line 381, home.scss */
+  /* line 382, home.scss */
   .new-day .day {
     line-height: 1em;
   }
 
-  /* line 384, home.scss */
+  /* line 385, home.scss */
   .new-day .date {
     line-height: .5em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 389, home.scss */
+  /* line 390, home.scss */
   #home.pg-frame {
     background-color: transparent;
     background-image: url("/wp/wp-content/uploads/2016/07/logo.svg");
@@ -609,7 +610,7 @@ span.label {
     background-repeat: no-repeat;
   }
 
-  /* line 397, home.scss */
+  /* line 398, home.scss */
   #home.page-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -664,7 +665,7 @@ span.label {
 }
 
 */
-/* line 446, home.scss */
+/* line 447, home.scss */
 .social-buttons {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -682,7 +683,7 @@ span.label {
   height: 240px;
 }
 
-/* line 459, home.scss */
+/* line 460, home.scss */
 .facebook-button, .twitter-button, .tumblr-button {
   display: block;
   min-width: 60px;
@@ -690,17 +691,17 @@ span.label {
   text-align: center;
 }
 
-/* line 465, home.scss */
+/* line 466, home.scss */
 .facebook-button {
   margin: -2px 4px 0 4px;
 }
 
-/* line 468, home.scss */
+/* line 469, home.scss */
 .twitter-button {
   margin: 0 4px;
 }
 
-/* line 471, home.scss */
+/* line 472, home.scss */
 .tumblr-button {
   margin: 0 4px;
 }

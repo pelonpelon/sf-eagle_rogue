@@ -173,6 +173,10 @@ function loadFacebook() {
 <!-- twitter -->
 <script async>
 function loadTwitter() {
+    is_live('function loadFacebook post');
+    if(!live){
+        return;
+    }
     console.info('loadTwitter called');
     var inserted = document.getElementById('twitter-wjs');
     if (inserted) {
@@ -223,6 +227,10 @@ function loadTwitter() {
 <!-- tumblr -->
 <script async>
 function loadTumblr(){
+    is_live('function loadFacebook post');
+    if(!live){
+        return;
+    }
     console.info('loadTumblr called');
     var inserted = document.getElementById('tumblr-js');
     if (inserted) {

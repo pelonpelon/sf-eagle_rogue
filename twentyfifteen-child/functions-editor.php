@@ -86,12 +86,6 @@ function appthemes_add_quicktags() {
   $post_type = $where->post_type;
   if ( $post_type == 'post' || $post_type == 'page' || $post_type == 'staff' ) {
     if (wp_script_is('quicktags')){
-      $bands_tmpl = get_page_by_title('_bands');
-      $bands_content = $bands_tmpl->post_content;
-      $bands_content_dirty = do_shortcode($bands_content);
-      $bands_content = str_replace(array("\r\n", "\n", "\r"), " ", $bands_content_dirty);
-      $bands_content_dirty = str_replace("'", "\"", $bands_content);
-      $bands_content = str_replace('> ', '>\n', $bands_content_dirty);
 
       $misc_tmpl = get_page_by_title('_misc');
       $misc_content = $misc_tmpl->post_content;
@@ -126,6 +120,34 @@ function appthemes_add_quicktags() {
       $staffc_content_dirty = str_replace("'", "\"", $staffc_content);
       $staffc_content = str_replace('> ', '>\n', $staffc_content_dirty);
 
+      $pcd_tmpl = get_page_by_title('_postcard_default');
+      $pcd_content = $pcd_tmpl->post_content;
+      $pcd_content = str_replace(array("\r\n", "\n", "\r"), " ", $pcd_content);
+      $pcd_content_dirty = str_replace("'", "\"", $pcd_content);
+      $pcd_content = str_replace('> ', '>\n', $pcd_content_dirty);
+      $pcd_content = str_replace('] ', ']\n', $pcd_content);
+
+      $pcbd_tmpl = get_page_by_title('_postcard_bands_default');
+      $pcbd_content = $pcbd_tmpl->post_content;
+      $pcbd_content = str_replace(array("\r\n", "\n", "\r"), " ", $pcbd_content);
+      $pcbd_content_dirty = str_replace("'", "\"", $pcbd_content);
+      $pcbd_content = str_replace('> ', '>\n', $pcbd_content_dirty);
+      $pcbd_content = str_replace('] ', ']\n', $pcbd_content);
+
+      $ped_tmpl = get_page_by_title('_post_editor_default');
+      $ped_content = $ped_tmpl->post_content;
+      $ped_content = str_replace(array("\r\n", "\n", "\r"), " ", $ped_content);
+      $ped_content_dirty = str_replace("'", "\"", $ped_content);
+      $ped_content = str_replace('> ', '>\n', $ped_content_dirty);
+      $ped_content = str_replace('] ', ']\n', $ped_content);
+
+      $pbed_tmpl = get_page_by_title('_post_bands_editor_default');
+      $pbed_content = $pbed_tmpl->post_content;
+      $pbed_content = str_replace(array("\r\n", "\n", "\r"), " ", $pbed_content);
+      $pbed_content_dirty = str_replace("'", "\"", $pbed_content);
+      $pbed_content = str_replace('> ', '>\n', $pbed_content_dirty);
+      $pbed_content = str_replace('] ', ']\n', $pbed_content);
+
 ?>
       <script type="text/javascript">
       console.log('<?php echo $details_content; ?>');
@@ -135,33 +157,18 @@ function appthemes_add_quicktags() {
         list += '  <li></li>\n';
         list += '</ul>\n';
 
-        /* event defaults */
-        def1 = '[title]\n';
-        def1 += '[subtitle]\n';
-        def1 += '[who]';
-        def2 = '[title align="left"]\n';
-        def2 += '[when]\n';
-        def2 += '<p>[who]</p>\n';
-        def2 += '[more]';
-
-        bands = '<?php echo $bands_content; ?>';
         misc = '<?php echo $misc_content; ?>';
         details = '<?php echo $details_content; ?>';
         complete = '<?php echo $complete_content; ?>';
         staffp = '<?php echo $staffp_content; ?>';
         staffc = '<?php echo $staffc_content; ?>';
+        pcd = '<?php echo $pcd_content; ?>';
+        pcbd = '<?php echo $pcbd_content; ?>';
+        ped = '<?php echo $ped_content; ?>';
+        pbed = '<?php echo $pbed_content; ?>';
 
         function list_markup(){
           QTags.insertContent(list);
-        }
-        function def1_markup(){
-          QTags.insertContent(def1);
-        }
-        function def2_markup(){
-          QTags.insertContent(def2);
-        }
-        function bands_markup(){
-          QTags.insertContent(bands);
         }
         function misc_markup(){
           QTags.insertContent(misc);
@@ -176,26 +183,45 @@ function appthemes_add_quicktags() {
           QTags.insertContent(staffp);
         }
         function staffc_markup(){
-          QTags.insertContent(staffc);
+            QTags.insertContent(staffc);
+        }
+        function pcd_markup(){
+            QTags.insertContent(pcd);
+        }
+        function pcbd_markup(){
+            QTags.insertContent(pcbd);
+        }
+        function ped_markup(){
+            QTags.insertContent(ped);
+        }
+        function pbed_markup(){
+          QTags.insertContent(pbed);
         }
 
-        QTags.addButton( 'eg_def1', 'def1', def1_markup, '', '', 'def1', 200 );
-        QTags.addButton( 'eg_def2', 'def2', def2_markup, '', '', 'def2', 200 );
-        QTags.addButton( 'eg_list', 'list', list_markup, '', '', 'ul>li>li', 300 );
-        QTags.addButton( 'eg_bands', 'bands', bands_markup, '', '', 'Band List', 300 );
+        QTags.addButton( 'eg_nbsp', 'nbsp', '&nbsp;', '', 'nbsp', '&nbsp;', 80 );
+        QTags.addButton( 'eg_br', 'br', '<br />', '', 'br', 'br tag', 80 );
+        QTags.addButton( 'eg_paragraph', 'p', '<p>', '</p>', 'p', 'Paragraph tag', 80 );
+        QTags.addButton( 'eg_h2', 'h2', '<h2>', '</h2>', 'h2', 'h2 tag', 80 );
+        QTags.addButton( 'eg_h3', 'h3', '<h3>', '</h3>', 'h3', 'h3 tag', 80 );
+        QTags.addButton( 'eg_h4', 'h4', '<h4>', '</h4>', 'h4', 'h4 tag', 80 );
+        QTags.addButton( 'eg_pre', 'pre', '<pre lang="php">', '</pre>', 'q', 'Preformatted text tag', 80 );
+        QTags.addButton( 'eg_list', 'list', list_markup, '', '', 'ul>li>li', 80 );
+
+        QTags.addButton( 'eg_style', 'style', ' style="color:aliceblue; "', '', 'style', 'style tag', 150 );
+        QTags.addButton( 'eg_class', 'class', ' class="alignright "', '', 'class', 'class tag', 150 );
+
+        QTags.addButton( 'eg_pcd', 'pcd', pcd_markup, '', '', 'pcd', 200 );
+        QTags.addButton( 'eg_pcbd', 'pcbd', pcbd_markup, '', '', 'pcbd', 200 );
+        QTags.addButton( 'eg_ped', 'ped', ped_markup, '', '', 'ped', 200 );
+        QTags.addButton( 'eg_pbed', 'pbed', pbed_markup, '', '', 'pbed', 200 );
+        QTags.addButton( 'eg_page', 'page', '\n[page title=""]', '', 'page', 'page tag', 200 );
+        QTags.addButton( 'eg_template', 'template', '\n[template title="_post_editor_default"]', '', 'template', 'template tag', 200 );
+
         QTags.addButton( 'eg_misc', 'misc', misc_markup, '', '', 'Misc', 300 );
         QTags.addButton( 'eg_details', 'details', details_markup, '', '', 'Details', 300 );
         QTags.addButton( 'eg_complete', 'details+', complete_markup, '', '', 'Details for popup', 300 );
         QTags.addButton( 'eg_staffc', 'staffc', staffc_markup, '', '', 'staffc', 300 );
         QTags.addButton( 'eg_staffp', 'staffp', staffp_markup, '', '', 'staffp', 300 );
-        QTags.addButton( 'eg_style', 'style', ' style="font-size:smaller; "', '', 'style', 'style tag', 150 );
-        QTags.addButton( 'eg_class', 'class', ' class="alignright "', '', 'class', 'class tag', 150 );
-        QTags.addButton( 'eg_paragraph', 'p', '<p>', '</p>', 'p', 'Paragraph tag', 80 );
-        QTags.addButton( 'eg_nbsp', 'nbsp', '&nbsp;', '', 'nbsp', '&nbsp;', 80 );
-        QTags.addButton( 'eg_br', 'br', '<br />', '', 'br', 'br tag', 80 );
-        QTags.addButton( 'eg_h3', 'h3', '<h3>', '</h3>', 'h3', 'h3 tag', 80 );
-        QTags.addButton( 'eg_h4', 'h4', '<h4>', '</h4>', 'h4', 'h4 tag', 80 );
-        QTags.addButton( 'eg_pre', 'pre', '<pre lang="php">', '</pre>', 'q', 'Preformatted text tag', 80 );
       </script>
 <?php
     }

@@ -26,7 +26,7 @@ function post_type_staff() {
         'label'               => __( 'Staff' ),
         'singular_label'      => __('Staff'),
         'description'         => __( 'The guys and Beth' ),
-        'supports'            => array( 'title', 'editor', 'thumbnail' ),
+        'supports'            => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
         'taxonomies'          => array('staff_cat', 'post_tag'),
         'hierarchical'        => false,
         'public'              => true,

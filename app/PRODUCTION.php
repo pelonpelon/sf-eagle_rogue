@@ -1,4 +1,3 @@
-        //TODOp ••• TURN OFF DEBUG
         //TODOp ••• make view post work
         //TODOp ••• fix somethings fucked up
         //TODOp ••• fix media dimensions in wp LIVE +1000
@@ -7,26 +6,28 @@
         //TODOp ••• add social media
         //TODOp ••• add pages to wp
         //TODOp ••• add pages to wp
+        //TODOp ••• TURN OFF DEBUG
         //TODOp  set default cat to event
         //TODOp  install plugins: metabox
         //TODOp  add FOLSOM to calendar
         //TODOp  Happy Hour news item (should there be an ad item)
         //TODOp  ------------------------
-        //TODOd ••• cron if weekly already exists don't advance
-        //TODOd ••• cron remove feature img etc upon weekly/monthly if generic
         //TODOd ••• how to DEC order to query for news without DB call
         //TODOd ••• editor move ul and li together
         //TODOd ••• editor add flexbox table
         //TODOd ••• editor add div
         //TODOd ••• cron removes poster if generic exists
+        //TODOd ••• cron remove feature img etc upon weekly/monthly if generic
+        //TODOd ••• cron if weekly already exists don't advance
         //TODOd ••• cron duplicate only required stuff on repeat
         //TODOd ••• can sampler do transparent backgound on banners
         //TODOd ••• add shortcodes to help or editor button
-        //TODOd  Monthlies rewite to check 2nd and 5th Tuesday and Wednesday
         //TODOd ••• 404.html not working
         //TODOd •• shortcode for formatted social
         //TODOd •• put menu-trigger on own layer for animation
         //TODOd •• make useable post template so I can preview pages
+        //TODOd •• give hosts, djs etc their own links
+        //TODOd •• add Sponsors,beneficiaries,procedes with hosts, guests
         //TODOd •• add Error Image for get_image_url_by_slug
         //TODOd • there are Woof pics
         //TODOd • staff button simplify classes
@@ -40,8 +41,6 @@
         //TODOd • djs urls
         //TODOd • create Softball post_type
         //TODOd • band page, add multiple [links] after name
-        //TODOd •• add Sponsors,beneficiaries,procedes with hosts, guests
-        //TODOd •• give hosts, djs etc their own links
         //TODOd • Try a video on popup
         //TODOd • Top Message should be a post that can be emailed
         //TODOd • TNL icon should have trans bg
@@ -58,14 +57,16 @@
         //TODOd  cancel default on modal clicks when you don't want to leave (class?)
         //TODOd  add "Generic image" url box
         //TODOd  Staff needs edit buttons
+        //TODOd  Monthlies rewite to check 2nd and 5th Tuesday and Wednesday
         //TODOd  Logo modal: [page title=''] HOT
         //TODOd  ------------------------
+        //FIXX  shrink band links for laptop
+        //FIXX ••• shortcodes -> get_post_custom
+        //FIXX ••• line height postcard extra text
+        //FIXX  editor buttons defp defc defpb defcb
         //FIXX ••• does godaddy run cron?
         //FIXX ••• Social Media Buttons
         //FIXX ••• Ack internal FIXXs
-        //FIXX ••• shortcodes -> get_post_custom
-        //FIXX ••• editor buttons defp defc defpb defcb
-        //FIXX ••• shrink band links for laptop
         //FIXX  subtitle should be any length
         //FIXX  staff default
         //FIXX  rows should replace space with nbsp to keep names together (but some are long)

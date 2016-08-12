@@ -278,8 +278,8 @@ function event_meta_boxes( $meta_boxes ) {
         'std'        => 'Jan 01, 1983',
         // jQuery date picker options. See here http://api.jqueryui.com/datepicker
         'js_options' => array(
-          'appendText'      => esc_html__( '(Jan 01, 1979)', 'your-prefix' ),
-          'dateFormat'      => esc_html__( 'M dd, yy', 'your-prefix' ),
+          'appendText'      => esc_html__( '(Jan 01, 1979)', $prefix ),
+          'dateFormat'      => esc_html__( 'M dd, yy', $prefix ),
           'changeMonth'     => true,
           'changeYear'      => true,
           'showButtonPanel' => true,
@@ -326,10 +326,7 @@ function event_meta_boxes( $meta_boxes ) {
         'id'    => $prefix . 'postcard',
         'type'  => 'wysiwyg',
         'raw'   => true,
-        'std'   => '<ul class="details">
-  <li>[title align="left"]</li>
-  <li>[staff id="position"]</li>
-</ul>',
+        'std'   => '[template title="_staff_postcard_default"]',
         'options' => array(
           'textarea_rows' => 16,
           'teeny'     => false,
