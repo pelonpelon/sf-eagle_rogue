@@ -7,13 +7,13 @@
   src: url("fonts/AlegreyaSans-Medium.woff");
 }
 /*$SansStack: Arial, sans-serif;*/
-/* line 95, _theme.scss */
+/* line 96, _theme.scss */
 .alert {
   background-color: crimson;
   color: black;
 }
 
-/* line 99, _theme.scss */
+/* line 100, _theme.scss */
 .spinner {
   background-image: url("../img/spinner.gif");
   background-repeat: no-repeat;
@@ -673,33 +673,34 @@ span.label {
       -ms-flex-direction: column;
           flex-direction: column;
   float: right;
-  margin-left: 2em;
-  margin-bottom: 20px;
+  margin-left: 0;
+  margin-bottom: 10px;
   text-align: center;
   font-weight: 900;
   color: aqua;
-  max-width: 80px;
+  width: 64px;
+  height: 240px;
 }
 
-/* line 458, home.scss */
+/* line 459, home.scss */
 .facebook-button, .twitter-button, .tumblr-button {
   display: block;
   min-width: 60px;
-  padding: 30px 10px;
+  padding: 25px 0px;
   text-align: center;
 }
 
-/* line 464, home.scss */
+/* line 465, home.scss */
 .facebook-button {
   margin: -2px 4px 0 4px;
 }
 
-/* line 467, home.scss */
+/* line 468, home.scss */
 .twitter-button {
   margin: 0 4px;
 }
 
-/* line 470, home.scss */
+/* line 471, home.scss */
 .tumblr-button {
   margin: 0 4px;
 }
