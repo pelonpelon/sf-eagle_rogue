@@ -35,7 +35,7 @@ function shortcode_social_buttons( $args ){
     if ( $fb_event_link ) {
         $markup .= '<div class="facebook-button">';
         $markup .= '<div class="fb-share-button" data-href="';
-        $markup .= $fb_event_link[0] . '"';
+        $markup .= $fb_event_link . '"';
         $markup .= 'data-layout="button">';
         $markup .= '</div></div>';
     }
@@ -50,18 +50,20 @@ function shortcode_social_buttons( $args ){
     $markup .= ' data-caption="SF-Eagle • ';
     $markup .= $clean_title . ' • ';
     $markup .= $start . ' ';
+    $markup .= $bands . ' ';
     $markup .= $fb_event_link;
     $markup .= '"';
     $markup .= ' href="https://embed.tumblr.com/share">';
-    $markup .= 'Tumblr</a>';
+    $markup .= '</a>';
     $markup .= '</div>';
-
+?>
+<?php
     $markup .= '<div class="twitter-button">';
     $markup .= '<a class="twitter-share-button"';
     $markup .= (' href="https://twitter.com/intent/tweet?via=sfeaglebar&text=SF-Eagle • ');
-    $markup .= ($start . ' ' . $bands);
+    $markup .= ($clean_title . ' • ' . $start . ' • ' . $bands);
     $markup .= '&url=https%3A%2F%2Fsf-eagle.com"';
-    $markup .= ' data-count="none">Twitter</a>';
+    $markup .= ' data-count="none"></a>';
     $markup .= '</div>';
 
     $markup .= '</div>';

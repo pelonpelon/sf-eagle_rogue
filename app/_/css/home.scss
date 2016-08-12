@@ -452,14 +452,13 @@ span.label {
   text-align: center;
   font-weight: 900;
   color: aqua;
+  max-width: 80px;
 
 }
 .facebook-button, .twitter-button, .tumblr-button {
-    display: inline-block;
-    overflow: hidden;
+    display: block;
     min-width: 60px;
-    height: 60px;
-    vertical-align: bottom;
+    padding: 30px 10px;
     text-align: center;
 }
 .facebook-button {

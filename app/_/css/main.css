@@ -808,29 +808,28 @@ span.label {
   text-align: center;
   font-weight: 900;
   color: aqua;
+  max-width: 80px;
 }
 
-/* line 457, home.scss */
+/* line 458, home.scss */
 .facebook-button, .twitter-button, .tumblr-button {
-  display: inline-block;
-  overflow: hidden;
+  display: block;
   min-width: 60px;
-  height: 60px;
-  vertical-align: bottom;
+  padding: 30px 10px;
   text-align: center;
 }
 
-/* line 465, home.scss */
+/* line 464, home.scss */
 .facebook-button {
   margin: -2px 4px 0 4px;
 }
 
-/* line 468, home.scss */
+/* line 467, home.scss */
 .twitter-button {
   margin: 0 4px;
 }
 
-/* line 471, home.scss */
+/* line 470, home.scss */
 .tumblr-button {
   margin: 0 4px;
 }

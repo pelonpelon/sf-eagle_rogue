@@ -28,8 +28,9 @@
         if (uri.hostname.substr(0,3) == '127' || uri.hostname.substr(0,3) == '192' || uri.hostname.substr(0,3) == '169' ) {
             live = false;
         } else if (uri.hostname == "sf-eagle.mirror" || uri.hostname == "localhost") {
-            live = false
+            live = false;
         }
+        live = true;
         function is_live(msg){
             console.info(live ? 'HOT' : 'COLD' + ": " + msg);
         }

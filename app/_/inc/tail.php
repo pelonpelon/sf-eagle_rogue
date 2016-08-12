@@ -63,6 +63,9 @@ var options = {
         //$('.menu-trigger').hide();
         //$('html').addClass('fixed');
         console.log('lightbox isOpen');
+        loadTumblr();
+        loadTwitter();
+        loadFacebook();
         $('.jslghtbx-caption a').on('click', function(e){
             console.log('clicked');
             e.stopPropagation();});
@@ -104,7 +107,7 @@ if (window.matchMedia) {
     mql = window.matchMedia("(min-device-width: 768px) and (orientation:landscape)");
     var logo = $('.logo')[0];
     if (mql.matches) {
-        loadFacebook();
+        //loadFacebook();
         logo.classList.remove('open-lightbox');
     }
 
@@ -112,7 +115,7 @@ if (window.matchMedia) {
     mql.addListener(mqlHandler);
     function mqlHandler(mql) {
         if(mql.matches) {
-            loadFacebook();
+            //loadFacebook();
             // we don't want a tap on the logo to bring up facebook as well
             logo.classList.remove('open-lightbox');
         }else{
@@ -125,6 +128,7 @@ function loadFacebook() {
     if(!live){
         return;
     }
+    console.info('loadFacebook called');
     var js,
         fjs = document.getElementsByTagName('script')[0];
     if (document.getElementById('facebook-jssdk')) return;
@@ -148,51 +152,70 @@ function loadFacebook() {
 
 <!-- facebook -->
 <script async>
-(function(d, s, id) {
-    is_live('social facebook');
-    if(!live){
-        return;
-    }
+//(function(d, s, id) {
+    //is_live('social facebook');
+    //if(!live){
+        //return;
+    //}
 
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/en_US/sdk.js#version=v2.3&xfbml=1";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'))
+//var js, fjs = d.getElementsByTagName(s)[0];
+//if (d.getElementById(id)) return;
+//js = d.createElement(s); js.id = id;
+//js.src = "//connect.facebook.net/en_US/sdk.js#version=v2.3&xfbml=1";
+//fjs.parentNode.insertBefore(js, fjs);
+//}(document, 'script', 'facebook-jssdk'))
 </script>
 
 <!-- twitter -->
 <script async>
-window.twttr = (function(d, s, id) {
-    is_live('social twitter');
-    if(!live){
-        return;
-    }
+function loadTwitter() {
+    console.info('loadTwitter called');
+    d = document;
+    s = "script";
+    id = "twitter-wjs";
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+    return t;
+}
+</script>
+<script async>
+//window.twttr = (function(d, s, id) {
+    //is_live('social twitter');
+    //if(!live){
+        //return;
+    //}
 
-var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-if (d.getElementById(id)) return t;
-js = d.createElement(s);
-js.id = id;
-js.src = "https://platform.twitter.com/widgets.js";
-fjs.parentNode.insertBefore(js, fjs);
-t._e = [];
-t.ready = function(f) {
-    t._e.push(f);
-};
-return t;
-}(document, "script", "twitter-wjs"));
+//var js, fjs = d.getElementsByTagName(s)[0],
+    //t = window.twttr || {};
+//if (d.getElementById(id)) return t;
+//js = d.createElement(s);
+//js.id = id;
+//js.src = "https://platform.twitter.com/widgets.js";
+//fjs.parentNode.insertBefore(js, fjs);
+//t._e = [];
+//t.ready = function(f) {
+    //t._e.push(f);
+//};
+//return t;
+//}(document, "script", "twitter-wjs"));
 </script>
 
 <!-- tumblr -->
 <script async>
-!function(d,s,id){
-    is_live('social tumblr');
-    if(!live){
-        return;
-    }
-
+function loadTumblr(){
+    console.info('loadTumblr called');
+    d = document;
+    s = "script";
+    id = "tumblr-js";
     var js,ajs=d.getElementsByTagName(s)[0];
     if (!d.getElementById(id)) {
         js=d.createElement(s);
@@ -200,7 +223,23 @@ return t;
         js.src="https://secure.assets.tumblr.com/share-button.js";
         ajs.parentNode.insertBefore(js,ajs);
     }
-}(document, "script", "tumblr-js");
+}
+</script>
+<script async>
+//!function(d,s,id){
+    //is_live('social tumblr');
+    //if(!live){
+        //return;
+    //}
+
+    //var js,ajs=d.getElementsByTagName(s)[0];
+    //if (!d.getElementById(id)) {
+        //js=d.createElement(s);
+        //js.id=id;
+        //js.src="https://secure.assets.tumblr.com/share-button.js";
+        //ajs.parentNode.insertBefore(js,ajs);
+    //}
+//}(document, "script", "tumblr-js");
 </script>
 
 <!-- build:remove:dist -->
