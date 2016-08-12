@@ -129,12 +129,16 @@ function loadFacebook() {
         return;
     }
     console.info('loadFacebook called');
+    var inserted = document.getElementById('facebook-jssdk');
+    if (inserted) {
+    window.FB.init({xfbml: true, cookie: true, version:'v2.6'});
+        return;
+    }
     var js,
         fjs = document.getElementsByTagName('script')[0];
-    if (document.getElementById('facebook-jssdk')) return;
     js = document.createElement('script');
     js.id = 'facebook-jssdk';
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+    js.src = "http://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
     fjs.parentNode.insertBefore(js, fjs);
 };
 //(function(d, s, id) {
@@ -170,6 +174,13 @@ function loadFacebook() {
 <script async>
 function loadTwitter() {
     console.info('loadTwitter called');
+    var inserted = document.getElementById('twitter-wjs');
+    if (inserted) {
+        console.log(inserted);
+        inserted.remove();
+        inserted = document.getElementById('twitter-wjs');
+        console.log(inserted);
+    }
     d = document;
     s = "script";
     id = "twitter-wjs";
@@ -213,6 +224,13 @@ function loadTwitter() {
 <script async>
 function loadTumblr(){
     console.info('loadTumblr called');
+    var inserted = document.getElementById('tumblr-js');
+    if (inserted) {
+        console.log(inserted);
+        inserted.remove();
+        inserted = document.getElementById('tumblr-js');
+        console.log(inserted);
+    }
     d = document;
     s = "script";
     id = "tumblr-js";
