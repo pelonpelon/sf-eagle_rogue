@@ -133,13 +133,13 @@
           $tagcloud = ' ';
           if ($tags) {
               foreach (array_keys($tags) as $tag) {
-                  $font_size = .8 + $tags[$tag]/10;
+                  $font_size = .7 + $tags[$tag]/10;
                   $font_weight = 300;
-                  if ($tag == 'special') {$font_size *= 1.5; $font_weight = 900;}
+                  if ($tag == 'special') {$font_size *= 1.3; $font_weight = 900;}
                   $taglist .= '<span style="font-size: ' . $font_size . 'em; font-weight: ' . $font_weight . ';"> ' . $tag . ' </span>';
                   $tagcloud .= '<a
                       class="tag-button"
-                      style="font-size: ' . ($font_size * 2.2) . 'em; font-weight: ' . $font_weight . ';"
+                      style="font-size: ' . ($font_size * 2) . 'em; font-weight: ' . $font_weight . ';"
                       onclick="$(\'.tagcloud a\').removeClass(\'clicked\'); $(this).addClass(\'clicked\'); allItems(\'hide\'); $(\'.tag-' . $tag . '\').each(function(){
                           $(this).delay(600).removeClass(\'hideme\').fadeIn(600).prevAll(\'.new-day\').first().delay(400).removeClass(\'hideme\').fadeIn(400);})">'
                           . $tag. '</a> ';

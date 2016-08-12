@@ -321,7 +321,7 @@ hr {
 /* line 107, home.scss */
 .tag-button {
   display: inline-block;
-  padding: 8px;
+  padding: 6px;
   /*border: 10px solid #600;*/
   border-radius: 35%;
   border: #000 2px solid;
