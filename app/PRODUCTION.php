@@ -5,8 +5,8 @@
         //TODOp ••• add to metabox input-list.css li float:left padding-right:20px
         //TODOp ••• add social media
         //TODOp ••• add pages to wp
-        //TODOp ••• add pages to wp
-        //TODOp ••• TURN OFF DEBUG
+        //TODOp ••• add tags to warnings
+        //TODOp  TURN OFF DEBUG
         //TODOp  set default cat to event
         //TODOp  install plugins: metabox
         //TODOp  add FOLSOM to calendar

@@ -49,13 +49,13 @@ var options = {
     closeOnClick: 		true,
     loadingAnimation: 	200,
     animElCount: 		4,
-    preload: 			true,
-    carousel: 			true,
+    preload: 			false,
+    carousel: 			false,
     animation: 			400,
     nextOnClick: 		false,
     responsive: 		true,
     maxImgSize:			0.8,
-    keyControls: 		true,
+    keyControls: 		false,
     addClickEvents:     true,
     // callbacks
     onopen: function(){
