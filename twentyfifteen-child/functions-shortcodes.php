@@ -215,7 +215,11 @@ function shortcode_event_url() {
 add_shortcode( 'url', 'shortcode_event_url' );
 
 function shortcode_event_more() {
-  $url = get_post_meta(get_the_ID(), 'event_url', true);
+  $md = get_post_custom(get_the_ID());
+  $url = isset($md['event_url'][0]) ? $md['event_url'][0] : '';
+  if ( !$url ) {
+      $url = isset($md['event_default_url'][0]) ? $md['event_default_url'][0] : '';
+  }
   $markup = '';
   if ($url) {
       $markup .= '<a class="more" href="' .$url. '" target="_blank">MORE INFO...</a><br />';

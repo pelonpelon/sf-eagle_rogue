@@ -61,11 +61,12 @@
         //TODOd  Logo modal: [page title=''] HOT
         //TODOd  ------------------------
         //FIXX  shrink band links for laptop
+        //FIXX ••• why online images larger, possibly media settings?
         //FIXX ••• shortcodes -> get_post_custom
         //FIXX ••• line height postcard extra text
         //FIXX  editor buttons defp defc defpb defcb
         //FIXX ••• does godaddy run cron?
-        //FIXX ••• Social Media Buttons
+        //FIXX  Social Media Buttons
         //FIXX ••• Ack internal FIXXs
         //FIXX  subtitle should be any length
         //FIXX  staff default

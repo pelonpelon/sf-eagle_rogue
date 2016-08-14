@@ -51,7 +51,7 @@
 .jslghtbx-caption .staff.social {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
 }
 @media only screen and (min-device-width: $big-phone){
     #staff .post-thumbnail img {
