@@ -26,12 +26,4 @@ $('.news a').on('click', function(e){e.stopPropagation();});
 //console.log('clicked');
 //e.stopPropagation();});
 
-//
-// Disable responsive images
-//
-function meks_disable_srcset( $sources ) {
-    return false;
-}
-add_filter( 'wp_calculate_image_srcset', 'meks_disable_srcset' );
-
 

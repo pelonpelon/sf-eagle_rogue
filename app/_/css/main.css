@@ -81,7 +81,7 @@ body {
   background-color: #000;
   font-family: "AlegreyaSans", Arial, sans-serif;
   font-weight: normal;
-  font-size: 110%;
+  font-size: 120%;
   top: 0;
   bottom: -90px;
   color: #d0e9ff;
@@ -305,7 +305,7 @@ hr {
   font-size: .8em;
   font-weight: 600;
   text-shadow: #200 2px 1px;
-  line-height: .2em;
+  line-height: .6em;
 }
 
 /* line 99, home.scss */
@@ -442,21 +442,21 @@ hr {
   position: relative;
   font-size: .8em;
   color: lightblue;
-  padding: 0 2%;
-  /*background-image: linear-gradient($bg-2, $bg-2, $bg-1)*/
+  padding: 0 2% 16px;
 }
 
-/* line 191, home.scss */
+/* line 190, home.scss */
 span.label {
   font-size: smaller;
   color: deepskyblue;
 }
 
-/* line 195, home.scss */
+/* line 194, home.scss */
 .event .content p {
   font-size: smaller;
   font-style: italic;
   font-weight: 600;
+  line-height: 1em;
 }
 
 /* line 204, home.scss */
@@ -494,21 +494,22 @@ span.label {
   text-align: right;
   color: #d0e9ff;
   opacity: .7;
+  line-height: 92%;
 }
 
-/* line 234, home.scss */
+/* line 235, home.scss */
 .who, .band-list {
   font-size: .9em;
   padding-top: 7px;
-  max-width: 80%;
+  max-width: 100%;
 }
 
-/* line 239, home.scss */
+/* line 240, home.scss */
 .band-list li:nth-child(odd) {
   color: #c7e4fd;
 }
 
-/* line 242, home.scss */
+/* line 243, home.scss */
 .band-list li:nth-child(even) {
   color: #98a7b5;
 }
@@ -516,12 +517,17 @@ span.label {
 /*.band-list li, .band-list a {*/
 /*color: #ef5eef;*/
 /*}*/
-/* line 248, home.scss */
+/* line 249, home.scss */
 .promoter, .promoter a {
   color: #618ece !important;
 }
 
-/* line 251, home.scss */
+/* line 252, home.scss */
+h4.promoter {
+  font-size: smaller;
+}
+
+/* line 255, home.scss */
 .more {
   color: aqua;
 }
@@ -533,65 +539,65 @@ span.label {
 /*line-height: .9em;*/
 /*padding-top: 2px;*/
 /*}*/
-/* line 261, home.scss */
+/* line 265, home.scss */
 .who .hosts span:nth-child(odd) {
   color: #98a7b5;
 }
 
-/* line 264, home.scss */
+/* line 268, home.scss */
 .who .hosts span:nth-child(even) {
   color: #c7e4fd;
 }
 
-/* line 267, home.scss */
+/* line 271, home.scss */
 .who .hosts span:first-child {
   color: deepskyblue;
 }
 
-/* line 270, home.scss */
+/* line 274, home.scss */
 .who .guests span:nth-child(odd) {
   color: #c7e4fd;
 }
 
-/* line 273, home.scss */
+/* line 277, home.scss */
 .who .guests span:nth-child(even) {
   color: #98a7b5;
 }
 
-/* line 276, home.scss */
+/* line 280, home.scss */
 .who .guests span:first-child {
   color: deepskyblue;
 }
 
-/* line 279, home.scss */
+/* line 283, home.scss */
 .who .djs span:nth-child(even) {
   color: #c7e4fd;
 }
 
-/* line 282, home.scss */
+/* line 286, home.scss */
 .who .djs span:nth-child(odd) {
   color: #98a7b5;
 }
 
-/* line 285, home.scss */
+/* line 289, home.scss */
 .who .djs span:first-child {
   color: deepskyblue;
 }
 
 /*Media Queries*/
 @media only screen and (min-device-width: 768px) {
-  /* line 292, home.scss */
+  /* line 296, home.scss */
   .news .content {
     width: 80%;
     margin: 0 auto;
   }
 
-  /* line 296, home.scss */
+  /* line 300, home.scss */
   .event .item {
     /*height: 120px;*/
   }
 
-  /* line 299, home.scss */
+  /* line 303, home.scss */
   .event .thumbnail {
     -webkit-flex: 0 0 120px;
         -ms-flex: 0 0 120px;
@@ -599,28 +605,28 @@ span.label {
     height: 120px;
   }
 
-  /* line 303, home.scss */
+  /* line 307, home.scss */
   .event .thumbnail img {
     width: 120px;
   }
 
-  /* line 306, home.scss */
+  /* line 310, home.scss */
   .event .content h3 {
     /*font-size: 1.3em;*/
   }
 
-  /* line 309, home.scss */
+  /* line 313, home.scss */
   .event .content li {
     font-size: 1em;
   }
 
-  /* line 313, home.scss */
+  /* line 317, home.scss */
   .who, .band-list {
     padding-left: 5%;
     font-size: 1em;
   }
 }
-/* line 318, home.scss */
+/* line 322, home.scss */
 .pages h1,
 .pages h2,
 .pages h3,
@@ -630,7 +636,7 @@ span.label {
   margin: 15px 0;
 }
 
-/* line 327, home.scss */
+/* line 331, home.scss */
 .pages {
   background: #000;
   position: relative;
@@ -639,7 +645,7 @@ span.label {
   overflow-y: auto;
 }
 
-/* line 334, home.scss */
+/* line 338, home.scss */
 .wp-page {
   -webkit-flex: 0 1 30%;
       -ms-flex: 0 1 30%;
@@ -649,7 +655,7 @@ span.label {
   font-size: .9em;
 }
 
-/* line 340, home.scss */
+/* line 344, home.scss */
 .jslghtbx-contentwrapper .pages {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -660,29 +666,29 @@ span.label {
 }
 
 @media only screen and (min-device-width: 768px) {
-  /* line 345, home.scss */
+  /* line 349, home.scss */
   .event .content {
     font-size: 1em;
   }
 
-  /* line 348, home.scss */
+  /* line 352, home.scss */
   .event .title {
     /*font-size: 1.3em;*/
   }
 }
 @media only screen and (max-device-width: 767px) and (orientation: landscape) {
-  /* line 353, home.scss */
+  /* line 357, home.scss */
   .scrollbox {
     font-size: 1.4em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 358, home.scss */
+  /* line 362, home.scss */
   #home iframe {
     display: block;
   }
 
-  /* line 361, home.scss */
+  /* line 365, home.scss */
   #home .pages {
     -webkit-flex: 0 0 59%;
         -ms-flex: 0 0 59%;
@@ -698,7 +704,7 @@ span.label {
     height: 80%;
   }
 
-  /* line 369, home.scss */
+  /* line 373, home.scss */
   #home .page {
     -webkit-flex: 1 0 0%;
         -ms-flex: 1 0 0%;
@@ -706,7 +712,7 @@ span.label {
     margin: 0 auto;
   }
 
-  /* line 373, home.scss */
+  /* line 377, home.scss */
   #home .scrollbox {
     -webkit-flex: 1 1 420px;
         -ms-flex: 1 1 420px;
@@ -714,24 +720,24 @@ span.label {
     height: 100%;
   }
 
-  /* line 377, home.scss */
+  /* line 381, home.scss */
   .news .content {
     width: 100% !important;
   }
 }
 @media only screen and (orientation: landscape) {
-  /* line 382, home.scss */
+  /* line 386, home.scss */
   .new-day .day {
     line-height: 1em;
   }
 
-  /* line 385, home.scss */
+  /* line 389, home.scss */
   .new-day .date {
-    line-height: .5em;
+    line-height: .9em;
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 390, home.scss */
+  /* line 394, home.scss */
   #home.pg-frame {
     background-color: transparent;
     background-image: url("/wp/wp-content/uploads/2016/07/logo.svg");
@@ -741,7 +747,7 @@ span.label {
     background-repeat: no-repeat;
   }
 
-  /* line 398, home.scss */
+  /* line 402, home.scss */
   #home.page-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -796,7 +802,7 @@ span.label {
 }
 
 */
-/* line 447, home.scss */
+/* line 451, home.scss */
 .social-buttons {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -814,7 +820,7 @@ span.label {
   height: 240px;
 }
 
-/* line 460, home.scss */
+/* line 464, home.scss */
 .facebook-button, .twitter-button, .tumblr-button {
   display: block;
   min-width: 60px;
@@ -822,24 +828,19 @@ span.label {
   text-align: center;
 }
 
-/* line 466, home.scss */
+/* line 470, home.scss */
 .facebook-button {
   margin: -2px 4px 0 4px;
 }
 
-/* line 469, home.scss */
+/* line 473, home.scss */
 .twitter-button {
   margin: 0 4px;
 }
 
-/* line 472, home.scss */
+/* line 476, home.scss */
 .tumblr-button {
   margin: 0 4px;
-}
-
-/* line 1, calendar.scss */
-#Calendar .calendar img {
-  max-width: 100%;
 }
 
 /* COLORS */
@@ -920,30 +921,32 @@ span.label {
           flex: 0 1 40%;
   height: 120px;
   overflow-y: hidden;
+  min-width: 120px;
+  max-width: 120px;
 }
 
-/* line 34, staff.scss */
+/* line 37, staff.scss */
 #staff .post-thumbnail img {
   height: auto;
   width: 100%;
 }
 
-/* line 38, staff.scss */
+/* line 41, staff.scss */
 .staff-postcard {
   margin-left: 15px;
 }
 
-/* line 41, staff.scss */
+/* line 44, staff.scss */
 .staff-nickname, .staff-position {
   display: block;
 }
 
-/* line 44, staff.scss */
+/* line 47, staff.scss */
 .staff-nickname {
-  font-size: 1.8em;
+  font-size: 1.4em;
 }
 
-/* line 47, staff.scss */
+/* line 50, staff.scss */
 .staff-profile {
   -webkit-flex: 1 0 50%;
       -ms-flex: 1 0 50%;
@@ -951,7 +954,7 @@ span.label {
   padding: 0 2px;
 }
 
-/* line 51, staff.scss */
+/* line 54, staff.scss */
 .jslghtbx-caption .staff.social {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -959,25 +962,25 @@ span.label {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 @media only screen and (min-device-width: 640px) {
-  /* line 57, staff.scss */
+  /* line 60, staff.scss */
   #staff .post-thumbnail img {
     max-width: 120px;
   }
 }
 @media only screen and (min-device-height: 640px) and (orientation: portrait) {
-  /* line 62, staff.scss */
+  /* line 65, staff.scss */
   #staff .scrollbox {
     overflow-y: auto;
   }
 }
 @media only screen and (min-device-height: 768px) {
-  /* line 67, staff.scss */
+  /* line 70, staff.scss */
   #staff .post {
     -webkit-flex: 0 1 240px;
         -ms-flex: 0 1 240px;
@@ -985,7 +988,7 @@ span.label {
   }
 }
 @media only screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 72, staff.scss */
+  /* line 75, staff.scss */
   #staff .scrollbox {
     -webkit-flex: 1 1 420px;
         -ms-flex: 1 1 420px;

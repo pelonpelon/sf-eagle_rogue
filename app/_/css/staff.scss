@@ -30,6 +30,9 @@
     flex: 0 1 40%;
     height: 120px;
     overflow-y: hidden;
+    min-width: 120px;
+    max-width: 120px;
+
 }
 #staff .post-thumbnail img {
     height: auto;
@@ -42,7 +45,7 @@
     display: block;
 }
 .staff-nickname {
-    font-size: 1.8em;
+    font-size: 1.4em;
 }
 .staff-profile {
     flex: 1 0 50%;

@@ -133,13 +133,13 @@
           $tagcloud = ' ';
           if ($tags) {
               foreach (array_keys($tags) as $tag) {
-                  $font_size = .7 + $tags[$tag]/10;
+                  $font_size = .6 + $tags[$tag]/15;
                   $font_weight = 300;
-                  if ($tag == 'special') {$font_size *= 1.3; $font_weight = 900;}
+                  if ($tag == 'special') {$font_size *= 1.5; $font_weight = 900;}
                   $taglist .= '<span style="font-size: ' . $font_size . 'em; font-weight: ' . $font_weight . ';"> ' . $tag . ' </span>';
                   $tagcloud .= '<a
                       class="tag-button"
-                      style="font-size: ' . ($font_size * 2) . 'em; font-weight: ' . $font_weight . ';"
+                      style="font-size: ' . ($font_size * 1.2) . 'em; font-weight: ' . $font_weight . ';"
                       onclick="$(\'.tagcloud a\').removeClass(\'clicked\'); $(this).addClass(\'clicked\'); allItems(\'hide\'); $(\'.tag-' . $tag . '\').each(function(){
                           $(this).delay(600).removeClass(\'hideme\').fadeIn(600).prevAll(\'.new-day\').first().delay(400).removeClass(\'hideme\').fadeIn(400);})">'
                           . $tag. '</a> ';
@@ -217,9 +217,9 @@
                   $post_data = array('ID' => $ID, 'post_status' => 'pending');
                   wp_update_post($post_data);
 
-                  $file = APP_PATH.'logs/transients.log';
+                  //$file = APP_PATH.'logs/transients.log';
                   $entry = date('ymd G:i:s'). " :home.php " .get_the_title(). " new status: pending\n\n";
-                  file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+                  //file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
                   continue;
               }
@@ -257,7 +257,7 @@
           $post_thumbnail_img = get_the_post_thumbnail(null, 'thumbnail', $attrs);
           //$drink_special = get_post_meta($ID, 'event_drink_special', true);
           $drink_special = isset($md['event_drink_special'][0]) ? $md['event_drink_special'][0] : '';
-          $cover = isset($md['event_cover'][0]) ? $md['event_cover'][0] : '';
+          //$cover = isset($md['event_cover'][0]) ? $md['event_cover'][0] : '';
 
           $postcard = do_shortcode(isset($md['event_postcard'][0]) ? $md['event_postcard'][0] : '');
           $post_tags = get_the_tags($ID);
@@ -287,7 +287,7 @@
               <div class="content"><?php echo $postcard; ?>
               <div class="info">
                   <!-- <div class="cover"><php echo get_post_meta($ID, 'event_cover', true); ?></div> -->
-                  <div class="cover"><?php echo $cover; ?></div>
+                  <!-- <div class="cover"><?php echo $cover; ?></div> -->
                   <div class="start-time">
         <?php
 

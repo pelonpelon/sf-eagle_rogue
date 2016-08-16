@@ -94,7 +94,7 @@ hr {
     font-size: .8em;
     font-weight: 600;
     text-shadow: #200 2px 1px;
-    line-height: .2em;
+    line-height: .6em;
 }
 .new-day .drink-special {
     flex: 1;
@@ -185,8 +185,7 @@ hr {
     position: relative;
     font-size: .8em;
     color: lightblue;
-    padding: 0 2%;
-    /*background-image: linear-gradient($bg-2, $bg-2, $bg-1)*/
+    padding: 0 2% 16px;
 }
 span.label {
     font-size: smaller;
@@ -196,6 +195,7 @@ span.label {
     font-size: smaller;
     font-style: italic;
     font-weight: 600;
+    line-height: 1em;
 }
 .event .content h3 {
 }
@@ -230,11 +230,12 @@ span.label {
     text-align: right;
     color: $fg2;
     opacity: .7;
+    line-height: 92%;
 }
 .who, .band-list {
     font-size: .9em;
     padding-top: 7px;
-    max-width: 80%;
+    max-width: 100%;
 }
 .band-list li:nth-child(odd) {
     color: #c7e4fd;
@@ -247,6 +248,9 @@ span.label {
 /*}*/
 .promoter, .promoter a {
     color: #618ece !important;
+}
+h4.promoter {
+  font-size: smaller;
 }
 .more {
     color: aqua;
@@ -383,7 +387,7 @@ span.label {
         line-height: 1em;
     }
     .new-day .date {
-        line-height: .5em;
+        line-height: .9em;
     }
 }
 @media only screen and (min-device-width: $tablet) and (orientation: landscape){

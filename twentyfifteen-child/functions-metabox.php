@@ -225,6 +225,7 @@ function event_meta_boxes( $meta_boxes ) {
       'desc'  => 'https://www.facebook.com/SFEagle.ThursdayNightLive/',
       'clone' => true,
       'size'  =>  '60',
+      'placeholder'  =>  'https://www.facebook.com/SFEagle.ThursdayNightLive/',
     ),
     ),
   );

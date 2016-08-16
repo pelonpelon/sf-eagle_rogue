@@ -70,7 +70,7 @@
         <ul>
           <li class="hamburger" onclick="event.preventDefault(); jpm.trigger(true);"></li>
           <li class="menu-item home" onclick="jpm.trigger(true);"><a href="index.php">HOME</a></li>
-          <li class="menu-item staff" onclick="jpm.trigger(true);"><a href="staff.php">STAFF</a></li>
+          <li class="menu-item staff" onclick="jpm.trigger(true);"><a href="staff.php">PEOPLE</a></li>
 
 <?php foreach ($pages as $page) {
         $title_raw = $page->post_title;

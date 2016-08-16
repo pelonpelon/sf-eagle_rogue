@@ -23,7 +23,7 @@
     margin: auto;
     text-align: center;
     /*font-size: 1.5em;*/
-    font-size: 3em;
+    font-size: 2.5em;
     line-height: 1em;
 	font-weight: 900;
     color: #000;
@@ -53,14 +53,14 @@
 .page-content {
     width: 100%;
     max-width: 1000px;
-    padding: 0px 2px;
+    /*padding: 0px 2px;*/
     margin: 0 auto;
     height: 100%;
     background: $bg-darkest
 }
 /* set these for every generic wp-page*/
 .wp-page {
-    margin: 25px auto;
+    margin: 0 auto;
 }
 .wp-page img {
     max-width: 100%;
@@ -95,7 +95,7 @@
     }
     .page-content {
         position: relative;
-        padding-top: 70px;
+        padding-top: 60px;
         /*top: 70px;*/
     }
 }
@@ -105,7 +105,7 @@
     }
     .site-title {
         /*font-size: 2em;*/
-      font-size: 5.6em;
+      font-size: 5em;
       line-height: 0.9em;
       text-shadow: #1b81da 3px 4px;
     }
@@ -116,7 +116,7 @@
         height: 90px;
     }
     .page-content {
-        padding-top: 90px;
+        padding-top: 120px;
         padding-left: 4%;
         padding-right: 4%;
         /*top: 90px;*/

@@ -291,7 +291,7 @@ li#menu-header {
   margin: auto;
   text-align: center;
   /*font-size: 1.5em;*/
-  font-size: 3em;
+  font-size: 2.5em;
   line-height: 1em;
   font-weight: 900;
   color: #000;
@@ -325,7 +325,7 @@ li#menu-header {
 .page-content {
   width: 100%;
   max-width: 1000px;
-  padding: 0px 2px;
+  /*padding: 0px 2px;*/
   margin: 0 auto;
   height: 100%;
   background: #000;
@@ -334,7 +334,7 @@ li#menu-header {
 /* set these for every generic wp-page*/
 /* line 62, layout.scss */
 .wp-page {
-  margin: 25px auto;
+  margin: 0 auto;
 }
 
 /* line 65, layout.scss */
@@ -379,7 +379,7 @@ li#menu-header {
   /* line 96, layout.scss */
   .page-content {
     position: relative;
-    padding-top: 70px;
+    padding-top: 60px;
     /*top: 70px;*/
   }
 }
@@ -392,7 +392,7 @@ li#menu-header {
   /* line 106, layout.scss */
   .site-title {
     /*font-size: 2em;*/
-    font-size: 5.6em;
+    font-size: 5em;
     line-height: 0.9em;
     text-shadow: #1b81da 3px 4px;
   }
@@ -409,7 +409,7 @@ li#menu-header {
 
   /* line 118, layout.scss */
   .page-content {
-    padding-top: 90px;
+    padding-top: 120px;
     padding-left: 4%;
     padding-right: 4%;
     /*top: 90px;*/

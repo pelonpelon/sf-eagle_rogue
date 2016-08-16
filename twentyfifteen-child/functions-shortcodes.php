@@ -99,38 +99,39 @@ function shortcode_post_meta( $args ){
 add_shortcode( 'meta', 'shortcode_post_meta' );
 
 // Event who
-function list_who() {
-  $ID = get_the_ID();
-  $hosts = implode(' • ', get_post_meta($ID, 'event_hosts', true));
-  $guests = implode(' • ', get_post_meta($ID, 'event_guests', true));
-  $djs = implode(' • ', get_post_meta($ID, 'event_djs', true));
-  $markup = '';
-  if ($hosts) { $markup .= ' <li class="hosts"><span class="label">Hosting: </span>' .$hosts. '</li>'; }
-  if ($guests) { $markup .= ' <li class="guests"><span class="label">With: </span>' .$guests. '</li>'; }
-  if ($djs) { $markup .= ' <li class="djs"><span class="label">Spinning: </span>' .$djs. '</li>'; }
-  return $markup;
-}
+//function list_who() {
+  //$ID = get_the_ID();
+  //$hosts = implode(' • ', get_post_meta($ID, 'event_hosts', true));
+  //$guests = implode(' • ', get_post_meta($ID, 'event_guests', true));
+  //$djs = implode(' • ', get_post_meta($ID, 'event_djs', true));
+  //$markup = '';
+  //if ($hosts) { $markup .= ' <li class="hosts"><span class="label">Hosting: </span>' .$hosts. '</li>'; }
+  //if ($guests) { $markup .= ' <li class="guests"><span class="label">With: </span>' .$guests. '</li>'; }
+  //if ($djs) { $markup .= ' <li class="djs"><span class="label">Spinning: </span>' .$djs. '</li>'; }
+  //return $markup;
+//}
 
 function row_who() {
   $ID = get_the_ID();
+  $md = get_post_custom($ID);
 
   $markup = '';
 
-  $hosts_array = get_post_meta($ID, 'event_hosts', true);
+  $hosts_array = isset($md['event_hosts']) ? maybe_unserialize($md['event_hosts'][0]) : false;
   if ($hosts_array) {
     foreach ($hosts_array as &$host) { $host = str_replace(' ', '&nbsp', $host); unset($host); }
     $hosts = '<span class="person">' .implode(' </span><span class="person">', $hosts_array). '</span>';
     $markup .= ' <li class="hosts"><span class="label">hosting: </span>' .$hosts. '</li>';
   }
 
-  $guests_array = get_post_meta($ID, 'event_guests', true);
+  $guests_array = isset($md['event_guests']) ? maybe_unserialize($md['event_guests'][0]) : false;
   if ($guests_array) {
     foreach ($guests_array as &$guest) { $guest = str_replace(' ', '&nbsp', $guest); unset($host); }
     $guests = '<span class="person">' .implode(' </span><span class="person">', $guests_array). '</span>';
     $markup .= ' <li class="guests"><span class="label">with: </span>' .$guests. '</li>';
   }
 
-  $djs_array = get_post_meta($ID, 'event_djs', true);
+  $djs_array = isset($md['event_djs']) ? maybe_unserialize($md['event_djs'][0]) : false;
   if ($djs_array) {
     foreach ($djs_array as &$dj) { $dj = str_replace(' ', '&nbsp', $dj); unset($host); }
     $djs = '<span class="person">' .implode(' </span><span class="person">', $djs_array). '</span>';
@@ -143,17 +144,18 @@ function row_who() {
 function shortcode_event_who( $args ){
   $markup = '';
   $field = shortcode_get_field_array('event_', $args);
-//if ($field->id == 'list') {throw new Exception(print_r($args));}
+  //throw new Exception("$field->id $field->fmt")
   // the default
   if ((!$field->id && !$field->fmt) || (!$field->id && $field->fmt)) {
-    $who = row_who();
-    if ($who) {
-      $markup = '<div class="who">';
-      $markup .= '<ul>';
-      $markup .= row_who();
-      $markup .= '</ul>';
-      $markup .= '</div>';
-    }
+      // default vertical list
+        $who = row_who();
+        if ($who) {
+          $markup .= '<div class="who">';
+          $markup .= '<ul>';
+          $markup .= $who;
+          $markup .= '</ul>';
+          $markup .= '</div>';
+        }
   }
 
   // Want specific data
@@ -161,9 +163,8 @@ function shortcode_event_who( $args ){
 
     // if it's a list
     if ($field->id[strlen($field->id)-1] == 's' ){
-
       // vertical list
-      if ($field->fmt == 'row') {
+      if ( !isset($field->fmt) || $field->fmt == 'row') {
         $who = row_who();
         if ($who) {
           $markup = '<div class="who">';
@@ -179,18 +180,18 @@ function shortcode_event_who( $args ){
             $markup .= ' • ';
           }
         }
-
-      // default vertical list
-      } else if ($field->fmt == 'list') {
-        $who = list_who();
-        if ($who) {
-          $markup = '<div class="who">';
-          $markup .= '<ul>';
-          $markup .= list_who();
-          $markup .= '</ul>';
-          $markup .= '</div>';
-        }
       }
+      // default vertical list
+      //} else if ($field->fmt == 'list') {
+        //$who = list_who();
+        //if ($who) {
+          //$markup = '<div class="who">';
+          //$markup .= '<ul>';
+          //$markup .= list_who();
+          //$markup .= '</ul>';
+          //$markup .= '</div>';
+        //}
+      //}
 
       // it's not a list
     } else {
@@ -232,7 +233,7 @@ function shortcode_event_cover() {
     $data = get_post_meta(get_the_ID(), 'event_cover', true);
     $markup = '';
     if ($data) {
-      $markup .= '<span class="label cover">Cover: </span>' . $data;
+      $markup .= '<span class="cover">' .$data. '</span>';
     }
     return $markup;
 }
@@ -318,14 +319,15 @@ add_shortcode( 'image', 'shortcode_image_by_name' );
 
 function shortcode_band_list( $args ){
   $ID = get_the_ID();
+  $md = get_post_custom($ID);
   $band_names = shortcode_get_field_array('event_', array('id' => 'band_names' ) );
   $band_urls = shortcode_get_field_array('event_', array('id' => 'band_urls' ) );
   if (!$band_urls->items) {
     $band_urls->items = array_fill(0, 10, 'https://www.facebook.com/SFEagle.ThursdayNightLive/');
   }
-  $promoter = get_post_meta($ID, 'event_promoter', true);
+  $promoter = isset($md['event_promoter'][0]) ? $md['event_promoter'][0] : false;
   if ($promoter) {
-    $promoter_url = get_post_meta($ID, 'event_promoter_url', true);
+      $promoter_url = isset($md['event_promoter_url'][0]) ? $md['event_promoter_url'][0] : false;
   }else{
     $promoter_url = '#';
   }
@@ -386,6 +388,7 @@ add_shortcode( 'band_list', 'shortcode_band_list' );
 // gets STAFF metadata conditional altering the output
 function shortcode_staff_meta( $args ){
   $ID = get_the_ID();
+  $md = get_post_custom($ID);
   $field = shortcode_get_field_array('staff_', $args);
   //var_export($field);
 
@@ -395,7 +398,6 @@ function shortcode_staff_meta( $args ){
   $markup = '';
 
   if ($field->id == 'staff_social') {
-      $md = get_post_custom($ID);
       $markup = '';
       $markup .= "<div class='staff social'>";
       foreach ($md as $key => $value){
@@ -409,7 +411,7 @@ function shortcode_staff_meta( $args ){
   }
   else if ($field->id == 'staff_birthday') {
       date_default_timezone_set('America/Los_Angeles');
-      $bd = get_post_meta($ID, 'staff_birthday', true);
+      $bd = isset($md['staff_birthday'][0]) ? $md['staff_birthday'][0] : '';
       $date = new DateTime($bd);
       $this_year = new DateTime();
       $this_year->modify($date->format('M d'));
@@ -436,7 +438,7 @@ function shortcode_staff_meta( $args ){
       }
     }
   } else {
-    $data = get_post_meta($ID, $field->id, true);
+    $data = isset($md["$field->id"][0]) ? $md["$field->id"][0] : '';
     if ($field->fmt == 'markup') {
       $output = '<span class=\'' .$cls. '\'>' .$data. '</span>';
     }else{

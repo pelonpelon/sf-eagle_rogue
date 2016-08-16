@@ -2,9 +2,9 @@
 
 global $past_items;
 
-$file = APP_PATH.'logs/transients.log';
+//$file = APP_PATH.'logs/transients.log';
 $entry = date('ymd G:i:s'). " :wp-cron.php\n";
-file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+//file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
 $args = array(
     'orderby'       => 'post_date',
@@ -22,9 +22,9 @@ $past_items = new WP_Query( $args );
 // reset past events scheduled weekly
 function reschedule_weekly_events() {
     global $past_items;
-    $file = APP_PATH.'logs/transients.log';
+    //$file = APP_PATH.'logs/transients.log';
     $entry = date('ymd G:i:s'). " :wp-cron.php :reschedule_weekly_events\n";
-    file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+    //file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
     while ($past_items->have_posts()): $past_items->the_post();
 
@@ -51,10 +51,10 @@ function reschedule_weekly_events() {
         $date_string = $date_gmt->format('Y-m-d H:i');
         update_post_meta($ID, 'event_starttime', $date_string);
 
-        $file = APP_PATH.'logs/transients.log';
+        //$file = APP_PATH.'logs/transients.log';
         $entry = date('ymd G:i:s'). ' :wp-cron.php: ' .get_the_title(). ' scheduled for ' .$date_string;
         $entry .= date('ymd G:i:s'). " :wp-cron.php :reschedule_weekly_events SENDING EMAIL\n";
-        file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+        //file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
         wp_mail( CONTACT_EMAIL, 'reschedule_weekly_events: '. get_the_title(),
             get_the_title(). ' scheduled for ' .$date_string );
@@ -66,9 +66,9 @@ function reschedule_weekly_events() {
 // reset past events scheduled monthly
 function reschedule_monthly_events() {
     global $past_items;
-    $file = APP_PATH.'logs/transients.log';
+    //$file = APP_PATH.'logs/transients.log';
     $entry =  date('ymd G:i:s'). " :wp-cron.php :reschedule_monthly_events\n";
-    file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+    //file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
     while ($past_items->have_posts()): $past_items->the_post();
 
@@ -101,10 +101,10 @@ function reschedule_monthly_events() {
             $date_string = $date_gmt->format('Y-m-d H:i');
             update_post_meta($ID, 'event_starttime', $date_string);
 
-            $file = APP_PATH.'logs/transients.log';
+            //$file = APP_PATH.'logs/transients.log';
             $entry = date('ymd G:i:s'). ' :wp-cron.php: ' .get_the_title(). ' scheduled for ' .$date_string;
             $entry .= date('ymd G:i:s'). " :wp-cron.php :reschedule_monthly_events SENDING EMAIL\n";
-            file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+            //file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
 
             wp_mail( CONTACT_EMAIL, 'reschedule_monthly_events: '. get_the_title(),
                 get_the_title(). ' scheduled for ' .$date_string );

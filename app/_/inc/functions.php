@@ -97,7 +97,7 @@ function SendMail($to, $subject, $message, $html = true, $from = FROM_EMAIL) {
 add_action( 'shutdown', 'retrieve_post_via_mail' );
 function retrieve_post_via_mail() {
     //require_once('wp-cron.php');
-    $file = APP_PATH.'logs/transients.log';
+    //$file = APP_PATH.'logs/transients.log';
     flush(); // Display the page before the mail fetching begins
     if ( get_transient( 'retrieve_post_via_mail' ) ) {
         return; // The mail has been checked recently; don't check again
@@ -110,18 +110,18 @@ function retrieve_post_via_mail() {
 // Check and advance weekly and monthly expired events
 add_action( 'shutdown', 'advance_periodic_events' );
 function advance_periodic_events() {
-    $file = APP_PATH.'logs/transients.log';
+    //$file = APP_PATH.'logs/transients.log';
     //throw new Exception("\n\n". APP_PATH2 ."\n\n".__file__."\n\n".$file."\n\n".getcwd()."\n\n");
     $entry = "\n\n" .date('ymd G:i:s'). " :advance_periodic_events\n";
-    file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+    //file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
     flush(); // Display the page before the mail fetching begins
     if ( get_transient( 'advance_periodic_events' ) ) {
         $entry = date('ymd G:i:s'). " :advance_periodic_events :skipping action wp-cron.php\n";
-        file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+        //file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
         return;
     } else {
         $entry = date('ymd G:i:s'). " :advance_periodic_events :require_once wp-cron.php\n";
-        file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+        //file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
         require_once('wp-cron.php');
         reschedule_weekly_events();
         reschedule_monthly_events();
@@ -129,10 +129,10 @@ function advance_periodic_events() {
         //do_action( 'wp-cron.php' );
         if (set_transient( 'advance_periodic_events', 1, 15 * MINUTE_IN_SECONDS )) { // check  every hour
             $entry = date('ymd G:i:s'). " :advance_periodic_events :set transient success\n";
-            file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+            //file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
         }else{
             $entry = date('ymd G:i:s'). " :advance_periodic_events :set transient failed\n";
-            file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+            //file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
         }
     }
 }
@@ -146,6 +146,14 @@ function HasFormError($fieldName) {
 
     return false;
 }
+
+//
+// Disable responsive images
+//
+function meks_disable_srcset( $sources ) {
+    return false;
+}
+add_filter( 'wp_calculate_image_srcset', 'meks_disable_srcset' );
 
 
 //NOTES GODADDY runs chron jobs. wp-cron.php is executed when requested
