@@ -12,6 +12,7 @@
         //TODOd ••• cron remove feature img etc upon weekly/monthly if generic
         //TODOd ••• cron jump 2-3 months for next on monthly, 4 weeks for weekly
         //TODOd ••• cron if weekly already exists don't advance
+        //TODOd ••• add subtitle to social buttons
         //TODOd  admin column
         //TODOd •• add tags to warnings
         //TODOd •• add shortcodes to help or editor button
@@ -61,6 +62,7 @@
         //FIXX ••• fix somethings fucked up
         //FIXX ••• does godaddy run cron?
         //FIXX ••• Ack internal FIXXs
+        //TODOp ••• price on modal missing online [cover]
         //FIXX  why online images larger, possibly media settings?
         //FIXX  subtitle should be any length
         //FIXX  staff default

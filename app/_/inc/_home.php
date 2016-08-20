@@ -118,7 +118,7 @@
         if ($tags_array) {
             foreach ($tags_array as $tag) {
                 //isset($tags[$tag->slug]) ? print(" ++ ") : print(" +1 ");
-                isset($tags[$tag->slug]) ? $tags[$tag->slug] += 1 : $tags[$tag->slug] = 1;
+                isset($tags[$tag->name]) ? $tags[$tag->name] += 1 : $tags[$tag->name] = 1;
                 //echo " tags: " . $tag->slug . ":" . $tags[$tag->slug];
             }
         }
@@ -133,13 +133,13 @@
           $tagcloud = ' ';
           if ($tags) {
               foreach (array_keys($tags) as $tag) {
-                  $font_size = .6 + $tags[$tag]/15;
+                  $font_size = .5 + $tags[$tag]/15;
                   $font_weight = 300;
-                  if ($tag == 'special') {$font_size *= 1.5; $font_weight = 900;}
+                  if ($tag == 'SpecialEvents') {$font_size *= 1.5; $font_weight = 900;}
                   $taglist .= '<span style="font-size: ' . $font_size . 'em; font-weight: ' . $font_weight . ';"> ' . $tag . ' </span>';
                   $tagcloud .= '<a
                       class="tag-button"
-                      style="font-size: ' . ($font_size * 1.2) . 'em; font-weight: ' . $font_weight . ';"
+                      style="font-size: ' . ($font_size * 1.4) . 'em; font-weight: ' . $font_weight . ';"
                       onclick="$(\'.tagcloud a\').removeClass(\'clicked\'); $(this).addClass(\'clicked\'); allItems(\'hide\'); $(\'.tag-' . $tag . '\').each(function(){
                           $(this).delay(600).removeClass(\'hideme\').fadeIn(600).prevAll(\'.new-day\').first().delay(400).removeClass(\'hideme\').fadeIn(400);})">'
                           . $tag. '</a> ';
@@ -173,7 +173,7 @@
             <div class="tagcloud" style="display:none;"><?php echo $tagcloud; ?>
 
                 <a class="filtered-list" name="filtered_list"></a>
-
+                <br >
                 <a class="show-everything tag-button"
                     onclick="allItems('show'); $('.tagcloud').slideToggle(); $('.tagcloud a').removeClass('clicked');">everything</a>
 
